@@ -56,14 +56,14 @@ custom taxonomy multiselector.
 
 == Frequently Asked Questions ==
 
-Can I replace BuddyPress Xprofile Custom Fields Type with this?
+= Can I replace BuddyPress Xprofile Custom Fields Type with this? =
 Yes, but you will need to follow our migration guide. We have changed the internal architecture and the fiels need to be updated.
 
 
-What is the supported BuddyPress Version?
+= What is the supported BuddyPress Version? =
 2.9+, Tested with 3.0.
 
-Where do I get support?
+= Where do I get support? =
 Please use [BuddyDev support](https://buddydev.com/support/forums/) forums.
 
 
