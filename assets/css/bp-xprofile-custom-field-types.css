@@ -1,0 +1,7 @@
+.standard-form input[type="color"] {
+    width: auto !important; /*override the 100% specified by BuddyPress*/
+}
+
+.field_type_image .bpxcftr-image {
+    max-width: 100%;
+}

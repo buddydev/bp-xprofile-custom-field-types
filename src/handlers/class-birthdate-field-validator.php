@@ -1,0 +1,81 @@
+<?php
+/**
+ * Birthdate Field Validator
+ *
+ * @package    BuddyPress Xprofile Custom Field Types
+ * @subpackage Handlers
+ * @copyright  Copyright (c) 2018, Brajesh Singh
+ * @license    https://www.gnu.org/licenses/gpl.html GNU Public License
+ * @author     Brajesh Singh
+ * @since      1.0.0
+ */
+
+namespace BPXProfileCFTR\Handlers;
+
+
+use BPXProfileCFTR\Field_Types\Field_Type_Birthdate;
+
+// No direct access.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit( 0 );
+}
+
+/**
+ * Manage and sync field data.
+ */
+class Birthdate_Field_Validator {
+
+	/**
+	 * Setup the bootstrapper.
+	 */
+	public static function boot() {
+		$self = new self();
+		$self->setup();
+	}
+
+	/**
+	 * Bind hooks
+	 */
+	private function setup() {
+		add_action( 'xprofile_data_before_save', array( $this, 'on_field_data_save' ) );
+	}
+
+	/**
+	 * Validate on field save.
+	 *
+	 * @param $data
+	 *
+	 * @return mixed
+	 */
+	public function on_field_data_save( $data ) {
+		$field_id = $data->field_id;
+		$field    = new \BP_XProfile_Field( $field_id );
+		$min_age  = Field_Type_Birthdate::get_min_age( $field_id );
+
+		if ( 'birthdate' != $field->type || $min_age <= 0 ) {
+			return $data;
+		}
+
+		$redirect_url = trailingslashit( bp_displayed_user_domain() . bp_get_profile_slug() . '/edit/group/' . bp_action_variable( 1 ) );
+
+		// Check birthdate.
+		$now       = new \DateTime();
+
+		$birthdate = new \DateTime( sprintf( "%s-%s-%s",
+			$_POST[ 'field_' . $field_id . '_year' ],
+			$_POST[ 'field_' . $field_id . '_month' ],
+			$_POST[ 'field_' . $field_id . '_day' ] ) );
+
+		if ( $now <= $birthdate ) {
+			bp_core_add_message( sprintf( __( 'Incorrect birthdate selection.', 'buddypress-xprofile-custom-fields-types' ), $min_age ), 'error' );
+			bp_core_redirect( $redirect_url );
+		}
+
+		$age = $now->diff( $birthdate );
+
+		if ( $age->y < $min_age ) {
+			bp_core_add_message( sprintf( __( 'You have to be at least %s years old.', 'buddypress-xprofile-custom-fields-types' ), $min_age ), 'error' );
+			bp_core_redirect( $redirect_url );
+		}
+	}
+}
