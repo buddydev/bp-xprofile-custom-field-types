@@ -25,8 +25,8 @@ class Field_Type_Image extends \BP_XProfile_Field_Type {
     public function __construct() {
 		parent::__construct();
 
-	    $this->name     = _x( 'Image', 'xprofile field type', 'buddypress-xprofile-custom-fields-types' );
-	    $this->category = _x( 'Custom Fields', 'xprofile field type category', 'buddypress-xprofile-custom-fields-types' );
+	    $this->name     = _x( 'Image', 'xprofile field type', 'bp-xprofile-custom-fields-types' );
+	    $this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-fields-types' );
 
 		$this->set_format( '/^.+$/', 'replace' );
 		do_action( 'bp_xprofile_field_type_image', $this );
@@ -71,7 +71,7 @@ class Field_Type_Image extends \BP_XProfile_Field_Type {
             </p>
 
             <label>
-                <input type="checkbox" name="<?php echo $name; ?>_delete" value="1"/> <?php _e( 'Check this to delete this file', 'buddypress-xprofile-custom-fields-types' ); ?>
+                <input type="checkbox" name="<?php echo $name; ?>_delete" value="1"/> <?php _e( 'Check this to delete this file', 'bp-xprofile-custom-fields-types' ); ?>
             </label>
 
 		<?php endif; ?>

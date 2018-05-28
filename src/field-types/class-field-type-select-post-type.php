@@ -25,8 +25,8 @@ class Field_Type_Select_Post_Type extends \BP_XProfile_Field_Type implements Fie
     public function __construct() {
 		parent::__construct();
 
-		$this->name     = _x( 'Custom Post Type Selector', 'xprofile field type', 'buddypress-xprofile-custom-fields-types' );
-		$this->category = _x( 'Custom Fields', 'xprofile field type category', 'buddypress-xprofile-custom-fields-types' );
+		$this->name     = _x( 'Custom Post Type Selector', 'xprofile field type', 'bp-xprofile-custom-fields-types' );
+		$this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-fields-types' );
 
 		$this->supports_options = false;
 
@@ -53,7 +53,7 @@ class Field_Type_Select_Post_Type extends \BP_XProfile_Field_Type implements Fie
 		<?php do_action( bp_get_the_profile_field_errors_action() ); ?>
 
         <select <?php echo $html; ?>>
-            <option value=""><?php _e( 'Select...', 'buddypress-xprofile-custom-fields-types' ); ?></option>
+            <option value=""><?php _e( 'Select...', 'bp-xprofile-custom-fields-types' ); ?></option>
 			<?php bp_the_profile_field_options( "user_id={$user_id}" ); ?>
         </select>
 
@@ -124,14 +124,14 @@ class Field_Type_Select_Post_Type extends \BP_XProfile_Field_Type implements Fie
         <div id="<?php echo esc_attr( $type ); ?>" class="postbox bp-options-box"
              style="<?php echo esc_attr( $class ); ?> margin-top: 15px;">
 			<?php if ( ! $post_types ): ?>
-                <h3><?php _e( 'There is no custom post type. You need to create at least one to use this field.', 'buddypress-xprofile-custom-fields-types' ); ?></h3>
+                <h3><?php _e( 'There is no custom post type. You need to create at least one to use this field.', 'bp-xprofile-custom-fields-types' ); ?></h3>
 			<?php else : ?>
-                <h3><?php esc_html_e( 'Select a post type:', 'buddypress-xprofile-custom-fields-types' ); ?></h3>
+                <h3><?php esc_html_e( 'Select a post type:', 'bp-xprofile-custom-fields-types' ); ?></h3>
                 <div class="inside">
                     <p>
-						<?php _e( 'Select a post type:', 'buddypress-xprofile-custom-fields-types' ); ?>
+						<?php _e( 'Select a post type:', 'bp-xprofile-custom-fields-types' ); ?>
                         <select name="bpxcftr_selected_post_type" id="bpxcftr_selected_post_type">
-                            <option value=""><?php _e( 'Select...', 'buddypress-xprofile-custom-fields-types' ); ?></option>
+                            <option value=""><?php _e( 'Select...', 'bp-xprofile-custom-fields-types' ); ?></option>
 							<?php foreach ( $post_types as $k => $v ): ?>
                                 <option value="<?php echo $k; ?>" <?php selected( $selected_post_type, $k, true ); ?>><?php echo $v; ?></option>
 							<?php endforeach; ?>

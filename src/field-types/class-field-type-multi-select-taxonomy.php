@@ -26,8 +26,8 @@ class Field_Type_Multi_Select_Taxonomy extends \BP_XProfile_Field_Type implement
 	public function __construct() {
 		parent::__construct();
 
-		$this->name     = _x( 'Custom Taxonomy Multiselector', 'xprofile field type', 'buddypress-xprofile-custom-fields-types' );
-		$this->category = _x( 'Custom Fields', 'xprofile field type category', 'buddypress-xprofile-custom-fields-types' );
+		$this->name     = _x( 'Custom Taxonomy Multiselector', 'xprofile field type', 'bp-xprofile-custom-fields-types' );
+		$this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-fields-types' );
 
 		$this->supports_multiple_defaults = false;
 		$this->supports_options           = false;
@@ -143,14 +143,14 @@ class Field_Type_Multi_Select_Taxonomy extends \BP_XProfile_Field_Type implement
 		?>
         <div id="<?php echo esc_attr( $type ); ?>" class="postbox bp-options-box" style="<?php echo esc_attr( $class ); ?> margin-top: 15px;">
 			<?php if ( ! $taxonomies ) : ?>
-                <h3><?php _e( 'There is no custom taxonomy. You need to create at least one to use this field.', 'buddypress-xprofile-custom-fields-types' ); ?></h3>
+                <h3><?php _e( 'There is no custom taxonomy. You need to create at least one to use this field.', 'bp-xprofile-custom-fields-types' ); ?></h3>
 			<?php else : ?>
-                <h3><?php esc_html_e( 'Select a custom taxonomy:', 'buddypress-xprofile-custom-fields-types' ); ?></h3>
+                <h3><?php esc_html_e( 'Select a custom taxonomy:', 'bp-xprofile-custom-fields-types' ); ?></h3>
                 <div class="inside">
                     <p>
-						<?php _e( 'Select a custom taxonomy:', 'buddypress-xprofile-custom-fields-types' ); ?>
+						<?php _e( 'Select a custom taxonomy:', 'bp-xprofile-custom-fields-types' ); ?>
                         <select name="bpxcftr_multi_selected_taxonomy" id="bpxcftr_multi_selected_taxonomy">
-                            <option value=""><?php _e( 'Select...', 'buddypress-xprofile-custom-fields-types' ); ?></option>
+                            <option value=""><?php _e( 'Select...', 'bp-xprofile-custom-fields-types' ); ?></option>
 							<?php foreach ( $taxonomies as $k => $v ): ?>
                                 <option value="<?php echo $k; ?>"<?php selected( $selected_tax,$k ) ?> ><?php echo $v; ?></option>
 							<?php endforeach; ?>
@@ -159,7 +159,7 @@ class Field_Type_Multi_Select_Taxonomy extends \BP_XProfile_Field_Type implement
                     <p>
                         <label>
                             <input type="checkbox" name="bpxcftr_multi_tax_allow_new_terms" id="bpxcftr_multi_tax_allow_new_terms" value="1" <?php checked(true,  self::allow_new_terms( $current_field->id ) );?> />
-		                    <?php _e( 'Allow users to add new terms:', 'buddypress-xprofile-custom-fields-types' ); ?>
+		                    <?php _e( 'Allow users to add new terms:', 'bp-xprofile-custom-fields-types' ); ?>
                         </label>
 
                     </p>

@@ -22,8 +22,8 @@ class Field_Type_Email extends \BP_XProfile_Field_Type {
 
 		parent::__construct();
 
-		$this->name     = _x( 'Email (HTML5 field)', 'xprofile field type', 'buddypress-xprofile-custom-fields-types' );
-		$this->category = _x( 'Custom Fields', 'xprofile field type category', 'buddypress-xprofile-custom-fields-types' );
+		$this->name     = _x( 'Email (HTML5 field)', 'xprofile field type', 'bp-xprofile-custom-fields-types' );
+		$this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-fields-types' );
 
 		do_action( 'bp_xprofile_field_type_email', $this );
 	}

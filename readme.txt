@@ -15,14 +15,14 @@ In the first version, It brings all the profile fields offered by the currently 
 
 The supported profile field types are:-
 * Birthdate.
+* Image.
+* File.
+* Checkbox acceptance.
 * [Email](http://www.w3.org/TR/html-markup/input.email.html "Input type email - HTML5").
 * [Web](http://www.w3.org/TR/html-markup/input.url.html "Input type url - HTML5").
 * [Datepicker](http://www.w3.org/TR/2013/NOTE-html-markup-20130528/input.date.html "Input type date - HTML5").
 * Custom post type selector.
 * Custom post type multiselector.
-* Checkbox acceptance.
-* Image.
-* File.
 * [Colorpicker](http://www.w3.org/TR/2013/NOTE-html-markup-20130528/input.color.html "Input type color - HTML5").
 * Decimal number.
 * Number within min/max values.

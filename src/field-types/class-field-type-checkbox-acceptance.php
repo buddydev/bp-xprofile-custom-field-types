@@ -26,8 +26,8 @@ class Field_Type_Checkbox_Acceptance extends \BP_XProfile_Field_Type {
 
 		parent::__construct();
 
-		$this->name     = _x( 'Checkbox Acceptance', 'xprofile field type', 'buddypress-xprofile-custom-fields-types' );
-		$this->category = _x( 'Custom Fields', 'xprofile field type category', 'buddypress-xprofile-custom-fields-types' );
+		$this->name     = _x( 'Checkbox Acceptance', 'xprofile field type', 'bp-xprofile-custom-fields-types' );
+		$this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-fields-types' );
 
 		$this->supports_multiple_defaults = false;
 		$this->accepts_null_value         = false;
@@ -119,7 +119,7 @@ class Field_Type_Checkbox_Acceptance extends \BP_XProfile_Field_Type {
 		?>
         <div id="<?php echo esc_attr( $type ); ?>" class="postbox bp-options-box"
              style="<?php echo esc_attr( $class ); ?> margin-top: 15px;">
-            <h3><?php esc_html_e( 'Use this field to write a text that should be displayed beside the checkbox:', 'buddypress-xprofile-custom-fields-types' ); ?></h3>
+            <h3><?php esc_html_e( 'Use this field to write a text that should be displayed beside the checkbox:', 'bp-xprofile-custom-fields-types' ); ?></h3>
             <div class="inside">
                 <p>
                     <textarea name="bpxcftr_tos_content" id="bpxcftr_tos_content" rows="5" cols="60"><?php echo $text; ?></textarea>
@@ -191,7 +191,7 @@ class Field_Type_Checkbox_Acceptance extends \BP_XProfile_Field_Type {
 	 * @return string   Value formatted
 	 */
 	public static function display_filter( $field_value, $field_id = 0 ) {
-		return empty( $field_value ) ? __( 'No', 'buddypress-xprofile-custom-fields-types' ) : __( 'Yes', 'buddypress-xprofile-custom-fields-types' );
+		return empty( $field_value ) ? __( 'No', 'bp-xprofile-custom-fields-types' ) : __( 'Yes', 'bp-xprofile-custom-fields-types' );
 	}
 
 	/**

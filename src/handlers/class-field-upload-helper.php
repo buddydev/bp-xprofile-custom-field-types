@@ -159,11 +159,11 @@ class Field_Upload_Helper {
 		$is_upload = ( $file_size > 0 ) && isset( $_FILES[ 'field_' . $field_id ] );
 
 		if ( ! $is_upload ) {
-			return new \WP_Error( 'file_err', __( 'Invalid file.', 'buddypress-xprofile-custom-fields-types' ) );
+			return new \WP_Error( 'file_err', __( 'Invalid file.', 'bp-xprofile-custom-fields-types' ) );
 		}
 
 		if ( $file_size <= 0 ) {
-			return new \WP_Error( 'file_size_err', __( 'Invalid file size.', 'buddypress-xprofile-custom-fields-types' ) );
+			return new \WP_Error( 'file_size_err', __( 'Invalid file size.', 'bp-xprofile-custom-fields-types' ) );
 		}
 
 		$ext          = strtolower( substr( $_FILES[ 'field_' . $field_id ]['name'], strrpos( $_FILES[ 'field_' . $field_id ]['name'], '.' ) + 1 ) );
@@ -171,9 +171,9 @@ class Field_Upload_Helper {
 		$allowed_size = bpxcftr_get_allowed_file_size( $field->type );
 
 		if ( ! in_array( $ext, $ext_allowed ) ) {
-			return new \WP_Error( 'invalid_file_type', sprintf( __( 'File type not allowed: (%s).', 'buddypress-xprofile-custom-fields-types' ), implode( ',', $ext_allowed ) ) );
+			return new \WP_Error( 'invalid_file_type', sprintf( __( 'File type not allowed: (%s).', 'bp-xprofile-custom-fields-types' ), implode( ',', $ext_allowed ) ) );
 		} elseif ( $file_size > $allowed_size ) {
-			return new \WP_Error( sprintf( __( 'Max image upload size: %s MB.', 'buddypress-xprofile-custom-fields-types' ), $allowed_size ) );
+			return new \WP_Error( sprintf( __( 'Max image upload size: %s MB.', 'bp-xprofile-custom-fields-types' ), $allowed_size ) );
 		}
 
 		// if we are here, we may proceed to upload.

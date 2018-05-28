@@ -21,8 +21,8 @@ class Field_Type_Datepicker extends \BP_XProfile_Field_Type {
 
 	    parent::__construct();
 
-	    $this->name     = _x( 'Datepicker (HTML5 field)', 'xprofile field type', 'buddypress-xprofile-custom-fields-types' );
-	    $this->category = _x( 'Custom Fields', 'xprofile field type category', 'buddypress-xprofile-custom-fields-types' );
+	    $this->name     = _x( 'Datepicker (HTML5 field)', 'xprofile field type', 'bp-xprofile-custom-fields-types' );
+	    $this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-fields-types' );
 
 		$this->set_format( '/^\d{4}-\d{1,2}-\d{1,2}$/', 'replace' );  // "Y-m-d 00:00:00"
 		do_action( 'bp_xprofile_field_type_datepicker', $this );
