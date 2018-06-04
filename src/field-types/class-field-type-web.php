@@ -22,7 +22,7 @@ class Field_Type_Web extends \BP_XProfile_Field_Type_URL {
 
 	public function __construct() {
 		parent::__construct();
-		$this->name     = _x( 'Website (HTML5 field)', 'xprofile field type', 'bp-xprofile-custom-fields-types' );
-		$this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-fields-types' );
+		$this->name     = _x( 'Website (HTML5 field)', 'xprofile field type', 'bp-xprofile-custom-field-types' );
+		$this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-field-types' );
 	}
 }

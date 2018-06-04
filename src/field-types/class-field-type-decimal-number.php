@@ -25,8 +25,8 @@ class Field_Type_Decimal_Number extends \BP_XProfile_Field_Type {
 
 		parent::__construct();
 
-	    $this->name     = __( 'Decimal number (HTML5 field)', 'bp-xprofile-custom-fields-types' );
-	    $this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-fields-types' );
+	    $this->name     = __( 'Decimal number (HTML5 field)', 'bp-xprofile-custom-field-types' );
+	    $this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-field-types' );
 
 		$this->accepts_null_value = true;
 		$this->supports_options   = false;
@@ -106,10 +106,10 @@ class Field_Type_Decimal_Number extends \BP_XProfile_Field_Type {
 		}
 		?>
         <div id="<?php echo esc_attr( $type ); ?>" class="postbox bp-options-box" style="<?php echo esc_attr( $class ); ?> margin-top: 15px;">
-            <h3><?php esc_html_e( 'Options', 'bp-xprofile-custom-fields-types' ); ?></h3>
+            <h3><?php esc_html_e( 'Options', 'bp-xprofile-custom-field-types' ); ?></h3>
             <div class="inside">
                 <p>
-                    <label for="bpxcftr_decimal_precision"><?php _e('Precision', 'bp-xprofile-custom-fields-types');?></label>
+                    <label for="bpxcftr_decimal_precision"><?php _e('Precision', 'bp-xprofile-custom-field-types');?></label>
                     <select name="bpxcftr_decimal_precision" id="bpxcftr_decimal_precision">
 						<?php for ( $j = 1; $j <= 6; $j ++ ): ?>
                             <option value="<?php echo $j; ?>" <?php  selected( $current_precision, $j, true ); ?>><?php echo $j; ?></option>
@@ -118,10 +118,10 @@ class Field_Type_Decimal_Number extends \BP_XProfile_Field_Type {
                 </p>
 
                 <p>
-                    <label for="bpxcftr_decimal_step_size"><?php _e('Step Size', 'bp-xprofile-custom-fields-types');?></label>
+                    <label for="bpxcftr_decimal_step_size"><?php _e('Step Size', 'bp-xprofile-custom-field-types');?></label>
                     <input type="text" value="<?php echo esc_attr( $current_step);?>" name="bpxcftr_decimal_step_size" />
                 </p>
-                <p><?php _e('Use decimal in step e.g .05, 1.3 etc, otherwise the field will behave as number','bp-xprofile-custom-fields-types' );?></p>
+                <p><?php _e('Use decimal in step e.g .05, 1.3 etc, otherwise the field will behave as number','bp-xprofile-custom-field-types' );?></p>
             </div>
         </div>
 		<?php

@@ -68,14 +68,14 @@ class Signup_Validator {
 
 			case 'checkbox_acceptance':
 				if ( $field->is_required && ( empty( $_POST[ 'field_' . $field_id ] ) || 1 != $_POST[ 'field_' . $field_id ] ) ) {
-					$bp->signup->errors[ 'field_' . $field_id ] = __( 'This is a required field', 'bp-xprofile-custom-fields-types' );
+					$bp->signup->errors[ 'field_' . $field_id ] = __( 'This is a required field', 'bp-xprofile-custom-field-types' );
 				}
 
 				break;
 
 			case 'fromto':
 				if ( $field->is_required && ( empty( $_POST[ 'field_' . $field_id ]['from'] ) || empty( $_POST[ 'field_' . $field_id ]['to'] ) ) ) {
-					$bp->signup->errors[ 'field_' . $field_id ] = __( 'This is a required field', 'bp-xprofile-custom-fields-types' );
+					$bp->signup->errors[ 'field_' . $field_id ] = __( 'This is a required field', 'bp-xprofile-custom-field-types' );
 				}
 
 				break;
@@ -98,7 +98,7 @@ class Signup_Validator {
 		$filesize = round( $_FILES[ 'field_' . $field_id ]['size'] / ( 1024 * 1024 ), 2 );
 
 		if ( $field->is_required && $filesize <= 0 ) {
-			$bp->signup->errors[ 'field_' . $field_id ] = __( 'This is a required field.', 'bp-xprofile-custom-fields-types' );
+			$bp->signup->errors[ 'field_' . $field_id ] = __( 'This is a required field.', 'bp-xprofile-custom-field-types' );
 
 			return;
 		}
@@ -110,11 +110,11 @@ class Signup_Validator {
 		$allowed_size      = bpxcftr_get_allowed_file_size( $field->type );
 
 		if ( $allowed_size < $filesize ) {
-			$bp->signup->errors[ 'field_' . $field_id ] = sprintf( __( 'File exceed the upload limit. Max upload size %d.', 'bp-xprofile-custom-fields-types' ), $allowed_size );
+			$bp->signup->errors[ 'field_' . $field_id ] = sprintf( __( 'File exceed the upload limit. Max upload size %d.', 'bp-xprofile-custom-field-types' ), $allowed_size );
 		}
 
 		if ( ! in_array( $ext, $allowed_extension ) ) {
-			$bp->signup->errors[ 'field_' . $field_id ] = sprintf( __( 'File type not allowed: (%s).', 'bp-xprofile-custom-fields-types' ), implode( ',', $allowed_extension ) );
+			$bp->signup->errors[ 'field_' . $field_id ] = sprintf( __( 'File type not allowed: (%s).', 'bp-xprofile-custom-field-types' ), implode( ',', $allowed_extension ) );
 		}
 	}
 
@@ -141,7 +141,7 @@ class Signup_Validator {
 			$_POST[ 'field_' . $field_id . '_day' ] ) );
 		$age       = $now->diff( $birthdate );
 		if ( $age->y < $min_age ) {
-			$bp->signup->errors[ 'field_' . $field_id ] = sprintf( __( 'You have to be at least %s years old.', 'bp-xprofile-custom-fields-types' ), $min_age );
+			$bp->signup->errors[ 'field_' . $field_id ] = sprintf( __( 'You have to be at least %s years old.', 'bp-xprofile-custom-field-types' ), $min_age );
 		}
 	}
 }

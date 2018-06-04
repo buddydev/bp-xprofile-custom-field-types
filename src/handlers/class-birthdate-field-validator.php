@@ -67,14 +67,14 @@ class Birthdate_Field_Validator {
 			$_POST[ 'field_' . $field_id . '_day' ] ) );
 
 		if ( $now <= $birthdate ) {
-			bp_core_add_message( sprintf( __( 'Incorrect birthdate selection.', 'bp-xprofile-custom-fields-types' ), $min_age ), 'error' );
+			bp_core_add_message( sprintf( __( 'Incorrect birthdate selection.', 'bp-xprofile-custom-field-types' ), $min_age ), 'error' );
 			bp_core_redirect( $redirect_url );
 		}
 
 		$age = $now->diff( $birthdate );
 
 		if ( $age->y < $min_age ) {
-			bp_core_add_message( sprintf( __( 'You have to be at least %s years old.', 'bp-xprofile-custom-fields-types' ), $min_age ), 'error' );
+			bp_core_add_message( sprintf( __( 'You have to be at least %s years old.', 'bp-xprofile-custom-field-types' ), $min_age ), 'error' );
 			bp_core_redirect( $redirect_url );
 		}
 	}

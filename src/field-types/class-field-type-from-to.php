@@ -25,8 +25,8 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 
 		parent::__construct();
 
-		$this->name     = __( 'From/To values', 'bp-xprofile-custom-fields-types' );
-		$this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-fields-types' );
+		$this->name     = __( 'From/To values', 'bp-xprofile-custom-field-types' );
+		$this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-field-types' );
 
 		$this->accepts_null_value = true;
 		$this->supports_options   = false;
@@ -149,30 +149,30 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 
 		?>
 		<div id="<?php echo esc_attr( $type ); ?>" class="postbox bp-options-box" style="<?php echo esc_attr( $class ); ?> margin-top: 15px;">
-			<h3><?php esc_html_e( 'Options', 'bp-xprofile-custom-fields-types' ); ?></h3>
+			<h3><?php esc_html_e( 'Options', 'bp-xprofile-custom-field-types' ); ?></h3>
 			<div class="inside">
 				<p>
-					<label for="bpxcftr_fromto_value_type"> <?php _e( 'Value Type', 'bp-xprofile-custom-fields-types' );?></label>
+					<label for="bpxcftr_fromto_value_type"> <?php _e( 'Value Type', 'bp-xprofile-custom-field-types' );?></label>
 					<select name="bpxcftr_fromto_value_type">
-						<option value="" <?php selected( $value_type, '', true);?>><?php _e( 'No restrictions', 'bp-xprofile-custom-fields-types');?></option>
-						<option value="integer" <?php selected( $value_type, 'integer', true );?>><?php _e( 'Integers', 'bp-xprofile-custom-fields-types');?></option>
-						<option value="numeric" <?php selected( $value_type, 'numeric', true );?>><?php _e( 'Numeric', 'bp-xprofile-custom-fields-types');?></option>
-						<option value="string" <?php selected( $value_type, 'string', true );?>><?php _e( 'String', 'bp-xprofile-custom-fields-types');?></option>
+						<option value="" <?php selected( $value_type, '', true);?>><?php _e( 'No restrictions', 'bp-xprofile-custom-field-types');?></option>
+						<option value="integer" <?php selected( $value_type, 'integer', true );?>><?php _e( 'Integers', 'bp-xprofile-custom-field-types');?></option>
+						<option value="numeric" <?php selected( $value_type, 'numeric', true );?>><?php _e( 'Numeric', 'bp-xprofile-custom-field-types');?></option>
+						<option value="string" <?php selected( $value_type, 'string', true );?>><?php _e( 'String', 'bp-xprofile-custom-field-types');?></option>
 					</select>
 				</p>
 
 				<div class="int-numeric-constraints">
-					<label for="bpxcftr_numeric_type_constraints"><?php _e('Integer/Numeric Type Constraints', 'bp-xprofile-custom-fields-types');?></label>
+					<label for="bpxcftr_numeric_type_constraints"><?php _e('Integer/Numeric Type Constraints', 'bp-xprofile-custom-field-types');?></label>
 
-					<h4><?php _e( 'Default Values', 'bp-xprofile-custom-fields-types');?></h4>
+					<h4><?php _e( 'Default Values', 'bp-xprofile-custom-field-types');?></h4>
 					<p>
 						<label>
-							<?php _e( 'From', 'bp-xprofile-custom-fields-types');?>
+							<?php _e( 'From', 'bp-xprofile-custom-field-types');?>
 							<input type="text" name="bpxcftr_fromto_from_value" value="<?php echo esc_attr( $from_value );?>" />
 						</label>
 
 						<label>
-							<?php _e( 'To', 'bp-xprofile-custom-fields-types');?>
+							<?php _e( 'To', 'bp-xprofile-custom-field-types');?>
 							<input type="text" name="bpxcftr_fromto_to_value" value="<?php echo esc_attr( $to_value );?>" />
 						</label>
 

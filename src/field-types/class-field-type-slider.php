@@ -22,8 +22,8 @@ class Field_Type_Slider extends \BP_XProfile_Field_Type {
 	public function __construct() {
 		parent::__construct();
 
-		$this->name     = __( 'Range input (HTML5 field)', 'bp-xprofile-custom-fields-types' );
-		$this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-fields-types' );
+		$this->name     = __( 'Range input (HTML5 field)', 'bp-xprofile-custom-field-types' );
+		$this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-field-types' );
 
 		$this->accepts_null_value = true;
 		$this->supports_options   = false;
@@ -105,15 +105,15 @@ class Field_Type_Slider extends \BP_XProfile_Field_Type {
 		?>
         <div id="<?php echo esc_attr( $type ); ?>" class="postbox bp-options-box" style="<?php echo esc_attr( $class ); ?> margin-top: 15px;">
 
-        <h3><?php esc_html_e( 'Write min and max values.', 'bp-xprofile-custom-fields-types' ); ?></h3>
+        <h3><?php esc_html_e( 'Write min and max values.', 'bp-xprofile-custom-field-types' ); ?></h3>
             <div class="inside">
                 <p>
                     <label for="bpxcftr_slider_min">
-						<?php esc_html_e( 'Minimum:', 'bp-xprofile-custom-fields-types' ); ?>
+						<?php esc_html_e( 'Minimum:', 'bp-xprofile-custom-field-types' ); ?>
                     </label>
                     <input type="text" name="bpxcftr_slider_min" id="bpxcftr_slider_min" value="<?php echo esc_attr( $min ); ?>"/>
                     <label for="bpxcftr_slider_max">
-						<?php esc_html_e( 'Maximum:', 'bp-xprofile-custom-fields-types' ); ?>
+						<?php esc_html_e( 'Maximum:', 'bp-xprofile-custom-field-types' ); ?>
                     </label>
                     <input type="text" name="bpxcftr_slider_max" id="bpxcftr_slider_max" value="<?php echo esc_attr( $max ); ?>"/>
                 </p>

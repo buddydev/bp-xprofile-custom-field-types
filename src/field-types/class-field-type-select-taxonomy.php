@@ -27,8 +27,8 @@ class Field_Type_Select_Taxonomy extends \BP_XProfile_Field_Type implements Fiel
 
 	    parent::__construct();
 
-	    $this->name     = _x( 'Custom Taxonomy Selector', 'xprofile field type', 'bp-xprofile-custom-fields-types' );
-	    $this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-fields-types' );
+	    $this->name     = _x( 'Custom Taxonomy Selector', 'xprofile field type', 'bp-xprofile-custom-field-types' );
+	    $this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-field-types' );
 
 		$this->supports_options = false;
 
@@ -54,7 +54,7 @@ class Field_Type_Select_Taxonomy extends \BP_XProfile_Field_Type implements Fiel
 
 		<?php do_action( bp_get_the_profile_field_errors_action() ); ?>
         <select <?php echo $html; ?>>
-            <option value=""><?php _e( 'Select...', 'bp-xprofile-custom-fields-types' ); ?></option>
+            <option value=""><?php _e( 'Select...', 'bp-xprofile-custom-field-types' ); ?></option>
 			<?php bp_the_profile_field_options( "user_id={$user_id}" ); ?>
         </select>
 
@@ -130,14 +130,14 @@ class Field_Type_Select_Taxonomy extends \BP_XProfile_Field_Type implements Fiel
 			<?php
 			if ( ! $taxonomies ):
 				?>
-                <h3><?php _e( 'There is no custom taxonomy. You need to create at least one to use this field.', 'bp-xprofile-custom-fields-types' ); ?></h3>
+                <h3><?php _e( 'There is no custom taxonomy. You need to create at least one to use this field.', 'bp-xprofile-custom-field-types' ); ?></h3>
 			<?php else : ?>
-                <h3><?php esc_html_e( 'Select a custom taxonomy:', 'bp-xprofile-custom-fields-types' ); ?></h3>
+                <h3><?php esc_html_e( 'Select a custom taxonomy:', 'bp-xprofile-custom-field-types' ); ?></h3>
                 <div class="inside">
                     <p>
-						<?php _e( 'Select a custom taxonomy:', 'bp-xprofile-custom-fields-types' ); ?>
+						<?php _e( 'Select a custom taxonomy:', 'bp-xprofile-custom-field-types' ); ?>
                         <select name="bpxcftr_selected_taxonomy" id="bpxcftr_selected_taxonomy">
-                            <option value=""><?php _e( 'Select...', 'bp-xprofile-custom-fields-types' ); ?></option>
+                            <option value=""><?php _e( 'Select...', 'bp-xprofile-custom-field-types' ); ?></option>
 							<?php foreach ( $taxonomies as $k => $v ): ?>
                                 <option value="<?php echo $k; ?>"<?php if ( $selected_tax == $k ): ?> selected="selected"<?php endif; ?>><?php echo $v; ?></option>
 							<?php endforeach; ?>

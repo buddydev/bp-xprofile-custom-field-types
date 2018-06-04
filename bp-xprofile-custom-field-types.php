@@ -19,7 +19,7 @@
  * Author URI: https://buddydev.com
  * License:      GPL2
  * License URI:  https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:  bp-xprofile-custom-fields-types
+ * Text Domain:  bp-xprofile-custom-field-types
  * Domain Path:  /languages
  */
 

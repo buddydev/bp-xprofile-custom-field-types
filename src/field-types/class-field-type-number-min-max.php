@@ -24,8 +24,8 @@ class Field_Type_Number_Min_Max extends \BP_XProfile_Field_Type {
 
         parent::__construct();
 
-	    $this->name     = __( 'Number within min/max values (HTML5 field)', 'bp-xprofile-custom-fields-types' );
-	    $this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-fields-types' );
+	    $this->name     = __( 'Number within min/max values (HTML5 field)', 'bp-xprofile-custom-field-types' );
+	    $this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-field-types' );
 
 		$this->accepts_null_value = true;
 		$this->supports_options   = false;
@@ -102,18 +102,18 @@ class Field_Type_Number_Min_Max extends \BP_XProfile_Field_Type {
 		?>
         <div id="<?php echo esc_attr( $type ); ?>" class="postbox bp-options-box" style="<?php echo esc_attr( $class ); ?> margin-top: 15px;">
 
-            <h3><?php esc_html_e( 'Write min and max values. You can leave any field blank if you want.', 'bp-xprofile-custom-fields-types' ); ?></h3>
+            <h3><?php esc_html_e( 'Write min and max values. You can leave any field blank if you want.', 'bp-xprofile-custom-field-types' ); ?></h3>
             <div class="inside">
                 <p>
 
                     <label for="bpxcftr_minmax_min">
-						<?php esc_html_e( 'Minimum:', 'bp-xprofile-custom-fields-types' ); ?>
+						<?php esc_html_e( 'Minimum:', 'bp-xprofile-custom-field-types' ); ?>
                     </label>
 
                     <input type="text" name="bpxcftr_minmax_min" id="bpxcftr_minmax_min" value="<?php echo esc_attr( $min ); ?>"/>
 
                     <label for="bpxcftr_minmax_max">
-						<?php esc_html_e( 'Maximum:', 'bp-xprofile-custom-fields-types' ); ?>
+						<?php esc_html_e( 'Maximum:', 'bp-xprofile-custom-field-types' ); ?>
                     </label>
                     <input type="text" name="bpxcftr_minmax_max" id="bpxcftr_minmax_max" value="<?php echo esc_attr($max); ?>"/>
 

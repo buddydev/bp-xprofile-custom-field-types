@@ -64,7 +64,7 @@ class Bootstrapper {
 	 * Load translations.
 	 */
 	public function load_translations() {
-		load_plugin_textdomain( 'bp-xprofile-custom-fields-types', false, basename( dirname( bp_xprofile_cftr()->path ) ) . '/languages' );
+		load_plugin_textdomain( 'bp-xprofile-custom-field-types', false, basename( dirname( bp_xprofile_cftr()->path ) ) . '/languages' );
 	}
 
 	/**

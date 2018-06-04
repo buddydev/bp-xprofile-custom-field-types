@@ -25,8 +25,8 @@ class Field_Type_File extends \BP_XProfile_Field_Type {
 	public function __construct() {
 		parent::__construct();
 
-		$this->name     = _x( 'File', 'xprofile field type', 'bp-xprofile-custom-fields-types' );
-		$this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-fields-types' );
+		$this->name     = _x( 'File', 'xprofile field type', 'bp-xprofile-custom-field-types' );
+		$this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-field-types' );
 
 		$this->set_format( '/^.+$/', 'replace' );
 		do_action( 'bp_xprofile_field_type_file', $this );
@@ -74,7 +74,7 @@ class Field_Type_File extends \BP_XProfile_Field_Type {
             </p>
 
             <label>
-                <input type="checkbox" name="<?php echo $name; ?>_delete" value="1"/> <?php _e( 'Check this to delete this file', 'bp-xprofile-custom-fields-types' ); ?>
+                <input type="checkbox" name="<?php echo $name; ?>_delete" value="1"/> <?php _e( 'Check this to delete this file', 'bp-xprofile-custom-field-types' ); ?>
             </label>
 		<?php endif; ?>
 
@@ -130,7 +130,7 @@ class Field_Type_File extends \BP_XProfile_Field_Type {
 
 		$new_field_value = trailingslashit( $uploads['baseurl'] ) . $field_value;
 
-		$new_field_value = sprintf( '<a href="%s" rel="nofollow" class="bpxcftr-file-link">%s</a>', esc_url( $new_field_value ), __( 'Download file', 'bp-xprofile-custom-fields-types' ) );
+		$new_field_value = sprintf( '<a href="%s" rel="nofollow" class="bpxcftr-file-link">%s</a>', esc_url( $new_field_value ), __( 'Download file', 'bp-xprofile-custom-field-types' ) );
 
 		return apply_filters( 'bpxcftr_file_display_data', $new_field_value, $field_id );
 	}
