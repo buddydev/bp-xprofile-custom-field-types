@@ -13,7 +13,7 @@
  * Plugin Name: BuddyPress Xprofile Custom Field Types
  * Plugin URI: https://buddydev.com/plugins/buddypress-xprofile-custom-field-types/
  * Description: Have all the extra field types at your disposal.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Requires PHP: 5.3
  * Author: BuddyDev
  * Author URI: https://buddydev.com
@@ -44,6 +44,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 class BP_Xprofile_CFTR {
 
 	/**
+	 * Plugin Version.
+	 *
+	 * @var string
+	 */
+	private $version = '1.0.1';
+
+	/**
 	 * Class instance
 	 *
 	 * @var static
@@ -70,13 +77,6 @@ class BP_Xprofile_CFTR {
 	 * @var string
 	 */
 	private $basename;
-
-	/**
-	 * Plugin Version.
-	 *
-	 * @var string
-	 */
-	private $version = '1.0.0';
 
 	/**
 	 * Temporary data store object.
