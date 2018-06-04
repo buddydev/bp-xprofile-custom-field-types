@@ -1,17 +1,17 @@
-=== Buddypress Xprofile Custom Field Types ===
+=== BuddyPress Xprofile Custom Field Types ===
 Contributors: buddydev, sbrajesh
-Tags: buddypress, xprofile, fields
+Tags: buddypress, xprofile, fields, buddypress-profile-field-types
 Requires at least: 4.5
 Tested up to: 4.9.6
 Stable tag: 1.0.0
 License: GLPv2 or later
 
-Buddypress Xprofile Custom Field Types adds extra custom field types to BuddyPress. Field types are: Birthdate, Email, Url etc.
+Buddypress Xprofile Custom Field Types adds extra custom profile field types to BuddyPress. Field types are: Birthdate, Email, Url etc.
 
 == Description ==
-Buddypress Xprofile Custom Field Types plugin adds some essential field types to BuddyPress Porifle Field.
+BuddyPress Xprofile Custom Field Types plugin adds some essential field types to BuddyPress Profile.
 
-In the first version, It brings all the profile fields offered by the currently abandoned The ["Buddypress Xprofile Custom Fields Type"]("https://github.com/donmik/buddypress-xprofile-custom-fields-type") plugin.
+In the first version, It brings all the profile fields offered by the currently abandoned The ["BuddyPress Xprofile Custom Fields Type"](https://github.com/donmik/buddypress-xprofile-custom-fields-type) plugin.
 
 The supported profile field types are:-
 * Birthdate.
@@ -31,16 +31,16 @@ The supported profile field types are:-
 * Range input (slider)
 * [Select2 javascript plugin](https://select2.github.io/) for select boxes.
 
-This plugin is a new plugin with a better and manageable codebase. We do re-0use 20-30% of the code for field types from
-the @donmik's plugin.
+Discuss the plugin on our [release post](https://buddydev.com/add-extra-buddypress-profile-fields-with-buddypress-xprofile-custom-field-types-plugin/) or view the plugin's [detailed documentation here](https://buddydev.com/plugins/bp-xprofile-custom-field-types/).
+The idea is based on @donmik's plugin. This plugin is a complete rewrite. Some field type do share code with the original plugin. My guess, we are using 20-30% of the code for field types from the original.
 
 In future, we hope to add more fields.
-Please do note that this plugin is not 100% backward compatible.
-If you are looking to move from the older plugin to this one, please read our release post(Link to be added on release).
 
+**Note: This plugin is not 100% backward compatible**
+If you are looking to move from the older plugin to this one, please read our [migration guide](https://buddydev.com/plugins/bp-xprofile-custom-field-types/#migrate).
 
-=== Credit ===
- [@donmik](http://donmik.com) for the [BuddyPress Xprofile Custom Fields Type]("https://github.com/donmik/buddypress-xprofile-custom-fields-type") from where we adopted the field types in our first version.
+= Credit =
+ [@donmik](http://donmik.com) for the [BuddyPress Xprofile Custom Fields Type](https://github.com/donmik/buddypress-xprofile-custom-fields-type) from where we adopted the field types in our first version.
 
 == Installation ==
 
@@ -57,7 +57,7 @@ custom taxonomy multiselector.
 == Frequently Asked Questions ==
 
 = Can I replace BuddyPress Xprofile Custom Fields Type with this? =
-Yes, but you will need to follow our migration guide. We have changed the internal architecture and the fiels need to be updated.
+Yes, but you will need to follow our migration guide. We have changed the internal architecture and the fields need to be updated.
 
 
 = What is the supported BuddyPress Version? =
@@ -66,6 +66,11 @@ Yes, but you will need to follow our migration guide. We have changed the intern
 = Where do I get support? =
 Please use [BuddyDev support](https://buddydev.com/support/forums/) forums.
 
+== Screenshots ==
+
+1. Admin field types dropdown screenshot-1.png
+2. front end edit profile field types screenshot-2.png
+3. profile view screenshot-3.png
 
 == Changelog ==
 
