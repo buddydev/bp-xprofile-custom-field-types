@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-06-04 19:47+0530\n"
-"PO-Revision-Date: 2018-06-04 19:47+0530\n"
+"POT-Creation-Date: 2018-06-05 03:12+0530\n"
+"PO-Revision-Date: 2018-06-05 03:12+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -21,19 +21,19 @@ msgid ""
 "Component. Please enable Xprofile first."
 msgstr ""
 
-#: admin/class-field-settings-helper.php:187
+#: admin/class-field-settings-helper.php:203
 msgid "Enable select2 javascript code."
 msgstr ""
 
-#: admin/class-field-settings-helper.php:191
+#: admin/class-field-settings-helper.php:207
 msgid "Select2 status for this field"
 msgstr ""
 
-#: admin/class-field-settings-helper.php:194
+#: admin/class-field-settings-helper.php:210
 msgid "Enabled"
 msgstr ""
 
-#: admin/class-field-settings-helper.php:197
+#: admin/class-field-settings-helper.php:213
 msgid "Disabled"
 msgstr ""
 
@@ -49,6 +49,7 @@ msgstr ""
 #: field-types/class-field-type-decimal-number.php:29
 #: field-types/class-field-type-email.php:26
 #: field-types/class-field-type-file.php:29
+#: field-types/class-field-type-from-to.php:29
 #: field-types/class-field-type-image.php:29
 #: field-types/class-field-type-multi-select-post-type.php:31
 #: field-types/class-field-type-multi-select-taxonomy.php:30
@@ -61,24 +62,28 @@ msgctxt "xprofile field type category"
 msgid "Custom Fields"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:87
+#: field-types/class-field-type-birthdate.php:88
 msgid "<code>4 years ago</code>, <code>4 years from now</code>"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:180
+#: field-types/class-field-type-birthdate.php:181
 msgid "Check this if you want to show age instead of birthdate:"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:189
+#: field-types/class-field-type-birthdate.php:187
+msgid "Hide months while showing age?"
+msgstr ""
+
+#: field-types/class-field-type-birthdate.php:196
 msgid "Minimum age:"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:225
+#: field-types/class-field-type-birthdate.php:232
 #, php-format
 msgid "%s years"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:228
+#: field-types/class-field-type-birthdate.php:235
 #, php-format
 msgid ", %s month"
 msgid_plural ", %s months"
@@ -143,6 +148,46 @@ msgstr ""
 
 #: field-types/class-field-type-file.php:133
 msgid "Download file"
+msgstr ""
+
+#: field-types/class-field-type-from-to.php:28
+msgid "From/To values"
+msgstr ""
+
+#: field-types/class-field-type-from-to.php:155
+msgid "Value Type"
+msgstr ""
+
+#: field-types/class-field-type-from-to.php:157
+msgid "No restrictions"
+msgstr ""
+
+#: field-types/class-field-type-from-to.php:158
+msgid "Integers"
+msgstr ""
+
+#: field-types/class-field-type-from-to.php:159
+msgid "Numeric"
+msgstr ""
+
+#: field-types/class-field-type-from-to.php:160
+msgid "String"
+msgstr ""
+
+#: field-types/class-field-type-from-to.php:165
+msgid "Integer/Numeric Type Constraints"
+msgstr ""
+
+#: field-types/class-field-type-from-to.php:167
+msgid "Default Values"
+msgstr ""
+
+#: field-types/class-field-type-from-to.php:170
+msgid "From"
+msgstr ""
+
+#: field-types/class-field-type-from-to.php:175
+msgid "To"
 msgstr ""
 
 #: field-types/class-field-type-image.php:28
@@ -225,7 +270,7 @@ msgid "Incorrect birthdate selection."
 msgstr ""
 
 #: handlers/class-birthdate-field-validator.php:77
-#: handlers/class-signup-validator.php:137
+#: handlers/class-signup-validator.php:144
 #, php-format
 msgid "You have to be at least %s years old."
 msgstr ""
@@ -239,7 +284,7 @@ msgid "Invalid file size."
 msgstr ""
 
 #: handlers/class-field-upload-helper.php:174
-#: handlers/class-signup-validator.php:110
+#: handlers/class-signup-validator.php:117
 #, php-format
 msgid "File type not allowed: (%s)."
 msgstr ""
@@ -250,14 +295,15 @@ msgid "Max image upload size: %s MB."
 msgstr ""
 
 #: handlers/class-signup-validator.php:71
+#: handlers/class-signup-validator.php:78
 msgid "This is a required field"
 msgstr ""
 
-#: handlers/class-signup-validator.php:94
+#: handlers/class-signup-validator.php:101
 msgid "This is a required field."
 msgstr ""
 
-#: handlers/class-signup-validator.php:106
+#: handlers/class-signup-validator.php:113
 #, php-format
 msgid "File exceed the upload limit. Max upload size %d."
 msgstr ""
