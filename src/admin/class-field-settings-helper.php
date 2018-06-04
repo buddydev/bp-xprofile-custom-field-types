@@ -144,7 +144,19 @@ class Field_Settings_Helper {
 
 				}
 
-				break;
+            case 'fromto':
+
+	            $value_type = isset( $_POST['bpxcftr_fromto_value_type'] ) ? $_POST['bpxcftr_fromto_value_type'] : '';
+	            bp_xprofile_update_field_meta( $field->id, 'value_type', $value_type );
+
+	            $from_value = isset( $_POST['bpxcftr_fromto_from_value'] ) ? $_POST['bpxcftr_fromto_from_value'] : '';
+	            bp_xprofile_update_field_meta( $field->id, 'from_value', $from_value );
+
+
+	            $from_value = isset( $_POST['bpxcftr_fromto_to_value'] ) ? $_POST['bpxcftr_fromto_to_value'] : '';
+	            bp_xprofile_update_field_meta( $field->id, 'to_value', $from_value );
+
+	            break;
 		}
 	}
 

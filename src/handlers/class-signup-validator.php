@@ -73,6 +73,13 @@ class Signup_Validator {
 
 				break;
 
+			case 'fromto':
+				if ( $field->is_required && ( empty( $_POST[ 'field_' . $field_id ]['from'] ) || empty( $_POST[ 'field_' . $field_id ]['to'] ) ) ) {
+					$bp->signup->errors[ 'field_' . $field_id ] = __( 'This is a required field', 'bp-xprofile-custom-fields-types' );
+				}
+
+				break;
+
 			case 'birthdate':
 				$this->validate_birthdate( $field );
 				break;

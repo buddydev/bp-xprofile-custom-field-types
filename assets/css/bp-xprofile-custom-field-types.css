@@ -5,3 +5,16 @@
 .field_type_image .bpxcftr-image {
     max-width: 100%;
 }
+
+/**
+ * From to value field
+ **/
+.bpxcftr-from-to-edit-field input[type="text"] {
+    width: 10em !important;
+    display: inline;
+}
+
+.bpxcftr-from-to-edit-field-integer input[type="text"],
+.bpxcftr-from-to-edit-field-numeric input[type="text"] {
+    width: 4em !important;
+}
