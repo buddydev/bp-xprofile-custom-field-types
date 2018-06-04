@@ -144,6 +144,10 @@ class Field_Settings_Helper {
 
 				}
 
+				$hide_months = isset( $_POST['bpxcftr_birtdate_hide_months'] ) ? 1 : 0;
+				bp_xprofile_update_field_meta( $field->id, 'hide_months', $hide_months );
+				break;
+
             case 'fromto':
 
 	            $value_type = isset( $_POST['bpxcftr_fromto_value_type'] ) ? $_POST['bpxcftr_fromto_value_type'] : '';

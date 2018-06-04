@@ -53,6 +53,7 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 		$show_age = self::show_age( $current_field->id ) ? 1 : 0;
 		$min_age  = self::get_min_age( $current_field->id );
 
+		$hide_months = self::hide_months( $current_field->id );
 		// settings from date field.
 		$settings = self::get_field_settings( $current_field->id );
 
@@ -181,6 +182,12 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 
                     <input type="checkbox" name="bpxcftr_birtdate_show_age" id="bpxcftr_birtdate_show_age" value="1" <?php checked(1, $show_age ); ?>/>
                 </p>
+
+                <p>
+		            <?php _e( 'Hide months while showing age?', 'bp-xprofile-custom-field-types' ); ?>
+
+                    <input type="checkbox" name="bpxcftr_birtdate_hide_months" id="bpxcftr_birtdate_hide_months" value="1" <?php checked(1, $hide_months ); ?>/>
+                </p>
             </div>
 
             <h3><?php esc_html_e( 'Define a minimum age:', 'bp-xprofile-custom-field-types' ); ?></h3>
@@ -224,11 +231,15 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 
 		$age = sprintf( __( '%s years', '' ), $age_interval->y );
 
-		if ( $age_interval->m ) {
+		if ( $age_interval->m && ! self::hide_months( $field_id ) ) {
 			$age .= sprintf( _n( ', %s month', ', %s months', $age_interval->m, 'bp-xprofile-custom-field-types' ), $age_interval->m );
 		}
 
 		return apply_filters( 'bpxcftr_birthdate_age_display_data', $age, $field_id );
+	}
+
+	public static function hide_months( $field_id ) {
+		return (bool) bp_xprofile_get_meta( $field_id, 'field', 'hide_months',  true );
 	}
 
 	public static function show_age( $field_id ) {
