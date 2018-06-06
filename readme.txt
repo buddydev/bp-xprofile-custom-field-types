@@ -3,7 +3,7 @@ Contributors: buddydev, sbrajesh
 Tags: buddypress, xprofile, fields, buddypress-profile-field-types
 Requires at least: 4.5
 Tested up to: 4.9.6
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GLPv2 or later
 
 Buddypress Xprofile Custom Field Types adds extra custom profile field types to BuddyPress. Field types are: Birthdate, Email, Url etc.
@@ -74,6 +74,9 @@ Please use [BuddyDev support](https://buddydev.com/support/forums/) forums.
 3. profile view screenshot-3.png
 
 == Changelog ==
+= 1.0.2 =
+* Fix the custom post type selection in admin. Thank you @jcdeckard.
+
 = 1.0.1 =
 * Added From/To field type. Thank you @carsten-lund for the suggestion.
 * Added option for birthdate field to show/hide months while showing age.
