@@ -43,6 +43,14 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 			'to'   => self::get_to_value( $field->id )
 		) : maybe_unserialize( $field->data->value );
 
+		// make sure data is always array. In case some one changed the field type, do not throw error.
+		if ( ! is_array( $data ) ) {
+			$data = array(
+				'to'   => '',
+				'from' => '',
+			);
+		}
+
 		if ( isset( $raw_properties['user_id'] ) ) {
 			unset( $raw_properties['user_id'] );
 		}
