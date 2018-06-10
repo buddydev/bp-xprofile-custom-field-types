@@ -13,6 +13,7 @@
 namespace BPXProfileCFTR\Bootstrap;
 
 use BPXProfileCFTR\Admin\Admin;
+use BPXProfileCFTR\Filters\BP_Profile_Search_Helper;
 use BPXProfileCFTR\Handlers\Birthdate_Field_Validator;
 use BPXProfileCFTR\Handlers\Field_Upload_Helper;
 use BPXProfileCFTR\Handlers\From_To_Helper;
@@ -104,6 +105,8 @@ class Bootstrapper {
 		Field_Settings_Handler::boot();
 		Signup_Validator::boot();
 		From_To_Helper::boot();
+		// BP profile Search
+		BP_Profile_Search_Helper::boot();
 	}
 
 	/**
