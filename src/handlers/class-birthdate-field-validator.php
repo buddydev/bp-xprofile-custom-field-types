@@ -48,6 +48,11 @@ class Birthdate_Field_Validator {
 	 * @return mixed
 	 */
 	public function on_field_data_save( $data ) {
+
+		if ( ! is_user_logged_in() ) {
+			return $data;
+		}
+
 		$field_id = $data->field_id;
 		$field    = new \BP_XProfile_Field( $field_id );
 		$min_age  = Field_Type_Birthdate::get_min_age( $field_id );

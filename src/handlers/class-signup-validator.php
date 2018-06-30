@@ -34,7 +34,7 @@ class Signup_Validator {
 	}
 
 	public function validate() {
-		if ( bp_is_active( 'xprofile' ) ) {
+		if ( ! bp_is_active( 'xprofile' ) ) {
 			return;
 		}
 
@@ -140,6 +140,7 @@ class Signup_Validator {
 			$_POST[ 'field_' . $field_id . '_month' ],
 			$_POST[ 'field_' . $field_id . '_day' ] ) );
 		$age       = $now->diff( $birthdate );
+
 		if ( $age->y < $min_age ) {
 			$bp->signup->errors[ 'field_' . $field_id ] = sprintf( __( 'You have to be at least %s years old.', 'bp-xprofile-custom-field-types' ), $min_age );
 		}
