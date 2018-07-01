@@ -3,7 +3,7 @@ Contributors: buddydev, sbrajesh
 Tags: buddypress, xprofile, fields, buddypress-profile-field-types
 Requires at least: 4.5
 Tested up to: 4.9.6
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GLPv2 or later
 
 Buddypress Xprofile Custom Field Types adds extra custom profile fields to BuddyPress. Field types are: Birthdate, Email, Url etc.
@@ -11,7 +11,7 @@ Buddypress Xprofile Custom Field Types adds extra custom profile fields to Buddy
 == Description ==
 BuddyPress Xprofile Custom Field Types plugin adds some essential field types to BuddyPress Profile.
 
-BuddyPress Xprofile Custom Field Types is 100% compatible with [BP Profile Search plugin]("https://wordpress.org/plugins/bp-profile-search/").
+BuddyPress Xprofile Custom Field Types is 100% compatible with [BP Profile Search plugin](https://wordpress.org/plugins/bp-profile-search/).
 
 The newly added BuddyPress field types are:-
 * Birthdate.
@@ -32,7 +32,7 @@ The newly added BuddyPress field types are:-
 * Range input (slider)
 * [Select2 javascript plugin](https://select2.github.io/) for select boxes.
 
-The plugin is opensource and currently developed on github. We welcome you to be part of its future development at [https://github.com/buddydev/bp-xprofile-custom-field-types]("https://github.com/buddydev/bp-xprofile-custom-field-types").
+The plugin is opensource and currently developed on github. We welcome you to be part of its future development at [https://github.com/buddydev/bp-xprofile-custom-field-types](https://github.com/buddydev/bp-xprofile-custom-field-types).
 
 Discuss the plugin on our [release post](https://buddydev.com/add-extra-buddypress-profile-fields-with-buddypress-xprofile-custom-field-types-plugin/) or view the plugin's [detailed documentation here](https://buddydev.com/plugins/bp-xprofile-custom-field-types/).
 The idea is based on @donmik's plugin. This plugin is a complete rewrite. Some field type do share code with the original plugin. My guess, we are using 20-30% of the code for field types from the original.
@@ -64,7 +64,7 @@ custom taxonomy multiselector.
 Yes, but you will need to follow our [migration guide](https://buddydev.com/plugins/bp-xprofile-custom-field-types/#migrate). We have changed the internal architecture and the admin field settings need to be updated.
 
 = Is the upgrade from BuddyPress Xprofile Custom Fields Type safe? =
-Yes, 100%. For better performance, we have changed the way field settings were stored in admin. The user data wil be preserved and they won't notice the difference.
+Yes, 100%. For better performance, we have changed the way field settings were stored in admin. The user data will be preserved and they won't notice the difference.
 
 = What is the supported BuddyPress Version? =
 2.9+, Tested with 3.1.
@@ -80,6 +80,10 @@ Please use [BuddyDev support](https://buddydev.com/support/forums/) forums.
 3. profile view screenshot-3.png
 
 == Changelog ==
+
+= 1.0.4 =
+ * Fix the signup validation. Thank you Thank you @carsten-lund.
+
 = 1.0.3 =
 * Add support for BP Profile Search plugin by Andrea.
 
