@@ -229,7 +229,7 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 		$birthdate = new \DateTime( "@$field_value" );
 		$age_interval = $now->diff( $birthdate );
 
-		$age = sprintf( __( '%s years', '' ), $age_interval->y );
+		$age = sprintf( __( '%s years', 'bp-xprofile-custom-field-types' ), $age_interval->y );
 
 		if ( $age_interval->m && ! self::hide_months( $field_id ) ) {
 			$age .= sprintf( _n( ', %s month', ', %s months', $age_interval->m, 'bp-xprofile-custom-field-types' ), $age_interval->m );
