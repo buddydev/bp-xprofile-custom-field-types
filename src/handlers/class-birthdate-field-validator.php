@@ -64,12 +64,17 @@ class Birthdate_Field_Validator {
 		$redirect_url = trailingslashit( bp_displayed_user_domain() . bp_get_profile_slug() . '/edit/group/' . bp_action_variable( 1 ) );
 
 		// Check birthdate.
-		$now       = new \DateTime();
+		$now   = new \DateTime();
+		$year  = $_POST[ 'field_' . $field_id . '_year' ];
+		$month = $_POST[ 'field_' . $field_id . '_month' ];
+		$day   = $_POST[ 'field_' . $field_id . '_day' ];
 
-		$birthdate = new \DateTime( sprintf( "%s-%s-%s",
-			$_POST[ 'field_' . $field_id . '_year' ],
-			$_POST[ 'field_' . $field_id . '_month' ],
-			$_POST[ 'field_' . $field_id . '_day' ] ) );
+		if ( ! is_numeric( $year ) || empty( $month ) || ! is_numeric( $day ) ) {
+			bp_core_add_message( sprintf( __( 'Incorrect birthdate selection.', 'bp-xprofile-custom-field-types' ), $min_age ), 'error' );
+			bp_core_redirect( $redirect_url );
+		}
+
+		$birthdate = new \DateTime( sprintf( '%s-%s-%s', str_pad( $day, 2, '0', STR_PAD_LEFT ), $month, $year ) );
 
 		if ( $now <= $birthdate ) {
 			bp_core_add_message( sprintf( __( 'Incorrect birthdate selection.', 'bp-xprofile-custom-field-types' ), $min_age ), 'error' );

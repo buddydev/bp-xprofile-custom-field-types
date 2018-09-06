@@ -19,6 +19,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 0 );
 }
 
+/**
+ * Signup data validator.
+ */
 class Signup_Validator {
 
 	/**
@@ -29,10 +32,16 @@ class Signup_Validator {
 		$self->setup();
 	}
 
+	/**
+	 * Setup.
+	 */
 	public function setup() {
 		add_action( 'bp_signup_validate', array( $this, 'validate' ) );
 	}
 
+	/**
+	 * Validate fields.
+	 */
 	public function validate() {
 		if ( ! bp_is_active( 'xprofile' ) ) {
 			return;
@@ -133,12 +142,25 @@ class Signup_Validator {
 			return;
 		}
 
+		if ( empty( $_POST[ 'field_' . $field_id ] ) ) {
+			$bp->signup->errors[ 'field_' . $field_id ] = sprintf( __( 'You have to be at least %s years old.', 'bp-xprofile-custom-field-types' ), $min_age );
+
+			return;
+		}
+
+		$year  = $_POST[ 'field_' . $field_id . '_year' ];
+		$month = $_POST[ 'field_' . $field_id . '_month' ];
+		$day   = $_POST[ 'field_' . $field_id . '_day' ];
+
+		if ( ! is_numeric( $year ) || empty( $month ) || ! is_numeric( $day ) ) {
+			$bp->signup->errors[ 'field_' . $field_id ] = sprintf( __( 'Invalid date.', 'bp-xprofile-custom-field-types' ) );
+
+			return;
+		}
+
 		// Check birthdate.
 		$now       = new \DateTime();
-		$birthdate = new \DateTime( sprintf( "%s-%s-%s",
-			$_POST[ 'field_' . $field_id . '_year' ],
-			$_POST[ 'field_' . $field_id . '_month' ],
-			$_POST[ 'field_' . $field_id . '_day' ] ) );
+		$birthdate = new \DateTime( sprintf( '%s-%s-%s', str_pad( $day, 2, '0', STR_PAD_LEFT ), $month, $year ) );
 		$age       = $now->diff( $birthdate );
 
 		if ( $age->y < $min_age ) {
