@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-06-10 15:33+0530\n"
-"PO-Revision-Date: 2018-06-10 15:33+0530\n"
+"POT-Creation-Date: 2018-09-06 22:30+0530\n"
+"PO-Revision-Date: 2018-09-06 22:30+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -265,45 +265,51 @@ msgctxt "xprofile field type"
 msgid "Website (HTML5 field)"
 msgstr ""
 
-#: handlers/class-birthdate-field-validator.php:70
+#: handlers/class-birthdate-field-validator.php:73
+#: handlers/class-birthdate-field-validator.php:80
 msgid "Incorrect birthdate selection."
 msgstr ""
 
-#: handlers/class-birthdate-field-validator.php:77
-#: handlers/class-signup-validator.php:144
+#: handlers/class-birthdate-field-validator.php:87
+#: handlers/class-signup-validator.php:146
+#: handlers/class-signup-validator.php:167
 #, php-format
 msgid "You have to be at least %s years old."
 msgstr ""
 
-#: handlers/class-field-upload-helper.php:162
+#: handlers/class-field-upload-helper.php:174
 msgid "Invalid file."
 msgstr ""
 
-#: handlers/class-field-upload-helper.php:166
+#: handlers/class-field-upload-helper.php:178
 msgid "Invalid file size."
 msgstr ""
 
-#: handlers/class-field-upload-helper.php:174
-#: handlers/class-signup-validator.php:117
+#: handlers/class-field-upload-helper.php:186
+#: handlers/class-signup-validator.php:126
 #, php-format
 msgid "File type not allowed: (%s)."
 msgstr ""
 
-#: handlers/class-field-upload-helper.php:176
+#: handlers/class-field-upload-helper.php:188
 #, php-format
 msgid "Max image upload size: %s MB."
 msgstr ""
 
-#: handlers/class-signup-validator.php:71
-#: handlers/class-signup-validator.php:78
+#: handlers/class-signup-validator.php:80
+#: handlers/class-signup-validator.php:87
 msgid "This is a required field"
 msgstr ""
 
-#: handlers/class-signup-validator.php:101
+#: handlers/class-signup-validator.php:110
 msgid "This is a required field."
 msgstr ""
 
-#: handlers/class-signup-validator.php:113
+#: handlers/class-signup-validator.php:122
 #, php-format
 msgid "File exceed the upload limit. Max upload size %d."
+msgstr ""
+
+#: handlers/class-signup-validator.php:156
+msgid "Invalid date."
 msgstr ""
