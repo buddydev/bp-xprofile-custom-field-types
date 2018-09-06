@@ -210,7 +210,8 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 		$field_value = array_map( 'trim', $field_value );
 
 		if( count( $field_value) !== 2 ) {
-			return '';
+		    // always return string.
+			return join('', $field_value );
 		}
 
 		return sprintf( '<span class="bpxcftr-fromto-from-value">%s</span>-<span class="bpxcftr-fromto-to-value">%s</span>', $field_value[0], $field_value[1] );
