@@ -96,10 +96,22 @@ class Field_Upload_Helper {
 
 		if ( is_wp_error( $value ) ) {
 			bp_core_add_message( $value->get_error_message(), 'error' );
-			bp_core_redirect( $redirect_url );
+			$this->redirect( $redirect_url );
 		} else {
 			$data->value = $value;
 		}
+	}
+
+	/**
+	 * Redirect if needed.
+	 *
+	 * @param string $url redirect url.
+	 */
+	private function redirect( $url ) {
+		if ( defined( 'DOING_AJAX' ) ) {
+			return; // ;; no redirect.
+		}
+		bp_core_redirect( $url );
 	}
 
 	/**
