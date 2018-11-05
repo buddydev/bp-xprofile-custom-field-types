@@ -105,7 +105,7 @@ class Bootstrapper {
 		Field_Settings_Handler::boot();
 		Signup_Validator::boot();
 		From_To_Helper::boot();
-		// BP profile Search
+		// BP profile Search.
 		BP_Profile_Search_Helper::boot();
 	}
 
