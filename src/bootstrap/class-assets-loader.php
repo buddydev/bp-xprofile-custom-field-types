@@ -71,12 +71,13 @@ class Assets_Loader {
 	 */
 	public function load_admin_assets() {
 
-		$load = isset( $_GET['page'] ) && 'bp-profile-edit' !== $_GET['page'];
+		$load = isset( $_GET['page'] ) && 'bp-profile-edit' === $_GET['page'];
 		$load = apply_filters( 'bpxcftr_load_admin_assets', $load );
 
 		if ( ! $load ) {
 			return;
 		}
+		
 		$this->enqueue_vendors();
 		$this->enqueue_admin();
 	}
