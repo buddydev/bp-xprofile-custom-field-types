@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-09-06 22:30+0530\n"
-"PO-Revision-Date: 2018-09-06 22:30+0530\n"
+"POT-Creation-Date: 2018-11-06 00:37+0530\n"
+"PO-Revision-Date: 2018-11-06 00:37+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -14,6 +14,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: ../assets\n"
 
 #: admin/class-admin.php:47
 msgid ""
