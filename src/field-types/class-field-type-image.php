@@ -22,11 +22,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Field_Type_Image extends \BP_XProfile_Field_Type {
 
-    public function __construct() {
+	public function __construct() {
 		parent::__construct();
 
-	    $this->name     = _x( 'Image', 'xprofile field type', 'bp-xprofile-custom-field-types' );
-	    $this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-field-types' );
+		$this->name     = _x( 'Image', 'xprofile field type', 'bp-xprofile-custom-field-types' );
+		$this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-field-types' );
 
 		$this->set_format( '/^.+$/', 'replace' );
 		do_action( 'bp_xprofile_field_type_image', $this );
