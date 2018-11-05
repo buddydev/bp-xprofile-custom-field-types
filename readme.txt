@@ -3,7 +3,7 @@ Contributors: buddydev, sbrajesh
 Tags: buddypress, xprofile, fields, buddypress-profile-field-types
 Requires at least: 4.5
 Tested up to: 4.9.8
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GLPv2 or later
 
 Buddypress Xprofile Custom Field Types adds extra custom profile fields to BuddyPress. Field types are: Birthdate, Email, Url etc.
@@ -46,6 +46,14 @@ It is very easy to migrate. Should take less than 5 minute. If you are looking t
  [@donmik](http://donmik.com) for the [BuddyPress Xprofile Custom Fields Type](https://github.com/donmik/buddypress-xprofile-custom-fields-type) from where we adopted the field types in our first version.
  In the first version, te plugin brought all the profile fields offered by the currently abandoned The ["BuddyPress Xprofile Custom Fields Type"](https://github.com/donmik/buddypress-xprofile-custom-fields-type) plugin.
 
+= More Plugins =
+We love BuddyPress and we have created 100+ BuddyPress plugins.
+Please take a look at our
+ 1. [Free BuddyPress Plugins](https://buddydev.com/plugins/  "Best BuddyPress Plugins")
+ 1. [Premium BuddyPress plugins](https://buddydev.com/plugins/category/buddypress-premium-plugins/ "Best BuddyPress Premium Plugins")
+ We hope that it will help you take your BuddyPress network to the next level.
+
+
 == Installation ==
 
 1. Upload the plugin to your 'wp-content/plugins' directory
@@ -67,7 +75,7 @@ Yes, but you will need to follow our [migration guide](https://buddydev.com/plug
 Yes, 100%. For better performance, we have changed the way field settings were stored in admin. The user data will be preserved and they won't notice the difference.
 
 = What is the supported BuddyPress Version? =
-2.9+, Tested with 3.1.
+2.9+, Tested with 3.2.
 
 = Where do I get support? =
 Please use [BuddyDev support](https://buddydev.com/support/forums/) forums.
@@ -80,6 +88,10 @@ Please use [BuddyDev support](https://buddydev.com/support/forums/) forums.
 3. profile view screenshot-3.png
 
 == Changelog ==
+= 1.0.6 =
+ * Update included select2 javascript to latest stable version(4.0.5).
+ * Enable select2 in dashboard edit profile if enabled.
+ * Fix a notice.
 
 = 1.0.5 =
  * Fix the date format for birthdate checking. Now it validates correctly(Earlier only year and month was significant).

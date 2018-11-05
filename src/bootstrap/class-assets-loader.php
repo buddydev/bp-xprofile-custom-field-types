@@ -77,7 +77,7 @@ class Assets_Loader {
 		if ( ! $load ) {
 			return;
 		}
-		
+
 		$this->enqueue_vendors();
 		$this->enqueue_admin();
 	}
