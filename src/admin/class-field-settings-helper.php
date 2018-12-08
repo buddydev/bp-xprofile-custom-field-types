@@ -64,7 +64,7 @@ class Field_Settings_Helper {
 
 			case 'select_custom_post_type':
 
-			    $data = isset( $_POST['bpxcftr_selected_post_typebpxcftr_selected_post_type'] ) ? $_POST['bpxcftr_selected_post_type'] : '';
+			    $data = isset( $_POST['bpxcftr_selected_post_type'] ) ? $_POST['bpxcftr_selected_post_type'] : '';
 				$data = sanitize_text_field( $data ); // seriously, we should validate against the post tye.
 				bp_xprofile_update_field_meta( $field->id, 'selected_post_type', $data );
 

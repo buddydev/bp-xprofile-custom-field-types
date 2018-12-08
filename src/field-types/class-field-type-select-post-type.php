@@ -120,6 +120,7 @@ class Field_Type_Select_Post_Type extends \BP_XProfile_Field_Type implements Fie
 		) );
 
         $selected_post_type = self::get_selected_post_type( $current_field->id );
+
         ?>
         <div id="<?php echo esc_attr( $type ); ?>" class="postbox bp-options-box"
              style="<?php echo esc_attr( $class ); ?> margin-top: 15px;">
