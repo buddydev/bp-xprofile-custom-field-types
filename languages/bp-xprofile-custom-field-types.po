@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-11-06 00:37+0530\n"
-"PO-Revision-Date: 2018-11-06 00:37+0530\n"
+"POT-Creation-Date: 2019-03-01 18:12+0530\n"
+"PO-Revision-Date: 2019-03-01 18:12+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -202,21 +202,21 @@ msgid "Custom Post Type Multiselector"
 msgstr ""
 
 #: field-types/class-field-type-multi-select-post-type.php:149
-#: field-types/class-field-type-select-post-type.php:127
+#: field-types/class-field-type-select-post-type.php:128
 msgid ""
 "There is no custom post type. You need to create at least one to use this "
 "field."
 msgstr ""
 
 #: field-types/class-field-type-multi-select-post-type.php:154
-#: field-types/class-field-type-select-post-type.php:132
+#: field-types/class-field-type-select-post-type.php:133
 msgid "Select a post type:"
 msgstr ""
 
 #: field-types/class-field-type-multi-select-post-type.php:156
 #: field-types/class-field-type-multi-select-taxonomy.php:153
 #: field-types/class-field-type-select-post-type.php:56
-#: field-types/class-field-type-select-post-type.php:134
+#: field-types/class-field-type-select-post-type.php:135
 #: field-types/class-field-type-select-taxonomy.php:57
 #: field-types/class-field-type-select-taxonomy.php:140
 msgid "Select..."
