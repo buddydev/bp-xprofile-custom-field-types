@@ -138,9 +138,9 @@ class Assets_Loader {
 
 		wp_register_script( 'select2', $url . 'assets/vendors/select2/select2.min.js', array( 'jquery' ), '4.0.2', true );
 
-		$locale = get_locale();
+		$locale = apply_filters( 'bpxcftr_select2_js_locale', get_locale() );
 		// Select 2, locale.
-		$locale_js = is_readable( $path . "assets/vendors/select2/i18n/{$locale}.js" ) ? "{$locale}.js" : 'en_US.js';
+		$locale_js = is_readable( $path . "assets/vendors/select2/i18n/{$locale}.js" ) ? "{$locale}.js" : 'en.js';
 
 		wp_register_script( 'select2-i18n', $url . "assets/vendors/select2/i18n/{$locale_js}", array( 'select2' ), '4.0.2', true );
 
