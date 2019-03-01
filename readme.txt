@@ -2,8 +2,8 @@
 Contributors: buddydev, sbrajesh
 Tags: buddypress, xprofile, fields, buddypress-profile-field-types
 Requires at least: 4.5
-Tested up to: 4.9.8
-Stable tag: 1.0.6
+Tested up to: 5.1
+Stable tag: 1.0.7
 License: GLPv2 or later
 
 Buddypress Xprofile Custom Field Types adds extra custom profile fields to BuddyPress. Field types are: Birthdate, Email, Url etc.
@@ -54,6 +54,10 @@ Please take a look at our
  We hope that it will help you take your BuddyPress network to the next level.
 
 
+= BuddyPress Custom development & Maintenance Service =
+If you need any assistance with setting up or adding new features to BuddyPress or this plugin, Our team is available for hire.
+Please use our [BuddyPress Development Services](https://buddydev.com/buddypress-custom-plugin-development-service/) for any custom development needs.
+
 == Installation ==
 
 1. Upload the plugin to your 'wp-content/plugins' directory
@@ -75,11 +79,13 @@ Yes, but you will need to follow our [migration guide](https://buddydev.com/plug
 Yes, 100%. For better performance, we have changed the way field settings were stored in admin. The user data will be preserved and they won't notice the difference.
 
 = What is the supported BuddyPress Version? =
-2.9+, Tested with 3.2.
+2.9+, Tested with 4.2.
 
 = Where do I get support? =
 Please use [BuddyDev support](https://buddydev.com/support/forums/) forums.
 
+= Can I hire you for BuddyPress development? =
+We will love to work with you. Please let us know if you need any of our [services](https://buddydev.com/services/).
 
 == Screenshots ==
 
@@ -88,6 +94,12 @@ Please use [BuddyDev support](https://buddydev.com/support/forums/) forums.
 3. profile view screenshot-3.png
 
 == Changelog ==
+
+= 1.0.7 =
+ * Fix a bug with multi post type selector.
+ * Fix upload issue in dashboard profile update screen. Thank you @laudag.
+ * Fix the loading of locale file for select2 js.
+
 = 1.0.6 =
  * Update included select2 javascript to latest stable version(4.0.5).
  * Enable select2 in dashboard edit profile if enabled.
