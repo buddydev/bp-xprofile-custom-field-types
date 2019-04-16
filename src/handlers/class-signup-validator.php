@@ -66,7 +66,7 @@ class Signup_Validator {
 		switch ( $field->type ) {
 			case 'image':
 			case 'file':
-				if ( ! isset( $_FILES[ 'field_' . $field_id ] ) ) {
+				if ( empty( $_FILES[ 'field_' . $field_id ] ) || empty( $_FILES[ 'field_' . $field_id ]['name'] ) ) {
 					break;
 				}
 				// remove error?
