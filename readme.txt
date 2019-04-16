@@ -3,7 +3,7 @@ Contributors: buddydev, sbrajesh
 Tags: buddypress, xprofile, fields, buddypress-profile-field-types
 Requires at least: 4.5
 Tested up to: 5.1
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GLPv2 or later
 
 Buddypress Xprofile Custom Field Types adds extra custom profile fields to BuddyPress. Field types are: Birthdate, Email, Url etc.
@@ -94,6 +94,9 @@ We will love to work with you. Please let us know if you need any of our [servic
 3. profile view screenshot-3.png
 
 == Changelog ==
+
+= 1.0.8 =
+ * Fix a upload error on signup page when a file is not selected.
 
 = 1.0.7 =
  * Fix a bug with multi post type selector.
