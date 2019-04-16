@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-03-01 18:12+0530\n"
-"PO-Revision-Date: 2019-03-01 18:12+0530\n"
+"POT-Creation-Date: 2019-04-16 22:16+0530\n"
+"PO-Revision-Date: 2019-04-16 22:16+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -272,8 +272,8 @@ msgid "Incorrect birthdate selection."
 msgstr ""
 
 #: handlers/class-birthdate-field-validator.php:87
-#: handlers/class-signup-validator.php:146
-#: handlers/class-signup-validator.php:167
+#: handlers/class-signup-validator.php:149
+#: handlers/class-signup-validator.php:170
 #, php-format
 msgid "You have to be at least %s years old."
 msgstr ""
@@ -287,7 +287,7 @@ msgid "Invalid file size."
 msgstr ""
 
 #: handlers/class-field-upload-helper.php:186
-#: handlers/class-signup-validator.php:126
+#: handlers/class-signup-validator.php:129
 #, php-format
 msgid "File type not allowed: (%s)."
 msgstr ""
@@ -297,20 +297,21 @@ msgstr ""
 msgid "Max image upload size: %s MB."
 msgstr ""
 
-#: handlers/class-signup-validator.php:80
-#: handlers/class-signup-validator.php:87
-msgid "This is a required field"
-msgstr ""
-
-#: handlers/class-signup-validator.php:110
+#: handlers/class-signup-validator.php:71
+#: handlers/class-signup-validator.php:113
 msgid "This is a required field."
 msgstr ""
 
-#: handlers/class-signup-validator.php:122
+#: handlers/class-signup-validator.php:83
+#: handlers/class-signup-validator.php:90
+msgid "This is a required field"
+msgstr ""
+
+#: handlers/class-signup-validator.php:125
 #, php-format
 msgid "File exceed the upload limit. Max upload size %d."
 msgstr ""
 
-#: handlers/class-signup-validator.php:156
+#: handlers/class-signup-validator.php:159
 msgid "Invalid date."
 msgstr ""
