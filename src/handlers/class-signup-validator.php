@@ -67,6 +67,9 @@ class Signup_Validator {
 			case 'image':
 			case 'file':
 				if ( empty( $_FILES[ 'field_' . $field_id ] ) || empty( $_FILES[ 'field_' . $field_id ]['name'] ) ) {
+					if ( $field->is_required ) {
+						$bp->signup->errors[ 'field_' . $field_id ] = __( 'This is a required field.', 'bp-xprofile-custom-field-types' );
+					}
 					break;
 				}
 				// remove error?
