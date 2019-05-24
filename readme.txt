@@ -2,8 +2,8 @@
 Contributors: buddydev, sbrajesh
 Tags: buddypress, xprofile, fields, buddypress-profile-field-types
 Requires at least: 4.5
-Tested up to: 5.1
-Stable tag: 1.0.8
+Tested up to: 5.2.1
+Stable tag: 1.0.9
 License: GLPv2 or later
 
 Buddypress Xprofile Custom Field Types adds extra custom profile fields to BuddyPress. Field types are: Birthdate, Email, Url etc.
@@ -42,6 +42,9 @@ In future, we hope to add more fields.
 **Note: This plugin is not 100% backward compatible**
 It is very easy to migrate. Should take less than 5 minute. If you are looking to move from the older plugin to this one, please read our [migration guide](https://buddydev.com/plugins/bp-xprofile-custom-field-types/#migrate).
 
+**Note 2: The Custom taxonomy field does not allow you to categorize users. They allow you to let users select some terms and display the terms on their profile.
+           It is not intended for classifying user**
+
 = Credit =
  [@donmik](http://donmik.com) for the [BuddyPress Xprofile Custom Fields Type](https://github.com/donmik/buddypress-xprofile-custom-fields-type) from where we adopted the field types in our first version.
  In the first version, te plugin brought all the profile fields offered by the currently abandoned The ["BuddyPress Xprofile Custom Fields Type"](https://github.com/donmik/buddypress-xprofile-custom-fields-type) plugin.
@@ -79,7 +82,7 @@ Yes, but you will need to follow our [migration guide](https://buddydev.com/plug
 Yes, 100%. For better performance, we have changed the way field settings were stored in admin. The user data will be preserved and they won't notice the difference.
 
 = What is the supported BuddyPress Version? =
-2.9+, Tested with 4.2.
+2.9+, Tested with 4.3.
 
 = Where do I get support? =
 Please use [BuddyDev support](https://buddydev.com/support/forums/) forums.
@@ -94,6 +97,10 @@ We will love to work with you. Please let us know if you need any of our [servic
 3. profile view screenshot-3.png
 
 == Changelog ==
+
+= 1.0.9 =
+ * Fix a required file/image fields asking to reupload on edit profile, even when user has already added files.
+ * Tested with WordPress 5.2.1 & BuddyPress 4.3
 
 = 1.0.8 =
  * Fix a upload error on signup page when a file is not selected.
