@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-04-16 22:16+0530\n"
-"PO-Revision-Date: 2019-04-16 22:16+0530\n"
+"POT-Creation-Date: 2019-05-25 02:28+0530\n"
+"PO-Revision-Date: 2019-05-25 02:28+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -142,12 +142,12 @@ msgctxt "xprofile field type"
 msgid "File"
 msgstr ""
 
-#: field-types/class-field-type-file.php:77
-#: field-types/class-field-type-image.php:74
+#: field-types/class-field-type-file.php:81
+#: field-types/class-field-type-image.php:78
 msgid "Check this to delete this file"
 msgstr ""
 
-#: field-types/class-field-type-file.php:133
+#: field-types/class-field-type-file.php:137
 msgid "Download file"
 msgstr ""
 
