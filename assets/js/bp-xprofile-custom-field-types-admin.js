@@ -32,7 +32,7 @@ jQuery( document).ready(function($) {
         }
 
         $('.bp-options-box').hide();
-        $('#' + fieldType).show()
+        $('#' + fieldType).show();
 
     });
 
