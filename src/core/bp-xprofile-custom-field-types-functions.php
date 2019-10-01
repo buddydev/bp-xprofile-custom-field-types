@@ -42,6 +42,7 @@ function bpxcftr_get_field_types() {
 		'slider'                       => 'BPXProfileCFTR\Field_Types\Field_Type_Slider',
 		'fromto'                       => 'BPXProfileCFTR\Field_Types\Field_Type_From_To',
 		'oembed'                       => 'BPXProfileCFTR\Field_Types\Field_Type_Oembed',
+		'token'                       => 'BPXProfileCFTR\Field_Types\Field_Type_Token',
 		// end of the BuddyPress Xprofile Custom Fields Type plugin's field type.
 
 	);

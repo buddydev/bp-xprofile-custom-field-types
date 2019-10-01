@@ -150,6 +150,12 @@ class Field_Settings_Helper {
 	            bp_xprofile_update_field_meta( $field->id, 'to_value', $from_value );
 
 	            break;
+
+			case 'token':
+				$data = isset( $_POST['bpxcftr_token_tokens'] ) ? wp_unslash( $_POST['bpxcftr_token_tokens'] ) : '';
+				$data = sanitize_textarea_field( $data );
+				bp_xprofile_update_field_meta( $field->id, 'token_tokens', $data );
+				break;
 		}
 	}
 

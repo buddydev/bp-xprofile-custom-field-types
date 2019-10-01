@@ -133,7 +133,7 @@ class Assets_Loader {
 	 */
 	public function enqueue_admin() {
 		wp_enqueue_script( 'bp-xprofile-custom-field-types-admin' );
-		
+
 		wp_localize_script( 'bp-xprofile-custom-field-types', 'BPXprofileCFTR', $this->data );
 
 		wp_localize_script( 'bp-xprofile-custom-field-types-admin', 'BPXprofileCFTRAdmin', $this->data );
