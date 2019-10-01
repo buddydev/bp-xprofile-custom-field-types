@@ -41,6 +41,7 @@ function bpxcftr_get_field_types() {
 		'number_minmax'                => 'BPXProfileCFTR\Field_Types\Field_Type_Number_Min_Max',
 		'slider'                       => 'BPXProfileCFTR\Field_Types\Field_Type_Slider',
 		'fromto'                       => 'BPXProfileCFTR\Field_Types\Field_Type_From_To',
+		'oembed'                       => 'BPXProfileCFTR\Field_Types\Field_Type_Oembed',
 		// end of the BuddyPress Xprofile Custom Fields Type plugin's field type.
 
 	);
