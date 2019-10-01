@@ -46,6 +46,7 @@ class Assets_Loader {
 
 		add_action( 'bp_enqueue_scripts', array( $this, 'load_assets' ) );
 		add_action( 'bp_admin_enqueue_scripts', array( $this, 'load_admin_assets' ) );
+		add_action( 'bp_admin_enqueue_scripts', array( $this, 'load_user_admin_assets' ) );
 
 	}
 
@@ -83,6 +84,22 @@ class Assets_Loader {
 	}
 
 	/**
+	 * Load plugin assets
+	 */
+	public function load_user_admin_assets() {
+
+		$load = isset( $_GET['page'] ) && 'bp-profile-edit' === $_GET['page'];
+		$load = apply_filters( 'bpxcftr_load_user_admin_assets', $load );
+
+		if ( ! $load ) {
+			return;
+		}
+
+		$this->enqueue_vendors();
+		$this->enqueue_user_admin();
+	}
+
+	/**
 	 * Register assets.
 	 */
 	public function register() {
@@ -112,15 +129,22 @@ class Assets_Loader {
 	}
 
 	/**
-	 * Enqueue admin assets.
+	 * Enqueue admin assets for add/edit field screen..
 	 */
 	public function enqueue_admin() {
 		wp_enqueue_script( 'bp-xprofile-custom-field-types-admin' );
-		wp_enqueue_script( 'bp-xprofile-custom-field-types' );
-
+		
 		wp_localize_script( 'bp-xprofile-custom-field-types', 'BPXprofileCFTR', $this->data );
 
 		wp_localize_script( 'bp-xprofile-custom-field-types-admin', 'BPXprofileCFTRAdmin', $this->data );
+	}
+
+	/**
+	 * Enqueue admin assets needed for user profile edit page.
+	 */
+	public function enqueue_user_admin() {
+		wp_enqueue_script( 'bp-xprofile-custom-field-types' );
+		wp_localize_script( 'bp-xprofile-custom-field-types', 'BPXprofileCFTR', $this->data );
 	}
 
 	/**
