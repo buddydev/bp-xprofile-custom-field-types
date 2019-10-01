@@ -111,9 +111,9 @@ class Field_Type_Token extends \BP_XProfile_Field_Type_Textbox {
 	 *
 	 * @return array
 	 */
-	private static function get_tokens( $field_id = null ) {
+	private static function get_tokens( $field_id = 0 ) {
 
-		if ( ! $field_id ) {
+		if ( ! $field_id && ! is_null( $field_id ) ) {
 			$field_id = bp_get_the_profile_field_id();
 		}
 
