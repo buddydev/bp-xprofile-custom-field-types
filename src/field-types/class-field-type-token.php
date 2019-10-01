@@ -61,11 +61,15 @@ class Field_Type_Token extends \BP_XProfile_Field_Type_Textbox {
 		?>
 		<div id="<?php echo esc_attr( $type ); ?>" class="postbox bp-options-box"
 		     style="<?php echo esc_attr( $class ); ?> margin-top: 15px;">
-			<h3><?php esc_html_e( 'Add a list of allowde tokens(separated by comma(,) eg. ONE,two etc):', 'bp-xprofile-custom-field-types' ); ?></h3>
+			<h3><?php esc_html_e( 'Add a list of allowed tokens(separated by comma(,) eg. ONE,two etc):', 'bp-xprofile-custom-field-types' ); ?></h3>
 			<div class="inside">
 				<p>
 					<textarea name="bpxcftr_token_tokens" id="bpxcftr_token_tokens" rows="5" cols="60"><?php echo $text; ?></textarea>
 				</p>
+                <p>
+                    <input type="checkbox" name="bpxcftr_token_ignore_case" id="bpxcftr_token_ignore_case" value="1" <?php checked(true, self::is_case_ignored( $current_field->id ) );?>>
+                    <label for="bpxcftr_token_ignore_case"><?php _e( 'Ignore cases of the token while matching.', 'bp-xprofile-custom-field-types' );?></label>
+                </p>
 			</div>
 		</div>
 		<?php
@@ -87,6 +91,11 @@ class Field_Type_Token extends \BP_XProfile_Field_Type_Textbox {
 		}
 
 		$tokens = self::get_tokens( $field->id );
+
+		if ( self::is_case_ignored( $field->id ) ) {
+			$tokens = array_map( 'strtoupper', $tokens );
+			$values = strtoupper( $values );
+		}
 
 		if ( empty( $values ) || ! in_array( $values, $tokens ) ) {
 			return false;
@@ -113,6 +122,26 @@ class Field_Type_Token extends \BP_XProfile_Field_Type_Textbox {
 		}
 
 		return array_map( 'trim', explode( ',', bp_xprofile_get_meta( $field_id, 'field', 'token_tokens', true ) ) );
+	}
+
+	/**
+	 * Get the tokens.
+	 *
+	 * @param int $field_id field id.
+	 *
+	 * @return bool
+	 */
+	private static function is_case_ignored( $field_id = null ) {
+
+		if ( ! $field_id ) {
+			$field_id = bp_get_the_profile_field_id();
+		}
+
+		if ( ! $field_id ) {
+			return false;
+		}
+
+		return (bool) bp_xprofile_get_meta( $field_id, 'field', 'token_ignore_case', true );
 	}
 }
 

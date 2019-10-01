@@ -155,6 +155,10 @@ class Field_Settings_Helper {
 				$data = isset( $_POST['bpxcftr_token_tokens'] ) ? wp_unslash( $_POST['bpxcftr_token_tokens'] ) : '';
 				$data = sanitize_textarea_field( $data );
 				bp_xprofile_update_field_meta( $field->id, 'token_tokens', $data );
+				// Ignore case?
+				$is_ignored = isset( $_POST['bpxcftr_token_ignore_case']) ? 1: 0;
+				bp_xprofile_update_field_meta( $field->id, 'token_ignore_case', $is_ignored );
+
 				break;
 		}
 	}
