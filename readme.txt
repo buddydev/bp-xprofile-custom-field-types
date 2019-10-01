@@ -2,8 +2,8 @@
 Contributors: buddydev, sbrajesh
 Tags: buddypress, xprofile, fields, buddypress-profile-field-types
 Requires at least: 4.5
-Tested up to: 5.2.1
-Stable tag: 1.0.9
+Tested up to: 5.2.3
+Stable tag: 1.1.0
 License: GLPv2 or later
 
 Buddypress Xprofile Custom Field Types adds extra custom profile fields to BuddyPress. Field types are: Birthdate, Email, Url etc.
@@ -19,6 +19,8 @@ The newly added BuddyPress field types are:-
 * File.
 * Checkbox acceptance.
 * From/To field(can be used to show 2 numbers or text strings).
+* Token (can be used to set a list of predefined approved codes for registration etc).
+* oEmbed ( allow your users to use youtube/facebook, vimeo and other oembed supporting urls to embed in their profile).
 * [Email](http://www.w3.org/TR/html-markup/input.email.html "Input type email - HTML5").
 * [Web](http://www.w3.org/TR/html-markup/input.url.html "Input type url - HTML5").
 * [Datepicker](http://www.w3.org/TR/2013/NOTE-html-markup-20130528/input.date.html "Input type date - HTML5").
@@ -97,7 +99,12 @@ We will love to work with you. Please let us know if you need any of our [servic
 3. profile view screenshot-3.png
 
 == Changelog ==
-
+= 1.1.0 =
+ * New: Added oEmbed field type. allows using faceboo, youtube, vimes and other urls and embed them in BuddyPress user profile.
+ * New: Token field type. Define a set of codes and ask your users to enter the codes. Could be used to simulate invite only registration.
+ * Updated: TOS field type to allow adding more html tags and not filtering the attributes like traget etc.
+ * Fix:- Options loading in admin.
+ 
 = 1.0.9 =
  * Fix a required file/image fields asking to reupload on edit profile, even when user has already added files.
  * Tested with WordPress 5.2.1 & BuddyPress 4.3
