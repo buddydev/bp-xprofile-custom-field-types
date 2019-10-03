@@ -17,6 +17,7 @@ use BPXProfileCFTR\Filters\BP_Profile_Search_Helper;
 use BPXProfileCFTR\Handlers\Birthdate_Field_Validator;
 use BPXProfileCFTR\Handlers\Field_Upload_Helper;
 use BPXProfileCFTR\Handlers\From_To_Helper;
+use BPXProfileCFTR\Handlers\Label_Filter;
 use BPXProfileCFTR\Handlers\Taxonomy_Terms_Creator;
 use BPXProfileCFTR\Handlers\Field_Settings_Handler;
 use BPXProfileCFTR\Admin\Field_Settings_Helper as Admin_Field_Settings_Helper;
@@ -107,6 +108,7 @@ class Bootstrapper {
 		From_To_Helper::boot();
 		// BP profile Search.
 		BP_Profile_Search_Helper::boot();
+		Label_Filter::boot();
 	}
 
 	/**

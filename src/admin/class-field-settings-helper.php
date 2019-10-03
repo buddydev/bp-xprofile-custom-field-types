@@ -136,6 +136,10 @@ class Field_Settings_Helper {
 
 				$hide_months = isset( $_POST['bpxcftr_birtdate_hide_months'] ) ? 1 : 0;
 				bp_xprofile_update_field_meta( $field->id, 'hide_months', $hide_months );
+
+				$age_label = isset( $_POST['bpxcftr_birthdate_age_label'] ) ? trim( wp_unslash( $_POST['bpxcftr_birthdate_age_label'] ) ) : '';
+				bp_xprofile_update_field_meta( $field->id, 'age_label', $age_label );
+
 				break;
 
             case 'fromto':

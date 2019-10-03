@@ -52,7 +52,7 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 		$class    = $current_field->type != $type ? 'display: none;' : '';
 		$show_age = self::show_age( $current_field->id ) ? 1 : 0;
 		$min_age  = self::get_min_age( $current_field->id );
-
+        $age_label = self::get_age_label( $current_field->id );
 		$hide_months = self::hide_months( $current_field->id );
 		// settings from date field.
 		$settings = self::get_field_settings( $current_field->id );
@@ -182,7 +182,12 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 
                     <input type="checkbox" name="bpxcftr_birtdate_show_age" id="bpxcftr_birtdate_show_age" value="1" <?php checked(1, $show_age ); ?>/>
                 </p>
-
+                <p>
+                    <label for="bpxcftr_birthdate_age_label">
+	                    <?php _e( 'Display Label for age:', 'bp-xprofile-custom-field-types' );?>
+                        <input type="text" placeholder="<?php esc_attr_e( 'e.g Age.', 'bp-xprofile-custom-field-types') ;?>" name="bpxcftr_birthdate_age_label"  value="<?php echo esc_attr( $age_label );?>"/>
+                    </label>
+                </p>
                 <p>
 		            <?php _e( 'Hide months while showing age?', 'bp-xprofile-custom-field-types' ); ?>
 
@@ -249,4 +254,15 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 	public static function get_min_age( $field_id ) {
 		return  bp_xprofile_get_meta( $field_id, 'field', 'min_age',  true );
     }
+
+	/**
+     * Get age label.
+     *
+	 * @param int $field_id field id.
+	 *
+	 * @return string
+	 */
+	public static function get_age_label( $field_id ) {
+		return bp_xprofile_get_meta( $field_id, 'field', 'age_label', true );
+	}
 }
