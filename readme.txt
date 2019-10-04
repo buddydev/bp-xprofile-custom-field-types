@@ -104,7 +104,9 @@ We will love to work with you. Please let us know if you need any of our [servic
  * New: Token field type. Define a set of codes and ask your users to enter the codes. Could be used to simulate invite only registration.
  * Updated: TOS field type to allow adding more html tags and not filtering the attributes like traget etc.
  * Fix:- Options loading in admin.
- 
+ * New:- Add extra label for Age(Birthdate field type). You can use different label for view/edit field name.
+ * For More, please see our [release post](https://buddydev.com/more-power-to-the-buddypress-custom-profile-fields/).
+
 = 1.0.9 =
  * Fix a required file/image fields asking to reupload on edit profile, even when user has already added files.
  * Tested with WordPress 5.2.1 & BuddyPress 4.3
