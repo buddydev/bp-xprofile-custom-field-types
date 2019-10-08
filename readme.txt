@@ -3,7 +3,7 @@ Contributors: buddydev, sbrajesh
 Tags: buddypress, xprofile, fields, buddypress-profile-field-types
 Requires at least: 4.5
 Tested up to: 5.2.3
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GLPv2 or later
 
 Buddypress Xprofile Custom Field Types adds extra custom profile fields to BuddyPress. Field types are: Birthdate, Email, Url etc.
@@ -99,6 +99,10 @@ We will love to work with you. Please let us know if you need any of our [servic
 3. profile view screenshot-3.png
 
 == Changelog ==
+= 1.1.1 =
+ * Fix the signup token validation.
+ * New: Include German translations by Thorsten Wollenhöfer
+
 = 1.1.0 =
  * New: Added oEmbed field type. allows using facebook, youtube, vimeo and other urls and embed them in BuddyPress user profile.
  * New: Token field type. Define a set of codes and ask your users to enter the codes. Could be used to simulate invite only registration.
