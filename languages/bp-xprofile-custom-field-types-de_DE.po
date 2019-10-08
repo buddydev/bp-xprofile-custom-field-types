@@ -1,0 +1,630 @@
+# Copyright (C) 2012 
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version: BuddyPress Xprofile Custom Fields Type\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/buddypress-xprofile-custom-"
+"fields-type\n"
+"POT-Creation-Date: 2019-10-07 15:40+0200\n"
+"PO-Revision-Date: 2019-10-07 15:43+0200\n"
+"Last-Translator: Thorsten Wollenhöfer <thorsten.wollenhoefer@gmail.com>\n"
+"Language-Team: Thorsten Wollenhöfer <thorsten.wollenhoefer@gmail.com>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext;_n;__ngettext_noop;_n_noop;_x;_nx;"
+"_nx_noop;_ex;esc_attr__;esc_attr_e;esc_attr_x;esc_html__;esc_html_e;"
+"esc_html_x;_c;_nc\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: src/admin/class-admin.php:47
+msgid ""
+"BuddyPress Xprofile Custom Field Types plugin needs Buddypress Xprofile "
+"Component. Please enable Xprofile first."
+msgstr ""
+"Das Plugin BuddyPress Xprofile Custom Field Types benötigt Buddypress "
+"Xprofile Component. Bitte aktivieren Sie zuerst Xprofile."
+
+#: src/admin/class-field-settings-helper.php:204
+msgid "Select2"
+msgstr "Select2"
+
+#: src/admin/class-field-settings-helper.php:206
+msgid "Enable select2 javascript code."
+msgstr "Aktivieren Sie Select2 JavaScript-Code."
+
+#: src/admin/class-field-settings-helper.php:210
+msgid "Select2 status for this field"
+msgstr "Select2 Status für dieses Feld"
+
+#: src/admin/class-field-settings-helper.php:213
+msgid "Enabled"
+msgstr "Aktiviert"
+
+#: src/admin/class-field-settings-helper.php:216
+msgid "Disabled"
+msgstr "Deaktiviert"
+
+#: src/field-types/class-field-type-birthdate.php:29
+msgctxt "xprofile field type"
+msgid "Birthdate Selector"
+msgstr "Geburtsdatum-Selektor"
+
+#: src/field-types/class-field-type-birthdate.php:30
+#: src/field-types/class-field-type-checkbox-acceptance.php:30
+#: src/field-types/class-field-type-color.php:28
+#: src/field-types/class-field-type-datepicker.php:25
+#: src/field-types/class-field-type-decimal-number.php:29
+#: src/field-types/class-field-type-email.php:26
+#: src/field-types/class-field-type-file.php:29
+#: src/field-types/class-field-type-from-to.php:29
+#: src/field-types/class-field-type-image.php:29
+#: src/field-types/class-field-type-multi-select-post-type.php:31
+#: src/field-types/class-field-type-multi-select-taxonomy.php:30
+#: src/field-types/class-field-type-number-min-max.php:28
+#: src/field-types/class-field-type-oembed.php:29
+#: src/field-types/class-field-type-select-post-type.php:29
+#: src/field-types/class-field-type-select-taxonomy.php:31
+#: src/field-types/class-field-type-slider.php:26
+#: src/field-types/class-field-type-token.php:33
+#: src/field-types/class-field-type-web.php:26
+msgctxt "xprofile field type category"
+msgid "Custom Fields"
+msgstr "Benutzerdefinierte Felder"
+
+#: src/field-types/class-field-type-birthdate.php:66
+#: src/field-types/class-field-type-birthdate.php:72
+msgid "Date format"
+msgstr "Datumsformat"
+
+#: src/field-types/class-field-type-birthdate.php:88
+msgid "Time elapsed"
+msgstr "Zeit ist abgelaufen"
+
+#: src/field-types/class-field-type-birthdate.php:88
+msgid "<code>4 years ago</code>, <code>4 years from now</code>"
+msgstr "<code>4 Jahre zuvor</code>, <code>4 Jahre von jetzt an</code>"
+
+#: src/field-types/class-field-type-birthdate.php:95
+msgid "Custom:"
+msgstr "Benutzerdefiniert:"
+
+#: src/field-types/class-field-type-birthdate.php:97
+msgid "Enter custom time format"
+msgstr "Eigenes Zeitformat angeben"
+
+#: src/field-types/class-field-type-birthdate.php:98
+msgid "Example:"
+msgstr "Beispiel:"
+
+#: src/field-types/class-field-type-birthdate.php:100
+msgid "Documentation on date and time formatting"
+msgstr "Dokumentation zur Datum/Zeit Formatierung"
+
+#: src/field-types/class-field-type-birthdate.php:109
+#: src/field-types/class-field-type-birthdate.php:115
+msgid "Range"
+msgstr "Bereich"
+
+#: src/field-types/class-field-type-birthdate.php:122
+msgid "Absolute"
+msgstr "Absolut"
+
+#: src/field-types/class-field-type-birthdate.php:127
+#: src/field-types/class-field-type-birthdate.php:143
+msgid "Start:"
+msgstr "Start:"
+
+#: src/field-types/class-field-type-birthdate.php:129
+#: src/field-types/class-field-type-birthdate.php:158
+msgid "End:"
+msgstr "Ende:"
+
+#: src/field-types/class-field-type-birthdate.php:138
+msgid "Relative"
+msgstr "Relativ"
+
+#: src/field-types/class-field-type-birthdate.php:149
+#: src/field-types/class-field-type-birthdate.php:163
+msgid "Select range"
+msgstr "Bereich auswählen"
+
+#: src/field-types/class-field-type-birthdate.php:152
+#: src/field-types/class-field-type-birthdate.php:166
+msgid "years ago"
+msgstr "Jahre zuvor"
+
+#: src/field-types/class-field-type-birthdate.php:154
+#: src/field-types/class-field-type-birthdate.php:168
+msgid "years from now"
+msgstr "Jahre von jetzt an"
+
+#: src/field-types/class-field-type-birthdate.php:178
+msgid "Show age:"
+msgstr "Das Alter anzeigen:"
+
+#: src/field-types/class-field-type-birthdate.php:181
+msgid "Check this if you want to show age instead of birthdate:"
+msgstr ""
+"Aktivieren Sie diese Option, wenn Sie anstelle des Geburtsdatums das Alter "
+"anzeigen möchten:"
+
+#: src/field-types/class-field-type-birthdate.php:187
+msgid "Display Label for age:"
+msgstr "Label für das Alter anzeigen:"
+
+#: src/field-types/class-field-type-birthdate.php:188
+msgid "e.g Age."
+msgstr "z.B. Alter."
+
+#: src/field-types/class-field-type-birthdate.php:192
+msgid "Hide months while showing age?"
+msgstr "Die Monate ausblenden und dafür das Alter anzeigen?"
+
+#: src/field-types/class-field-type-birthdate.php:198
+msgid "Define a minimum age:"
+msgstr "Definieren Sie ein Mindestalter:"
+
+#: src/field-types/class-field-type-birthdate.php:201
+msgid "Minimum age:"
+msgstr "Mindestalter:"
+
+#: src/field-types/class-field-type-birthdate.php:237
+#, php-format
+msgid "%s years"
+msgstr "%s Jahre"
+
+#: src/field-types/class-field-type-birthdate.php:240
+#, php-format
+msgid ", %s month"
+msgid_plural ", %s months"
+msgstr[0] ", %s Monat"
+msgstr[1] ", %s Monate"
+
+#: src/field-types/class-field-type-checkbox-acceptance.php:29
+msgctxt "xprofile field type"
+msgid "Checkbox Acceptance"
+msgstr "Checkbox-Zustimmung"
+
+#: src/field-types/class-field-type-checkbox-acceptance.php:122
+msgid ""
+"Use this field to write a text that should be displayed beside the checkbox:"
+msgstr ""
+"Verwenden Sie dieses Feld, um einen Text zu schreiben, der neben dem "
+"Kontrollkästchen angezeigt werden soll:"
+
+#: src/field-types/class-field-type-checkbox-acceptance.php:195
+msgid "No"
+msgstr "Nein"
+
+#: src/field-types/class-field-type-checkbox-acceptance.php:195
+msgid "Yes"
+msgstr "Ja"
+
+#: src/field-types/class-field-type-color.php:27
+msgctxt "xprofile field type"
+msgid "Color (HTML5 field)"
+msgstr "Farbe (HTML5-Feld)"
+
+#: src/field-types/class-field-type-datepicker.php:24
+msgctxt "xprofile field type"
+msgid "Datepicker (HTML5 field)"
+msgstr "Datumsauswahl (HTML5 Feld)"
+
+#: src/field-types/class-field-type-decimal-number.php:28
+msgid "Decimal number (HTML5 field)"
+msgstr "Dezimalzahl (HTML5-Feld)"
+
+#: src/field-types/class-field-type-decimal-number.php:109
+#: src/field-types/class-field-type-from-to.php:160
+msgid "Options"
+msgstr "Optionen"
+
+#: src/field-types/class-field-type-decimal-number.php:112
+msgid "Precision"
+msgstr "Genauigkeit"
+
+#: src/field-types/class-field-type-decimal-number.php:121
+msgid "Step Size"
+msgstr "Schrittgröße"
+
+#: src/field-types/class-field-type-decimal-number.php:124
+msgid ""
+"Use decimal in step e.g .05, 1.3 etc, otherwise the field will behave as "
+"number"
+msgstr ""
+"Verwenden Sie die Dezimalstelle in Schritten, z. B. 0,05; 1,3 usw., "
+"andernfalls verhält sich das Feld wie eine Nummer"
+
+#: src/field-types/class-field-type-email.php:25
+msgctxt "xprofile field type"
+msgid "Email (HTML5 field)"
+msgstr "E-Mail (HTML5 Feld)"
+
+#: src/field-types/class-field-type-file.php:28
+msgctxt "xprofile field type"
+msgid "File"
+msgstr "Datei"
+
+#: src/field-types/class-field-type-file.php:81
+#: src/field-types/class-field-type-image.php:78
+msgid "Check this to delete this file"
+msgstr "Aktivieren Sie diese Option, um diese Datei zu löschen"
+
+#: src/field-types/class-field-type-file.php:137
+msgid "Download file"
+msgstr "Datei herunterladen"
+
+#: src/field-types/class-field-type-from-to.php:28
+msgid "From/To values"
+msgstr "Von / zu Werten"
+
+#: src/field-types/class-field-type-from-to.php:163
+msgid "Value Type"
+msgstr "Werttyp"
+
+#: src/field-types/class-field-type-from-to.php:165
+msgid "No restrictions"
+msgstr "Keine Einschränkungen"
+
+#: src/field-types/class-field-type-from-to.php:166
+msgid "Integers"
+msgstr "Ganzzahlen"
+
+#: src/field-types/class-field-type-from-to.php:167
+msgid "Numeric"
+msgstr "Numerisch"
+
+#: src/field-types/class-field-type-from-to.php:168
+msgid "String"
+msgstr "Zeichenkette"
+
+#: src/field-types/class-field-type-from-to.php:173
+msgid "Integer/Numeric Type Constraints"
+msgstr "Integer/numerische Typbeschränkungen"
+
+#: src/field-types/class-field-type-from-to.php:175
+msgid "Default Values"
+msgstr "Standardwerte"
+
+#: src/field-types/class-field-type-from-to.php:178
+msgid "From"
+msgstr "Von"
+
+#: src/field-types/class-field-type-from-to.php:183
+msgid "To"
+msgstr "Bis"
+
+#: src/field-types/class-field-type-image.php:28
+msgctxt "xprofile field type"
+msgid "Image"
+msgstr "Bild"
+
+#: src/field-types/class-field-type-multi-select-post-type.php:30
+msgctxt "xprofile field type"
+msgid "Custom Post Type Multiselector"
+msgstr "Benutzerdefinierter Post-Typ-Multiselektor"
+
+#: src/field-types/class-field-type-multi-select-post-type.php:149
+#: src/field-types/class-field-type-select-post-type.php:128
+msgid ""
+"There is no custom post type. You need to create at least one to use this "
+"field."
+msgstr ""
+"Es gibt keinen benutzerdefinierten Post-Typ. Sie müssen mindestens einen "
+"erstellen, um dieses Feld zu verwenden."
+
+#: src/field-types/class-field-type-multi-select-post-type.php:151
+#: src/field-types/class-field-type-multi-select-post-type.php:154
+#: src/field-types/class-field-type-select-post-type.php:130
+#: src/field-types/class-field-type-select-post-type.php:133
+msgid "Select a post type:"
+msgstr "Wählen Sie einen Beitragstyp:"
+
+#: src/field-types/class-field-type-multi-select-post-type.php:156
+#: src/field-types/class-field-type-multi-select-taxonomy.php:153
+#: src/field-types/class-field-type-select-post-type.php:56
+#: src/field-types/class-field-type-select-post-type.php:135
+#: src/field-types/class-field-type-select-taxonomy.php:57
+#: src/field-types/class-field-type-select-taxonomy.php:140
+msgid "Select..."
+msgstr "Bitte auswählen..."
+
+#: src/field-types/class-field-type-multi-select-taxonomy.php:29
+msgctxt "xprofile field type"
+msgid "Custom Taxonomy Multiselector"
+msgstr "Benutzerdefinierter Taxonomie-Multiselektor"
+
+#: src/field-types/class-field-type-multi-select-taxonomy.php:146
+#: src/field-types/class-field-type-select-taxonomy.php:133
+msgid ""
+"There is no custom taxonomy. You need to create at least one to use this "
+"field."
+msgstr ""
+"Es gibt keine benutzerdefinierte Taxonomie. Sie müssen mindestens einen "
+"erstellen, um dieses Feld zu verwenden."
+
+#: src/field-types/class-field-type-multi-select-taxonomy.php:148
+#: src/field-types/class-field-type-multi-select-taxonomy.php:151
+#: src/field-types/class-field-type-select-taxonomy.php:135
+#: src/field-types/class-field-type-select-taxonomy.php:138
+msgid "Select a custom taxonomy:"
+msgstr "Wählen Sie eine benutzerdefinierte Taxonomie aus:"
+
+#: src/field-types/class-field-type-multi-select-taxonomy.php:162
+msgid "Allow users to add new terms:"
+msgstr "Erlauben Sie den Benutzern, neue Begriffe hinzuzufügen:"
+
+#: src/field-types/class-field-type-number-min-max.php:27
+msgid "Number within min/max values (HTML5 field)"
+msgstr "Anzahl in Min / Max-Werten (HTML5-Feld)"
+
+#: src/field-types/class-field-type-number-min-max.php:105
+msgid "Write min and max values. You can leave any field blank if you want."
+msgstr ""
+"Schreibe Min- und Max-Werte. Sie können jedes Feld leer lassen, wenn Sie "
+"möchten."
+
+#: src/field-types/class-field-type-number-min-max.php:110
+#: src/field-types/class-field-type-slider.php:112
+msgid "Minimum:"
+msgstr "Minimum:"
+
+#: src/field-types/class-field-type-number-min-max.php:116
+#: src/field-types/class-field-type-slider.php:116
+msgid "Maximum:"
+msgstr "Maximum:"
+
+#: src/field-types/class-field-type-oembed.php:28
+msgctxt "xprofile field type"
+msgid "oEmbed URL"
+msgstr "oEmbed URL"
+
+#: src/field-types/class-field-type-select-post-type.php:28
+msgctxt "xprofile field type"
+msgid "Custom Post Type Selector"
+msgstr "Benutzerdefinierte Beitragstyp-Auswahl"
+
+#: src/field-types/class-field-type-select-taxonomy.php:30
+msgctxt "xprofile field type"
+msgid "Custom Taxonomy Selector"
+msgstr "Benutzerdefinierte Taxonomie-Auswahl"
+
+#: src/field-types/class-field-type-slider.php:25
+msgid "Range input (HTML5 field)"
+msgstr "Bereichseingabe (HTML5-Feld)"
+
+#: src/field-types/class-field-type-slider.php:108
+msgid "Write min and max values."
+msgstr "Schreibe Min- und Max-Werte."
+
+#: src/field-types/class-field-type-token.php:32
+msgctxt "xprofile field type"
+msgid "Token"
+msgstr "Token"
+
+#: src/field-types/class-field-type-token.php:64
+msgid "Add a list of allowed tokens(separated by comma(,) eg. ONE,two etc):"
+msgstr ""
+"Fügen Sie eine Liste der zulässigen Token hinzu (durch Komma (,) getrennt, "
+"z. B. EINE, zwei usw.):"
+
+#: src/field-types/class-field-type-token.php:71
+msgid "Ignore cases of the token while matching."
+msgstr "Ignoriere Fälle des Tokens während des Abgleichs."
+
+#: src/field-types/class-field-type-web.php:25
+msgctxt "xprofile field type"
+msgid "Website (HTML5 field)"
+msgstr "Website (HTML5 Field)"
+
+#: src/handlers/class-birthdate-field-validator.php:73
+#: src/handlers/class-birthdate-field-validator.php:80
+msgid "Incorrect birthdate selection."
+msgstr "Falsche Auswahl des Geburtsdatums."
+
+#: src/handlers/class-birthdate-field-validator.php:87
+#: src/handlers/class-signup-validator.php:149
+#: src/handlers/class-signup-validator.php:170
+#, php-format
+msgid "You have to be at least %s years old."
+msgstr "Sie müssen mindestens %s Jahre alt sein."
+
+#: src/handlers/class-field-upload-helper.php:174
+msgid "Invalid file."
+msgstr "Ungültige Datei."
+
+#: src/handlers/class-field-upload-helper.php:178
+msgid "Invalid file size."
+msgstr "Ungültige Dateigröße."
+
+#: src/handlers/class-field-upload-helper.php:186
+#: src/handlers/class-signup-validator.php:129
+#, php-format
+msgid "File type not allowed: (%s)."
+msgstr "Dateityp nicht erlaubt: ( %s)."
+
+#: src/handlers/class-field-upload-helper.php:188
+#, php-format
+msgid "Max image upload size: %s MB."
+msgstr "Max. Bilduploadgröße: %s MB."
+
+#: src/handlers/class-signup-validator.php:71
+#: src/handlers/class-signup-validator.php:113
+msgid "This is a required field."
+msgstr "Dieses Feld muss ausgefüllt werden."
+
+#: src/handlers/class-signup-validator.php:83
+#: src/handlers/class-signup-validator.php:90
+msgid "This is a required field"
+msgstr "Dieses Feld wird benötigt"
+
+#: src/handlers/class-signup-validator.php:125
+#, php-format
+msgid "File exceed the upload limit. Max upload size %d."
+msgstr "Datei überschreitet das Upload-Limit. Maximale Uploadgröße %d."
+
+#: src/handlers/class-signup-validator.php:159
+msgid "Invalid date."
+msgstr "Ungültiges Datum."
+
+#. Plugin Name of the plugin/theme
+msgid "BuddyPress Xprofile Custom Field Types"
+msgstr "(BuddyDev) BuddyPress Xprofile Custom Field Types"
+
+#. Plugin URI of the plugin/theme
+msgid "https://buddydev.com/plugins/buddypress-xprofile-custom-field-types/"
+msgstr "https://buddydev.com/plugins/buddypress-xprofile-custom-field-types/"
+
+#. Description of the plugin/theme
+msgid "Have all the extra field types at your disposal."
+msgstr "Haben Sie alle zusätzlichen Feldtypen zu Ihrer Verfügung."
+
+#. Author of the plugin/theme
+msgid "BuddyDev"
+msgstr "BuddyDev"
+
+#. Author URI of the plugin/theme
+msgid "https://buddydev.com"
+msgstr "https://buddydev.com"
+
+#~ msgid "Image type not allowed: (%s)."
+#~ msgstr "Bildtyp nicht erlaubt: (%s)."
+
+#~ msgid "Max file upload size: %s MB."
+#~ msgstr "Max Dateigröße: %s MB."
+
+#~ msgid "no"
+#~ msgstr "nein"
+
+#~ msgid "Not empty"
+#~ msgstr "Nicht leer"
+
+#~ msgid "Show age (hide birthdate):"
+#~ msgstr "Anzeigen Alter (ausblenden Geburtsdatum):"
+
+#~ msgid "(required)"
+#~ msgstr "(required)"
+
+# no option picked in select box
+#~ msgid "----"
+#~ msgstr "----"
+
+#~ msgid "January"
+#~ msgstr "Januar"
+
+#~ msgid "February"
+#~ msgstr "Februar"
+
+#~ msgid "March"
+#~ msgstr "März"
+
+#~ msgid "April"
+#~ msgstr "April"
+
+#~ msgid "May"
+#~ msgstr "Mai"
+
+#~ msgid "June"
+#~ msgstr "Juni"
+
+#~ msgid "July"
+#~ msgstr "Juli"
+
+#~ msgid "August"
+#~ msgstr "August"
+
+#~ msgid "September"
+#~ msgstr "September"
+
+#~ msgid "October"
+#~ msgstr "Oktober"
+
+#~ msgid "November"
+#~ msgstr "November"
+
+#~ msgid "December"
+#~ msgstr "Dezember"
+
+#~ msgid "Select max number of decimals:"
+#~ msgstr "Wählen Sie max Anzahl der Nachkommastellen:"
+
+#~ msgid "Check this to delete this image"
+#~ msgstr "Aktivieren Sie diese Option, um dieses Bild zu löschen"
+
+#~ msgid "Min value cannot be bigger than max value."
+#~ msgstr "Mindeswert darf nicht größer als der Maximalwert sein."
+
+#~ msgid "You have to fill at least one field."
+#~ msgstr "Sie müssen mindestens ein Feld ausfüllen."
+
+#~ msgid "--"
+#~ msgstr "--"
+
+#~ msgid "You have to fill the two fields."
+#~ msgstr "Sie müssen die beiden Felder ausfüllen."
+
+#~ msgid ""
+#~ "Buddypress Xprofile Custom Fields Type plugin needs <b>Buddypress 2.0</"
+#~ "b>, please install or upgrade Buddypress."
+#~ msgstr ""
+#~ "BuddyPress Xprofile Custom Fields Type Plugin benötigt <b>BuddyPress 2.0</"
+#~ "b>, bitte installieren oder aktualisieren BuddyPress."
+
+#~ msgid "yourwebsite.com"
+#~ msgstr "yourwebsite.com"
+
+#~ msgid "example@mail.com"
+#~ msgstr "example@mail.com"
+
+#~ msgid "*"
+#~ msgstr "*"
+
+#~ msgid "Email"
+#~ msgstr "Email"
+
+#~ msgid "Website"
+#~ msgstr "Website"
+
+#~ msgid "Datepicker"
+#~ msgstr "Datumsauswahl 2"
+
+#~ msgid "Color"
+#~ msgstr "Farbe"
+
+#~ msgid "Number"
+#~ msgstr "Anzahl"
+
+#~ msgid "Custom Post Type:"
+#~ msgstr "Benutzerdefinierter Post Typ:"
+
+#~ msgid "Show age (hide birthdate)"
+#~ msgstr "Zeige das Alter (den Geburtstag verstecken)"
+
+#~ msgid "Nobody"
+#~ msgstr "Niemand"
+
+#~ msgid "Field type unrecognized"
+#~ msgstr "Feldtyp nicht erkannt"
+
+#~ msgid ""
+#~ "Please make sure you fill in all required fields in this profile field "
+#~ "group before saving."
+#~ msgstr ""
+#~ "Bitte stellen Sie sicher, dass Sie alle erforderlichen Felder in diesem "
+#~ "Profil Feldgruppe füllen vor dem Speichern."
+
+#~ msgid ""
+#~ "There was a problem updating some of your profile information, please try "
+#~ "again."
+#~ msgstr ""
+#~ "Es war ein Problem beim Aktualisieren einige Ihrer Profilinformationen, "
+#~ "please try again."
+
+#~ msgid "Changes saved."
+#~ msgstr "Änderungen gespeichert."
