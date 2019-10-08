@@ -95,6 +95,9 @@ class Signup_Validator {
 			case 'birthdate':
 				$this->validate_birthdate( $field );
 				break;
+			case 'token':
+				$this->validate_token( $field, isset( $_POST[ 'field_' . $field_id ] ) ? trim( $_POST[ 'field_' . $field_id ] ) : '' );
+				break;
 		}
 	}
 
@@ -168,6 +171,25 @@ class Signup_Validator {
 
 		if ( $age->y < $min_age ) {
 			$bp->signup->errors[ 'field_' . $field_id ] = sprintf( __( 'You have to be at least %s years old.', 'bp-xprofile-custom-field-types' ), $min_age );
+		}
+	}
+
+	/**
+	 * Validate signup token.
+	 *
+	 * @param \BP_XProfile_Field_Type $field filed type token.
+	 * @param string                  $token token to validate.
+	 */
+	private function validate_token( $field, $token ) {
+
+		if ( ! $field->is_required && empty( $token ) ) {
+			return;
+		}
+
+		$field_type_obj = bp_xprofile_create_field_type( 'token' );
+		bpxcftr_set_current_field( $field );
+		if ( ! $field_type_obj->is_valid( $token ) ) {
+			buddypress()->signup->errors[ 'field_' . $field->id ] = __( 'Please provide a valid token.', 'bp-xprofile-custom-field-types' );
 		}
 	}
 }
