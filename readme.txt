@@ -100,7 +100,7 @@ We will love to work with you. Please let us know if you need any of our [servic
 
 == Changelog ==
 = 1.1.0 =
- * New: Added oEmbed field type. allows using faceboo, youtube, vimes and other urls and embed them in BuddyPress user profile.
+ * New: Added oEmbed field type. allows using facebook, youtube, vimeo and other urls and embed them in BuddyPress user profile.
  * New: Token field type. Define a set of codes and ask your users to enter the codes. Could be used to simulate invite only registration.
  * Updated: TOS field type to allow adding more html tags and not filtering the attributes like traget etc.
  * Fix:- Options loading in admin.
