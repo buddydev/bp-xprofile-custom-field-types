@@ -240,7 +240,7 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 			$age .= sprintf( _n( ', %s month', ', %s months', $age_interval->m, 'bp-xprofile-custom-field-types' ), $age_interval->m );
 		}
 
-		return apply_filters( 'bpxcftr_birthdate_age_display_data', $age, $field_id );
+		return apply_filters( 'bpxcftr_birthdate_age_display_data', $age, $field_value, $age_interval, $field_id );
 	}
 
 	public static function hide_months( $field_id ) {
