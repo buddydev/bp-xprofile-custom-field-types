@@ -5,15 +5,15 @@ msgstr ""
 "Project-Id-Version: BuddyPress Xprofile Custom Fields Type\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/buddypress-xprofile-custom-"
 "fields-type\n"
-"POT-Creation-Date: 2019-10-07 15:40+0200\n"
-"PO-Revision-Date: 2019-10-07 15:43+0200\n"
+"POT-Creation-Date: 2019-12-21 00:19+0530\n"
+"PO-Revision-Date: 2019-12-21 00:19+0530\n"
 "Last-Translator: Thorsten Wollenhöfer <thorsten.wollenhoefer@gmail.com>\n"
 "Language-Team: Thorsten Wollenhöfer <thorsten.wollenhoefer@gmail.com>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 1.8.7.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext;_n;__ngettext_noop;_n_noop;_x;_nx;"
 "_nx_noop;_ex;esc_attr__;esc_attr_e;esc_attr_x;esc_html__;esc_html_e;"
@@ -51,9 +51,8 @@ msgid "Disabled"
 msgstr "Deaktiviert"
 
 #: src/field-types/class-field-type-birthdate.php:29
-msgctxt "xprofile field type"
 msgid "Birthdate Selector"
-msgstr "Geburtsdatum-Selektor"
+msgstr ""
 
 #: src/field-types/class-field-type-birthdate.php:30
 #: src/field-types/class-field-type-checkbox-acceptance.php:30
@@ -73,9 +72,8 @@ msgstr "Geburtsdatum-Selektor"
 #: src/field-types/class-field-type-slider.php:26
 #: src/field-types/class-field-type-token.php:33
 #: src/field-types/class-field-type-web.php:26
-msgctxt "xprofile field type category"
 msgid "Custom Fields"
-msgstr "Benutzerdefinierte Felder"
+msgstr ""
 
 #: src/field-types/class-field-type-birthdate.php:66
 #: src/field-types/class-field-type-birthdate.php:72
@@ -180,16 +178,13 @@ msgid "%s years"
 msgstr "%s Jahre"
 
 #: src/field-types/class-field-type-birthdate.php:240
-#, php-format
+#, fuzzy, php-format
 msgid ", %s month"
-msgid_plural ", %s months"
-msgstr[0] ", %s Monat"
-msgstr[1] ", %s Monate"
+msgstr ", %s Monat"
 
 #: src/field-types/class-field-type-checkbox-acceptance.php:29
-msgctxt "xprofile field type"
 msgid "Checkbox Acceptance"
-msgstr "Checkbox-Zustimmung"
+msgstr ""
 
 #: src/field-types/class-field-type-checkbox-acceptance.php:122
 msgid ""
@@ -207,14 +202,12 @@ msgid "Yes"
 msgstr "Ja"
 
 #: src/field-types/class-field-type-color.php:27
-msgctxt "xprofile field type"
 msgid "Color (HTML5 field)"
-msgstr "Farbe (HTML5-Feld)"
+msgstr ""
 
 #: src/field-types/class-field-type-datepicker.php:24
-msgctxt "xprofile field type"
 msgid "Datepicker (HTML5 field)"
-msgstr "Datumsauswahl (HTML5 Feld)"
+msgstr ""
 
 #: src/field-types/class-field-type-decimal-number.php:28
 msgid "Decimal number (HTML5 field)"
@@ -242,14 +235,12 @@ msgstr ""
 "andernfalls verhält sich das Feld wie eine Nummer"
 
 #: src/field-types/class-field-type-email.php:25
-msgctxt "xprofile field type"
 msgid "Email (HTML5 field)"
-msgstr "E-Mail (HTML5 Feld)"
+msgstr ""
 
 #: src/field-types/class-field-type-file.php:28
-msgctxt "xprofile field type"
 msgid "File"
-msgstr "Datei"
+msgstr ""
 
 #: src/field-types/class-field-type-file.php:81
 #: src/field-types/class-field-type-image.php:78
@@ -301,14 +292,12 @@ msgid "To"
 msgstr "Bis"
 
 #: src/field-types/class-field-type-image.php:28
-msgctxt "xprofile field type"
 msgid "Image"
-msgstr "Bild"
+msgstr ""
 
 #: src/field-types/class-field-type-multi-select-post-type.php:30
-msgctxt "xprofile field type"
 msgid "Custom Post Type Multiselector"
-msgstr "Benutzerdefinierter Post-Typ-Multiselektor"
+msgstr ""
 
 #: src/field-types/class-field-type-multi-select-post-type.php:149
 #: src/field-types/class-field-type-select-post-type.php:128
@@ -336,9 +325,8 @@ msgid "Select..."
 msgstr "Bitte auswählen..."
 
 #: src/field-types/class-field-type-multi-select-taxonomy.php:29
-msgctxt "xprofile field type"
 msgid "Custom Taxonomy Multiselector"
-msgstr "Benutzerdefinierter Taxonomie-Multiselektor"
+msgstr ""
 
 #: src/field-types/class-field-type-multi-select-taxonomy.php:146
 #: src/field-types/class-field-type-select-taxonomy.php:133
@@ -381,19 +369,16 @@ msgid "Maximum:"
 msgstr "Maximum:"
 
 #: src/field-types/class-field-type-oembed.php:28
-msgctxt "xprofile field type"
 msgid "oEmbed URL"
-msgstr "oEmbed URL"
+msgstr ""
 
 #: src/field-types/class-field-type-select-post-type.php:28
-msgctxt "xprofile field type"
 msgid "Custom Post Type Selector"
-msgstr "Benutzerdefinierte Beitragstyp-Auswahl"
+msgstr ""
 
 #: src/field-types/class-field-type-select-taxonomy.php:30
-msgctxt "xprofile field type"
 msgid "Custom Taxonomy Selector"
-msgstr "Benutzerdefinierte Taxonomie-Auswahl"
+msgstr ""
 
 #: src/field-types/class-field-type-slider.php:25
 msgid "Range input (HTML5 field)"
@@ -404,9 +389,8 @@ msgid "Write min and max values."
 msgstr "Schreibe Min- und Max-Werte."
 
 #: src/field-types/class-field-type-token.php:32
-msgctxt "xprofile field type"
 msgid "Token"
-msgstr "Token"
+msgstr ""
 
 #: src/field-types/class-field-type-token.php:64
 msgid "Add a list of allowed tokens(separated by comma(,) eg. ONE,two etc):"
@@ -419,9 +403,8 @@ msgid "Ignore cases of the token while matching."
 msgstr "Ignoriere Fälle des Tokens während des Abgleichs."
 
 #: src/field-types/class-field-type-web.php:25
-msgctxt "xprofile field type"
 msgid "Website (HTML5 field)"
-msgstr "Website (HTML5 Field)"
+msgstr ""
 
 #: src/handlers/class-birthdate-field-validator.php:73
 #: src/handlers/class-birthdate-field-validator.php:80
@@ -429,8 +412,8 @@ msgid "Incorrect birthdate selection."
 msgstr "Falsche Auswahl des Geburtsdatums."
 
 #: src/handlers/class-birthdate-field-validator.php:87
-#: src/handlers/class-signup-validator.php:149
-#: src/handlers/class-signup-validator.php:170
+#: src/handlers/class-signup-validator.php:152
+#: src/handlers/class-signup-validator.php:173
 #, php-format
 msgid "You have to be at least %s years old."
 msgstr "Sie müssen mindestens %s Jahre alt sein."
@@ -444,7 +427,7 @@ msgid "Invalid file size."
 msgstr "Ungültige Dateigröße."
 
 #: src/handlers/class-field-upload-helper.php:186
-#: src/handlers/class-signup-validator.php:129
+#: src/handlers/class-signup-validator.php:132
 #, php-format
 msgid "File type not allowed: (%s)."
 msgstr "Dateityp nicht erlaubt: ( %s)."
@@ -455,7 +438,7 @@ msgid "Max image upload size: %s MB."
 msgstr "Max. Bilduploadgröße: %s MB."
 
 #: src/handlers/class-signup-validator.php:71
-#: src/handlers/class-signup-validator.php:113
+#: src/handlers/class-signup-validator.php:116
 msgid "This is a required field."
 msgstr "Dieses Feld muss ausgefüllt werden."
 
@@ -464,34 +447,94 @@ msgstr "Dieses Feld muss ausgefüllt werden."
 msgid "This is a required field"
 msgstr "Dieses Feld wird benötigt"
 
-#: src/handlers/class-signup-validator.php:125
+#: src/handlers/class-signup-validator.php:128
 #, php-format
 msgid "File exceed the upload limit. Max upload size %d."
 msgstr "Datei überschreitet das Upload-Limit. Maximale Uploadgröße %d."
 
-#: src/handlers/class-signup-validator.php:159
+#: src/handlers/class-signup-validator.php:162
 msgid "Invalid date."
 msgstr "Ungültiges Datum."
 
-#. Plugin Name of the plugin/theme
-msgid "BuddyPress Xprofile Custom Field Types"
-msgstr "(BuddyDev) BuddyPress Xprofile Custom Field Types"
+#: src/handlers/class-signup-validator.php:192
+msgid "Please provide a valid token."
+msgstr ""
 
-#. Plugin URI of the plugin/theme
-msgid "https://buddydev.com/plugins/buddypress-xprofile-custom-field-types/"
-msgstr "https://buddydev.com/plugins/buddypress-xprofile-custom-field-types/"
+#~ msgctxt "xprofile field type"
+#~ msgid "Birthdate Selector"
+#~ msgstr "Geburtsdatum-Selektor"
 
-#. Description of the plugin/theme
-msgid "Have all the extra field types at your disposal."
-msgstr "Haben Sie alle zusätzlichen Feldtypen zu Ihrer Verfügung."
+#~ msgctxt "xprofile field type category"
+#~ msgid "Custom Fields"
+#~ msgstr "Benutzerdefinierte Felder"
 
-#. Author of the plugin/theme
-msgid "BuddyDev"
-msgstr "BuddyDev"
+#~ msgctxt "xprofile field type"
+#~ msgid "Checkbox Acceptance"
+#~ msgstr "Checkbox-Zustimmung"
 
-#. Author URI of the plugin/theme
-msgid "https://buddydev.com"
-msgstr "https://buddydev.com"
+#~ msgctxt "xprofile field type"
+#~ msgid "Color (HTML5 field)"
+#~ msgstr "Farbe (HTML5-Feld)"
+
+#~ msgctxt "xprofile field type"
+#~ msgid "Datepicker (HTML5 field)"
+#~ msgstr "Datumsauswahl (HTML5 Feld)"
+
+#~ msgctxt "xprofile field type"
+#~ msgid "Email (HTML5 field)"
+#~ msgstr "E-Mail (HTML5 Feld)"
+
+#~ msgctxt "xprofile field type"
+#~ msgid "File"
+#~ msgstr "Datei"
+
+#~ msgctxt "xprofile field type"
+#~ msgid "Image"
+#~ msgstr "Bild"
+
+#~ msgctxt "xprofile field type"
+#~ msgid "Custom Post Type Multiselector"
+#~ msgstr "Benutzerdefinierter Post-Typ-Multiselektor"
+
+#~ msgctxt "xprofile field type"
+#~ msgid "Custom Taxonomy Multiselector"
+#~ msgstr "Benutzerdefinierter Taxonomie-Multiselektor"
+
+#~ msgctxt "xprofile field type"
+#~ msgid "oEmbed URL"
+#~ msgstr "oEmbed URL"
+
+#~ msgctxt "xprofile field type"
+#~ msgid "Custom Post Type Selector"
+#~ msgstr "Benutzerdefinierte Beitragstyp-Auswahl"
+
+#~ msgctxt "xprofile field type"
+#~ msgid "Custom Taxonomy Selector"
+#~ msgstr "Benutzerdefinierte Taxonomie-Auswahl"
+
+#~ msgctxt "xprofile field type"
+#~ msgid "Token"
+#~ msgstr "Token"
+
+#~ msgctxt "xprofile field type"
+#~ msgid "Website (HTML5 field)"
+#~ msgstr "Website (HTML5 Field)"
+
+#~ msgid "BuddyPress Xprofile Custom Field Types"
+#~ msgstr "(BuddyDev) BuddyPress Xprofile Custom Field Types"
+
+#~ msgid "https://buddydev.com/plugins/buddypress-xprofile-custom-field-types/"
+#~ msgstr ""
+#~ "https://buddydev.com/plugins/buddypress-xprofile-custom-field-types/"
+
+#~ msgid "Have all the extra field types at your disposal."
+#~ msgstr "Haben Sie alle zusätzlichen Feldtypen zu Ihrer Verfügung."
+
+#~ msgid "BuddyDev"
+#~ msgstr "BuddyDev"
+
+#~ msgid "https://buddydev.com"
+#~ msgstr "https://buddydev.com"
 
 #~ msgid "Image type not allowed: (%s)."
 #~ msgstr "Bildtyp nicht erlaubt: (%s)."
