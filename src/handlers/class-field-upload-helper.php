@@ -56,7 +56,7 @@ class Field_Upload_Helper {
 	 */
 	private function setup() {
 		add_action( 'xprofile_data_before_save', array( $this, 'on_field_data_save' ) );
-		add_action( 'xprofile_data_after_delete', array( $this, 'on_field_data_delete' ) );
+		add_action( 'xprofile_data_before_delete', array( $this, 'on_field_data_delete' ) );
 	}
 
 	/**
@@ -146,6 +146,7 @@ class Field_Upload_Helper {
 
 			case 'image':
 			case 'file':
+				do_action( 'bpxcftr_field_data_file_deleted', $path, $field, $data );
 				wp_delete_file( $path );
 				break;
 		}
