@@ -133,6 +133,7 @@ class Field_Type_File extends \BP_XProfile_Field_Type {
 		$uploads = wp_upload_dir();
 
 		$new_field_value = trailingslashit( $uploads['baseurl'] ) . $field_value;
+		$new_field_value = apply_filters( 'bpxcftr_file_type_field_data', $new_field_value, $field_id );
 
 		$new_field_value = sprintf( '<a href="%s" rel="nofollow" class="bpxcftr-file-link">%s</a>', esc_url( $new_field_value ), __( 'Download file', 'bp-xprofile-custom-field-types' ) );
 
