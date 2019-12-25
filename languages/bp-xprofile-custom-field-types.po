@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-12-21 00:19+0530\n"
-"PO-Revision-Date: 2019-12-21 00:19+0530\n"
+"POT-Creation-Date: 2019-12-26 04:44+0530\n"
+"PO-Revision-Date: 2019-12-26 04:44+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -243,7 +243,7 @@ msgstr ""
 msgid "Check this to delete this file"
 msgstr ""
 
-#: field-types/class-field-type-file.php:137
+#: field-types/class-field-type-file.php:138
 msgid "Download file"
 msgstr ""
 
@@ -414,21 +414,21 @@ msgstr ""
 msgid "You have to be at least %s years old."
 msgstr ""
 
-#: handlers/class-field-upload-helper.php:174
+#: handlers/class-field-upload-helper.php:175
 msgid "Invalid file."
 msgstr ""
 
-#: handlers/class-field-upload-helper.php:178
+#: handlers/class-field-upload-helper.php:179
 msgid "Invalid file size."
 msgstr ""
 
-#: handlers/class-field-upload-helper.php:186
+#: handlers/class-field-upload-helper.php:187
 #: handlers/class-signup-validator.php:132
 #, php-format
 msgid "File type not allowed: (%s)."
 msgstr ""
 
-#: handlers/class-field-upload-helper.php:188
+#: handlers/class-field-upload-helper.php:189
 #, php-format
 msgid "Max image upload size: %s MB."
 msgstr ""

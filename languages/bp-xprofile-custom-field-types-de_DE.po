@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: BuddyPress Xprofile Custom Fields Type\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/buddypress-xprofile-custom-"
 "fields-type\n"
-"POT-Creation-Date: 2019-12-21 00:19+0530\n"
-"PO-Revision-Date: 2019-12-21 00:19+0530\n"
+"POT-Creation-Date: 2019-12-26 04:44+0530\n"
+"PO-Revision-Date: 2019-12-26 04:44+0530\n"
 "Last-Translator: Thorsten Wollenhöfer <thorsten.wollenhoefer@gmail.com>\n"
 "Language-Team: Thorsten Wollenhöfer <thorsten.wollenhoefer@gmail.com>\n"
 "Language: de_DE\n"
@@ -247,7 +247,7 @@ msgstr ""
 msgid "Check this to delete this file"
 msgstr "Aktivieren Sie diese Option, um diese Datei zu löschen"
 
-#: src/field-types/class-field-type-file.php:137
+#: src/field-types/class-field-type-file.php:138
 msgid "Download file"
 msgstr "Datei herunterladen"
 
@@ -418,21 +418,21 @@ msgstr "Falsche Auswahl des Geburtsdatums."
 msgid "You have to be at least %s years old."
 msgstr "Sie müssen mindestens %s Jahre alt sein."
 
-#: src/handlers/class-field-upload-helper.php:174
+#: src/handlers/class-field-upload-helper.php:175
 msgid "Invalid file."
 msgstr "Ungültige Datei."
 
-#: src/handlers/class-field-upload-helper.php:178
+#: src/handlers/class-field-upload-helper.php:179
 msgid "Invalid file size."
 msgstr "Ungültige Dateigröße."
 
-#: src/handlers/class-field-upload-helper.php:186
+#: src/handlers/class-field-upload-helper.php:187
 #: src/handlers/class-signup-validator.php:132
 #, php-format
 msgid "File type not allowed: (%s)."
 msgstr "Dateityp nicht erlaubt: ( %s)."
 
-#: src/handlers/class-field-upload-helper.php:188
+#: src/handlers/class-field-upload-helper.php:189
 #, php-format
 msgid "Max image upload size: %s MB."
 msgstr "Max. Bilduploadgröße: %s MB."
