@@ -41,13 +41,25 @@ class Assets_Loader {
 	 * Setup
 	 */
 	public function setup() {
-		add_action( 'bp_enqueue_scripts', array( $this, 'register' ) );
-		add_action( 'bp_admin_enqueue_scripts', array( $this, 'register' ) );
+		add_action( 'bp_enqueue_scripts', array( $this, 'register_front_assets' ) );
+		add_action( 'bp_admin_enqueue_scripts', array( $this, 'register_admin_assets' ) );
 
 		add_action( 'bp_enqueue_scripts', array( $this, 'load_assets' ) );
 		add_action( 'bp_admin_enqueue_scripts', array( $this, 'load_admin_assets' ) );
 		add_action( 'bp_admin_enqueue_scripts', array( $this, 'load_user_admin_assets' ) );
 
+	}
+
+	/**
+	 * Register front assets.
+	 */
+	public function register_front_assets() {
+
+		if ( ! $this->should_load_front_assets() ) {
+			return;
+		}
+
+		$this->register();
 	}
 
 	/**
@@ -57,10 +69,7 @@ class Assets_Loader {
 		// css should be always loaded.
 		wp_enqueue_style( 'bp-xprofile-custom-field-types' );
 
-		$load = bp_is_user_profile_edit() || bp_is_register_page();
-		$load = apply_filters( 'bpxcftr_load_front_assets', $load );
-
-		if ( ! $load ) {
+		if ( ! $this->should_load_front_assets() ) {
 			return;
 		}
 		$this->enqueue_vendors();
@@ -68,14 +77,23 @@ class Assets_Loader {
 	}
 
 	/**
+	 * Register admin assets.
+	 */
+	public function register_admin_assets() {
+
+		if ( ! $this->should_load_admin_assets() ) {
+			return;
+		}
+
+		$this->register();
+	}
+
+	/**
 	 * Load plugin assets
 	 */
 	public function load_admin_assets() {
 
-		$load = isset( $_GET['page'] ) && 'bp-profile-setup' === $_GET['page'];
-		$load = apply_filters( 'bpxcftr_load_admin_assets', $load );
-
-		if ( ! $load ) {
+		if ( ! $this->should_load_admin_assets() ) {
 			return;
 		}
 
@@ -102,7 +120,7 @@ class Assets_Loader {
 	/**
 	 * Register assets.
 	 */
-	public function register() {
+	private function register() {
 		$this->register_vendors();
 		$this->register_core();
 		$this->register_admin();
@@ -176,11 +194,10 @@ class Assets_Loader {
 	 * Register core assets.
 	 */
 	private function register_core() {
-		$url = bp_xprofile_cftr()->url;
-
+		$url     = bp_xprofile_cftr()->url;
 		$version = bp_xprofile_cftr()->version;
 
-		wp_register_style( 'bp-xprofile-custom-field-types', $url . 'assets/css/bp-xprofile-custom-field-types.css' );
+		wp_register_style( 'bp-xprofile-custom-field-types', $url . 'assets/css/bp-xprofile-custom-field-types.css', false, $version );
 
 		wp_register_script( 'bp-xprofile-custom-field-types', $url . 'assets/js/bp-xprofile-custom-field-types.js', array( 'jquery' ), $version, true );
 
@@ -191,8 +208,7 @@ class Assets_Loader {
 	 * Register core assets.
 	 */
 	private function register_admin() {
-		$url = bp_xprofile_cftr()->url;
-
+		$url     = bp_xprofile_cftr()->url;
 		$version = bp_xprofile_cftr()->version;
 
 		wp_register_script( 'bp-xprofile-custom-field-types-admin', $url . 'assets/js/bp-xprofile-custom-field-types-admin.js', array( 'jquery' ), $version, true );
@@ -201,4 +217,27 @@ class Assets_Loader {
 			'selectableTypes' => bpxcftr_get_selectable_field_types(),
 		);
 	}
+
+	/**
+	 * Should we load admin assets?
+	 *
+	 * @return bool
+	 */
+	private function should_load_admin_assets() {
+		$load = isset( $_GET['page'] ) && 'bp-profile-setup' === $_GET['page'];
+
+		return apply_filters( 'bpxcftr_load_admin_assets', $load );
+	}
+
+	/**
+	 * Should we load front assets.
+	 *
+	 * @return bool
+	 */
+	private function should_load_front_assets() {
+		$load = bp_is_user_profile_edit() || bp_is_register_page();
+
+		return apply_filters( 'bpxcftr_load_front_assets', $load );
+	}
+
 }

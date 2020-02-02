@@ -100,6 +100,9 @@ We will love to work with you. Please let us know if you need any of our [servic
 
 == Changelog ==
 
+= 1.1.4 =
+ * Update to avoid registering our script handles on the pages not relavan to us. Fixes select2 conflict for some.
+
 = 1.1.3 =
  * Added an action to notify file deletion.
 
