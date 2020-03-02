@@ -224,7 +224,7 @@ class Assets_Loader {
 	 * @return bool
 	 */
 	private function should_load_admin_assets() {
-		$load = isset( $_GET['page'] ) && 'bp-profile-setup' === $_GET['page'];
+		$load = isset( $_GET['page'] ) && ( 'bp-profile-setup' === $_GET['page'] || 'bp-profile-edit' == $_GET['page'] );
 
 		return apply_filters( 'bpxcftr_load_admin_assets', $load );
 	}
