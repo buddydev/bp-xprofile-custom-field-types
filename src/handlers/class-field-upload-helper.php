@@ -57,6 +57,29 @@ class Field_Upload_Helper {
 	private function setup() {
 		add_action( 'xprofile_data_before_save', array( $this, 'on_field_data_save' ) );
 		add_action( 'xprofile_data_before_delete', array( $this, 'on_field_data_delete' ) );
+		add_action( 'wpmu_delete_user', array( $this, 'on_user_data_delete' ) );
+		add_action( 'delete_user', array( $this, 'on_user_delete' ) );
+		add_action( 'bp_make_spam_user', array( $this, 'on_user_data_delete' ) );
+	}
+
+	/**
+	 * Cleanup user files|images.
+	 *
+	 * @param int $user_id user id.
+	 */
+	public function on_user_data_delete( $user_id ) {
+		$this->delete_for_user( $user_id);
+	}
+
+	/**
+	 * Cleanup user files|images.
+	 *
+	 * @param int $user_id user id.
+	 */
+	public function on_user_delete( $user_id ) {
+		if ( function_exists( 'bp_remove_user_data_on_delete_user_hook' ) && bp_remove_user_data_on_delete_user_hook( 'xprofile', $user_id ) ) {
+			$this->delete_for_user( $user_id );
+		}
 	}
 
 	/**
@@ -242,4 +265,42 @@ class Field_Upload_Helper {
 		// uploads/bpxcftr-profile-uploads/1/image
 		return $upload_dir;
 	}
+
+	/**
+	 * Force delete file or image fields for user.
+	 *
+	 * @param int $user_id user id.
+	 */
+	private function delete_for_user( $user_id ) {
+
+		if ( ! bp_is_active( 'xprofile' ) ) {
+			return;
+		}
+
+		$field_ids = $this->get_file_field_ids();
+		if ( empty( $field_ids ) ) {
+			return;
+		}
+
+		foreach ( $field_ids as $field_id ) {
+			if ( ! xprofile_get_field_data( $field_id, $user_id ) ) {
+				continue;
+			}
+			// force cleanup routine.
+			$field = new \BP_XProfile_ProfileData( $field_id, $user_id );
+			$field->delete();
+		}
+	}
+
+	/**
+	 * Get all fields of file|image type.
+	 *
+	 * @return array
+	 */
+	private function get_file_field_ids() {
+		global $wpdb;
+		$bp = buddypress();
+		return $wpdb->get_col( $wpdb->prepare( "SELECT id FROM {$bp->profile->table_name_fields} WHERE field_type = %s Or field_type = %s", 'image', 'file' ) );
+	}
+
 }
