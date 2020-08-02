@@ -148,8 +148,8 @@ class Field_Type_Checkbox_Acceptance extends \BP_XProfile_Field_Type {
 
 		$atts = array(
 			'type'  => 'checkbox',
-			'name'  => 'check_acc_' . bp_get_the_profile_field_input_name(),
-			'id'    => 'check_acc_' . bp_get_the_profile_field_input_name(),
+			'name'  => bp_get_the_profile_field_input_name(),
+			'id'    => bp_get_the_profile_field_input_name(),
 			'value' => 1,
 			'class' => 'bpxcftr-tos-checkbox',
 		);
@@ -163,8 +163,7 @@ class Field_Type_Checkbox_Acceptance extends \BP_XProfile_Field_Type {
 		$html .= wp_kses_post( self::get_content( $field ) );
 		echo apply_filters( 'bp_get_the_profile_field_checkbox_acceptance', $html, $args['type'], $this->field_obj->id, $checkbox_acceptance );
 		?>
-        <input type="hidden" name="<?php echo bp_get_the_profile_field_input_name(); ?>" id="<?php echo bp_get_the_profile_field_input_name(); ?>" class="bpxcftr-tos-checkbox-hidden" value="<?php echo esc_attr( $checkbox_acceptance ) ?>"/>
-		<?php
+    	<?php
 	}
 
 	/**

@@ -1,16 +1,5 @@
 (function ($) {
     'use strict';
-    // tos checkbox.
-    $(document).on('click', '.bpxcftr-tos-checkbox', function () {
-        var $this = $(this);
-        var $hidden_tos = $this.parents('.editfield').find('.bpxcftr-tos-checkbox-hidden');
-        if ($this.is(':checked')) {
-            $hidden_tos.val('1');
-        } else {
-            $hidden_tos.val('0');
-        }
-    });
-
     // colors
     if (!Modernizr.inputtypes.color) {
         // No html5 field colorpicker => Calling jscolor.
