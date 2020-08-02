@@ -181,4 +181,3 @@ function bp_xprofile_cftr() {
 }
 
 bp_xprofile_cftr();
-

@@ -12,10 +12,8 @@
 
 namespace BPXProfileCFTR\Handlers;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Manage and sync field data.
@@ -46,7 +44,7 @@ class From_To_Helper {
 	}
 
 	/**
-	 * detach the validation filter as it will remove our array keys.
+	 * Detach the validation filter as it will remove our array keys.
 	 *
 	 * @param int $field_id field id.
 	 * @param int $data_field_id data field id.
@@ -61,7 +59,7 @@ class From_To_Helper {
 
 		$field = new \BP_XProfile_Field( $field_id );
 
-		if ( 'fromto' != $field->type ) {
+		if ( 'fromto' !== $field->type ) {
 			return $field_id;
 		}
 

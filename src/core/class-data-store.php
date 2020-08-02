@@ -12,10 +12,8 @@
 
 namespace BPXProfileCFTR\Core;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Temporary, In memory data store.

@@ -12,12 +12,10 @@
 
 namespace BPXProfileCFTR\Handlers;
 
-// No direct access.
 use BPXProfileCFTR\Field_Types\Field_Type_Birthdate;
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Filters Label.

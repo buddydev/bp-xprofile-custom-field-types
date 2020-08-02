@@ -12,10 +12,8 @@
 
 namespace BPXProfileCFTR\Handlers;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Manage and sync field data.
@@ -41,7 +39,7 @@ class Field_Upload_Helper {
 	 *
 	 * @var string
 	 */
-	private $dir_base = "bpxcftr-profile-uploads";
+	private $dir_base = 'bpxcftr-profile-uploads';
 
 	/**
 	 * Setup the bootstrapper.
@@ -68,7 +66,7 @@ class Field_Upload_Helper {
 	 * @param int $user_id user id.
 	 */
 	public function on_user_data_delete( $user_id ) {
-		$this->delete_for_user( $user_id);
+		$this->delete_for_user( $user_id );
 	}
 
 	/**
@@ -91,13 +89,13 @@ class Field_Upload_Helper {
 		$field_id = $data->field_id;
 		$field    = new \BP_XProfile_Field( $field_id );
 
-		if ( ! in_array( $field->type, array( 'image', 'file' ) ) ) {
+		if ( ! in_array( $field->type, array( 'image', 'file' ), true ) ) {
 			return;
 		}
 
 		if ( ! empty( $_POST["field_{$field_id}_delete"] ) ) {
 			$this->delete_field( $field, $data );
-			$data->value = '';//empty.
+			$data->value = ''; // empty.
 		}
 
 		// file not selected?
@@ -134,6 +132,7 @@ class Field_Upload_Helper {
 		if ( defined( 'DOING_AJAX' ) ) {
 			return; // ;; no redirect.
 		}
+
 		bp_core_redirect( $url );
 	}
 
@@ -163,7 +162,7 @@ class Field_Upload_Helper {
 		}
 
 		$uploads = wp_upload_dir();
-		$path = path_join( $uploads['basedir'],  trim( $data->value, '/\\' ) );
+		$path    = path_join( $uploads['basedir'], trim( $data->value, '/\\' ) );
 
 		switch ( $field->type ) {
 
@@ -183,9 +182,9 @@ class Field_Upload_Helper {
 	 * @param \BP_XProfile_Field       $field field object.
 	 * @param \BP_XProfile_ProfileData $data data object.
 	 *
-	 * @return \WP_Error
+	 * @return string|\WP_Error
 	 */
-	private function handle_upload( $field, $data  ) {
+	private function handle_upload( $field, $data ) {
 
 		$user_id = $data->user_id;
 
@@ -213,8 +212,6 @@ class Field_Upload_Helper {
 		}
 
 		// if we are here, we may proceed to upload.
-
-
 		require_once( ABSPATH . '/wp-admin/includes/file.php' );
 
 		$this->user_id = $user_id;
@@ -234,7 +231,7 @@ class Field_Upload_Helper {
 
 		// if we are here, all is well.
 		// delete the previous file.
-		$this->delete_field($field, $data );
+		$this->delete_field( $field, $data );
 
 		// find the relative path?
 		$value = _wp_relative_upload_path( $uploaded_file['file'] );
@@ -262,7 +259,7 @@ class Field_Upload_Helper {
 		$upload_dir['subdir'] = $subdir;
 
 		// uploads/bpxcftr-profile-uploads/1/file
-		// uploads/bpxcftr-profile-uploads/1/image
+		// uploads/bpxcftr-profile-uploads/1/image.
 		return $upload_dir;
 	}
 
@@ -300,7 +297,6 @@ class Field_Upload_Helper {
 	private function get_file_field_ids() {
 		global $wpdb;
 		$bp = buddypress();
-		return $wpdb->get_col( $wpdb->prepare( "SELECT id FROM {$bp->profile->table_name_fields} WHERE field_type = %s Or field_type = %s", 'image', 'file' ) );
+		return $wpdb->get_col( $wpdb->prepare( "SELECT id FROM {$bp->profile->table_name_fields} WHERE field_type = %s OR field_type = %s", 'image', 'file' ) );
 	}
-
 }

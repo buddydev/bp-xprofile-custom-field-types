@@ -12,10 +12,8 @@
 use BPXProfileCFTR\Contracts\Field_Type_Multi_Valued;
 use BPXProfileCFTR\Contracts\Field_Type_Selectable;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Get a mapping of field type to their implementation class.
@@ -24,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function bpxcftr_get_field_types() {
 	$fields = array(
-		// I haven't changed the field type name to make it drop in replacement for BuddyPress Xprofile Custom Fields Type plugin.
+		// I haven't changed the field type name to make it drop-in replacement for BuddyPress Xprofile Custom Fields Type plugin.
 		'birthdate'                    => 'BPXProfileCFTR\Field_Types\Field_Type_Birthdate',
 		'email'                        => 'BPXProfileCFTR\Field_Types\Field_Type_Email',
 		'web'                          => 'BPXProfileCFTR\Field_Types\Field_Type_Web',
@@ -42,8 +40,7 @@ function bpxcftr_get_field_types() {
 		'slider'                       => 'BPXProfileCFTR\Field_Types\Field_Type_Slider',
 		'fromto'                       => 'BPXProfileCFTR\Field_Types\Field_Type_From_To',
 		'oembed'                       => 'BPXProfileCFTR\Field_Types\Field_Type_Oembed',
-		'token'                       => 'BPXProfileCFTR\Field_Types\Field_Type_Token',
-		// end of the BuddyPress Xprofile Custom Fields Type plugin's field type.
+		'token'                        => 'BPXProfileCFTR\Field_Types\Field_Type_Token',
 
 	);
 
@@ -137,11 +134,9 @@ function bpxcftr_is_selectable_field( $field ) {
  * @return bool
  */
 function bpxcftr_is_multi_valued_field( $field ) {
-	$selectable_types = apply_filters( 'bpxcftr_multi_valued_types', array(
-		'multiselectbox',
-	));
+	$selectable_types = apply_filters( 'bpxcftr_multi_valued_types', array( 'multiselectbox' ) );
 
-	return in_array( $field->type, $selectable_types ) || $field->type_obj instanceof Field_Type_Multi_Valued ;
+	return in_array( $field->type, $selectable_types, true ) || $field->type_obj instanceof Field_Type_Multi_Valued;
 }
 
 /**

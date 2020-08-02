@@ -14,10 +14,9 @@ namespace BPXProfileCFTR\Handlers;
 
 use BPXProfileCFTR\Field_Types\Field_Type_Multi_Select_Taxonomy;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Field settings helper.
  */
@@ -36,23 +35,35 @@ class Taxonomy_Terms_Creator {
 	 */
 	private function setup() {
 		// Pre validate multiselect custom taxonomy.
-		add_filter( 'bp_xprofile_set_field_data_pre_validate', array(
-			$this,
-			'sanitize'
-		), 10, 3 );
+		add_filter(
+			'bp_xprofile_set_field_data_pre_validate',
+			array( $this, 'sanitize' ),
+			10,
+			3
+		);
 	}
 
+	/**
+	 * Sanitize Value.
+	 *
+	 * @param mixed                   $value value.
+	 * @param \BP_XProfile_Field      $field field object.
+	 * @param \BP_XProfile_Field_Type $field_type_obj field type object.
+	 *
+	 * @return array|string
+	 */
 	public function sanitize( $value, $field, $field_type_obj ) {
 		// store Field's reference to allow us fetch it when validating.
 		bpxcftr_set_current_field( $field );
 
-		if ( $field->type !== 'multiselect_custom_taxonomy' ) {
+		if ( 'multiselect_custom_taxonomy' !== $field->type ) {
 			return $value;
 		}
+
 		$allow_new_tags    = Field_Type_Multi_Select_Taxonomy::allow_new_terms( $field->id );
 		$taxonomy_selected = Field_Type_Multi_Select_Taxonomy::get_selected_taxonomy( $field->id );
 
-		if ( empty( $taxonomy_selected )|| empty( $value ) ) {
+		if ( empty( $taxonomy_selected ) || empty( $value ) ) {
 			return '';
 		}
 
@@ -72,7 +83,6 @@ class Taxonomy_Terms_Creator {
 				if ( ! is_wp_error( $res ) && is_array( $res ) ) {
 					$sanitized[] = "{$res['term_id']}";
 				}
-
 			} else {
 				$sanitized[] = $tag;
 			}

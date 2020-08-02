@@ -1,6 +1,6 @@
 <?php
 /**
- * Multi Vlaued Field Type
+ * Multi Valued Field Type
  *
  * @package    BuddyPress Xprofile Custom Field Types
  * @subpackage Bootstrap

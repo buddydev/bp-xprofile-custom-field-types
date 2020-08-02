@@ -12,12 +12,11 @@
 
 namespace BPXProfileCFTR\Handlers;
 
-// No direct access.
 use BPXProfileCFTR\Field_Types\Field_Type_Birthdate;
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
+
 
 /**
  * Signup data validator.
@@ -47,7 +46,7 @@ class Signup_Validator {
 			return;
 		}
 
-		$profile_field_ids = isset( $_POST['signup_profile_field_ids'] ) ? explode( ',', $_POST['signup_profile_field_ids'] ) : array();
+		$profile_field_ids = isset( $_POST['signup_profile_field_ids'] ) ? explode( ',', wp_unslash( $_POST['signup_profile_field_ids'] ) ) : array();
 
 		foreach ( $profile_field_ids as $field_id ) {
 			$this->validate_field( $field_id );
@@ -95,6 +94,7 @@ class Signup_Validator {
 			case 'birthdate':
 				$this->validate_birthdate( $field );
 				break;
+
 			case 'token':
 				$this->validate_token( $field, isset( $_POST[ 'field_' . $field_id ] ) ? trim( $_POST[ 'field_' . $field_id ] ) : '' );
 				break;
@@ -154,13 +154,12 @@ class Signup_Validator {
 			return;
 		}
 
-		$year  = $_POST[ 'field_' . $field_id . '_year' ];
-		$month = $_POST[ 'field_' . $field_id . '_month' ];
-		$day   = $_POST[ 'field_' . $field_id . '_day' ];
+		$year  = wp_unslash( $_POST[ 'field_' . $field_id . '_year' ] );
+		$month = wp_unslash( $_POST[ 'field_' . $field_id . '_month' ] );
+		$day   = wp_unslash( $_POST[ 'field_' . $field_id . '_day' ] );
 
 		if ( ! is_numeric( $year ) || empty( $month ) || ! is_numeric( $day ) ) {
 			$bp->signup->errors[ 'field_' . $field_id ] = sprintf( __( 'Invalid date.', 'bp-xprofile-custom-field-types' ) );
-
 			return;
 		}
 
