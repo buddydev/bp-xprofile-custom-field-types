@@ -1,6 +1,6 @@
 <?php
 /**
- * Date Picker Field.
+ * Date Picker Field
  *
  * @package    BuddyPress Xprofile Custom Field Types
  * @subpackage Field_Types
@@ -10,27 +10,31 @@
 
 namespace BPXProfileCFTR\Field_Types;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
+/**
+ * Date picker class.
+ */
 class Field_Type_Datepicker extends \BP_XProfile_Field_Type {
 
-    public function __construct() {
+	/**
+	 * Constructor.
+	 */
+	public function __construct() {
 
-	    parent::__construct();
+		parent::__construct();
 
-	    $this->name     = _x( 'Datepicker (HTML5 field)', 'xprofile field type', 'bp-xprofile-custom-field-types' );
-	    $this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-field-types' );
+		$this->name     = _x( 'Datepicker (HTML5 field)', 'xprofile field type', 'bp-xprofile-custom-field-types' );
+		$this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-field-types' );
 
 		$this->set_format( '/^\d{4}-\d{1,2}-\d{1,2}$/', 'replace' );  // "Y-m-d 00:00:00"
 		do_action( 'bp_xprofile_field_type_datepicker', $this );
 	}
 
 	/**
-     * Output html for the Profile->Edit and Register screen.
-     *
+	 * Output html for the Profile->Edit and Register screen.
+	 *
 	 * @param array $raw_properties array of attributes.
 	 */
 	public function edit_field_html( array $raw_properties = array() ) {
@@ -39,19 +43,21 @@ class Field_Type_Datepicker extends \BP_XProfile_Field_Type {
 			unset( $raw_properties['user_id'] );
 		}
 
-		$html = $this->get_edit_field_html_elements( array_merge(
-			array(
-				'type'  => 'date',
-				'value' => bp_get_the_profile_field_edit_value(),
-			),
-			$raw_properties
-		) );
+		$html = $this->get_edit_field_html_elements(
+			array_merge(
+				array(
+					'type'  => 'date',
+					'value' => bp_get_the_profile_field_edit_value(),
+				),
+				$raw_properties
+			)
+		);
 		?>
 
-        <legend id="<?php bp_the_profile_field_input_name(); ?>-1">
+		<legend id="<?php bp_the_profile_field_input_name(); ?>-1">
 			<?php bp_the_profile_field_name(); ?>
 			<?php bp_the_profile_field_required_label(); ?>
-        </legend>
+		</legend>
 
 		<?php
 		// Errors.
@@ -67,12 +73,19 @@ class Field_Type_Datepicker extends \BP_XProfile_Field_Type {
 		<?php
 	}
 
+	/**
+	 * Admin field list html.
+	 *
+	 * @param array $raw_properties properties.
+	 */
 	public function admin_field_html( array $raw_properties = array() ) {
 
-	    $html = $this->get_edit_field_html_elements( array_merge(
-			array( 'type' => 'date' ),
-			$raw_properties
-		) );
+		$html = $this->get_edit_field_html_elements(
+			array_merge(
+				array( 'type' => 'date' ),
+				$raw_properties
+			)
+		);
 		?>
 
         <input <?php echo $html; ?> />
@@ -80,11 +93,11 @@ class Field_Type_Datepicker extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-     * Output html for showing options on Add New Field/Edit Field screen.
-     *
+	 * Output html for showing options on Add New Field/Edit Field screen.
+	 *
 	 * @param \BP_XProfile_Field $current_field The current profile field on the add/edit screen.
-	 * @param string            $control_type  Optional. HTML input type used to render the current
-	 *                          field's child options.
+	 * @param string             $control_type  Optional. HTML input type used to render the current
+	 *                              field's child options.
 	 */
 	public function admin_new_field_html( \BP_XProfile_Field $current_field, $control_type = '' ) {
 	}

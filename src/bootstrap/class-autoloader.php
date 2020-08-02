@@ -12,10 +12,8 @@
 
 namespace BPXProfileCFTR\Bootstrap;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Auto Loader for ReportAbuse.

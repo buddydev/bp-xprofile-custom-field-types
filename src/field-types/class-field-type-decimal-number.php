@@ -1,6 +1,6 @@
 <?php
 /**
- * Date Picker Field.
+ * Number Field
  *
  * @package    BuddyPress Xprofile Custom Field Types
  * @subpackage Field_Types
@@ -11,22 +11,23 @@
 
 namespace BPXProfileCFTR\Field_Types;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Decimal number.
  */
 class Field_Type_Decimal_Number extends \BP_XProfile_Field_Type {
 
-    public function __construct() {
+	/**
+	 * Constructor.
+	 */
+	public function __construct() {
 
 		parent::__construct();
 
-	    $this->name     = __( 'Decimal number (HTML5 field)', 'bp-xprofile-custom-field-types' );
-	    $this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-field-types' );
+		$this->name     = __( 'Decimal number (HTML5 field)', 'bp-xprofile-custom-field-types' );
+		$this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-field-types' );
 
 		$this->accepts_null_value = true;
 		$this->supports_options   = false;
@@ -36,7 +37,11 @@ class Field_Type_Decimal_Number extends \BP_XProfile_Field_Type {
 		do_action( 'bp_xprofile_field_type_decimal_number', $this );
 	}
 
-
+	/**
+	 * Edit field html.
+	 *
+	 * @param array $raw_properties properties.
+	 */
 	public function edit_field_html( array $raw_properties = array() ) {
         global $field;
 
@@ -44,20 +49,22 @@ class Field_Type_Decimal_Number extends \BP_XProfile_Field_Type {
 			unset( $raw_properties['user_id'] );
 		}
 
-		$html = $this->get_edit_field_html_elements( array_merge(
-			array(
-				'type'  => 'number',
-				'step'  => floatval( self::get_step( $field->id) ),
-				'value' => bp_get_the_profile_field_edit_value(),
-			),
-			$raw_properties
-		) );
+		$html = $this->get_edit_field_html_elements(
+			array_merge(
+				array(
+					'type'  => 'number',
+					'step'  => floatval( self::get_step( $field->id ) ),
+					'value' => bp_get_the_profile_field_edit_value(),
+				),
+				$raw_properties
+			)
+		);
 		?>
 
-        <legend id="<?php bp_the_profile_field_input_name(); ?>-1">
+		<legend id="<?php bp_the_profile_field_input_name(); ?>-1">
 			<?php bp_the_profile_field_name(); ?>
 			<?php bp_the_profile_field_required_label(); ?>
-        </legend>
+		</legend>
 
 		<?php
 
@@ -74,22 +81,34 @@ class Field_Type_Decimal_Number extends \BP_XProfile_Field_Type {
 		<?php
 	}
 
-
+	/**
+	 * Admin field list html.
+	 *
+	 * @param array $raw_properties properties.
+	 */
 	public function admin_field_html( array $raw_properties = array() ) {
 		global $field;
 
-		$html = $this->get_edit_field_html_elements( array_merge(
-			array(
-				'type' => 'number',
-				'step' => self::get_step( $field->id ),
-			),
-			$raw_properties
-		) );
+		$html = $this->get_edit_field_html_elements(
+			array_merge(
+				array(
+					'type' => 'number',
+					'step' => self::get_step( $field->id ),
+				),
+				$raw_properties
+			)
+		);
 		?>
         <input <?php echo $html; ?> />
 		<?php
 	}
 
+	/**
+	 * Dashboard->Users->Profile Fields->New|Edit entry.
+	 *
+	 * @param \BP_XProfile_Field $current_field object.
+	 * @param string             $control_type type.
+	 */
 	public function admin_new_field_html( \BP_XProfile_Field $current_field, $control_type = '' ) {
 
         $type = array_search( get_class( $this ), bp_xprofile_get_field_types() );
@@ -128,15 +147,15 @@ class Field_Type_Decimal_Number extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-     * It is a valid value?
-     *
+	 * It is a valid value?
+	 *
 	 * @param string $values value to be checked.
 	 *
 	 * @return bool
 	 */
 	public function is_valid( $values ) {
 
-	    if ( empty( $values ) ) {
+		if ( empty( $values ) ) {
 			return true;
 		}
 
@@ -161,24 +180,24 @@ class Field_Type_Decimal_Number extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-     * Get the step size.
-     *
+	 * Get the step size.
+	 *
 	 * @param int $field_id field id.
 	 *
 	 * @return float|int
 	 */
 	private static function get_step( $field_id ) {
-		return bp_xprofile_get_meta( $field_id, 'field', 'step_size',  true );
+		return bp_xprofile_get_meta( $field_id, 'field', 'step_size', true );
 	}
 
 	/**
-     * Get the step size.
-     *
+	 * Get the step size.
+	 *
 	 * @param int $field_id field id.
 	 *
 	 * @return int
 	 */
 	private static function get_precision( $field_id ) {
-		return bp_xprofile_get_meta( $field_id, 'field', 'precision',  true );
+		return bp_xprofile_get_meta( $field_id, 'field', 'precision', true );
 	}
 }

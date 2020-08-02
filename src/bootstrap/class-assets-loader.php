@@ -12,10 +12,8 @@
 
 namespace BPXProfileCFTR\Bootstrap;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Assets Loader.
@@ -47,7 +45,6 @@ class Assets_Loader {
 		add_action( 'bp_enqueue_scripts', array( $this, 'load_assets' ) );
 		add_action( 'bp_admin_enqueue_scripts', array( $this, 'load_admin_assets' ) );
 		add_action( 'bp_admin_enqueue_scripts', array( $this, 'load_user_admin_assets' ) );
-
 	}
 
 	/**

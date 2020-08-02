@@ -12,16 +12,17 @@
 
 namespace BPXProfileCFTR\Field_Types;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Tos field.
  */
 class Field_Type_Checkbox_Acceptance extends \BP_XProfile_Field_Type {
 
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 
 		parent::__construct();
@@ -59,10 +60,10 @@ class Field_Type_Checkbox_Acceptance extends \BP_XProfile_Field_Type {
 			$required = false;
 		}
 		?>
-        <legend id="<?php bp_the_profile_field_input_name(); ?>-1">
+		<legend id="<?php bp_the_profile_field_input_name(); ?>-1">
 			<?php bp_the_profile_field_name(); ?>
 			<?php bp_the_profile_field_required_label(); ?>
-        </legend>
+		</legend>
 
 		<?php do_action( bp_get_the_profile_field_errors_action() ); ?>
 
@@ -102,8 +103,7 @@ class Field_Type_Checkbox_Acceptance extends \BP_XProfile_Field_Type {
 	 * Admin new field screen.
 	 *
 	 * @param \BP_XProfile_Field $current_field profile field object.
-	 *
-	 * @param string $control_type type.
+	 * @param string             $control_type type.
 	 */
 	public function admin_new_field_html( \BP_XProfile_Field $current_field, $control_type = '' ) {
 
@@ -167,8 +167,8 @@ class Field_Type_Checkbox_Acceptance extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-     * Check if field is valid?
-     *
+	 * Check if field is valid?
+	 *
 	 * @param string|int $values value.
 	 *
 	 * @return bool
@@ -185,8 +185,8 @@ class Field_Type_Checkbox_Acceptance extends \BP_XProfile_Field_Type {
 	/**
 	 * Modify the appearance of value.
 	 *
-	 * @param  string $field_value Original value of field
-	 * @param  int $field_id Id of field.
+	 * @param string $field_value Original value of field.
+	 * @param int    $field_id field id.
 	 *
 	 * @return string   Value formatted
 	 */
@@ -216,4 +216,3 @@ class Field_Type_Checkbox_Acceptance extends \BP_XProfile_Field_Type {
 		return bp_xprofile_get_meta( $field_id, 'field', 'tos_content', true );
 	}
 }
-

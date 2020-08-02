@@ -1,6 +1,6 @@
 <?php
 /**
- * Post Type Field.
+ * Slider Type Field
  *
  * @package    BuddyPress Xprofile Custom Field Types
  * @subpackage Field_Types
@@ -10,15 +10,17 @@
 
 namespace BPXProfileCFTR\Field_Types;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Slider Type
  */
 class Field_Type_Slider extends \BP_XProfile_Field_Type {
+
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 		parent::__construct();
 
@@ -37,7 +39,7 @@ class Field_Type_Slider extends \BP_XProfile_Field_Type {
 	 * @param array $raw_properties properties.
 	 */
 	public function edit_field_html( array $raw_properties = array() ) {
-        global $field;
+		global $field;
 
 		if ( isset( $raw_properties['user_id'] ) ) {
 			unset( $raw_properties['user_id'] );
@@ -52,26 +54,31 @@ class Field_Type_Slider extends \BP_XProfile_Field_Type {
 		);
 		?>
 
-        <legend id="<?php bp_the_profile_field_input_name(); ?>-1">
+		<legend id="<?php bp_the_profile_field_input_name(); ?>-1">
 			<?php bp_the_profile_field_name(); ?>
 			<?php bp_the_profile_field_required_label(); ?>
-        </legend>
+		</legend>
 
-        <?php
+		<?php
 		// Errors.
 		do_action( bp_get_the_profile_field_errors_action() );
 		// Input.
 		?>
-        <input <?php echo $this->get_edit_field_html_elements( array_merge( $args, $raw_properties ) ); ?> />
-        <span id="output-field_<?php echo $field->id; ?>"></span>
+		<input <?php echo $this->get_edit_field_html_elements( array_merge( $args, $raw_properties ) ); ?> />
+		<span id="output-field_<?php echo $field->id; ?>"></span>
 
-        <?php  if ( bp_get_the_profile_field_description() ) : ?>
-            <p class="description" id="<?php bp_the_profile_field_input_name(); ?>-3"><?php bp_the_profile_field_description(); ?></p>
-		<?php endif;?>
+		<?php if ( bp_get_the_profile_field_description() ) : ?>
+			<p class="description" id="<?php bp_the_profile_field_input_name(); ?>-3"><?php bp_the_profile_field_description(); ?></p>
+		<?php endif; ?>
 
 		<?php
 	}
 
+	/**
+	 * Dashboard->User->Profile Fields screen.
+	 *
+	 * @param array $raw_properties properties.
+	 */
 	public function admin_field_html( array $raw_properties = array() ) {
 		global $field;
 
@@ -89,6 +96,12 @@ class Field_Type_Slider extends \BP_XProfile_Field_Type {
 	}
 
 
+	/**
+	 * Admin->User->Profile Fields->New|Edit screen.
+	 *
+	 * @param \BP_XProfile_Field $current_field field.
+	 * @param string             $control_type type.
+	 */
 	public function admin_new_field_html( \BP_XProfile_Field $current_field, $control_type = '' ) {
 
 	    $type = array_search( get_class( $this ), bp_xprofile_get_field_types() );
@@ -97,10 +110,10 @@ class Field_Type_Slider extends \BP_XProfile_Field_Type {
 			return;
 		}
 
-		$class            = $current_field->type != $type ? 'display: none;' : '';
+		$class = $current_field->type != $type ? 'display: none;' : '';
 
-		$min     = self::get_min_val( $current_field->id );
-		$max     = self::get_max_val( $current_field->id );
+		$min = self::get_min_val( $current_field->id );
+		$max = self::get_max_val( $current_field->id );
 
 		?>
         <div id="<?php echo esc_attr( $type ); ?>" class="postbox bp-options-box" style="<?php echo esc_attr( $class ); ?> margin-top: 15px;">
@@ -146,7 +159,7 @@ class Field_Type_Slider extends \BP_XProfile_Field_Type {
 		$max = self::get_max_val( $field->id );
 
 		// unset the current field from our saved field id.
-		bpxcftr_set_current_field(null );
+		bpxcftr_set_current_field( null );
 
 		return ( $values >= $min ) && ( $values <= $max );
 	}
@@ -156,14 +169,12 @@ class Field_Type_Slider extends \BP_XProfile_Field_Type {
 	 * Modify the appearance of value. Apply autolink if enabled.
 	 *
 	 * @param  string $field_value Original value of field.
-	 * @param  int $field_id Id of field.
+	 * @param  int    $field_id Id of field.
 	 *
 	 * @return string   Value formatted
 	 */
 	public static function display_filter( $field_value, $field_id = 0 ) {
-
 		return $field_value;
-
 	}
 
 	/**

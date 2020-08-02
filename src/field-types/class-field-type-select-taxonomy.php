@@ -1,6 +1,6 @@
 <?php
 /**
- * Select Taxonomy.
+ * Select Taxonomy
  *
  * @package    BuddyPress Xprofile Custom Field Types
  * @subpackage Field_Types
@@ -10,34 +10,39 @@
 
 namespace BPXProfileCFTR\Field_Types;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
-
 use BPXProfileCFTR\Contracts\Field_Type_Selectable;
+
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Select Custom Taxonomy Type
  */
-
 class Field_Type_Select_Taxonomy extends \BP_XProfile_Field_Type implements Field_Type_Selectable {
 
-    public function __construct() {
+	/**
+	 * Constructor.
+	 */
+	public function __construct() {
 
-	    parent::__construct();
+		parent::__construct();
 
-	    $this->name     = _x( 'Custom Taxonomy Selector', 'xprofile field type', 'bp-xprofile-custom-field-types' );
-	    $this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-field-types' );
+		$this->name     = _x( 'Custom Taxonomy Selector', 'xprofile field type', 'bp-xprofile-custom-field-types' );
+		$this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-field-types' );
 
 		$this->supports_options = false;
 
 		do_action( 'bp_xprofile_field_type_select_custom_taxonomy', $this );
 	}
 
+	/**
+	 * Field edit screen.
+	 *
+	 * @param array $raw_properties properties.
+	 */
 	public function edit_field_html( array $raw_properties = array() ) {
 
-	    $user_id = bp_displayed_user_id();
+		$user_id = bp_displayed_user_id();
 
 		if ( isset( $raw_properties['user_id'] ) ) {
 			$user_id = (int) $raw_properties['user_id'];
@@ -47,24 +52,29 @@ class Field_Type_Select_Taxonomy extends \BP_XProfile_Field_Type implements Fiel
 		$html = $this->get_edit_field_html_elements( $raw_properties );
 		?>
 
-        <legend id="<?php bp_the_profile_field_input_name(); ?>-1">
+		<legend id="<?php bp_the_profile_field_input_name(); ?>-1">
 			<?php bp_the_profile_field_name(); ?>
 			<?php bp_the_profile_field_required_label(); ?>
-        </legend>
+		</legend>
 
 		<?php do_action( bp_get_the_profile_field_errors_action() ); ?>
-        <select <?php echo $html; ?>>
-            <option value=""><?php _e( 'Select...', 'bp-xprofile-custom-field-types' ); ?></option>
+		<select <?php echo $html; ?>>
+			<option value=""><?php _e( 'Select...', 'bp-xprofile-custom-field-types' ); ?></option>
 			<?php bp_the_profile_field_options( "user_id={$user_id}" ); ?>
-        </select>
+		</select>
 
-		<?php  if ( bp_get_the_profile_field_description() ) : ?>
+		<?php if ( bp_get_the_profile_field_description() ) : ?>
             <p class="description" id="<?php bp_the_profile_field_input_name(); ?>-3"><?php bp_the_profile_field_description(); ?></p>
-		<?php endif;?>
+		<?php endif; ?>
 
 		<?php
 	}
 
+	/**
+	 * Field Options(dropdown).
+	 *
+	 * @param array $args args.
+	 */
 	public function edit_field_options_html( array $args = array() ) {
 		global $field;
 
@@ -80,24 +90,28 @@ class Field_Type_Select_Taxonomy extends \BP_XProfile_Field_Type implements Fiel
 		}
 
 		// Get terms of custom taxonomy selected.
-		$terms = get_terms( $taxonomy_selected, array(
-			'hide_empty' => false
-		) );
+		$terms = get_terms( $taxonomy_selected, array( 'hide_empty' => false ) );
 
-		if ( $terms && ! is_wp_error( $terms )) {
+		if ( $terms && ! is_wp_error( $terms ) ) {
 
 			foreach ( $terms as $term ) {
-				$html .= sprintf( '<option value="%s"%s>%s</option>',
+				$html .= sprintf(
+					'<option value="%s"%s>%s</option>',
 					$term->term_id,
 					( $term_selected == $term->term_id ) ? ' selected="selected"' : '',
-					$term->name );
+					$term->name
+				);
 			}
 		}
 
 		echo apply_filters( 'bp_get_the_profile_field_select_custom_taxonomy', $html, $args['type'], $term_selected, $this->field_obj->id );
 	}
 
-
+	/**
+	 * Dashboard->Users->Profile Fields entry.
+	 *
+	 * @param array $raw_properties properties.
+	 */
 	public function admin_field_html( array $raw_properties = array() ) {
 		$html = $this->get_edit_field_html_elements( $raw_properties );
 		?>
@@ -109,6 +123,12 @@ class Field_Type_Select_Taxonomy extends \BP_XProfile_Field_Type implements Fiel
 		<?php
 	}
 
+	/**
+     * Dashboard->Users->Profile Fields->New|Edit entry.
+	 *
+     * @param \BP_XProfile_Field $current_field object.
+	 * @param string             $control_type type.
+	 */
 	public function admin_new_field_html( \BP_XProfile_Field $current_field, $control_type = '' ) {
 
         $type = array_search( get_class( $this ), bp_xprofile_get_field_types() );
@@ -119,16 +139,13 @@ class Field_Type_Select_Taxonomy extends \BP_XProfile_Field_Type implements Fiel
 
 		$class = $current_field->type != $type ? 'display: none;' : '';
 
-		$taxonomies = get_taxonomies( array(
-			'public'   => true,
-		) );
+		$taxonomies = get_taxonomies( array( 'public' => true ) );
 
 		$selected_tax = self::get_selected_taxonomy( $current_field->id );
 		?>
-        <div id="<?php echo esc_attr( $type ); ?>" class="postbox bp-options-box"
-             style="<?php echo esc_attr( $class ); ?> margin-top: 15px;">
+        <div id="<?php echo esc_attr( $type ); ?>" class="postbox bp-options-box" style="<?php echo esc_attr( $class ); ?> margin-top: 15px;">
 			<?php
-			if ( ! $taxonomies ):
+			if ( ! $taxonomies ) :
 				?>
                 <h3><?php _e( 'There is no custom taxonomy. You need to create at least one to use this field.', 'bp-xprofile-custom-field-types' ); ?></h3>
 			<?php else : ?>
@@ -149,6 +166,13 @@ class Field_Type_Select_Taxonomy extends \BP_XProfile_Field_Type implements Fiel
 		<?php
 	}
 
+	/**
+	 * Check if value is valid.
+	 *
+	 * @param array|string $values values.
+	 *
+	 * @return bool
+	 */
 	public function is_valid( $values ) {
 
         if ( empty( $values ) ) {
@@ -179,15 +203,14 @@ class Field_Type_Select_Taxonomy extends \BP_XProfile_Field_Type implements Fiel
 		}
 
 		$term_id = absint( $field_value );
-		$tax = self::get_selected_taxonomy( $field_id );
+		$tax     = self::get_selected_taxonomy( $field_id );
 
 		$term = get_term( $term_id, $tax );
 		if ( ! $term || is_wp_error( $term ) ) {
 			return '';
 		}
 
-		return  sprintf( '<a href="%1$s">%2$s</a>', esc_url( get_term_link( $term, $tax ) ), esc_html( $term->name ) );
-
+		return sprintf( '<a href="%1$s">%2$s</a>', esc_url( get_term_link( $term, $tax ) ), esc_html( $term->name ) );
 	}
 
 	/**
@@ -203,6 +226,6 @@ class Field_Type_Select_Taxonomy extends \BP_XProfile_Field_Type implements Fiel
 			return '';
 		}
 
-		return bp_xprofile_get_meta( $field_id, 'field', 'selected_taxonomy',  true );
+		return bp_xprofile_get_meta( $field_id, 'field', 'selected_taxonomy', true );
 	}
 }

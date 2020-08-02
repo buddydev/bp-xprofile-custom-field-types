@@ -12,11 +12,8 @@
 
 namespace BPXProfileCFTR\Filters;
 
-
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Compatibility helper for BP Profile Search.
@@ -31,6 +28,9 @@ class BP_Profile_Search_Helper {
 		$self->setup();
 	}
 
+	/**
+	 * Setup hooks.
+	 */
 	public function setup() {
 		add_action( 'bps_custom_field', array( $this, 'register_field_types' ) );
 	}

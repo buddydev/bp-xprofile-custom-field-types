@@ -27,10 +27,8 @@ use BPXProfileCFTR\Bootstrap\Autoloader;
 use BPXProfileCFTR\Bootstrap\Bootstrapper;
 use BPXProfileCFTR\Core\Data_Store;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Class BP_Xprofile_CFTR

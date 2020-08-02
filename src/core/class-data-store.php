@@ -19,6 +19,7 @@ defined( 'ABSPATH' ) || exit;
  * Temporary, In memory data store.
  */
 class Data_Store {
+
 	/**
 	 * Private data store.
 	 *

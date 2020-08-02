@@ -12,10 +12,9 @@
 
 namespace BPXProfileCFTR\Admin;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Note:- To be fully backward compatible with BuddyPress Xprofile Custom Fields Type plugin,
  * we are using the same settings name.
@@ -190,6 +189,11 @@ class Field_Settings_Helper {
 
 	}
 
+	/**
+	 * Prints select2 setting.
+	 *
+	 * @param \BP_XProfile_Field $field field object.
+	 */
 	public function show_select2_box_settings( $field ) {
 
 		$do_select2 = bp_xprofile_get_meta( $field->id, 'field', 'do_select2' );

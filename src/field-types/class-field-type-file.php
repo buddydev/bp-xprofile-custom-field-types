@@ -12,16 +12,17 @@
 
 namespace BPXProfileCFTR\Field_Types;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * File Type
  */
 class Field_Type_File extends \BP_XProfile_Field_Type {
 
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 		parent::__construct();
 
@@ -32,6 +33,11 @@ class Field_Type_File extends \BP_XProfile_Field_Type {
 		do_action( 'bp_xprofile_field_type_file', $this );
 	}
 
+	/**
+	 * Edit field html.
+	 *
+	 * @param array $raw_properties properties.
+	 */
 	public function edit_field_html( array $raw_properties = array() ) {
 		global $field;
 
@@ -39,32 +45,33 @@ class Field_Type_File extends \BP_XProfile_Field_Type {
 			unset( $raw_properties['user_id'] );
 		}
 
-
 		$value = is_user_logged_in() ? bp_get_the_profile_field_value() : '';
 		$name  = bp_get_the_profile_field_input_name();
 
 		$has_file = false;
 		// for backward compatibility, check against '-'.
-		if ( $value && $value != '-' ) {
+		if ( $value && '-' !== $value ) {
 			$has_file = true;
 		}
 
 		$edit_value = isset( $field->data ) && ! empty( $field->data->value ) ? $field->data->value : '-';
 
-		if ( ( empty( $value ) || '-' == $value ) && xprofile_check_is_required_field( $field->id ) ) {
+		if ( ( empty( $value ) || '-' === $value ) && xprofile_check_is_required_field( $field->id ) ) {
 			$raw_properties['required'] = true;
 		}
 
-		$html = $this->get_edit_field_html_elements( array_merge(
-			array( 'type' => 'file' ),
-			$raw_properties
-		) );
+		$html = $this->get_edit_field_html_elements(
+			array_merge(
+				array( 'type' => 'file' ),
+				$raw_properties
+			)
+		);
 		?>
 
-        <legend id="<?php bp_the_profile_field_input_name(); ?>-1">
+		<legend id="<?php bp_the_profile_field_input_name(); ?>-1">
 			<?php bp_the_profile_field_name(); ?>
 			<?php bp_the_profile_field_required_label(); ?>
-        </legend>
+		</legend>
 
 		<?php
 		do_action( bp_get_the_profile_field_errors_action() );
@@ -98,10 +105,12 @@ class Field_Type_File extends \BP_XProfile_Field_Type {
 	 */
 	public function admin_field_html( array $raw_properties = array() ) {
 
-	    $html = $this->get_edit_field_html_elements( array_merge(
-			array( 'type' => 'file' ),
-			$raw_properties
-		) );
+		$html = $this->get_edit_field_html_elements(
+			array_merge(
+				array( 'type' => 'file' ),
+				$raw_properties
+			)
+		);
 		?>
 
         <input <?php echo $html; ?> />
@@ -109,6 +118,12 @@ class Field_Type_File extends \BP_XProfile_Field_Type {
 		<?php
 	}
 
+	/**
+	 * Dashboard->Users->Profile Fields->New|Edit entry.
+	 *
+	 * @param \BP_XProfile_Field $current_field object.
+	 * @param string             $control_type type.
+	 */
 	public function admin_new_field_html( \BP_XProfile_Field $current_field, $control_type = '' ) {
 	}
 
@@ -116,20 +131,19 @@ class Field_Type_File extends \BP_XProfile_Field_Type {
 	 * Modify the appearance of value.
 	 *
 	 * @param  string $field_value Original value of field.
-	 * @param  int $field_id Id of field.
+	 * @param  int    $field_id  field id.
 	 *
 	 * @return string   Value formatted
 	 */
 	public static function display_filter( $field_value, $field_id = 0 ) {
 
-	    if ( empty( $field_value ) ) {
+		if ( empty( $field_value ) ) {
 			return '';
 		}
 
 		$field_value = trim( $field_value, '/\\' );// no absolute path or dir please.
 		// the BP Xprofile Custom Fields type stored '/path' which was a bad decision
 		// we are using the above line for back compatibility with them.
-
 		$uploads = wp_upload_dir();
 
 		$new_field_value = trailingslashit( $uploads['baseurl'] ) . $field_value;

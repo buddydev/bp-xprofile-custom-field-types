@@ -23,10 +23,8 @@ use BPXProfileCFTR\Handlers\Field_Settings_Handler;
 use BPXProfileCFTR\Admin\Field_Settings_Helper as Admin_Field_Settings_Helper;
 use BPXProfileCFTR\Handlers\Signup_Validator;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Bootstrapper.

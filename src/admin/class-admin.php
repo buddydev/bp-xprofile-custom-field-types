@@ -12,11 +12,12 @@
 
 namespace BPXProfileCFTR\Admin;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
+/**
+ * Class Admin.
+ */
 class Admin {
 
 	/**
@@ -65,5 +66,4 @@ class Admin {
 			delete_option( 'bpxcftr_notices' );
 		}
 	}
-
 }

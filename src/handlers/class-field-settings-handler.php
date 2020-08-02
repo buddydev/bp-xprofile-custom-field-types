@@ -11,13 +11,10 @@
 
 namespace BPXProfileCFTR\Handlers;
 
-// No direct access.
-
 use BPXProfileCFTR\Field_Types\Field_Type_Multi_Select_Taxonomy;
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Field settings helper.
@@ -40,7 +37,7 @@ class Field_Settings_Handler {
 	}
 
 	/**
-	 * enable_select2.
+	 * Enable_select2.
 	 */
 	public function enable_select2() {
 		global $field;

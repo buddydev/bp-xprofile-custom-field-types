@@ -1,6 +1,6 @@
 <?php
 /**
- * Field type to manage a list of predefined tokens.
+ * Field type to manage a list of predefined tokens
  *
  * @package    BuddyPress Xprofile Custom Field Types
  * @subpackage Field_Types
@@ -12,10 +12,8 @@
 
 namespace BPXProfileCFTR\Field_Types;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Token field.
@@ -44,12 +42,11 @@ class Field_Type_Token extends \BP_XProfile_Field_Type_Textbox {
 	 * Admin new field screen.
 	 *
 	 * @param \BP_XProfile_Field $current_field profile field object.
-	 *
-	 * @param string $control_type type.
+	 * @param string             $control_type type.
 	 */
 	public function admin_new_field_html( \BP_XProfile_Field $current_field, $control_type = '' ) {
 
-		$type = array_search( get_class( $this ), bp_xprofile_get_field_types() );
+		$type = array_search( get_class( $this ), bp_xprofile_get_field_types(), false );
 
 		if ( false === $type ) {
 			return;
@@ -144,4 +141,3 @@ class Field_Type_Token extends \BP_XProfile_Field_Type_Textbox {
 		return (bool) bp_xprofile_get_meta( $field_id, 'field', 'token_ignore_case', true );
 	}
 }
-

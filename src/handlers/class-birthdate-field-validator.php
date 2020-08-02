@@ -12,13 +12,10 @@
 
 namespace BPXProfileCFTR\Handlers;
 
-
 use BPXProfileCFTR\Field_Types\Field_Type_Birthdate;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Manage and sync field data.
@@ -43,7 +40,7 @@ class Birthdate_Field_Validator {
 	/**
 	 * Validate on field save.
 	 *
-	 * @param $data
+	 * @param \BP_XProfile_ProfileData $data data object.
 	 *
 	 * @return mixed
 	 */
@@ -57,7 +54,7 @@ class Birthdate_Field_Validator {
 		$field    = new \BP_XProfile_Field( $field_id );
 		$min_age  = Field_Type_Birthdate::get_min_age( $field_id );
 
-		if ( 'birthdate' != $field->type || $min_age <= 0 ) {
+		if ( 'birthdate' !== $field->type || $min_age <= 0 ) {
 			return $data;
 		}
 

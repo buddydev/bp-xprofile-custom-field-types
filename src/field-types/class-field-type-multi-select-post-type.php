@@ -10,19 +10,20 @@
 
 namespace BPXProfileCFTR\Field_Types;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
-
 use BPXProfileCFTR\Contracts\Field_Type_Multi_Valued;
 use BPXProfileCFTR\Contracts\Field_Type_Selectable;
+
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Multiselect Post Type Type
  */
 class Field_Type_Multi_Select_Post_Type extends \BP_XProfile_Field_Type implements Field_Type_Selectable, Field_Type_Multi_Valued {
 
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 
 		parent::__construct();
@@ -35,7 +36,11 @@ class Field_Type_Multi_Select_Post_Type extends \BP_XProfile_Field_Type implemen
 		do_action( 'bp_xprofile_field_type_multiselect_custom_post_type', $this );
 	}
 
-
+	/**
+	 * Edit field html.
+	 *
+	 * @param array $raw_properties properties.
+	 */
 	public function edit_field_html( array $raw_properties = array() ) {
 		$user_id = bp_displayed_user_id();
 
@@ -44,26 +49,28 @@ class Field_Type_Multi_Select_Post_Type extends \BP_XProfile_Field_Type implemen
 			unset( $raw_properties['user_id'] );
 		}
 
-		$html = $this->get_edit_field_html_elements( array_merge(
-			array(
-				'multiple' => 'multiple',
-				'id'       => bp_get_the_profile_field_input_name() . '[]',
-				'name'     => bp_get_the_profile_field_input_name() . '[]',
-			),
-			$raw_properties
-		) );
+		$html = $this->get_edit_field_html_elements(
+			array_merge(
+				array(
+					'multiple' => 'multiple',
+					'id'       => bp_get_the_profile_field_input_name() . '[]',
+					'name'     => bp_get_the_profile_field_input_name() . '[]',
+				),
+				$raw_properties
+			)
+		);
 		?>
 
-        <legend id="<?php bp_the_profile_field_input_name(); ?>-1">
+		<legend id="<?php bp_the_profile_field_input_name(); ?>-1">
 			<?php bp_the_profile_field_name(); ?>
 			<?php bp_the_profile_field_required_label(); ?>
-        </legend>
+		</legend>
 
 		<?php do_action( bp_get_the_profile_field_errors_action() ); ?>
 
-        <select <?php echo $html; ?>>
+		<select <?php echo $html; ?>>
 			<?php bp_the_profile_field_options( "user_id={$user_id}" ); ?>
-        </select>
+		</select>
 
 		<?php if ( bp_get_the_profile_field_description() ) : ?>
             <p class="description" id="<?php bp_the_profile_field_input_name(); ?>-3"><?php bp_the_profile_field_description(); ?></p>
@@ -72,10 +79,16 @@ class Field_Type_Multi_Select_Post_Type extends \BP_XProfile_Field_Type implemen
 		<?php
 	}
 
+	/**
+	 * Edit field options.
+	 *
+	 * @param array $args args.
+	 */
 	public function edit_field_options_html( array $args = array() ) {
 	    global $field;
-		$post_type_selected        = self::get_selected_post_type( $field->id );
-		$posts_selected = maybe_unserialize( \BP_XProfile_ProfileData::get_value_byid( $this->field_obj->id, $args['user_id'] ) );
+
+		$post_type_selected = self::get_selected_post_type( $field->id );
+		$posts_selected     = maybe_unserialize( \BP_XProfile_ProfileData::get_value_byid( $this->field_obj->id, $args['user_id'] ) );
 
 		$html = '';
 
@@ -84,50 +97,61 @@ class Field_Type_Multi_Select_Post_Type extends \BP_XProfile_Field_Type implemen
 			$posts_selected     = ( $posts_selected != $new_posts_selected ) ? $new_posts_selected : $posts_selected;
 		}
 		// Get posts of custom post type selected.
-		$posts = new \WP_Query( array(
-			'posts_per_page' => - 1,
-			'post_type'      => $post_type_selected,
-			'orderby'        => 'title',
-			'order'          => 'ASC'
-		) );
+		$posts = new \WP_Query(
+			array(
+				'posts_per_page' => - 1,
+				'post_type'      => $post_type_selected,
+				'orderby'        => 'title',
+				'order'          => 'ASC',
+			)
+		);
 
 		if ( $posts ) {
 			foreach ( $posts->posts as $post ) {
-				$html .= sprintf( '<option value="%s"%s>%s</option>',
+				$html .= sprintf(
+					'<option value="%s"%s>%s</option>',
 					$post->ID,
 					( ! empty( $posts_selected ) && ( in_array( $post->ID, $posts_selected ) ) ) ? 'selected="selected"' : '',
-					$post->post_title );
+					$post->post_title
+				);
 			}
 		}
 
 		echo apply_filters( 'bp_get_the_profile_field_multiselect_custom_post_type', $html, $args['type'], $post_type_selected, $this->field_obj->id );
 	}
 
-
 	/**
-     * Dashboard->Users->Profile Fields
-     *
+	 * Dashboard->Users->Profile Fields
+	 *
 	 * @param array $raw_properties atts.
 	 */
 	public function admin_field_html( array $raw_properties = array() ) {
 
-		$html = $this->get_edit_field_html_elements( array_merge(
-			array(
-				'multiple' => 'multiple',
-				'id'       => bp_get_the_profile_field_input_name() . '[]',
-				'name'     => bp_get_the_profile_field_input_name() . '[]',
-			),
-			$raw_properties
-		) );
+		$html = $this->get_edit_field_html_elements(
+			array_merge(
+				array(
+					'multiple' => 'multiple',
+					'id'       => bp_get_the_profile_field_input_name() . '[]',
+					'name'     => bp_get_the_profile_field_input_name() . '[]',
+				),
+				$raw_properties
+			)
+		);
 		?>
 
-        <select <?php echo $html; ?>>
+		<select <?php echo $html; ?>>
 			<?php bp_the_profile_field_options(); ?>
-        </select>
+		</select>
 
 		<?php
 	}
 
+	/**
+	 * Dashboard->Users->Profile Fields->New|Edit entry.
+	 *
+	 * @param \BP_XProfile_Field $current_field object.
+	 * @param string             $control_type type.
+	 */
 	public function admin_new_field_html( \BP_XProfile_Field $current_field, $control_type = '' ) {
 
 		$type = array_search( get_class( $this ), bp_xprofile_get_field_types() );
@@ -136,11 +160,9 @@ class Field_Type_Multi_Select_Post_Type extends \BP_XProfile_Field_Type implemen
 			return;
 		}
 
-		$class            = $current_field->type != $type ? 'display: none;' : '';
+		$class = $current_field->type != $type ? 'display: none;' : '';
 
-		$post_types = get_post_types( array(
-			'public'   => true,
-		) );
+		$post_types = get_post_types( array( 'public' => true ) );
 
 		$selected_post_type = self::get_selected_post_type( $current_field->id );
 		?>
@@ -168,7 +190,7 @@ class Field_Type_Multi_Select_Post_Type extends \BP_XProfile_Field_Type implemen
 	/**
 	 * Check if the values are valid.
 	 *
-	 * @param array $values
+	 * @param array $values values.
 	 *
 	 * @return bool
 	 */
@@ -182,7 +204,7 @@ class Field_Type_Multi_Select_Post_Type extends \BP_XProfile_Field_Type implemen
 		 * Can not test for post type as the field id is unknown at this moment.
 		 */
 
-		$values = (array) $values;//
+		$values = (array) $values;
 
 		_prime_post_caches( $values, false, false );
 		$validated = true;
@@ -190,7 +212,7 @@ class Field_Type_Multi_Select_Post_Type extends \BP_XProfile_Field_Type implemen
 		foreach ( $values as $post_id ) {
 			$post = get_post( $post_id );
 
-			if ( ! $post  ) {
+			if ( ! $post ) {
 				$validated = false;
 				break;
 			}
@@ -247,6 +269,6 @@ class Field_Type_Multi_Select_Post_Type extends \BP_XProfile_Field_Type implemen
 			return '';
 		}
 
-		return bp_xprofile_get_meta( $field_id, 'field', 'selected_post_type',  true );
+		return bp_xprofile_get_meta( $field_id, 'field', 'selected_post_type', true );
 	}
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * oEmbed Type Field.
+ * oEmbed Type Field
  *
  * @package    BuddyPress Xprofile Custom Field Types
  * @subpackage Field_Types
@@ -10,13 +10,11 @@
 
 namespace BPXProfileCFTR\Field_Types;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
 /**
- * Web Type
+ * Oembed field Type
  */
 class Field_Type_Oembed extends \BP_XProfile_Field_Type_URL {
 

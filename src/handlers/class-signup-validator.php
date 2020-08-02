@@ -17,7 +17,6 @@ use BPXProfileCFTR\Field_Types\Field_Type_Birthdate;
 // Do not allow direct access over web.
 defined( 'ABSPATH' ) || exit;
 
-
 /**
  * Signup data validator.
  */

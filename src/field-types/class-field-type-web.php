@@ -1,6 +1,6 @@
 <?php
 /**
- * Post Type Field.
+ * Web Type Field
  *
  * @package    BuddyPress Xprofile Custom Field Types
  * @subpackage Field_Types
@@ -10,16 +10,17 @@
 
 namespace BPXProfileCFTR\Field_Types;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Web Type
  */
 class Field_Type_Web extends \BP_XProfile_Field_Type_URL {
 
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 		parent::__construct();
 		$this->name     = _x( 'Website (HTML5 field)', 'xprofile field type', 'bp-xprofile-custom-field-types' );

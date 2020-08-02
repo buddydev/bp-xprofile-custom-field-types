@@ -1,6 +1,6 @@
 <?php
 /**
- * BuddyPress Xprofile Custom Field Types
+ * BuddyPress Xprofile Custom Field Types Birthdate field type
  *
  * @package    BuddyPress Xprofile Custom Field Types
  * @subpackage Field_Types
@@ -12,19 +12,20 @@
 
 namespace BPXProfileCFTR\Field_Types;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
 /**
- * This field is
+ * Birthdate field
  */
 class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 
+    /**
+	 * Constructor.
+	 */
 	public function __construct() {
 
-	    parent::__construct();
+		parent::__construct();
 
 		$this->name     = _x( 'Birthdate Selector', 'xprofile field type', 'bp-xprofile-custom-field-types' );
 		$this->category = _x( 'Custom Fields', 'xprofile field type category', 'bp-xprofile-custom-field-types' );
@@ -36,9 +37,9 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 	 * Generate the settings markup for Date fields.
 	 *
 	 * This is in overridden version of parent::admin_new_field_html() since there was no other way to inject extra info.
-     *
+	 *
 	 * @param \BP_XProfile_Field $current_field The current profile field on the add/edit screen.
-	 * @param string            $control_type  Optional. HTML input type used to render the current
+	 * @param string             $control_type  Optional. HTML input type used to render the current
 	 *                                         field's child options.
 	 */
 	public function admin_new_field_html( \BP_XProfile_Field $current_field, $control_type = '' ) {
@@ -49,10 +50,10 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 			return;
 		}
 
-		$class    = $current_field->type != $type ? 'display: none;' : '';
-		$show_age = self::show_age( $current_field->id ) ? 1 : 0;
-		$min_age  = self::get_min_age( $current_field->id );
-        $age_label = self::get_age_label( $current_field->id );
+		$class       = $current_field->type != $type ? 'display: none;' : '';
+		$show_age    = self::show_age( $current_field->id ) ? 1 : 0;
+		$min_age     = self::get_min_age( $current_field->id );
+		$age_label   = self::get_age_label( $current_field->id );
 		$hide_months = self::hide_months( $current_field->id );
 		// settings from date field.
 		$settings = self::get_field_settings( $current_field->id );
@@ -208,8 +209,8 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 
 
 	/**
-     * Display formatting.
-     *
+	 * Display formatting.
+	 *
 	 * @param string $field_value field value.
 	 * @param int    $field_id field id.
 	 *
@@ -229,9 +230,9 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 			$field_value = strtotime( $field_value );
 		}
 
-		$now       = new \DateTime();
+		$now = new \DateTime();
 
-		$birthdate = new \DateTime( "@$field_value" );
+		$birthdate    = new \DateTime( "@$field_value" );
 		$age_interval = $now->diff( $birthdate );
 
 		$age = sprintf( __( '%s years', 'bp-xprofile-custom-field-types' ), $age_interval->y );
@@ -243,21 +244,42 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 		return apply_filters( 'bpxcftr_birthdate_age_display_data', $age, $field_value, $age_interval, $field_id );
 	}
 
+	/**
+	 * Checks if we should hide months in display.
+	 *
+	 * @param int $field_id field id.
+	 *
+	 * @return bool
+	 */
 	public static function hide_months( $field_id ) {
-		return (bool) bp_xprofile_get_meta( $field_id, 'field', 'hide_months',  true );
+		return (bool) bp_xprofile_get_meta( $field_id, 'field', 'hide_months', true );
 	}
 
+	/**
+	 * Checks if we should show age in display.
+	 *
+	 * @param int $field_id field id.
+	 *
+	 * @return bool
+	 */
 	public static function show_age( $field_id ) {
-		return (bool) bp_xprofile_get_meta( $field_id, 'field', 'show_age',  true );
-    }
-
-	public static function get_min_age( $field_id ) {
-		return  bp_xprofile_get_meta( $field_id, 'field', 'min_age',  true );
-    }
+		return (bool) bp_xprofile_get_meta( $field_id, 'field', 'show_age', true );
+	}
 
 	/**
-     * Get age label.
-     *
+	 * Returns minimum age needed.
+	 *
+	 * @param int $field_id field id.
+	 *
+	 * @return int
+	 */
+	public static function get_min_age( $field_id ) {
+		return bp_xprofile_get_meta( $field_id, 'field', 'min_age', true );
+	}
+
+	/**
+	 * Get age label.
+	 *
 	 * @param int $field_id field id.
 	 *
 	 * @return string

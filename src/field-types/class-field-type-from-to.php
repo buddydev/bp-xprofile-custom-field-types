@@ -11,16 +11,17 @@
 
 namespace BPXProfileCFTR\Field_Types;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
 /**
- * 'fromto' field type.
+ * From/To field type.
  */
 class Field_Type_From_To extends \BP_XProfile_Field_Type {
 
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 
 		parent::__construct();
@@ -34,13 +35,17 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 		do_action( 'bp_xprofile_field_type_from_to_number', $this );
 	}
 
-
+	/**
+	 * Edit field html.
+	 *
+	 * @param array $raw_properties properties.
+	 */
 	public function edit_field_html( array $raw_properties = array() ) {
 		global $field;
 
 		$data = empty( $field->data ) ? array(
 			'from' => self::get_from_value( $field->id ),
-			'to'   => self::get_to_value( $field->id )
+			'to'   => self::get_to_value( $field->id ),
 		) : maybe_unserialize( $field->data->value );
 
 		// make sure data is always array. In case some one changed the field type, do not throw error.
@@ -59,30 +64,34 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 		$value      = bp_get_the_profile_field_edit_value();
 
 		$is_array = is_array( $value );
-		$from = $is_array && isset( $value['from'] ) ? $value['from'] : $data['from'];
-		$to   = $is_array && isset( $value['to'] ) ? $value['to'] : $data['to'];
+		$from     = $is_array && isset( $value['from'] ) ? $value['from'] : $data['from'];
+		$to       = $is_array && isset( $value['to'] ) ? $value['to'] : $data['to'];
 
-		$type = self::get_value_type( $field->id);
+		$type = self::get_value_type( $field->id );
 
-		$from_atts = $this->get_edit_field_html_elements( array_merge(
-			array(
-				'type'  => 'text',
-				'name'  => $field_name . '[from]',
-				'id'    => $field_name . '[from]',
-				'value' => $from,
-			),
-			$raw_properties
-		) );
+		$from_atts = $this->get_edit_field_html_elements(
+			array_merge(
+				array(
+					'type'  => 'text',
+					'name'  => $field_name . '[from]',
+					'id'    => $field_name . '[from]',
+					'value' => $from,
+				),
+				$raw_properties
+			)
+		);
 
-		$to_atts =  $this->get_edit_field_html_elements( array_merge(
-			array(
-				'type' => 'text',
-				'name' => $field_name .'[to]',
-				'id' => $field_name .'[to]',
-				'value' => $to,
-			),
-			$raw_properties
-		) );
+		$to_atts = $this->get_edit_field_html_elements(
+			array_merge(
+				array(
+					'type'  => 'text',
+					'name'  => $field_name . '[to]',
+					'id'    => $field_name . '[to]',
+					'value' => $to,
+				),
+				$raw_properties
+			)
+		);
 
 		?>
 
@@ -109,29 +118,37 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 		<?php
 	}
 
-
+	/**
+	 * Dashboard->Users->Profile Fields entry.
+	 *
+	 * @param array $raw_properties properties.
+	 */
 	public function admin_field_html( array $raw_properties = array() ) {
 		global $field;
 
 		$field_name = bp_get_the_profile_field_input_name();
 
-		$from_atts = $this->get_edit_field_html_elements( array_merge(
-			array(
-				'type' => 'text',
-				'name' => $field_name . '[from]',
-				'id'   => $field_name . '[from]',
-			),
-			$raw_properties
-		) );
+		$from_atts = $this->get_edit_field_html_elements(
+			array_merge(
+				array(
+					'type' => 'text',
+					'name' => $field_name . '[from]',
+					'id'   => $field_name . '[from]',
+				),
+				$raw_properties
+			)
+		);
 
-		$to_atts =  $this->get_edit_field_html_elements( array_merge(
-			array(
-				'type' => 'text',
-				'name' => $field_name . '[to]',
-				'id'   => $field_name . '[to]',
-			),
-			$raw_properties
-		) );
+		$to_atts = $this->get_edit_field_html_elements(
+			array_merge(
+				array(
+					'type' => 'text',
+					'name' => $field_name . '[to]',
+					'id'   => $field_name . '[to]',
+				),
+				$raw_properties
+			)
+		);
 
 		?>
 		<div class="bpxcftr-from-to-edit-field">
@@ -142,6 +159,12 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 		<?php
 	}
 
+	/**
+	 * Dashboard->Users->Profile Fields->New|Edit entry.
+	 *
+	 * @param \BP_XProfile_Field $current_field object.
+	 * @param string             $control_type type.
+	 */
 	public function admin_new_field_html( \BP_XProfile_Field $current_field, $control_type = '' ) {
 
 		$type = array_search( get_class( $this ), bp_xprofile_get_field_types() );
@@ -150,7 +173,7 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 			return;
 		}
 
-		$class      = $current_field->type != $type ? 'display: none;' : '';
+		$class      = $current_field->type !== $type ? 'display: none;' : '';
 		$from_value = self::get_from_value( $current_field->id );
 		$to_value   = self::get_to_value( $current_field->id );
 		$value_type = self::get_value_type( $current_field->id );
@@ -180,8 +203,8 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 						</label>
 
 						<label>
-							<?php _e( 'To', 'bp-xprofile-custom-field-types');?>
-							<input type="text" name="bpxcftr_fromto_to_value" value="<?php echo esc_attr( $to_value );?>" />
+							<?php _e( 'To', 'bp-xprofile-custom-field-types' ); ?>
+							<input type="text" name="bpxcftr_fromto_to_value" value="<?php echo esc_attr( $to_value ); ?>"/>
 						</label>
 
 					</p>
@@ -197,7 +220,7 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 	 * Modify display for the field.
 	 *
 	 * @param mixed $field_value field value.
-	 * @param int $field_id field id
+	 * @param int   $field_id field id.
 	 *
 	 * @return string
 	 */
@@ -206,12 +229,13 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 		if ( empty( $field_value ) ) {
 			return $field_value;
 		}
+
 		$field_value = explode( ',', $field_value );
 		$field_value = array_map( 'trim', $field_value );
 
-		if( count( $field_value) !== 2 ) {
-		    // always return string.
-			return join('', $field_value );
+		if ( count( $field_value ) !== 2 ) {
+			// always return string.
+			return join( '', $field_value );
 		}
 
 		return sprintf( '<span class="bpxcftr-fromto-from-value">%s</span>-<span class="bpxcftr-fromto-to-value">%s</span>', $field_value[0], $field_value[1] );
@@ -229,7 +253,6 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 		if ( empty( $values ) ) {
 			return true;
 		}
-
 
 		$field = bpxcftr_get_current_field();
 		bpxcftr_set_current_field( null );
@@ -251,10 +274,9 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 
 		if ( 'integer' === $type && ( filter_var( $values['from'], FILTER_VALIDATE_INT ) === false || filter_var( $values['to'], FILTER_VALIDATE_INT ) === false ) ) {
 			return false;
-		} elseif ( 'numeric' === $type && (! is_numeric( $values['from'] ) || ! is_numeric( $values['to'] ) ) ) {
+		} elseif ( 'numeric' === $type && ( ! is_numeric( $values['from'] ) || ! is_numeric( $values['to'] ) ) ) {
 			return false;
 		}
-
 
 		// if we are here, it validates.
 		return true;
@@ -268,7 +290,7 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 	 * @return float|int
 	 */
 	private static function get_value_type( $field_id ) {
-		return bp_xprofile_get_meta( $field_id, 'field', 'value_type',  true );
+		return bp_xprofile_get_meta( $field_id, 'field', 'value_type', true );
 	}
 
 	/**
@@ -279,7 +301,7 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 	 * @return float|int
 	 */
 	private static function get_from_value( $field_id ) {
-		return bp_xprofile_get_meta( $field_id, 'field', 'from_value',  true );
+		return bp_xprofile_get_meta( $field_id, 'field', 'from_value', true );
 	}
 
 	/**
@@ -290,6 +312,6 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 	 * @return int
 	 */
 	private static function get_to_value( $field_id ) {
-		return bp_xprofile_get_meta( $field_id, 'field', 'to_value',  true );
+		return bp_xprofile_get_meta( $field_id, 'field', 'to_value', true );
 	}
 }

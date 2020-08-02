@@ -11,13 +11,17 @@
 
 namespace BPXProfileCFTR\Field_Types;
 
-// No direct access.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit( 0 );
-}
+// Do not allow direct access over web.
+defined( 'ABSPATH' ) || exit;
 
+/**
+ * Field type email.
+ */
 class Field_Type_Email extends \BP_XProfile_Field_Type {
 
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 
 		parent::__construct();
@@ -28,25 +32,32 @@ class Field_Type_Email extends \BP_XProfile_Field_Type {
 		do_action( 'bp_xprofile_field_type_email', $this );
 	}
 
+	/**
+	 * Edit field html.
+	 *
+	 * @param array $raw_properties properties.
+	 */
 	public function edit_field_html( array $raw_properties = array() ) {
 
 		if ( isset( $raw_properties['user_id'] ) ) {
 			unset( $raw_properties['user_id'] );
 		}
 
-		$html = $this->get_edit_field_html_elements( array_merge(
-			array(
-				'type'  => 'email',
-				'value' => bp_get_the_profile_field_edit_value(),
-			),
-			$raw_properties
-		) );
+		$html = $this->get_edit_field_html_elements(
+			array_merge(
+				array(
+					'type'  => 'email',
+					'value' => bp_get_the_profile_field_edit_value(),
+				),
+				$raw_properties
+			)
+		);
 		?>
 
-        <legend id="<?php bp_the_profile_field_input_name(); ?>-1">
+		<legend id="<?php bp_the_profile_field_input_name(); ?>-1">
 			<?php bp_the_profile_field_name(); ?>
 			<?php bp_the_profile_field_required_label(); ?>
-        </legend>
+		</legend>
 
 		<?php
 		// Errors.
@@ -63,12 +74,19 @@ class Field_Type_Email extends \BP_XProfile_Field_Type {
 		<?php
 	}
 
+	/**
+	 * Admin field list html.
+	 *
+	 * @param array $raw_properties properties.
+	 */
 	public function admin_field_html( array $raw_properties = array() ) {
 
-		$html = $this->get_edit_field_html_elements( array_merge(
-			array( 'type' => 'email' ),
-			$raw_properties
-		) );
+		$html = $this->get_edit_field_html_elements(
+			array_merge(
+				array( 'type' => 'email' ),
+				$raw_properties
+			)
+		);
 		?>
 
         <input <?php echo $html; ?> />
@@ -76,18 +94,24 @@ class Field_Type_Email extends \BP_XProfile_Field_Type {
 		<?php
 	}
 
+	/**
+	 * Dashboard->Users->Profile Fields->New|Edit entry.
+	 *
+	 * @param \BP_XProfile_Field $current_field object.
+	 * @param string             $control_type type.
+	 */
 	public function admin_new_field_html( \BP_XProfile_Field $current_field, $control_type = '' ) {
 	}
 
 	/**
-     * Check if it is a valid email.
-     *
+	 * Check if it is a valid email.
+	 *
 	 * @param string $values value.
 	 *
 	 * @return bool
 	 */
 	public function is_valid( $values ) {
-	    return empty( $values ) || is_email( $values );
+		return empty( $values ) || is_email( $values );
 	}
 
 	/**
@@ -99,7 +123,6 @@ class Field_Type_Email extends \BP_XProfile_Field_Type {
 	 * @return string   Value formatted
 	 */
 	public static function display_filter( $field_value, $field_id = 0 ) {
-	    return empty( $field_value ) ? '' : sprintf( '<a href="mailto:%1$s" rel="nofollow">%1$s</a>', $field_value );
+		return empty( $field_value ) ? '' : sprintf( '<a href="mailto:%1$s" rel="nofollow">%1$s</a>', $field_value );
 	}
 }
-
