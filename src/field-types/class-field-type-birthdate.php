@@ -75,8 +75,8 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 
 							<?php foreach ( $this->get_date_formats() as $format ): ?>
                                 <div class="bp-date-format-option">
-                                    <label for="date-format-<?php echo esc_attr( $format ); ?>">
-                                        <input type="radio" name="field-settings[date_format]" id="date-format-<?php echo esc_attr( $format ); ?>" value="<?php echo esc_attr( $format ); ?>" <?php checked( $format, $settings['date_format'] ); ?> />
+                                    <label for="bpxcftr-birthdate-date-format-<?php echo esc_attr( $format ); ?>">
+                                        <input type="radio" name="field-settings[bpxcftr_birthdate_date_format]" id="bpxcftr-birthdate-date-format-<?php echo esc_attr( $format ); ?>" value="<?php echo esc_attr( $format ); ?>" <?php checked( $format, $settings['date_format'] ); ?> />
                                         <span class="date-format-label"><?php echo date_i18n( $format ); ?></span>
                                         <code><?php echo esc_html( $format ); ?></code>
                                     </label>
@@ -84,19 +84,19 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 							<?php endforeach;?>
 
                             <div class="bp-date-format-option">
-                                <label for="date-format-elapsed">
-                                    <input type="radio" name="field-settings[date_format]" id="date-format-elapsed" <?php checked( 'elapsed', $settings['date_format'] ); ?> value="elapsed" aria-describedby="date-format-elapsed-setting" />
-                                    <span class="date-format-label" id="date-format-elapsed-setting"><?php esc_html_e( 'Time elapsed', 'bp-xprofile-custom-field-types' ); ?></span> <?php _e( '<code>4 years ago</code>, <code>4 years from now</code>', 'bp-xprofile-custom-field-types' ); ?>
+                                <label for="bpxcftr-birthdate-date-format-elapsed">
+                                    <input type="radio" name="field-settings[bpxcftr_birthdate_date_format]" id="bpxcftr-birthdate-date-format-elapsed" <?php checked( 'elapsed', $settings['date_format'] ); ?> value="elapsed" aria-describedby="bpxcftr-birthdate-date-format-elapsed-setting" />
+                                    <span class="date-format-label" id="bpxcftr-birthdate-date-format-elapsed-setting"><?php esc_html_e( 'Time elapsed', 'bp-xprofile-custom-field-types' ); ?></span> <?php _e( '<code>4 years ago</code>, <code>4 years from now</code>', 'bp-xprofile-custom-field-types' ); ?>
                                 </label>
                             </div>
 
                             <div class="bp-date-format-option">
-                                <label for="date-format-custom">
-                                    <input type="radio" name="field-settings[date_format]" id="date-format-custom" <?php checked( 'custom', $settings['date_format'] ); ?> value="custom" />
+                                <label for="bpxcftr-birthdate-date-format-custom">
+                                    <input type="radio" name="field-settings[bpxcftr_birthdate_date_format]" id="bpxcftr-birthdate-date-format-custom" <?php checked( 'custom', $settings['date_format'] ); ?> value="custom" />
                                     <span class="date-format-label"><?php esc_html_e( 'Custom:', 'bp-xprofile-custom-field-types' ); ?></span>
                                 </label>
-                                <label for="date-format-custom-value" class="screen-reader-text"><?php esc_html_e( 'Enter custom time format', 'bp-xprofile-custom-field-types' ); ?></label>
-                                <input type="text" name="field-settings[date_format_custom]" id="date-format-custom-value" class="date-format-custom-value" value="<?php echo esc_attr( $settings['date_format_custom'] ); ?>" aria-describedby="date-format-custom-example" /> <span class="screen-reader-text"><?php esc_html_e( 'Example:', 'bp-xprofile-custom-field-types' ); ?></span><span class="date-format-custom-example" id="date-format-custom-sample"><?php if ( $settings['date_format_custom'] ) : ?><?php echo esc_html( date_i18n( $settings['date_format_custom'] ) ); endif; ?></span><span class="spinner" id="date-format-custom-spinner" aria-hidden="true"></span>
+                                <label for="bpxcftr-birthdate-date-format-custom-value" class="screen-reader-text"><?php esc_html_e( 'Enter custom time format', 'bp-xprofile-custom-field-types' ); ?></label>
+                                <input type="text" name="field-settings[date_format_custom]" id="bpxcftr-birthdate-date-format-custom-value" class="date-format-custom-value" value="<?php echo esc_attr( $settings['date_format_custom'] ); ?>" aria-describedby="bpxcftr-birthdate-date-format-custom-example" /> <span class="screen-reader-text"><?php esc_html_e( 'Example:', 'bp-xprofile-custom-field-types' ); ?></span><span class="date-format-custom-example" id="date-format-custom-sample"><?php if ( $settings['date_format_custom'] ) : ?><?php echo esc_html( date_i18n( $settings['date_format_custom'] ) ); endif; ?></span><span class="spinner" id="bpxcftr-birthdate-date-format-custom-spinner" aria-hidden="true"></span>
 
                                 <p><a href="https://codex.wordpress.org/Formatting_Date_and_Time"><?php esc_html_e( 'Documentation on date and time formatting', 'bp-xprofile-custom-field-types' ); ?></a></p>
                             </div>
@@ -118,37 +118,37 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 
                             <div class="bp-date-format-option">
                                 <div class="bp-date-range-type-label">
-                                    <label for="range_type_absolute">
-                                        <input type="radio" name="field-settings[range_type]" id="range_type_absolute" value="absolute" <?php checked( 'absolute', $settings['range_type'] ); ?> />
+                                    <label for="bpxcftr-birthdate-range-type-absolute">
+                                        <input type="radio" name="field-settings[bpxcftr_birthdate_range_type]" id="bpxcftr-birthdate-range-type-absolute" value="absolute" <?php checked( 'absolute', $settings['range_type'] ); ?> />
 										<?php esc_html_e( 'Absolute', 'bp-xprofile-custom-field-types' ); ?>
                                     </label>
                                 </div>
 
                                 <div class="bp-date-range-type-values">
-                                    <label for="field-settings[range_absolute_start]" aria-label="Year"><?php esc_html_e( 'Start:', 'bp-xprofile-custom-field-types' ); ?></label>
-									<?php printf( '<input class="date-range-numeric" type="text" name="field-settings[range_absolute_start]" id="field-settings[range_absolute_start]" value="%s" />', esc_attr( $settings['range_absolute_start'] ) ); ?>
-                                    <label for="field-settings[range_absolute_end]" aria-label="Year"><?php esc_html_e( 'End:', 'bp-xprofile-custom-field-types' ); ?></label>
-									<?php printf( '<input class="date-range-numeric" type="text" name="field-settings[range_absolute_end]" id="field-settings[range_absolute_end]" value="%s" />', esc_attr( $settings['range_absolute_end'] ) ); ?>
+                                    <label for="bpxcftr-birthdate-field-settings[bpxcftr_birthdate_range_absolute_start]" aria-label="Year"><?php esc_html_e( 'Start:', 'bp-xprofile-custom-field-types' ); ?></label>
+									<?php printf( '<input class="date-range-numeric" type="text" name="field-settings[bpxcftr_birthdate_range_absolute_start]" id="bpxcftr-birthdate-field-settings[bpxcftr_birthdate_range_absolute_start]" value="%s" />', esc_attr( $settings['range_absolute_start'] ) ); ?>
+                                    <label for="bpxcftr-birthdate-field-settings[range_absolute_end]" aria-label="Year"><?php esc_html_e( 'End:', 'bp-xprofile-custom-field-types' ); ?></label>
+									<?php printf( '<input class="date-range-numeric" type="text" name="field-settings[bpxcftr_birthdate_range_absolute_end]" id="bpxcftr-birthdate-field-settings[bpxcftr_birthdate_range_absolute_end]" value="%s" />', esc_attr( $settings['range_absolute_end'] ) ); ?>
                                 </div>
                             </div>
 
                             <div class="bp-date-format-option">
                                 <div class="bp-date-range-type-label">
-                                    <label for="range_type_relative">
-                                        <input type="radio" name="field-settings[range_type]" id="range_type_relative" value="relative" <?php checked( 'relative', $settings['range_type'] ); ?> />
+                                    <label for="bpxcftr-birthdate-range_type_relative">
+                                        <input type="radio" name="field-settings[bpxcftr_birthdate_range_type]" id="bpxcftr-birthdate-range_type_relative" value="relative" <?php checked( 'relative', $settings['range_type'] ); ?> />
 										<?php esc_html_e( 'Relative', 'bp-xprofile-custom-field-types' ); ?>
                                     </label>
                                 </div>
 
                                 <div class="bp-date-range-type-values">
-                                    <label for="field-settings[range_relative_start]"><?php esc_html_e( 'Start:', 'bp-xprofile-custom-field-types' ); ?></label>
-									<?php printf( '<input type="text" class="date-range-numeric" name="field-settings[range_relative_start]" id="field-settings[range_relative_start]" value="%s" />',
+                                    <label for="bpxcftr-birthdate-field-settings[range_relative_start]"><?php esc_html_e( 'Start:', 'bp-xprofile-custom-field-types' ); ?></label>
+									<?php printf( '<input type="text" class="date-range-numeric" name="field-settings[bpxcftr_birthdate_range_relative_start]" id="bpxcftr-birthdate-field-settings[bpxcftr_birthdate_range_relative_start]" value="%s" />',
 										esc_attr( abs( $settings['range_relative_start'] ) )
 									);
 									?>
 
-                                    <label class="screen-reader-text" for="field-settings[range_relative_start_type]"><?php esc_html_e( 'Select range', 'bp-xprofile-custom-field-types' ); ?></label>
-									<?php printf( '<select name="field-settings[range_relative_start_type]" id="field-settings[range_relative_start_type]"><option value="past" %s>%s</option><option value="future" %s>%s</option></select>',
+                                    <label class="screen-reader-text" for="bpxcftr-birthdate-field-settings[bpxcftr_birthdate_range_relative_start_type]"><?php esc_html_e( 'Select range', 'bp-xprofile-custom-field-types' ); ?></label>
+									<?php printf( '<select name="field-settings[bpxcftr_birthdate_range_relative_start_type]" id="bpxcftr-birthdate-field-settings[bpxcftr_birthdate_range_relative_start_type]"><option value="past" %s>%s</option><option value="future" %s>%s</option></select>',
 										selected( true, $settings['range_relative_start'] <= 0, false ),
 										esc_attr__( 'years ago', 'bp-xprofile-custom-field-types' ),
 										selected( true, $settings['range_relative_start'] > 0, false ),
@@ -156,13 +156,13 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 									);
 									?>
 
-                                    <label for="field-settings[range_relative_end]"><?php esc_html_e( 'End:', 'bp-xprofile-custom-field-types' ); ?></label>
-									<?php printf( '<input type="text" class="date-range-numeric" name="field-settings[range_relative_end]" id="field-settings[range_relative_end]" value="%s" />',
+                                    <label for="bpxcftr-birthdate-field-settings[bpxcftr_birthdate_range_relative_end]"><?php esc_html_e( 'End:', 'bp-xprofile-custom-field-types' ); ?></label>
+									<?php printf( '<input type="text" class="date-range-numeric" name="field-settings[bpxcftr_birthdate_range_relative_end]" id="bpxcftr-birthdate-field-settings[bpxcftr_birthdate_range_relative_end]" value="%s" />',
 										esc_attr( abs( $settings['range_relative_end'] ) )
 									);
 									?>
-                                    <label class="screen-reader-text" for="field-settings[range_relative_end_type]"><?php esc_html_e( 'Select range', 'bp-xprofile-custom-field-types' ); ?></label>
-									<?php printf( '<select name="field-settings[range_relative_end_type]" id="field-settings[range_relative_end_type]"><option value="past" %s>%s</option><option value="future" %s>%s</option></select>',
+                                    <label class="screen-reader-text" for="bpxcftr-birthdate-field-settings[bpxcftr_birthdate_range_relative_end_type]"><?php esc_html_e( 'Select range', 'bp-xprofile-custom-field-types' ); ?></label>
+									<?php printf( '<select name="field-settings[bpxcftr_birthdate_range_relative_end_type]" id="bpxcftr-birthdate-field-settings[bpxcftr_birthdate_range_relative_end_type]"><option value="past" %s>%s</option><option value="future" %s>%s</option></select>',
 										selected( true, $settings['range_relative_end'] <= 0, false ),
 										esc_attr__( 'years ago', 'bp-xprofile-custom-field-types' ),
 										selected( true, $settings['range_relative_end'] > 0, false ),
@@ -288,102 +288,39 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 		return bp_xprofile_get_meta( $field_id, 'field', 'age_label', true );
 	}
 
-	/**
-	 * Get settings for a given date field.
-	 *
-	 * @since 2.7.0
-	 *
-	 * @param int $field_id ID of the field.
-	 * @return array
-	 */
-	public static function get_field_settings( $field_id ) {
-		$defaults = array(
-			'date_format'          => 'Y-m-d',
-			'date_format_custom'   => '',
-			'range_type'           => 'absolute',
-			'range_absolute_start' => date( 'Y' ) - 60,
-			'range_absolute_end'   => date( 'Y' ) + 10,
-			'range_relative_start' => '-10',
-			'range_relative_end'   => '20',
-		);
-
-		$settings = array();
-		foreach ( $defaults as $key => $value ) {
-			$saved = bp_xprofile_get_meta( $field_id, 'field', $key, true );
-
-			if ( $saved ) {
-				$settings[ $key ] = $saved;
-			} else {
-				$settings[ $key ] = $value;
-			}
-		}
-
-		$settings = self::validate_settings( $settings );
-
-		return $settings;
-	}
-
-	/**
-	 * Validate date field settings.
-	 *
-	 * @since 2.7.0
-	 *
-	 * @param array $settings Raw settings.
-	 * @return array Validated settings.
-	 */
-	public static function validate_settings( $settings ) {
-		foreach ( $settings as $key => &$value ) {
-			switch ( $key ) {
-				case 'range_type' :
-					if ( $value !== 'absolute' ) {
-						$value = 'relative';
-					}
-					break;
-
-				// @todo More date restrictions?
-				case 'range_absolute_start' :
-				case 'range_absolute_end' :
-					$value = absint( $value );
-					break;
-
-				case 'range_relative_start' :
-				case 'range_relative_end' :
-					$value = intval( $value );
-					break;
-			}
-		}
-
-		return $settings;
-	}
 
 	/**
 	 * Save settings from the field edit screen in the Dashboard.
 	 *
 	 * @param int   $field_id ID of the field.
-	 * @param array $settings Array of settings.
+	 * @param array $settings Array of settings posted($_POST['field-settings'] ).
 	 * @return bool True on success.
 	 */
 	public function admin_save_settings( $field_id, $settings ) {
 		$existing_settings = self::get_field_settings( $field_id );
 
 		$saved_settings = array();
+		$prefix         = 'bpxcftr_birthdate_';
+
 		foreach ( array_keys( $existing_settings ) as $setting ) {
+			$key = $prefix . $setting;
+
 			switch ( $setting ) {
-				case 'range_relative_start' :
-				case 'range_relative_end' :
-					$op_key = $setting . '_type';
+				case 'range_relative_start':
+				case 'range_relative_end':
+					$op_key = $key . '_type';
 					if ( isset( $settings[ $op_key ] ) && 'past' === $settings[ $op_key ] ) {
-						$value = 0 - intval( $settings[ $setting ] );
+						$value = 0 - intval( $settings[ $key ] );
 					} else {
-						$value = intval( $settings[ $setting ] );
+						$value = intval( $settings[ $key ] );
 					}
 
 					$saved_settings[ $setting ] = $value;
 					break;
 
-				default :
-					if ( isset( $settings[ $setting ] ) ) {
-						$saved_settings[ $setting ] = $settings[ $setting ];
+				default:
+					if ( isset( $settings[ $key ] ) ) {
+						$saved_settings[ $setting ] = $settings[ $key ];
 					}
 					break;
 			}
