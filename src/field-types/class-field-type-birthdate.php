@@ -61,7 +61,7 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 		?>
 
         <div id="<?php echo esc_attr( $type ); ?>" class="postbox bp-options-box" style="<?php echo esc_attr( $class ); ?> margin-top: 15px;">
-            <table class="form-table bp-date-options">
+            <table class="form-table bp-date-options bpxcftr-date-options">
                 <tr>
                     <th scope="row">
 						<?php esc_html_e( 'Date format', 'bp-xprofile-custom-field-types' ); ?>
@@ -287,4 +287,116 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 	public static function get_age_label( $field_id ) {
 		return bp_xprofile_get_meta( $field_id, 'field', 'age_label', true );
 	}
+
+	/**
+	 * Get settings for a given date field.
+	 *
+	 * @since 2.7.0
+	 *
+	 * @param int $field_id ID of the field.
+	 * @return array
+	 */
+	public static function get_field_settings( $field_id ) {
+		$defaults = array(
+			'date_format'          => 'Y-m-d',
+			'date_format_custom'   => '',
+			'range_type'           => 'absolute',
+			'range_absolute_start' => date( 'Y' ) - 60,
+			'range_absolute_end'   => date( 'Y' ) + 10,
+			'range_relative_start' => '-10',
+			'range_relative_end'   => '20',
+		);
+
+		$settings = array();
+		foreach ( $defaults as $key => $value ) {
+			$saved = bp_xprofile_get_meta( $field_id, 'field', $key, true );
+
+			if ( $saved ) {
+				$settings[ $key ] = $saved;
+			} else {
+				$settings[ $key ] = $value;
+			}
+		}
+
+		$settings = self::validate_settings( $settings );
+
+		return $settings;
+	}
+
+	/**
+	 * Validate date field settings.
+	 *
+	 * @since 2.7.0
+	 *
+	 * @param array $settings Raw settings.
+	 * @return array Validated settings.
+	 */
+	public static function validate_settings( $settings ) {
+		foreach ( $settings as $key => &$value ) {
+			switch ( $key ) {
+				case 'range_type' :
+					if ( $value !== 'absolute' ) {
+						$value = 'relative';
+					}
+					break;
+
+				// @todo More date restrictions?
+				case 'range_absolute_start' :
+				case 'range_absolute_end' :
+					$value = absint( $value );
+					break;
+
+				case 'range_relative_start' :
+				case 'range_relative_end' :
+					$value = intval( $value );
+					break;
+			}
+		}
+
+		return $settings;
+	}
+
+	/**
+	 * Save settings from the field edit screen in the Dashboard.
+	 *
+	 * @param int   $field_id ID of the field.
+	 * @param array $settings Array of settings.
+	 * @return bool True on success.
+	 */
+	public function admin_save_settings( $field_id, $settings ) {
+		$existing_settings = self::get_field_settings( $field_id );
+
+		$saved_settings = array();
+		foreach ( array_keys( $existing_settings ) as $setting ) {
+			switch ( $setting ) {
+				case 'range_relative_start' :
+				case 'range_relative_end' :
+					$op_key = $setting . '_type';
+					if ( isset( $settings[ $op_key ] ) && 'past' === $settings[ $op_key ] ) {
+						$value = 0 - intval( $settings[ $setting ] );
+					} else {
+						$value = intval( $settings[ $setting ] );
+					}
+
+					$saved_settings[ $setting ] = $value;
+					break;
+
+				default :
+					if ( isset( $settings[ $setting ] ) ) {
+						$saved_settings[ $setting ] = $settings[ $setting ];
+					}
+					break;
+			}
+		}
+
+		// Sanitize and validate saved settings.
+		$saved_settings = self::validate_settings( $saved_settings );
+
+		foreach ( $saved_settings as $setting_key => $setting_value ) {
+			bp_xprofile_update_meta( $field_id, 'field', $setting_key, $setting_value );
+		}
+
+		return true;
+	}
+
 }
