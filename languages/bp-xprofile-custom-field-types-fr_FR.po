@@ -1,0 +1,352 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BuddyPress Xprofile Custom Field Types\n"
+"POT-Creation-Date: 2020-08-08 16:45+0530\n"
+"PO-Revision-Date: 2020-08-08 16:45+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-Basepath: ../src\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: ../assets\n"
+
+#: admin/class-admin.php:48
+msgid ""
+"BuddyPress Xprofile Custom Field Types plugin needs Buddypress Xprofile "
+"Component. Please enable Xprofile first."
+msgstr ""
+"Le plugin BuddyPress Xprofile Custom Field Types nécessite le composant "
+"Buddprress Xprofile. Veuillez activer d'abord Xprofile."
+
+#: admin/class-field-settings-helper.php:210
+msgid "Enable select2 javascript code."
+msgstr "Activer le code javascript select2."
+
+#: admin/class-field-settings-helper.php:214
+msgid "Select2 status for this field"
+msgstr "Statut Select2 pour ce champ"
+
+#: admin/class-field-settings-helper.php:217
+msgid "Enabled"
+msgstr "Activé"
+
+#: admin/class-field-settings-helper.php:220
+msgid "Disabled"
+msgstr "Désactivé"
+
+#: field-types/class-field-type-birthdate.php:30
+msgctxt "xprofile field type"
+msgid "Birthdate Selector"
+msgstr "Sélecteur de date de naissance"
+
+#: field-types/class-field-type-birthdate.php:31
+#: field-types/class-field-type-checkbox-acceptance.php:31
+#: field-types/class-field-type-color.php:29
+#: field-types/class-field-type-datepicker.php:29
+#: field-types/class-field-type-decimal-number.php:30
+#: field-types/class-field-type-email.php:30
+#: field-types/class-field-type-file.php:30
+#: field-types/class-field-type-from-to.php:30
+#: field-types/class-field-type-image.php:30
+#: field-types/class-field-type-multi-select-post-type.php:32
+#: field-types/class-field-type-multi-select-taxonomy.php:31
+#: field-types/class-field-type-number-min-max.php:29
+#: field-types/class-field-type-oembed.php:27
+#: field-types/class-field-type-select-post-type.php:30
+#: field-types/class-field-type-select-taxonomy.php:31
+#: field-types/class-field-type-slider.php:28
+#: field-types/class-field-type-token.php:31
+#: field-types/class-field-type-web.php:27
+msgctxt "xprofile field type category"
+msgid "Custom Fields"
+msgstr "Champs personnalisés"
+
+#: field-types/class-field-type-birthdate.php:89
+msgid "<code>4 years ago</code>, <code>4 years from now</code>"
+msgstr "<code>il y a 4 ans</code>, <code>4 ans depuis maintenant</code>"
+
+#: field-types/class-field-type-birthdate.php:182
+msgid "Check this if you want to show age instead of birthdate:"
+msgstr ""
+"Cochez cette case si vous souhaitez afficher l’âge au lieu de la date de "
+"naissance:"
+
+#: field-types/class-field-type-birthdate.php:188
+msgid "Display Label for age:"
+msgstr ""
+
+#: field-types/class-field-type-birthdate.php:193
+msgid "Hide months while showing age?"
+msgstr "Masquer les mois pour l’affichage de l’âge?"
+
+#: field-types/class-field-type-birthdate.php:202
+msgid "Minimum age:"
+msgstr "Âge minimum:"
+
+#: field-types/class-field-type-birthdate.php:238
+#, php-format
+msgid "%s years"
+msgstr "%s ans"
+
+#: field-types/class-field-type-birthdate.php:241
+#, php-format
+msgid ", %s month"
+msgid_plural ", %s months"
+msgstr[0] ", %s mois"
+msgstr[1] ", %s mois"
+
+#: field-types/class-field-type-checkbox-acceptance.php:30
+msgctxt "xprofile field type"
+msgid "Checkbox Acceptance"
+msgstr "Acceptation de la case à cocher"
+
+#: field-types/class-field-type-checkbox-acceptance.php:194
+msgid "No"
+msgstr "Non"
+
+#: field-types/class-field-type-checkbox-acceptance.php:194
+msgid "Yes"
+msgstr "Oui"
+
+#: field-types/class-field-type-color.php:28
+msgctxt "xprofile field type"
+msgid "Color (HTML5 field)"
+msgstr "Couleur (champ HTML5)"
+
+#: field-types/class-field-type-datepicker.php:28
+msgctxt "xprofile field type"
+msgid "Datepicker (HTML5 field)"
+msgstr "Sélecteur de date (champ HTML5)"
+
+#: field-types/class-field-type-decimal-number.php:29
+msgid "Decimal number (HTML5 field)"
+msgstr "Nombre décimal (champ HTML5)"
+
+#: field-types/class-field-type-decimal-number.php:131
+msgid "Precision"
+msgstr "Précision"
+
+#: field-types/class-field-type-decimal-number.php:140
+msgid "Step Size"
+msgstr "Taille de pas"
+
+#: field-types/class-field-type-decimal-number.php:143
+msgid ""
+"Use decimal in step e.g .05, 1.3 etc, otherwise the field will behave as "
+"number"
+msgstr ""
+"Utilisez décimal à l'étape, par exemple .05, 1.3, etc., sinon le champ se "
+"comportera comme un nombre"
+
+#: field-types/class-field-type-email.php:29
+msgctxt "xprofile field type"
+msgid "Email (HTML5 field)"
+msgstr "Email (champ HTML5)"
+
+#: field-types/class-field-type-file.php:29
+msgctxt "xprofile field type"
+msgid "File"
+msgstr "Fichier"
+
+#: field-types/class-field-type-file.php:88
+#: field-types/class-field-type-image.php:86
+msgid "Check this to delete this file"
+msgstr "Cochez cette case pour supprimer ce fichier"
+
+#: field-types/class-field-type-file.php:152
+msgid "Download file"
+msgstr "Télécharger un fichier"
+
+#: field-types/class-field-type-from-to.php:29
+msgid "From/To values"
+msgstr "Valeurs de / à"
+
+#: field-types/class-field-type-from-to.php:186
+msgid "Value Type"
+msgstr "Type de valeur"
+
+#: field-types/class-field-type-from-to.php:188
+msgid "No restrictions"
+msgstr "Pas de restrictions"
+
+#: field-types/class-field-type-from-to.php:189
+msgid "Integers"
+msgstr "Entiers"
+
+#: field-types/class-field-type-from-to.php:190
+msgid "Numeric"
+msgstr "Numérique"
+
+#: field-types/class-field-type-from-to.php:191
+msgid "String"
+msgstr "Chaîne"
+
+#: field-types/class-field-type-from-to.php:196
+msgid "Integer/Numeric Type Constraints"
+msgstr "Contraintes de type entier / numérique"
+
+#: field-types/class-field-type-from-to.php:198
+msgid "Default Values"
+msgstr "Valeurs par défaut"
+
+#: field-types/class-field-type-from-to.php:201
+msgid "From"
+msgstr "De"
+
+#: field-types/class-field-type-from-to.php:206
+msgid "To"
+msgstr "À"
+
+#: field-types/class-field-type-image.php:29
+msgctxt "xprofile field type"
+msgid "Image"
+msgstr "Image"
+
+#: field-types/class-field-type-multi-select-post-type.php:31
+msgctxt "xprofile field type"
+msgid "Custom Post Type Multiselector"
+msgstr "Multisélecteur de Custom Post Type"
+
+#: field-types/class-field-type-multi-select-post-type.php:171
+#: field-types/class-field-type-select-post-type.php:151
+msgid ""
+"There is no custom post type. You need to create at least one to use this "
+"field."
+msgstr ""
+"Il n'y a pas de custom post type. Vous devez en créer au moins un pour "
+"utiliser ce champ."
+
+#: field-types/class-field-type-multi-select-post-type.php:176
+#: field-types/class-field-type-select-post-type.php:156
+msgid "Select a post type:"
+msgstr "Sélectionnez un type d’article:"
+
+#: field-types/class-field-type-multi-select-post-type.php:178
+#: field-types/class-field-type-multi-select-taxonomy.php:170
+#: field-types/class-field-type-select-post-type.php:61
+#: field-types/class-field-type-select-post-type.php:158
+#: field-types/class-field-type-select-taxonomy.php:62
+#: field-types/class-field-type-select-taxonomy.php:157
+msgid "Select..."
+msgstr "Sélectionnez"
+
+#: field-types/class-field-type-multi-select-taxonomy.php:30
+msgctxt "xprofile field type"
+msgid "Custom Taxonomy Multiselector"
+msgstr "Multisélecteur de taxonomie personnalisée"
+
+#: field-types/class-field-type-multi-select-taxonomy.php:163
+#: field-types/class-field-type-select-taxonomy.php:150
+msgid ""
+"There is no custom taxonomy. You need to create at least one to use this "
+"field."
+msgstr ""
+"Il n'y a pas de taxonomie personnalisée. Vous devez en créer au moins une "
+"pour utiliser ce champ."
+
+#: field-types/class-field-type-multi-select-taxonomy.php:168
+#: field-types/class-field-type-select-taxonomy.php:155
+msgid "Select a custom taxonomy:"
+msgstr "Sélectionnez une taxonomie personnalisée:"
+
+#: field-types/class-field-type-multi-select-taxonomy.php:179
+msgid "Allow users to add new terms:"
+msgstr "Autoriser les utilisateurs à ajouter de nouveaux termes:"
+
+#: field-types/class-field-type-number-min-max.php:28
+msgid "Number within min/max values (HTML5 field)"
+msgstr "Nombre compris entre les valeurs min / max (champ HTML5)"
+
+#: field-types/class-field-type-oembed.php:26
+msgctxt "xprofile field type"
+msgid "oEmbed URL"
+msgstr ""
+
+#: field-types/class-field-type-select-post-type.php:29
+msgctxt "xprofile field type"
+msgid "Custom Post Type Selector"
+msgstr "Sélecteur de Custom Post Type"
+
+#: field-types/class-field-type-select-taxonomy.php:30
+msgctxt "xprofile field type"
+msgid "Custom Taxonomy Selector"
+msgstr "Sélecteur de taxonomie personnalisée"
+
+#: field-types/class-field-type-slider.php:27
+msgid "Range input (HTML5 field)"
+msgstr "Entrée de plage (champ HTML5)"
+
+#: field-types/class-field-type-token.php:30
+msgctxt "xprofile field type"
+msgid "Token"
+msgstr ""
+
+#: field-types/class-field-type-token.php:68
+msgid "Ignore cases of the token while matching."
+msgstr ""
+
+#: field-types/class-field-type-web.php:26
+msgctxt "xprofile field type"
+msgid "Website (HTML5 field)"
+msgstr "Site Web (champ HTML5)"
+
+#: handlers/class-birthdate-field-validator.php:70
+#: handlers/class-birthdate-field-validator.php:77
+msgid "Incorrect birthdate selection."
+msgstr "Sélection de date de naissance incorrecte."
+
+#: handlers/class-birthdate-field-validator.php:84
+#: handlers/class-signup-validator.php:151
+#: handlers/class-signup-validator.php:171
+#, php-format
+msgid "You have to be at least %s years old."
+msgstr "Vous devez avoir au moins %s ans."
+
+#: handlers/class-field-upload-helper.php:197
+msgid "Invalid file."
+msgstr "Fichier non valide."
+
+#: handlers/class-field-upload-helper.php:201
+msgid "Invalid file size."
+msgstr "Taille de fichier invalide."
+
+#: handlers/class-field-upload-helper.php:209
+#: handlers/class-signup-validator.php:131
+#, php-format
+msgid "File type not allowed: (%s)."
+msgstr "Type de fichier non autorisé: (%s)."
+
+#: handlers/class-field-upload-helper.php:211
+#, php-format
+msgid "Max image upload size: %s MB."
+msgstr "Taille maximale de téléchargement des images: %s MB."
+
+#: handlers/class-signup-validator.php:69
+#: handlers/class-signup-validator.php:115
+msgid "This is a required field."
+msgstr "Ceci est un champ obligatoire."
+
+#: handlers/class-signup-validator.php:81
+#: handlers/class-signup-validator.php:88
+msgid "This is a required field"
+msgstr "Ceci est un champ obligatoire"
+
+#: handlers/class-signup-validator.php:127
+#, php-format
+msgid "File exceed the upload limit. Max upload size %d."
+msgstr ""
+"Le fichier dépasse la limite de téléchargement. Taille maximale d'envoi %d."
+
+#: handlers/class-signup-validator.php:161
+msgid "Invalid date."
+msgstr "Date invalide."
+
+#: handlers/class-signup-validator.php:190
+msgid "Please provide a valid token."
+msgstr ""

@@ -84,7 +84,7 @@ Yes, but you will need to follow our [migration guide](https://buddydev.com/plug
 Yes, 100%. For better performance, we have changed the way field settings were stored in admin. The user data will be preserved and they won't notice the difference.
 
 = What is the supported BuddyPress Version? =
-2.9+, Tested with 5.1.
+2.9+, Tested with 6.2.
 
 = Where do I get support? =
 Please use [BuddyDev support](https://buddydev.com/support/forums/) forums.
@@ -104,6 +104,7 @@ We will love to work with you. Please let us know if you need any of our [servic
  * Fix conflict of bitrhdate settings with date field settings.
  * Fix terms checkbox issue in the dashboard.
  * Cleanup files/images on user being marked spam or user deletion.
+ * Added French translations. Props @johan_walter
 
 = 1.1.5 =
  * Fix script loading on dashboard profile edit page.
