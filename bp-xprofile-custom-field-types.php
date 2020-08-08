@@ -46,7 +46,7 @@ class BP_Xprofile_CFTR {
 	 *
 	 * @var string
 	 */
-	private $version = '1.1.5';
+	private $version = '1.1.6';
 
 	/**
 	 * Class instance
