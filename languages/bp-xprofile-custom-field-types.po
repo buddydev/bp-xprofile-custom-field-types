@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: 2020-03-03 02:09+0530\n"
-"PO-Revision-Date: 2020-03-03 02:09+0530\n"
+"Project-Id-Version: BuddyPress Xprofile Cusotm Field Types\n"
+"POT-Creation-Date: 2020-08-08 16:43+0530\n"
+"PO-Revision-Date: 2020-08-08 16:43+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.3\n"
 "X-Poedit-Basepath: ../src\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_html_e;"
@@ -17,167 +17,167 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: ../assets\n"
 
-#: admin/class-admin.php:47
+#: admin/class-admin.php:48
 msgid ""
 "BuddyPress Xprofile Custom Field Types plugin needs Buddypress Xprofile "
 "Component. Please enable Xprofile first."
 msgstr ""
 
-#: admin/class-field-settings-helper.php:204
+#: admin/class-field-settings-helper.php:208
 msgid "Select2"
 msgstr ""
 
-#: admin/class-field-settings-helper.php:206
+#: admin/class-field-settings-helper.php:210
 msgid "Enable select2 javascript code."
 msgstr ""
 
-#: admin/class-field-settings-helper.php:210
+#: admin/class-field-settings-helper.php:214
 msgid "Select2 status for this field"
 msgstr ""
 
-#: admin/class-field-settings-helper.php:213
+#: admin/class-field-settings-helper.php:217
 msgid "Enabled"
 msgstr ""
 
-#: admin/class-field-settings-helper.php:216
+#: admin/class-field-settings-helper.php:220
 msgid "Disabled"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:29
+#: field-types/class-field-type-birthdate.php:30
 msgctxt "xprofile field type"
 msgid "Birthdate Selector"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:30
-#: field-types/class-field-type-checkbox-acceptance.php:30
-#: field-types/class-field-type-color.php:28
-#: field-types/class-field-type-datepicker.php:25
-#: field-types/class-field-type-decimal-number.php:29
-#: field-types/class-field-type-email.php:26
-#: field-types/class-field-type-file.php:29
-#: field-types/class-field-type-from-to.php:29
-#: field-types/class-field-type-image.php:29
-#: field-types/class-field-type-multi-select-post-type.php:31
-#: field-types/class-field-type-multi-select-taxonomy.php:30
-#: field-types/class-field-type-number-min-max.php:28
-#: field-types/class-field-type-oembed.php:29
-#: field-types/class-field-type-select-post-type.php:29
+#: field-types/class-field-type-birthdate.php:31
+#: field-types/class-field-type-checkbox-acceptance.php:31
+#: field-types/class-field-type-color.php:29
+#: field-types/class-field-type-datepicker.php:29
+#: field-types/class-field-type-decimal-number.php:30
+#: field-types/class-field-type-email.php:30
+#: field-types/class-field-type-file.php:30
+#: field-types/class-field-type-from-to.php:30
+#: field-types/class-field-type-image.php:30
+#: field-types/class-field-type-multi-select-post-type.php:32
+#: field-types/class-field-type-multi-select-taxonomy.php:31
+#: field-types/class-field-type-number-min-max.php:29
+#: field-types/class-field-type-oembed.php:27
+#: field-types/class-field-type-select-post-type.php:30
 #: field-types/class-field-type-select-taxonomy.php:31
-#: field-types/class-field-type-slider.php:26
-#: field-types/class-field-type-token.php:33
-#: field-types/class-field-type-web.php:26
+#: field-types/class-field-type-slider.php:28
+#: field-types/class-field-type-token.php:31
+#: field-types/class-field-type-web.php:27
 msgctxt "xprofile field type category"
 msgid "Custom Fields"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:66
-#: field-types/class-field-type-birthdate.php:72
+#: field-types/class-field-type-birthdate.php:67
+#: field-types/class-field-type-birthdate.php:73
 msgid "Date format"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:88
+#: field-types/class-field-type-birthdate.php:89
 msgid "Time elapsed"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:88
+#: field-types/class-field-type-birthdate.php:89
 msgid "<code>4 years ago</code>, <code>4 years from now</code>"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:95
+#: field-types/class-field-type-birthdate.php:96
 msgid "Custom:"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:97
+#: field-types/class-field-type-birthdate.php:98
 msgid "Enter custom time format"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:98
+#: field-types/class-field-type-birthdate.php:99
 msgid "Example:"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:100
+#: field-types/class-field-type-birthdate.php:101
 msgid "Documentation on date and time formatting"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:109
-#: field-types/class-field-type-birthdate.php:115
+#: field-types/class-field-type-birthdate.php:110
+#: field-types/class-field-type-birthdate.php:116
 msgid "Range"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:122
+#: field-types/class-field-type-birthdate.php:123
 msgid "Absolute"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:127
-#: field-types/class-field-type-birthdate.php:143
+#: field-types/class-field-type-birthdate.php:128
+#: field-types/class-field-type-birthdate.php:144
 msgid "Start:"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:129
-#: field-types/class-field-type-birthdate.php:158
+#: field-types/class-field-type-birthdate.php:130
+#: field-types/class-field-type-birthdate.php:159
 msgid "End:"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:138
+#: field-types/class-field-type-birthdate.php:139
 msgid "Relative"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:149
-#: field-types/class-field-type-birthdate.php:163
+#: field-types/class-field-type-birthdate.php:150
+#: field-types/class-field-type-birthdate.php:164
 msgid "Select range"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:152
-#: field-types/class-field-type-birthdate.php:166
+#: field-types/class-field-type-birthdate.php:153
+#: field-types/class-field-type-birthdate.php:167
 msgid "years ago"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:154
-#: field-types/class-field-type-birthdate.php:168
+#: field-types/class-field-type-birthdate.php:155
+#: field-types/class-field-type-birthdate.php:169
 msgid "years from now"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:178
+#: field-types/class-field-type-birthdate.php:179
 msgid "Show age:"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:181
+#: field-types/class-field-type-birthdate.php:182
 msgid "Check this if you want to show age instead of birthdate:"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:187
+#: field-types/class-field-type-birthdate.php:188
 msgid "Display Label for age:"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:188
+#: field-types/class-field-type-birthdate.php:189
 msgid "e.g Age."
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:192
+#: field-types/class-field-type-birthdate.php:193
 msgid "Hide months while showing age?"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:198
+#: field-types/class-field-type-birthdate.php:199
 msgid "Define a minimum age:"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:201
+#: field-types/class-field-type-birthdate.php:202
 msgid "Minimum age:"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:237
+#: field-types/class-field-type-birthdate.php:238
 #, php-format
 msgid "%s years"
 msgstr ""
 
-#: field-types/class-field-type-birthdate.php:240
+#: field-types/class-field-type-birthdate.php:241
 #, php-format
 msgid ", %s month"
 msgid_plural ", %s months"
 msgstr[0] ""
 msgstr[1] ""
 
-#: field-types/class-field-type-checkbox-acceptance.php:29
+#: field-types/class-field-type-checkbox-acceptance.php:30
 msgctxt "xprofile field type"
 msgid "Checkbox Acceptance"
 msgstr ""
@@ -187,186 +187,186 @@ msgid ""
 "Use this field to write a text that should be displayed beside the checkbox:"
 msgstr ""
 
-#: field-types/class-field-type-checkbox-acceptance.php:195
+#: field-types/class-field-type-checkbox-acceptance.php:194
 msgid "No"
 msgstr ""
 
-#: field-types/class-field-type-checkbox-acceptance.php:195
+#: field-types/class-field-type-checkbox-acceptance.php:194
 msgid "Yes"
 msgstr ""
 
-#: field-types/class-field-type-color.php:27
+#: field-types/class-field-type-color.php:28
 msgctxt "xprofile field type"
 msgid "Color (HTML5 field)"
 msgstr ""
 
-#: field-types/class-field-type-datepicker.php:24
+#: field-types/class-field-type-datepicker.php:28
 msgctxt "xprofile field type"
 msgid "Datepicker (HTML5 field)"
 msgstr ""
 
-#: field-types/class-field-type-decimal-number.php:28
+#: field-types/class-field-type-decimal-number.php:29
 msgid "Decimal number (HTML5 field)"
 msgstr ""
 
-#: field-types/class-field-type-decimal-number.php:109
-#: field-types/class-field-type-from-to.php:160
+#: field-types/class-field-type-decimal-number.php:128
+#: field-types/class-field-type-from-to.php:183
 msgid "Options"
 msgstr ""
 
-#: field-types/class-field-type-decimal-number.php:112
+#: field-types/class-field-type-decimal-number.php:131
 msgid "Precision"
 msgstr ""
 
-#: field-types/class-field-type-decimal-number.php:121
+#: field-types/class-field-type-decimal-number.php:140
 msgid "Step Size"
 msgstr ""
 
-#: field-types/class-field-type-decimal-number.php:124
+#: field-types/class-field-type-decimal-number.php:143
 msgid ""
 "Use decimal in step e.g .05, 1.3 etc, otherwise the field will behave as "
 "number"
 msgstr ""
 
-#: field-types/class-field-type-email.php:25
+#: field-types/class-field-type-email.php:29
 msgctxt "xprofile field type"
 msgid "Email (HTML5 field)"
 msgstr ""
 
-#: field-types/class-field-type-file.php:28
+#: field-types/class-field-type-file.php:29
 msgctxt "xprofile field type"
 msgid "File"
 msgstr ""
 
-#: field-types/class-field-type-file.php:81
-#: field-types/class-field-type-image.php:78
+#: field-types/class-field-type-file.php:88
+#: field-types/class-field-type-image.php:86
 msgid "Check this to delete this file"
 msgstr ""
 
-#: field-types/class-field-type-file.php:138
+#: field-types/class-field-type-file.php:152
 msgid "Download file"
 msgstr ""
 
-#: field-types/class-field-type-from-to.php:28
+#: field-types/class-field-type-from-to.php:29
 msgid "From/To values"
 msgstr ""
 
-#: field-types/class-field-type-from-to.php:163
+#: field-types/class-field-type-from-to.php:186
 msgid "Value Type"
 msgstr ""
 
-#: field-types/class-field-type-from-to.php:165
+#: field-types/class-field-type-from-to.php:188
 msgid "No restrictions"
 msgstr ""
 
-#: field-types/class-field-type-from-to.php:166
+#: field-types/class-field-type-from-to.php:189
 msgid "Integers"
 msgstr ""
 
-#: field-types/class-field-type-from-to.php:167
+#: field-types/class-field-type-from-to.php:190
 msgid "Numeric"
 msgstr ""
 
-#: field-types/class-field-type-from-to.php:168
+#: field-types/class-field-type-from-to.php:191
 msgid "String"
 msgstr ""
 
-#: field-types/class-field-type-from-to.php:173
+#: field-types/class-field-type-from-to.php:196
 msgid "Integer/Numeric Type Constraints"
 msgstr ""
 
-#: field-types/class-field-type-from-to.php:175
+#: field-types/class-field-type-from-to.php:198
 msgid "Default Values"
 msgstr ""
 
-#: field-types/class-field-type-from-to.php:178
+#: field-types/class-field-type-from-to.php:201
 msgid "From"
 msgstr ""
 
-#: field-types/class-field-type-from-to.php:183
+#: field-types/class-field-type-from-to.php:206
 msgid "To"
 msgstr ""
 
-#: field-types/class-field-type-image.php:28
+#: field-types/class-field-type-image.php:29
 msgctxt "xprofile field type"
 msgid "Image"
 msgstr ""
 
-#: field-types/class-field-type-multi-select-post-type.php:30
+#: field-types/class-field-type-multi-select-post-type.php:31
 msgctxt "xprofile field type"
 msgid "Custom Post Type Multiselector"
 msgstr ""
 
-#: field-types/class-field-type-multi-select-post-type.php:149
-#: field-types/class-field-type-select-post-type.php:128
+#: field-types/class-field-type-multi-select-post-type.php:171
+#: field-types/class-field-type-select-post-type.php:151
 msgid ""
 "There is no custom post type. You need to create at least one to use this "
 "field."
 msgstr ""
 
-#: field-types/class-field-type-multi-select-post-type.php:151
-#: field-types/class-field-type-multi-select-post-type.php:154
-#: field-types/class-field-type-select-post-type.php:130
-#: field-types/class-field-type-select-post-type.php:133
+#: field-types/class-field-type-multi-select-post-type.php:173
+#: field-types/class-field-type-multi-select-post-type.php:176
+#: field-types/class-field-type-select-post-type.php:153
+#: field-types/class-field-type-select-post-type.php:156
 msgid "Select a post type:"
 msgstr ""
 
-#: field-types/class-field-type-multi-select-post-type.php:156
-#: field-types/class-field-type-multi-select-taxonomy.php:153
-#: field-types/class-field-type-select-post-type.php:56
-#: field-types/class-field-type-select-post-type.php:135
-#: field-types/class-field-type-select-taxonomy.php:57
-#: field-types/class-field-type-select-taxonomy.php:140
+#: field-types/class-field-type-multi-select-post-type.php:178
+#: field-types/class-field-type-multi-select-taxonomy.php:170
+#: field-types/class-field-type-select-post-type.php:61
+#: field-types/class-field-type-select-post-type.php:158
+#: field-types/class-field-type-select-taxonomy.php:62
+#: field-types/class-field-type-select-taxonomy.php:157
 msgid "Select..."
 msgstr ""
 
-#: field-types/class-field-type-multi-select-taxonomy.php:29
+#: field-types/class-field-type-multi-select-taxonomy.php:30
 msgctxt "xprofile field type"
 msgid "Custom Taxonomy Multiselector"
 msgstr ""
 
-#: field-types/class-field-type-multi-select-taxonomy.php:146
-#: field-types/class-field-type-select-taxonomy.php:133
+#: field-types/class-field-type-multi-select-taxonomy.php:163
+#: field-types/class-field-type-select-taxonomy.php:150
 msgid ""
 "There is no custom taxonomy. You need to create at least one to use this "
 "field."
 msgstr ""
 
-#: field-types/class-field-type-multi-select-taxonomy.php:148
-#: field-types/class-field-type-multi-select-taxonomy.php:151
-#: field-types/class-field-type-select-taxonomy.php:135
-#: field-types/class-field-type-select-taxonomy.php:138
+#: field-types/class-field-type-multi-select-taxonomy.php:165
+#: field-types/class-field-type-multi-select-taxonomy.php:168
+#: field-types/class-field-type-select-taxonomy.php:152
+#: field-types/class-field-type-select-taxonomy.php:155
 msgid "Select a custom taxonomy:"
 msgstr ""
 
-#: field-types/class-field-type-multi-select-taxonomy.php:162
+#: field-types/class-field-type-multi-select-taxonomy.php:179
 msgid "Allow users to add new terms:"
 msgstr ""
 
-#: field-types/class-field-type-number-min-max.php:27
+#: field-types/class-field-type-number-min-max.php:28
 msgid "Number within min/max values (HTML5 field)"
 msgstr ""
 
-#: field-types/class-field-type-number-min-max.php:105
+#: field-types/class-field-type-number-min-max.php:123
 msgid "Write min and max values. You can leave any field blank if you want."
 msgstr ""
 
-#: field-types/class-field-type-number-min-max.php:110
-#: field-types/class-field-type-slider.php:112
+#: field-types/class-field-type-number-min-max.php:128
+#: field-types/class-field-type-slider.php:125
 msgid "Minimum:"
 msgstr ""
 
-#: field-types/class-field-type-number-min-max.php:116
-#: field-types/class-field-type-slider.php:116
+#: field-types/class-field-type-number-min-max.php:134
+#: field-types/class-field-type-slider.php:129
 msgid "Maximum:"
 msgstr ""
 
-#: field-types/class-field-type-oembed.php:28
+#: field-types/class-field-type-oembed.php:26
 msgctxt "xprofile field type"
 msgid "oEmbed URL"
 msgstr ""
 
-#: field-types/class-field-type-select-post-type.php:28
+#: field-types/class-field-type-select-post-type.php:29
 msgctxt "xprofile field type"
 msgid "Custom Post Type Selector"
 msgstr ""
@@ -376,82 +376,82 @@ msgctxt "xprofile field type"
 msgid "Custom Taxonomy Selector"
 msgstr ""
 
-#: field-types/class-field-type-slider.php:25
+#: field-types/class-field-type-slider.php:27
 msgid "Range input (HTML5 field)"
 msgstr ""
 
-#: field-types/class-field-type-slider.php:108
+#: field-types/class-field-type-slider.php:121
 msgid "Write min and max values."
 msgstr ""
 
-#: field-types/class-field-type-token.php:32
+#: field-types/class-field-type-token.php:30
 msgctxt "xprofile field type"
 msgid "Token"
 msgstr ""
 
-#: field-types/class-field-type-token.php:64
+#: field-types/class-field-type-token.php:61
 msgid "Add a list of allowed tokens(separated by comma(,) eg. ONE,two etc):"
 msgstr ""
 
-#: field-types/class-field-type-token.php:71
+#: field-types/class-field-type-token.php:68
 msgid "Ignore cases of the token while matching."
 msgstr ""
 
-#: field-types/class-field-type-web.php:25
+#: field-types/class-field-type-web.php:26
 msgctxt "xprofile field type"
 msgid "Website (HTML5 field)"
 msgstr ""
 
-#: handlers/class-birthdate-field-validator.php:73
-#: handlers/class-birthdate-field-validator.php:80
+#: handlers/class-birthdate-field-validator.php:70
+#: handlers/class-birthdate-field-validator.php:77
 msgid "Incorrect birthdate selection."
 msgstr ""
 
-#: handlers/class-birthdate-field-validator.php:87
-#: handlers/class-signup-validator.php:152
-#: handlers/class-signup-validator.php:173
+#: handlers/class-birthdate-field-validator.php:84
+#: handlers/class-signup-validator.php:151
+#: handlers/class-signup-validator.php:171
 #, php-format
 msgid "You have to be at least %s years old."
 msgstr ""
 
-#: handlers/class-field-upload-helper.php:175
+#: handlers/class-field-upload-helper.php:197
 msgid "Invalid file."
 msgstr ""
 
-#: handlers/class-field-upload-helper.php:179
+#: handlers/class-field-upload-helper.php:201
 msgid "Invalid file size."
 msgstr ""
 
-#: handlers/class-field-upload-helper.php:187
-#: handlers/class-signup-validator.php:132
+#: handlers/class-field-upload-helper.php:209
+#: handlers/class-signup-validator.php:131
 #, php-format
 msgid "File type not allowed: (%s)."
 msgstr ""
 
-#: handlers/class-field-upload-helper.php:189
+#: handlers/class-field-upload-helper.php:211
 #, php-format
 msgid "Max image upload size: %s MB."
 msgstr ""
 
-#: handlers/class-signup-validator.php:71
-#: handlers/class-signup-validator.php:116
+#: handlers/class-signup-validator.php:69
+#: handlers/class-signup-validator.php:115
 msgid "This is a required field."
 msgstr ""
 
-#: handlers/class-signup-validator.php:83
-#: handlers/class-signup-validator.php:90
+#: handlers/class-signup-validator.php:81
+#: handlers/class-signup-validator.php:88
 msgid "This is a required field"
 msgstr ""
 
-#: handlers/class-signup-validator.php:128
+#: handlers/class-signup-validator.php:127
 #, php-format
 msgid "File exceed the upload limit. Max upload size %d."
 msgstr ""
 
-#: handlers/class-signup-validator.php:162
+#: handlers/class-signup-validator.php:161
 msgid "Invalid date."
 msgstr ""
 
-#: handlers/class-signup-validator.php:192
+#: handlers/class-signup-validator.php:190
 msgid "Please provide a valid token."
 msgstr ""
