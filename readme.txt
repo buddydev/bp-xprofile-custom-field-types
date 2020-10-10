@@ -99,8 +99,10 @@ We will love to work with you. Please let us know if you need any of our [servic
 3. profile view screenshot-3.png
 
 == Changelog ==
+
 = 1.1.7 =
- * Fix issue with the default value sof from/to field not being shown.
+ * Fix image/file not getting deleted when a user was deleted or marked spam.
+ * Fix issue with the default values of from/to field not being shown.
  * Add option to select value separator in the from/to field.
  * Fix deletion of value of From/To field when using numeric values.
  * Prop @johan_walter for the suggestions.
