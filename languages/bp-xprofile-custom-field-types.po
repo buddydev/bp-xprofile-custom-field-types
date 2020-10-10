@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BuddyPress Xprofile Cusotm Field Types\n"
-"POT-Creation-Date: 2020-08-08 16:43+0530\n"
-"PO-Revision-Date: 2020-08-08 16:43+0530\n"
+"POT-Creation-Date: 2020-10-10 21:28+0530\n"
+"PO-Revision-Date: 2020-10-10 21:28+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -23,23 +23,23 @@ msgid ""
 "Component. Please enable Xprofile first."
 msgstr ""
 
-#: admin/class-field-settings-helper.php:208
+#: admin/class-field-settings-helper.php:211
 msgid "Select2"
 msgstr ""
 
-#: admin/class-field-settings-helper.php:210
+#: admin/class-field-settings-helper.php:213
 msgid "Enable select2 javascript code."
 msgstr ""
 
-#: admin/class-field-settings-helper.php:214
+#: admin/class-field-settings-helper.php:217
 msgid "Select2 status for this field"
 msgstr ""
 
-#: admin/class-field-settings-helper.php:217
+#: admin/class-field-settings-helper.php:220
 msgid "Enabled"
 msgstr ""
 
-#: admin/class-field-settings-helper.php:220
+#: admin/class-field-settings-helper.php:223
 msgid "Disabled"
 msgstr ""
 
@@ -210,7 +210,7 @@ msgid "Decimal number (HTML5 field)"
 msgstr ""
 
 #: field-types/class-field-type-decimal-number.php:128
-#: field-types/class-field-type-from-to.php:183
+#: field-types/class-field-type-from-to.php:185
 msgid "Options"
 msgstr ""
 
@@ -251,40 +251,61 @@ msgstr ""
 msgid "From/To values"
 msgstr ""
 
-#: field-types/class-field-type-from-to.php:186
+#: field-types/class-field-type-from-to.php:188
 msgid "Value Type"
 msgstr ""
 
-#: field-types/class-field-type-from-to.php:188
+#: field-types/class-field-type-from-to.php:190
 msgid "No restrictions"
 msgstr ""
 
-#: field-types/class-field-type-from-to.php:189
+#: field-types/class-field-type-from-to.php:191
 msgid "Integers"
 msgstr ""
 
-#: field-types/class-field-type-from-to.php:190
+#: field-types/class-field-type-from-to.php:192
 msgid "Numeric"
 msgstr ""
 
-#: field-types/class-field-type-from-to.php:191
+#: field-types/class-field-type-from-to.php:193
 msgid "String"
 msgstr ""
 
-#: field-types/class-field-type-from-to.php:196
+#: field-types/class-field-type-from-to.php:198
 msgid "Integer/Numeric Type Constraints"
 msgstr ""
 
-#: field-types/class-field-type-from-to.php:198
+#: field-types/class-field-type-from-to.php:200
 msgid "Default Values"
 msgstr ""
 
-#: field-types/class-field-type-from-to.php:201
+#: field-types/class-field-type-from-to.php:203
 msgid "From"
 msgstr ""
 
-#: field-types/class-field-type-from-to.php:206
+#: field-types/class-field-type-from-to.php:208
 msgid "To"
+msgstr ""
+
+#: field-types/class-field-type-from-to.php:216
+msgid "Value separator"
+msgstr ""
+
+#: field-types/class-field-type-from-to.php:218
+msgid "Hyphen(v1 - v2)"
+msgstr ""
+
+#: field-types/class-field-type-from-to.php:219
+msgid "Colon(v1 : v2)"
+msgstr ""
+
+#: field-types/class-field-type-from-to.php:220
+msgid "to( v1 to v2)"
+msgstr ""
+
+#: field-types/class-field-type-from-to.php:257
+msgctxt "From/To field value separator"
+msgid "to"
 msgstr ""
 
 #: field-types/class-field-type-image.php:29
