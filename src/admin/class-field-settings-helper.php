@@ -152,6 +152,9 @@ class Field_Settings_Helper {
 				$from_value = isset( $_POST['bpxcftr_fromto_to_value'] ) ? wp_unslash( $_POST['bpxcftr_fromto_to_value'] ) : '';
 				bp_xprofile_update_field_meta( $field->id, 'to_value', $from_value );
 
+				$separator = isset( $_POST['bpxcftr_fromto_separator_token'] )? wp_unslash( $_POST['bpxcftr_fromto_separator_token']): '-';
+				bp_xprofile_update_field_meta( $field->id, 'separator_token', $separator );
+
 				break;
 
 			case 'token':
