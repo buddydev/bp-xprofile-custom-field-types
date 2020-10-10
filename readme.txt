@@ -2,8 +2,8 @@
 Contributors: buddydev, sbrajesh
 Tags: buddypress, xprofile, fields, buddypress-profile-field-types
 Requires at least: 4.5
-Tested up to: 5.5
-Stable tag: 1.1.6
+Tested up to: 5.5.1
+Stable tag: 1.1.7
 License: GLPv2 or later
 
 Buddypress Xprofile Custom Field Types adds extra custom profile fields to BuddyPress. Field types are: Birthdate, Email, Url etc.
@@ -99,6 +99,11 @@ We will love to work with you. Please let us know if you need any of our [servic
 3. profile view screenshot-3.png
 
 == Changelog ==
+= 1.1.7 =
+ * Fix issue with the default value sof from/to field not being shown.
+ * Add option to select value separator in the from/to field.
+ * Fix deletion of value of From/To field when using numeric values.
+ * Prop @johan_walter for the suggestions.
 
 = 1.1.6 =
  * Fix conflict of bitrhdate settings with date field settings.
