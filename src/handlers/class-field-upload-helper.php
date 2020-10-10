@@ -53,11 +53,11 @@ class Field_Upload_Helper {
 	 * Bind hooks
 	 */
 	private function setup() {
-		add_action( 'xprofile_data_before_save', array( $this, 'on_field_data_save' ) );
-		add_action( 'xprofile_data_before_delete', array( $this, 'on_field_data_delete' ) );
-		add_action( 'wpmu_delete_user', array( $this, 'on_user_data_delete' ) );
-		add_action( 'delete_user', array( $this, 'on_user_delete' ) );
-		add_action( 'bp_make_spam_user', array( $this, 'on_user_data_delete' ) );
+		add_action( 'xprofile_data_before_save', array( $this, 'on_field_data_save' ), 5 );
+		add_action( 'xprofile_data_before_delete', array( $this, 'on_field_data_delete' ), 5 );
+		add_action( 'wpmu_delete_user', array( $this, 'on_user_data_delete' ), 5 );
+		add_action( 'delete_user', array( $this, 'on_user_delete' ), 5 );
+		add_action( 'bp_make_spam_user', array( $this, 'on_user_data_delete' ), 5 );
 	}
 
 	/**
@@ -297,6 +297,6 @@ class Field_Upload_Helper {
 	private function get_file_field_ids() {
 		global $wpdb;
 		$bp = buddypress();
-		return $wpdb->get_col( $wpdb->prepare( "SELECT id FROM {$bp->profile->table_name_fields} WHERE field_type = %s OR field_type = %s", 'image', 'file' ) );
+		return $wpdb->get_col( $wpdb->prepare( "SELECT id FROM {$bp->profile->table_name_fields} WHERE type = %s OR type = %s", 'image', 'file' ) );
 	}
 }
