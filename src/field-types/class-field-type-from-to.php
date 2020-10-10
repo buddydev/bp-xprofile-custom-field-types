@@ -43,10 +43,13 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 	public function edit_field_html( array $raw_properties = array() ) {
 		global $field;
 
-		$data = empty( $field->data ) ? array(
+		// does the value field exists.
+		$data_exists = isset( $field->data ) && ! empty( $field->data->id );
+
+		$data = $data_exists ? maybe_unserialize( $field->data->value ) : array(
 			'from' => self::get_from_value( $field->id ),
 			'to'   => self::get_to_value( $field->id ),
-		) : maybe_unserialize( $field->data->value );
+		);
 
 		// make sure data is always array. In case some one changed the field type, do not throw error.
 		if ( ! is_array( $data ) ) {
@@ -63,9 +66,8 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 		$field_name = bp_get_the_profile_field_input_name();
 		$value      = (array) bp_get_the_profile_field_edit_value();
 
-		$is_array = is_array( $value );
-		$from     = $is_array && isset( $value['from'] ) ? $value['from'] : $data['from'];
-		$to       = $is_array && isset( $value['to'] ) ? $value['to'] : $data['to'];
+		$from = isset( $value['from'] ) ? $value['from'] : $data['from'];
+		$to   = isset( $value['to'] ) ? $value['to'] : $data['to'];
 
 		$type = self::get_value_type( $field->id );
 
