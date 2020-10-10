@@ -61,7 +61,7 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 		}
 
 		$field_name = bp_get_the_profile_field_input_name();
-		$value      = bp_get_the_profile_field_edit_value();
+		$value      = (array) bp_get_the_profile_field_edit_value();
 
 		$is_array = is_array( $value );
 		$from     = $is_array && isset( $value['from'] ) ? $value['from'] : $data['from'];
@@ -271,6 +271,11 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 		if ( empty( $type ) || 'string' === $type ) {
 			return true;// allow numbers?
 		}
+		// allow deleting value.
+		if ( '' === $values['from'] && '' === $values['to'] ) {
+			return true;
+		}
+
 
 		if ( 'integer' === $type && ( filter_var( $values['from'], FILTER_VALIDATE_INT ) === false || filter_var( $values['to'], FILTER_VALIDATE_INT ) === false ) ) {
 			return false;
