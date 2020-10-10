@@ -103,19 +103,19 @@ class Field_Settings_Helper {
 				break;
 
 			case 'slider':
-				$min = isset( $_POST['bpxcftr_slider_min'] ) ? $_POST['bpxcftr_slider_min'] : 0;
+				$min = isset( $_POST['bpxcftr_slider_min'] ) ? wp_unslash( $_POST['bpxcftr_slider_min'] ) : 0;
 				bp_xprofile_update_field_meta( $field->id, 'min_val', $min );
 
-				$max = isset( $_POST['bpxcftr_slider_max'] ) ? $_POST['bpxcftr_slider_max'] : 0;
+				$max = isset( $_POST['bpxcftr_slider_max'] ) ? wp_unslash( $_POST['bpxcftr_slider_max'] ) : 0;
 				bp_xprofile_update_field_meta( $field->id, 'max_val', $max );
 
 				break;
 
 			case 'decimal_number':
-				$precision = isset( $_POST['bpxcftr_decimal_precision'] ) ? $_POST['bpxcftr_decimal_precision'] : 0;
+				$precision = isset( $_POST['bpxcftr_decimal_precision'] ) ? wp_unslash( $_POST['bpxcftr_decimal_precision'] ) : 0;
 				bp_xprofile_update_field_meta( $field->id, 'precision', $precision );
 
-				$step = isset( $_POST['bpxcftr_decimal_step_size'] ) ? $_POST['bpxcftr_decimal_step_size'] : 1;
+				$step = isset( $_POST['bpxcftr_decimal_step_size'] ) ? wp_unslash( $_POST['bpxcftr_decimal_step_size'] ) : 1;
 				bp_xprofile_update_field_meta( $field->id, 'step_size', $step );
 
 				break;
@@ -124,7 +124,7 @@ class Field_Settings_Helper {
 				$show_age = isset( $_POST['bpxcftr_birtdate_show_age'] ) ? 1 : 0;
 				bp_xprofile_update_field_meta( $field->id, 'show_age', $show_age );
 
-				$min_age = isset( $_POST['bpxcftr_birtdate_min_age'] ) ? $_POST['bpxcftr_birtdate_min_age'] : 0;
+				$min_age = isset( $_POST['bpxcftr_birtdate_min_age'] ) ? wp_unslash( $_POST['bpxcftr_birtdate_min_age'] ) : 0;
 
 				if ( $min_age ) {
 					bp_xprofile_update_field_meta( $field->id, 'min_age', $min_age );
@@ -141,25 +141,25 @@ class Field_Settings_Helper {
 
 				break;
 
-            case 'fromto':
-	            $value_type = isset( $_POST['bpxcftr_fromto_value_type'] ) ? $_POST['bpxcftr_fromto_value_type'] : '';
-	            bp_xprofile_update_field_meta( $field->id, 'value_type', $value_type );
+			case 'fromto':
+				$value_type = isset( $_POST['bpxcftr_fromto_value_type'] ) ? wp_unslash( $_POST['bpxcftr_fromto_value_type'] ) : '';
+				bp_xprofile_update_field_meta( $field->id, 'value_type', $value_type );
 
-	            $from_value = isset( $_POST['bpxcftr_fromto_from_value'] ) ? $_POST['bpxcftr_fromto_from_value'] : '';
-	            bp_xprofile_update_field_meta( $field->id, 'from_value', $from_value );
+				$from_value = isset( $_POST['bpxcftr_fromto_from_value'] ) ? wp_unslash( $_POST['bpxcftr_fromto_from_value'] ) : '';
+				bp_xprofile_update_field_meta( $field->id, 'from_value', $from_value );
 
 
-	            $from_value = isset( $_POST['bpxcftr_fromto_to_value'] ) ? $_POST['bpxcftr_fromto_to_value'] : '';
-	            bp_xprofile_update_field_meta( $field->id, 'to_value', $from_value );
+				$from_value = isset( $_POST['bpxcftr_fromto_to_value'] ) ? wp_unslash( $_POST['bpxcftr_fromto_to_value'] ) : '';
+				bp_xprofile_update_field_meta( $field->id, 'to_value', $from_value );
 
-	            break;
+				break;
 
 			case 'token':
 				$data = isset( $_POST['bpxcftr_token_tokens'] ) ? wp_unslash( $_POST['bpxcftr_token_tokens'] ) : '';
 				$data = sanitize_textarea_field( $data );
 				bp_xprofile_update_field_meta( $field->id, 'token_tokens', $data );
 				// Ignore case?
-				$is_ignored = isset( $_POST['bpxcftr_token_ignore_case']) ? 1: 0;
+				$is_ignored = isset( $_POST['bpxcftr_token_ignore_case'] ) ? 1 : 0;
 				bp_xprofile_update_field_meta( $field->id, 'token_ignore_case', $is_ignored );
 
 				break;
