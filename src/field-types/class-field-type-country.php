@@ -16,9 +16,9 @@ use BPXProfileCFTR\Contracts\Field_Type_Selectable;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Select Country Type
+ * Country Profile Field Type
  */
-class Field_Type_Select_Country extends \BP_XProfile_Field_Type implements Field_Type_Selectable {
+class Field_Type_Country extends \BP_XProfile_Field_Type implements Field_Type_Selectable {
 
 	/**
 	 * Constructor.
@@ -31,7 +31,7 @@ class Field_Type_Select_Country extends \BP_XProfile_Field_Type implements Field
 
 		$this->supports_options = false;
 
-		do_action( 'bp_xprofile_field_type_select_country', $this );
+		do_action( 'bp_xprofile_field_type_country', $this );
 	}
 
 	/**
@@ -40,6 +40,7 @@ class Field_Type_Select_Country extends \BP_XProfile_Field_Type implements Field
 	 * @param array $raw_properties properties.
 	 */
 	public function edit_field_html( array $raw_properties = array() ) {
+
 		$user_id = bp_displayed_user_id();
 
 		if ( isset( $raw_properties['user_id'] ) ) {
@@ -47,7 +48,7 @@ class Field_Type_Select_Country extends \BP_XProfile_Field_Type implements Field
 			unset( $raw_properties['user_id'] );
 		}
 
-		$html = $this->get_edit_field_html_elements( $raw_properties );
+		$atts = $this->get_edit_field_html_elements( $raw_properties );
 		?>
 
 		<legend id="<?php bp_the_profile_field_input_name(); ?>-1">
@@ -57,7 +58,7 @@ class Field_Type_Select_Country extends \BP_XProfile_Field_Type implements Field
 
 		<?php do_action( bp_get_the_profile_field_errors_action() ); ?>
 
-	   <select <?php echo $html; ?>>
+	   <select <?php echo $atts; ?>>
 			<option value=""><?php _e( 'Select...', 'bp-xprofile-custom-field-types' ); ?></option>
 			<?php bp_the_profile_field_options( "user_id={$user_id}" ); ?>
 		</select>
@@ -77,8 +78,13 @@ class Field_Type_Select_Country extends \BP_XProfile_Field_Type implements Field
 	public function edit_field_options_html( array $args = array() ) {
 		global $field;
 
-		$country_selected       = self::get_selected_country( $field->id );
+		$country_selected       = self::get_default_selected_country( $field->id );
 		$user_selected_country  = \BP_XProfile_ProfileData::get_value_byid( $this->field_obj->id, $args['user_id'] );
+
+		// fallback to default.
+		if ( ! $user_selected_country ) {
+			$user_selected_country = $country_selected;
+		}
 
 		$html = '';
 
@@ -91,17 +97,17 @@ class Field_Type_Select_Country extends \BP_XProfile_Field_Type implements Field
 		$countries = self::get_countries();
 
 		if ( $countries ) {
-			foreach ( $countries as $country_code => $country ) {
+			foreach ( $countries as $country_code => $country_name ) {
 				$html .= sprintf(
 					'<option value="%1$s" %2$s>%3$s</option>',
 					$country_code,
-					( $user_selected_country == $country_code ) ? ' selected="selected"' : '',
-					$country
+					$user_selected_country === $country_code ? ' selected="selected"' : '',
+					$country_name
 				);
 			}
 		}
 
-		echo apply_filters( 'bp_get_the_profile_field_select_country', $html, $args['type'], $country_selected, $this->field_obj->id );
+		echo apply_filters( 'bp_get_the_profile_field_country', $html, $args['type'], $country_selected, $this->field_obj->id );
 	}
 
 	/**
@@ -110,9 +116,9 @@ class Field_Type_Select_Country extends \BP_XProfile_Field_Type implements Field
 	 * @param array $raw_properties properties.
 	 */
 	public function admin_field_html( array $raw_properties = array() ) {
-		$html = $this->get_edit_field_html_elements( $raw_properties );
+		$atts = $this->get_edit_field_html_elements( $raw_properties );
 		?>
-        <select <?php echo $html; ?>>
+        <select <?php echo $atts; ?>>
 			<?php bp_the_profile_field_options(); ?>
         </select>
 		<?php
@@ -134,16 +140,15 @@ class Field_Type_Select_Country extends \BP_XProfile_Field_Type implements Field
 
 		$class = $current_field->type != $type ? 'display: none;' : '';
 
-		$selected_country = self::get_selected_country( $current_field->id );
+		$selected_country = self::get_default_selected_country( $current_field->id );
 
 		?>
-        <div id="<?php echo esc_attr( $type ); ?>" class="postbox bp-options-box"
-             style="<?php echo esc_attr( $class ); ?> margin-top: 15px;">
+        <div id="<?php echo esc_attr( $type ); ?>" class="postbox bp-options-box" style="<?php echo esc_attr( $class ); ?> margin-top: 15px;">
                 <h3><?php esc_html_e( 'Select country:', 'bp-xprofile-custom-field-types' ); ?></h3>
                 <div class="inside">
                     <p>
 						<?php _e( 'Select country:', 'bp-xprofile-custom-field-types' ); ?>
-                        <select name="bpxcftr_selected_country" id="bpxcftr_selected_country">
+                        <select name="bpxcftr_default_country" id="bpxcftr_default_country">
                             <option value=""><?php _e( 'Select...', 'bp-xprofile-custom-field-types' ); ?></option>
 							<?php foreach ( self::get_countries() as $country_code => $country ): ?>
                                 <option value="<?php echo $country_code; ?>" <?php selected( $selected_country, $country_code, true ); ?>><?php echo $country; ?></option>
@@ -183,7 +188,7 @@ class Field_Type_Select_Country extends \BP_XProfile_Field_Type implements Field
 		$countries = self::get_countries();
 
 		if ( ! isset( $countries[ $field_value ] ) ) {
-		    return '';
+			return '';
 		}
 
 		return $countries[ $field_value ];
@@ -196,18 +201,18 @@ class Field_Type_Select_Country extends \BP_XProfile_Field_Type implements Field
 	 *
 	 * @return string
 	 */
-	private static function get_selected_country( $field_id ) {
+	private static function get_default_selected_country( $field_id ) {
 
 		if ( ! $field_id ) {
 			return '';
 		}
 
-		return bp_xprofile_get_meta( $field_id, 'field', 'selected_country', true );
+		return bp_xprofile_get_meta( $field_id, 'field', 'default_country', true );
 	}
 
 	/**
-     * Get countries
-     *
+	 * Get countries
+	 *
 	 * @return array
 	 */
 	private static function get_countries() {

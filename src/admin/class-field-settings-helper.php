@@ -60,6 +60,12 @@ class Field_Settings_Helper {
 
 				break;
 
+			case 'country':
+				$country = isset( $_POST['bpxcftr_default_country'] ) ? wp_unslash( $_POST['bpxcftr_default_country'] ) : '';
+				$country = sanitize_text_field( $country );
+				bp_xprofile_update_field_meta( $field->id, 'default_country', $country );
+				break;
+
 			case 'select_custom_post_type':
 				$data = isset( $_POST['bpxcftr_selected_post_type'] ) ? wp_unslash( $_POST['bpxcftr_selected_post_type'] ) : '';
 				$data = sanitize_text_field( $data ); // seriously, we should validate against the post tye.

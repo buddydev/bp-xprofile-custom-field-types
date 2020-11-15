@@ -28,7 +28,7 @@ function bpxcftr_get_field_types() {
 		'web'                          => 'BPXProfileCFTR\Field_Types\Field_Type_Web',
 		'datepicker'                   => 'BPXProfileCFTR\Field_Types\Field_Type_Datepicker',
 		'select_custom_post_type'      => 'BPXProfileCFTR\Field_Types\Field_Type_Select_Post_Type',
-		'select_country'               => 'BPXProfileCFTR\Field_Types\Field_Type_Select_Country',
+		'country'                      => 'BPXProfileCFTR\Field_Types\Field_Type_Country',
 		'multiselect_custom_post_type' => 'BPXProfileCFTR\Field_Types\Field_Type_Multi_Select_Post_Type',
 		'select_custom_taxonomy'       => 'BPXProfileCFTR\Field_Types\Field_Type_Select_Taxonomy',
 		'multiselect_custom_taxonomy'  => 'BPXProfileCFTR\Field_Types\Field_Type_Multi_Select_Taxonomy',
