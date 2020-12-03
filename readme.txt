@@ -2,8 +2,8 @@
 Contributors: buddydev, sbrajesh
 Tags: buddypress, xprofile, fields, buddypress-profile-field-types
 Requires at least: 4.5
-Tested up to: 5.5.1
-Stable tag: 1.1.7
+Tested up to: 5.6
+Stable tag: 1.1.8
 License: GLPv2 or later
 
 Buddypress Xprofile Custom Field Types adds extra custom profile fields to BuddyPress. Field types are: Birthdate, Email, Url etc.
@@ -18,6 +18,7 @@ The newly added BuddyPress field types are:-
 * Image.
 * File.
 * Checkbox acceptance.
+* Country field.
 * From/To field(can be used to show 2 numbers or text strings).
 * Token (can be used to set a list of predefined approved codes for registration etc).
 * oEmbed ( allow your users to use youtube/facebook, vimeo and other oembed supporting urls to embed in their profile).
@@ -84,7 +85,7 @@ Yes, but you will need to follow our [migration guide](https://buddydev.com/plug
 Yes, 100%. For better performance, we have changed the way field settings were stored in admin. The user data will be preserved and they won't notice the difference.
 
 = What is the supported BuddyPress Version? =
-2.9+, Tested with 6.2.
+2.9+, Tested with 7.0-RC1.
 
 = Where do I get support? =
 Please use [BuddyDev support](https://buddydev.com/support/forums/) forums.
@@ -99,6 +100,12 @@ We will love to work with you. Please let us know if you need any of our [servic
 3. profile view screenshot-3.png
 
 == Changelog ==
+
+= 1.1.8 =
+ * Added country field.
+ * Added option for admins to choose if web links would open in new window/tab.
+ * Fixed the issue with From/To value deletion. Thank you @johan_walter
+ * Fixed web field always using http schema instead of the specified one.
 
 = 1.1.7 =
  * Fix image/file not getting deleted when a user was deleted or marked spam.
