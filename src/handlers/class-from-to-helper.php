@@ -39,8 +39,35 @@ class From_To_Helper {
 	 * Bind hooks
 	 */
 	private function setup() {
+		add_filter( 'bp_xprofile_set_field_data_pre_validate', array( $this, 'pre_save_validate' ), 10, 3 );
 		add_filter( 'xprofile_data_field_id_before_save', array( $this, 'detach' ), 1, 2 );
 		add_filter( 'xprofile_data_after_save', array( $this, 'attach' ) );
+	}
+
+	/**
+	 * Update Value on pre-validate to enforce deletion.
+	 *
+	 * @param mixed                   $value value.
+	 * @param \BP_XProfile_Field      $field field object.
+	 * @param \BP_XProfile_Field_Type $field_type_obj field type object.
+	 *
+	 * @return array|string
+	 */
+	public function pre_save_validate( $value, $field, $field_type_obj ) {
+
+		if ( 'fromto' !== $field->type ) {
+			return $value;
+		}
+
+		if ( ! is_array( $value ) ) {
+			return $value;
+		}
+
+		if ( isset( $value['from'] ) && isset( $value['to'] ) && '' === $value['from'] && '' === $value['to'] ) {
+			return null;
+		}
+
+		return $value;
 	}
 
 	/**
