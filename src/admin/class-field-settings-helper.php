@@ -172,6 +172,17 @@ class Field_Settings_Helper {
 				bp_xprofile_update_field_meta( $field->id, 'token_ignore_case', $is_ignored );
 
 				break;
+			case 'web':
+				$link_target = isset( $_POST['bpxcftr_web_link_target'] ) ? wp_unslash( $_POST['bpxcftr_web_link_target'] ) : '';
+
+				if ( '_blank' !== $link_target ) {
+					$link_target = '';
+				}
+
+				bp_xprofile_update_field_meta( $field->id, 'link_target', $link_target );
+
+				break;
+
 		}
 	}
 
