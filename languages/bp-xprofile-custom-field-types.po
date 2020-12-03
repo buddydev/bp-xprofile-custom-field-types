@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BuddyPress Xprofile Cusotm Field Types\n"
-"POT-Creation-Date: 2020-10-10 21:28+0530\n"
-"PO-Revision-Date: 2020-10-10 21:28+0530\n"
+"POT-Creation-Date: 2020-12-03 07:33+0530\n"
+"PO-Revision-Date: 2020-12-03 07:33+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -23,23 +23,23 @@ msgid ""
 "Component. Please enable Xprofile first."
 msgstr ""
 
-#: admin/class-field-settings-helper.php:211
+#: admin/class-field-settings-helper.php:228
 msgid "Select2"
 msgstr ""
 
-#: admin/class-field-settings-helper.php:213
+#: admin/class-field-settings-helper.php:230
 msgid "Enable select2 javascript code."
 msgstr ""
 
-#: admin/class-field-settings-helper.php:217
+#: admin/class-field-settings-helper.php:234
 msgid "Select2 status for this field"
 msgstr ""
 
-#: admin/class-field-settings-helper.php:220
+#: admin/class-field-settings-helper.php:237
 msgid "Enabled"
 msgstr ""
 
-#: admin/class-field-settings-helper.php:223
+#: admin/class-field-settings-helper.php:240
 msgid "Disabled"
 msgstr ""
 
@@ -51,6 +51,7 @@ msgstr ""
 #: field-types/class-field-type-birthdate.php:31
 #: field-types/class-field-type-checkbox-acceptance.php:31
 #: field-types/class-field-type-color.php:29
+#: field-types/class-field-type-country.php:30
 #: field-types/class-field-type-datepicker.php:29
 #: field-types/class-field-type-decimal-number.php:30
 #: field-types/class-field-type-email.php:30
@@ -192,12 +193,1030 @@ msgid "No"
 msgstr ""
 
 #: field-types/class-field-type-checkbox-acceptance.php:194
+#: field-types/class-field-type-web.php:62
 msgid "Yes"
 msgstr ""
 
 #: field-types/class-field-type-color.php:28
 msgctxt "xprofile field type"
 msgid "Color (HTML5 field)"
+msgstr ""
+
+#: field-types/class-field-type-country.php:29
+msgctxt "xprofile field type"
+msgid "Country Selector"
+msgstr ""
+
+#: field-types/class-field-type-country.php:62
+#: field-types/class-field-type-country.php:152
+#: field-types/class-field-type-multi-select-post-type.php:178
+#: field-types/class-field-type-multi-select-taxonomy.php:170
+#: field-types/class-field-type-select-post-type.php:61
+#: field-types/class-field-type-select-post-type.php:158
+#: field-types/class-field-type-select-taxonomy.php:62
+#: field-types/class-field-type-select-taxonomy.php:157
+msgid "Select..."
+msgstr ""
+
+#: field-types/class-field-type-country.php:147
+#: field-types/class-field-type-country.php:150
+msgid "Select country:"
+msgstr ""
+
+#: field-types/class-field-type-country.php:220
+msgid "Afghanistan"
+msgstr ""
+
+#: field-types/class-field-type-country.php:221
+msgid "Åland Islands"
+msgstr ""
+
+#: field-types/class-field-type-country.php:222
+msgid "Albania"
+msgstr ""
+
+#: field-types/class-field-type-country.php:223
+msgid "Algeria"
+msgstr ""
+
+#: field-types/class-field-type-country.php:224
+msgid "American Samoa"
+msgstr ""
+
+#: field-types/class-field-type-country.php:225
+msgid "Andorra"
+msgstr ""
+
+#: field-types/class-field-type-country.php:226
+msgid "Angola"
+msgstr ""
+
+#: field-types/class-field-type-country.php:227
+msgid "Anguilla"
+msgstr ""
+
+#: field-types/class-field-type-country.php:228
+msgid "Antarctica"
+msgstr ""
+
+#: field-types/class-field-type-country.php:229
+msgid "Antigua and Barbuda"
+msgstr ""
+
+#: field-types/class-field-type-country.php:230
+msgid "Argentina"
+msgstr ""
+
+#: field-types/class-field-type-country.php:231
+msgid "Armenia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:232
+msgid "Aruba"
+msgstr ""
+
+#: field-types/class-field-type-country.php:233
+msgid "Australia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:234
+msgid "Austria"
+msgstr ""
+
+#: field-types/class-field-type-country.php:235
+msgid "Azerbaijan"
+msgstr ""
+
+#: field-types/class-field-type-country.php:236
+msgid "Bahamas"
+msgstr ""
+
+#: field-types/class-field-type-country.php:237
+msgid "Bahrain"
+msgstr ""
+
+#: field-types/class-field-type-country.php:238
+msgid "Bangladesh"
+msgstr ""
+
+#: field-types/class-field-type-country.php:239
+msgid "Barbados"
+msgstr ""
+
+#: field-types/class-field-type-country.php:240
+msgid "Belarus"
+msgstr ""
+
+#: field-types/class-field-type-country.php:241
+msgid "Belgium"
+msgstr ""
+
+#: field-types/class-field-type-country.php:242
+msgid "Belau"
+msgstr ""
+
+#: field-types/class-field-type-country.php:243
+msgid "Belize"
+msgstr ""
+
+#: field-types/class-field-type-country.php:244
+msgid "Benin"
+msgstr ""
+
+#: field-types/class-field-type-country.php:245
+msgid "Bermuda"
+msgstr ""
+
+#: field-types/class-field-type-country.php:246
+msgid "Bhutan"
+msgstr ""
+
+#: field-types/class-field-type-country.php:247
+msgid "Bolivia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:248
+msgid "Bonaire, Saint Eustatius and Saba"
+msgstr ""
+
+#: field-types/class-field-type-country.php:249
+msgid "Bosnia and Herzegovina"
+msgstr ""
+
+#: field-types/class-field-type-country.php:250
+msgid "Botswana"
+msgstr ""
+
+#: field-types/class-field-type-country.php:251
+msgid "Bouvet Island"
+msgstr ""
+
+#: field-types/class-field-type-country.php:252
+msgid "Brazil"
+msgstr ""
+
+#: field-types/class-field-type-country.php:253
+msgid "British Indian Ocean Territory"
+msgstr ""
+
+#: field-types/class-field-type-country.php:254
+msgid "Brunei"
+msgstr ""
+
+#: field-types/class-field-type-country.php:255
+msgid "Bulgaria"
+msgstr ""
+
+#: field-types/class-field-type-country.php:256
+msgid "Burkina Faso"
+msgstr ""
+
+#: field-types/class-field-type-country.php:257
+msgid "Burundi"
+msgstr ""
+
+#: field-types/class-field-type-country.php:258
+msgid "Cambodia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:259
+msgid "Cameroon"
+msgstr ""
+
+#: field-types/class-field-type-country.php:260
+msgid "Canada"
+msgstr ""
+
+#: field-types/class-field-type-country.php:261
+msgid "Cape Verde"
+msgstr ""
+
+#: field-types/class-field-type-country.php:262
+msgid "Cayman Islands"
+msgstr ""
+
+#: field-types/class-field-type-country.php:263
+msgid "Central African Republic"
+msgstr ""
+
+#: field-types/class-field-type-country.php:264
+msgid "Chad"
+msgstr ""
+
+#: field-types/class-field-type-country.php:265
+msgid "Chile"
+msgstr ""
+
+#: field-types/class-field-type-country.php:266
+msgid "China"
+msgstr ""
+
+#: field-types/class-field-type-country.php:267
+msgid "Christmas Island"
+msgstr ""
+
+#: field-types/class-field-type-country.php:268
+msgid "Cocos (Keeling) Islands"
+msgstr ""
+
+#: field-types/class-field-type-country.php:269
+msgid "Colombia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:270
+msgid "Comoros"
+msgstr ""
+
+#: field-types/class-field-type-country.php:271
+msgid "Congo (Brazzaville)"
+msgstr ""
+
+#: field-types/class-field-type-country.php:272
+msgid "Congo (Kinshasa)"
+msgstr ""
+
+#: field-types/class-field-type-country.php:273
+msgid "Cook Islands"
+msgstr ""
+
+#: field-types/class-field-type-country.php:274
+msgid "Costa Rica"
+msgstr ""
+
+#: field-types/class-field-type-country.php:275
+msgid "Croatia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:276
+msgid "Cuba"
+msgstr ""
+
+#: field-types/class-field-type-country.php:277
+msgid "Cura&ccedil;ao"
+msgstr ""
+
+#: field-types/class-field-type-country.php:278
+msgid "Cyprus"
+msgstr ""
+
+#: field-types/class-field-type-country.php:279
+msgid "Czech Republic"
+msgstr ""
+
+#: field-types/class-field-type-country.php:280
+msgid "Denmark"
+msgstr ""
+
+#: field-types/class-field-type-country.php:281
+msgid "Djibouti"
+msgstr ""
+
+#: field-types/class-field-type-country.php:282
+msgid "Dominica"
+msgstr ""
+
+#: field-types/class-field-type-country.php:283
+msgid "Dominican Republic"
+msgstr ""
+
+#: field-types/class-field-type-country.php:284
+msgid "Ecuador"
+msgstr ""
+
+#: field-types/class-field-type-country.php:285
+msgid "Egypt"
+msgstr ""
+
+#: field-types/class-field-type-country.php:286
+msgid "El Salvador"
+msgstr ""
+
+#: field-types/class-field-type-country.php:287
+msgid "Equatorial Guinea"
+msgstr ""
+
+#: field-types/class-field-type-country.php:288
+msgid "Eritrea"
+msgstr ""
+
+#: field-types/class-field-type-country.php:289
+msgid "Estonia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:290
+msgid "Ethiopia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:291
+msgid "Falkland Islands"
+msgstr ""
+
+#: field-types/class-field-type-country.php:292
+msgid "Faroe Islands"
+msgstr ""
+
+#: field-types/class-field-type-country.php:293
+msgid "Fiji"
+msgstr ""
+
+#: field-types/class-field-type-country.php:294
+msgid "Finland"
+msgstr ""
+
+#: field-types/class-field-type-country.php:295
+msgid "France"
+msgstr ""
+
+#: field-types/class-field-type-country.php:296
+msgid "French Guiana"
+msgstr ""
+
+#: field-types/class-field-type-country.php:297
+msgid "French Polynesia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:298
+msgid "French Southern Territories"
+msgstr ""
+
+#: field-types/class-field-type-country.php:299
+msgid "Gabon"
+msgstr ""
+
+#: field-types/class-field-type-country.php:300
+msgid "Gambia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:301
+msgid "Georgia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:302
+msgid "Germany"
+msgstr ""
+
+#: field-types/class-field-type-country.php:303
+msgid "Ghana"
+msgstr ""
+
+#: field-types/class-field-type-country.php:304
+msgid "Gibraltar"
+msgstr ""
+
+#: field-types/class-field-type-country.php:305
+msgid "Greece"
+msgstr ""
+
+#: field-types/class-field-type-country.php:306
+msgid "Greenland"
+msgstr ""
+
+#: field-types/class-field-type-country.php:307
+msgid "Grenada"
+msgstr ""
+
+#: field-types/class-field-type-country.php:308
+msgid "Guadeloupe"
+msgstr ""
+
+#: field-types/class-field-type-country.php:309
+msgid "Guam"
+msgstr ""
+
+#: field-types/class-field-type-country.php:310
+msgid "Guatemala"
+msgstr ""
+
+#: field-types/class-field-type-country.php:311
+msgid "Guernsey"
+msgstr ""
+
+#: field-types/class-field-type-country.php:312
+msgid "Guinea"
+msgstr ""
+
+#: field-types/class-field-type-country.php:313
+msgid "Guinea-Bissau"
+msgstr ""
+
+#: field-types/class-field-type-country.php:314
+msgid "Guyana"
+msgstr ""
+
+#: field-types/class-field-type-country.php:315
+msgid "Haiti"
+msgstr ""
+
+#: field-types/class-field-type-country.php:316
+msgid "Heard Island and McDonald Islands"
+msgstr ""
+
+#: field-types/class-field-type-country.php:317
+msgid "Honduras"
+msgstr ""
+
+#: field-types/class-field-type-country.php:318
+msgid "Hong Kong"
+msgstr ""
+
+#: field-types/class-field-type-country.php:319
+msgid "Hungary"
+msgstr ""
+
+#: field-types/class-field-type-country.php:320
+msgid "Iceland"
+msgstr ""
+
+#: field-types/class-field-type-country.php:321
+msgid "India"
+msgstr ""
+
+#: field-types/class-field-type-country.php:322
+msgid "Indonesia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:323
+msgid "Iran"
+msgstr ""
+
+#: field-types/class-field-type-country.php:324
+msgid "Iraq"
+msgstr ""
+
+#: field-types/class-field-type-country.php:325
+msgid "Ireland"
+msgstr ""
+
+#: field-types/class-field-type-country.php:326
+msgid "Isle of Man"
+msgstr ""
+
+#: field-types/class-field-type-country.php:327
+msgid "Israel"
+msgstr ""
+
+#: field-types/class-field-type-country.php:328
+msgid "Italy"
+msgstr ""
+
+#: field-types/class-field-type-country.php:329
+msgid "Ivory Coast"
+msgstr ""
+
+#: field-types/class-field-type-country.php:330
+msgid "Jamaica"
+msgstr ""
+
+#: field-types/class-field-type-country.php:331
+msgid "Japan"
+msgstr ""
+
+#: field-types/class-field-type-country.php:332
+msgid "Jersey"
+msgstr ""
+
+#: field-types/class-field-type-country.php:333
+msgid "Jordan"
+msgstr ""
+
+#: field-types/class-field-type-country.php:334
+msgid "Kazakhstan"
+msgstr ""
+
+#: field-types/class-field-type-country.php:335
+msgid "Kenya"
+msgstr ""
+
+#: field-types/class-field-type-country.php:336
+msgid "Kiribati"
+msgstr ""
+
+#: field-types/class-field-type-country.php:337
+msgid "Kuwait"
+msgstr ""
+
+#: field-types/class-field-type-country.php:338
+msgid "Kyrgyzstan"
+msgstr ""
+
+#: field-types/class-field-type-country.php:339
+msgid "Laos"
+msgstr ""
+
+#: field-types/class-field-type-country.php:340
+msgid "Latvia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:341
+msgid "Lebanon"
+msgstr ""
+
+#: field-types/class-field-type-country.php:342
+msgid "Lesotho"
+msgstr ""
+
+#: field-types/class-field-type-country.php:343
+msgid "Liberia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:344
+msgid "Libya"
+msgstr ""
+
+#: field-types/class-field-type-country.php:345
+msgid "Liechtenstein"
+msgstr ""
+
+#: field-types/class-field-type-country.php:346
+msgid "Lithuania"
+msgstr ""
+
+#: field-types/class-field-type-country.php:347
+msgid "Luxembourg"
+msgstr ""
+
+#: field-types/class-field-type-country.php:348
+msgid "Macao"
+msgstr ""
+
+#: field-types/class-field-type-country.php:349
+msgid "North Macedonia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:350
+msgid "Madagascar"
+msgstr ""
+
+#: field-types/class-field-type-country.php:351
+msgid "Malawi"
+msgstr ""
+
+#: field-types/class-field-type-country.php:352
+msgid "Malaysia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:353
+msgid "Maldives"
+msgstr ""
+
+#: field-types/class-field-type-country.php:354
+msgid "Mali"
+msgstr ""
+
+#: field-types/class-field-type-country.php:355
+msgid "Malta"
+msgstr ""
+
+#: field-types/class-field-type-country.php:356
+msgid "Marshall Islands"
+msgstr ""
+
+#: field-types/class-field-type-country.php:357
+msgid "Martinique"
+msgstr ""
+
+#: field-types/class-field-type-country.php:358
+msgid "Mauritania"
+msgstr ""
+
+#: field-types/class-field-type-country.php:359
+msgid "Mauritius"
+msgstr ""
+
+#: field-types/class-field-type-country.php:360
+msgid "Mayotte"
+msgstr ""
+
+#: field-types/class-field-type-country.php:361
+msgid "Mexico"
+msgstr ""
+
+#: field-types/class-field-type-country.php:362
+msgid "Micronesia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:363
+msgid "Moldova"
+msgstr ""
+
+#: field-types/class-field-type-country.php:364
+msgid "Monaco"
+msgstr ""
+
+#: field-types/class-field-type-country.php:365
+msgid "Mongolia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:366
+msgid "Montenegro"
+msgstr ""
+
+#: field-types/class-field-type-country.php:367
+msgid "Montserrat"
+msgstr ""
+
+#: field-types/class-field-type-country.php:368
+msgid "Morocco"
+msgstr ""
+
+#: field-types/class-field-type-country.php:369
+msgid "Mozambique"
+msgstr ""
+
+#: field-types/class-field-type-country.php:370
+msgid "Myanmar"
+msgstr ""
+
+#: field-types/class-field-type-country.php:371
+msgid "Namibia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:372
+msgid "Nauru"
+msgstr ""
+
+#: field-types/class-field-type-country.php:373
+msgid "Nepal"
+msgstr ""
+
+#: field-types/class-field-type-country.php:374
+msgid "Netherlands"
+msgstr ""
+
+#: field-types/class-field-type-country.php:375
+msgid "New Caledonia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:376
+msgid "New Zealand"
+msgstr ""
+
+#: field-types/class-field-type-country.php:377
+msgid "Nicaragua"
+msgstr ""
+
+#: field-types/class-field-type-country.php:378
+msgid "Niger"
+msgstr ""
+
+#: field-types/class-field-type-country.php:379
+msgid "Nigeria"
+msgstr ""
+
+#: field-types/class-field-type-country.php:380
+msgid "Niue"
+msgstr ""
+
+#: field-types/class-field-type-country.php:381
+msgid "Norfolk Island"
+msgstr ""
+
+#: field-types/class-field-type-country.php:382
+msgid "Northern Mariana Islands"
+msgstr ""
+
+#: field-types/class-field-type-country.php:383
+msgid "North Korea"
+msgstr ""
+
+#: field-types/class-field-type-country.php:384
+msgid "Norway"
+msgstr ""
+
+#: field-types/class-field-type-country.php:385
+msgid "Oman"
+msgstr ""
+
+#: field-types/class-field-type-country.php:386
+msgid "Pakistan"
+msgstr ""
+
+#: field-types/class-field-type-country.php:387
+msgid "Palestinian Territory"
+msgstr ""
+
+#: field-types/class-field-type-country.php:388
+msgid "Panama"
+msgstr ""
+
+#: field-types/class-field-type-country.php:389
+msgid "Papua New Guinea"
+msgstr ""
+
+#: field-types/class-field-type-country.php:390
+msgid "Paraguay"
+msgstr ""
+
+#: field-types/class-field-type-country.php:391
+msgid "Peru"
+msgstr ""
+
+#: field-types/class-field-type-country.php:392
+msgid "Philippines"
+msgstr ""
+
+#: field-types/class-field-type-country.php:393
+msgid "Pitcairn"
+msgstr ""
+
+#: field-types/class-field-type-country.php:394
+msgid "Poland"
+msgstr ""
+
+#: field-types/class-field-type-country.php:395
+msgid "Portugal"
+msgstr ""
+
+#: field-types/class-field-type-country.php:396
+msgid "Puerto Rico"
+msgstr ""
+
+#: field-types/class-field-type-country.php:397
+msgid "Qatar"
+msgstr ""
+
+#: field-types/class-field-type-country.php:398
+msgid "Reunion"
+msgstr ""
+
+#: field-types/class-field-type-country.php:399
+msgid "Romania"
+msgstr ""
+
+#: field-types/class-field-type-country.php:400
+msgid "Russia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:401
+msgid "Rwanda"
+msgstr ""
+
+#: field-types/class-field-type-country.php:402
+msgid "Saint Barth&eacute;lemy"
+msgstr ""
+
+#: field-types/class-field-type-country.php:403
+msgid "Saint Helena"
+msgstr ""
+
+#: field-types/class-field-type-country.php:404
+msgid "Saint Kitts and Nevis"
+msgstr ""
+
+#: field-types/class-field-type-country.php:405
+msgid "Saint Lucia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:406
+msgid "Saint Martin (French part)"
+msgstr ""
+
+#: field-types/class-field-type-country.php:407
+msgid "Saint Martin (Dutch part)"
+msgstr ""
+
+#: field-types/class-field-type-country.php:408
+msgid "Saint Pierre and Miquelon"
+msgstr ""
+
+#: field-types/class-field-type-country.php:409
+msgid "Saint Vincent and the Grenadines"
+msgstr ""
+
+#: field-types/class-field-type-country.php:410
+msgid "San Marino"
+msgstr ""
+
+#: field-types/class-field-type-country.php:411
+msgid "S&atilde;o Tom&eacute; and Pr&iacute;ncipe"
+msgstr ""
+
+#: field-types/class-field-type-country.php:412
+msgid "Saudi Arabia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:413
+msgid "Senegal"
+msgstr ""
+
+#: field-types/class-field-type-country.php:414
+msgid "Serbia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:415
+msgid "Seychelles"
+msgstr ""
+
+#: field-types/class-field-type-country.php:416
+msgid "Sierra Leone"
+msgstr ""
+
+#: field-types/class-field-type-country.php:417
+msgid "Singapore"
+msgstr ""
+
+#: field-types/class-field-type-country.php:418
+msgid "Slovakia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:419
+msgid "Slovenia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:420
+msgid "Solomon Islands"
+msgstr ""
+
+#: field-types/class-field-type-country.php:421
+msgid "Somalia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:422
+msgid "South Africa"
+msgstr ""
+
+#: field-types/class-field-type-country.php:423
+msgid "South Georgia/Sandwich Islands"
+msgstr ""
+
+#: field-types/class-field-type-country.php:424
+msgid "South Korea"
+msgstr ""
+
+#: field-types/class-field-type-country.php:425
+msgid "South Sudan"
+msgstr ""
+
+#: field-types/class-field-type-country.php:426
+msgid "Spain"
+msgstr ""
+
+#: field-types/class-field-type-country.php:427
+msgid "Sri Lanka"
+msgstr ""
+
+#: field-types/class-field-type-country.php:428
+msgid "Sudan"
+msgstr ""
+
+#: field-types/class-field-type-country.php:429
+msgid "Suriname"
+msgstr ""
+
+#: field-types/class-field-type-country.php:430
+msgid "Svalbard and Jan Mayen"
+msgstr ""
+
+#: field-types/class-field-type-country.php:431
+msgid "Swaziland"
+msgstr ""
+
+#: field-types/class-field-type-country.php:432
+msgid "Sweden"
+msgstr ""
+
+#: field-types/class-field-type-country.php:433
+msgid "Switzerland"
+msgstr ""
+
+#: field-types/class-field-type-country.php:434
+msgid "Syria"
+msgstr ""
+
+#: field-types/class-field-type-country.php:435
+msgid "Taiwan"
+msgstr ""
+
+#: field-types/class-field-type-country.php:436
+msgid "Tajikistan"
+msgstr ""
+
+#: field-types/class-field-type-country.php:437
+msgid "Tanzania"
+msgstr ""
+
+#: field-types/class-field-type-country.php:438
+msgid "Thailand"
+msgstr ""
+
+#: field-types/class-field-type-country.php:439
+msgid "Timor-Leste"
+msgstr ""
+
+#: field-types/class-field-type-country.php:440
+msgid "Togo"
+msgstr ""
+
+#: field-types/class-field-type-country.php:441
+msgid "Tokelau"
+msgstr ""
+
+#: field-types/class-field-type-country.php:442
+msgid "Tonga"
+msgstr ""
+
+#: field-types/class-field-type-country.php:443
+msgid "Trinidad and Tobago"
+msgstr ""
+
+#: field-types/class-field-type-country.php:444
+msgid "Tunisia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:445
+msgid "Turkey"
+msgstr ""
+
+#: field-types/class-field-type-country.php:446
+msgid "Turkmenistan"
+msgstr ""
+
+#: field-types/class-field-type-country.php:447
+msgid "Turks and Caicos Islands"
+msgstr ""
+
+#: field-types/class-field-type-country.php:448
+msgid "Tuvalu"
+msgstr ""
+
+#: field-types/class-field-type-country.php:449
+msgid "Uganda"
+msgstr ""
+
+#: field-types/class-field-type-country.php:450
+msgid "Ukraine"
+msgstr ""
+
+#: field-types/class-field-type-country.php:451
+msgid "United Arab Emirates"
+msgstr ""
+
+#: field-types/class-field-type-country.php:452
+msgid "United Kingdom"
+msgstr ""
+
+#: field-types/class-field-type-country.php:453
+msgid "United States"
+msgstr ""
+
+#: field-types/class-field-type-country.php:454
+msgid "United States Minor Outlying Islands"
+msgstr ""
+
+#: field-types/class-field-type-country.php:455
+msgid "Uruguay"
+msgstr ""
+
+#: field-types/class-field-type-country.php:456
+msgid "Uzbekistan"
+msgstr ""
+
+#: field-types/class-field-type-country.php:457
+msgid "Vanuatu"
+msgstr ""
+
+#: field-types/class-field-type-country.php:458
+msgid "Vatican"
+msgstr ""
+
+#: field-types/class-field-type-country.php:459
+msgid "Venezuela"
+msgstr ""
+
+#: field-types/class-field-type-country.php:460
+msgid "Vietnam"
+msgstr ""
+
+#: field-types/class-field-type-country.php:461
+msgid "Virgin Islands (British)"
+msgstr ""
+
+#: field-types/class-field-type-country.php:462
+msgid "Virgin Islands (US)"
+msgstr ""
+
+#: field-types/class-field-type-country.php:463
+msgid "Wallis and Futuna"
+msgstr ""
+
+#: field-types/class-field-type-country.php:464
+msgid "Western Sahara"
+msgstr ""
+
+#: field-types/class-field-type-country.php:465
+msgid "Samoa"
+msgstr ""
+
+#: field-types/class-field-type-country.php:466
+msgid "Yemen"
+msgstr ""
+
+#: field-types/class-field-type-country.php:467
+msgid "Zambia"
+msgstr ""
+
+#: field-types/class-field-type-country.php:468
+msgid "Zimbabwe"
 msgstr ""
 
 #: field-types/class-field-type-datepicker.php:28
@@ -332,15 +1351,6 @@ msgstr ""
 msgid "Select a post type:"
 msgstr ""
 
-#: field-types/class-field-type-multi-select-post-type.php:178
-#: field-types/class-field-type-multi-select-taxonomy.php:170
-#: field-types/class-field-type-select-post-type.php:61
-#: field-types/class-field-type-select-post-type.php:158
-#: field-types/class-field-type-select-taxonomy.php:62
-#: field-types/class-field-type-select-taxonomy.php:157
-msgid "Select..."
-msgstr ""
-
 #: field-types/class-field-type-multi-select-taxonomy.php:30
 msgctxt "xprofile field type"
 msgid "Custom Taxonomy Multiselector"
@@ -421,6 +1431,14 @@ msgstr ""
 #: field-types/class-field-type-web.php:26
 msgctxt "xprofile field type"
 msgid "Website (HTML5 field)"
+msgstr ""
+
+#: field-types/class-field-type-web.php:55
+msgid "Link options:-"
+msgstr ""
+
+#: field-types/class-field-type-web.php:59
+msgid "Open link in new window?"
 msgstr ""
 
 #: handlers/class-birthdate-field-validator.php:70
