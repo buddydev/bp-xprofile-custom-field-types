@@ -59,6 +59,13 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 			);
 		}
 
+		if ( ! isset( $data['from'] ) ) {
+			$data['from'] = '';
+		}
+		if ( ! isset( $data['to'] ) ) {
+			$data['to'] = '';
+		}
+
 		if ( isset( $raw_properties['user_id'] ) ) {
 			unset( $raw_properties['user_id'] );
 		}
