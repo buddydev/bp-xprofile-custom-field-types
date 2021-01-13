@@ -264,6 +264,8 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 			'to' => _x( 'to', 'From/To field value separator', 'bp-xprofile-custom-field-types' ),
 		);
 
+		$separator = '';
+
 		if ( $field_id ) {
 			$separator = self::get_separator_token( $field_id );
 		}
