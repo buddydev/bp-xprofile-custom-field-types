@@ -33,6 +33,7 @@ class BP_Profile_Search_Helper {
 	 */
 	public function setup() {
 		add_action( 'bps_custom_field', array( $this, 'register_field_types' ) );
+		add_action( 'bp_ps_custom_field', array( $this, 'register_field_types' ) );
 	}
 
 	/**
