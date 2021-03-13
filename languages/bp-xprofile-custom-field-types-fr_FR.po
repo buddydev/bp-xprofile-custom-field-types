@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BuddyPress Xprofile Custom Field Types\n"
-"POT-Creation-Date: 2020-12-03 07:33+0530\n"
-"PO-Revision-Date: 2020-12-03 07:33+0530\n"
+"POT-Creation-Date: 2021-03-14 03:25+0530\n"
+"PO-Revision-Date: 2021-03-14 03:25+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -1190,59 +1190,59 @@ msgstr "Télécharger un fichier"
 msgid "From/To values"
 msgstr "Valeurs de / à"
 
-#: field-types/class-field-type-from-to.php:188
+#: field-types/class-field-type-from-to.php:195
 msgid "Value Type"
 msgstr "Type de valeur"
 
-#: field-types/class-field-type-from-to.php:190
+#: field-types/class-field-type-from-to.php:197
 msgid "No restrictions"
 msgstr "Pas de restrictions"
 
-#: field-types/class-field-type-from-to.php:191
+#: field-types/class-field-type-from-to.php:198
 msgid "Integers"
 msgstr "Entiers"
 
-#: field-types/class-field-type-from-to.php:192
+#: field-types/class-field-type-from-to.php:199
 msgid "Numeric"
 msgstr "Numérique"
 
-#: field-types/class-field-type-from-to.php:193
+#: field-types/class-field-type-from-to.php:200
 msgid "String"
 msgstr "Chaîne"
 
-#: field-types/class-field-type-from-to.php:198
+#: field-types/class-field-type-from-to.php:205
 msgid "Integer/Numeric Type Constraints"
 msgstr "Contraintes de type entier / numérique"
 
-#: field-types/class-field-type-from-to.php:200
+#: field-types/class-field-type-from-to.php:207
 msgid "Default Values"
 msgstr "Valeurs par défaut"
 
-#: field-types/class-field-type-from-to.php:203
+#: field-types/class-field-type-from-to.php:210
 msgid "From"
 msgstr "De"
 
-#: field-types/class-field-type-from-to.php:208
+#: field-types/class-field-type-from-to.php:215
 msgid "To"
 msgstr "À"
 
-#: field-types/class-field-type-from-to.php:216
+#: field-types/class-field-type-from-to.php:223
 msgid "Value separator"
 msgstr ""
 
-#: field-types/class-field-type-from-to.php:218
+#: field-types/class-field-type-from-to.php:225
 msgid "Hyphen(v1 - v2)"
 msgstr ""
 
-#: field-types/class-field-type-from-to.php:219
+#: field-types/class-field-type-from-to.php:226
 msgid "Colon(v1 : v2)"
 msgstr ""
 
-#: field-types/class-field-type-from-to.php:220
+#: field-types/class-field-type-from-to.php:227
 msgid "to( v1 to v2)"
 msgstr ""
 
-#: field-types/class-field-type-from-to.php:257
+#: field-types/class-field-type-from-to.php:264
 msgctxt "From/To field value separator"
 msgid "to"
 msgstr ""
