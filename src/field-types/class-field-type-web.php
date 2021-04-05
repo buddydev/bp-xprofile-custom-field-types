@@ -68,6 +68,42 @@ class Field_Type_Web extends \BP_XProfile_Field_Type_URL {
 	}
 
 	/**
+	 * Validate web field.
+	 *
+	 * @param array|string $values Field values for validating.
+	 *
+	 * @return bool
+	 */
+	public function is_valid( $values ) {
+
+		$values = strpos( $values, 'http' ) === false ? "http://$values" : $values;
+
+		if ( ! filter_var( $values, FILTER_VALIDATE_URL ) ) {
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
+	 * Pre validate for web field
+	 *
+	 * @param string $submitted_value Submitted value.
+	 * @param string $field_id        Field id.
+	 *
+	 * @return mixed|string
+	 */
+	public static function pre_validate_filter( $submitted_value = '', $field_id = '' ) {
+
+		// Allow empty URL values.
+		if ( empty( $submitted_value ) ) {
+			return '';
+		}
+
+		return filter_var( $submitted_value, FILTER_SANITIZE_URL );
+	}
+
+	/**
 	 * Format URL values for display.
 	 *
 	 * @param string     $field_value The URL value, as saved in the database.
