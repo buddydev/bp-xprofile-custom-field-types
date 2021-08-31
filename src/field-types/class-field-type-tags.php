@@ -51,19 +51,13 @@ class Field_Type_Tags extends BP_XProfile_Field_Type_Multiselectbox {
 	 *
 	 * Must be used inside the {@link bp_profile_fields()} template loop.
 	 *
-	 * @param array $raw_properties Optional key/value array of permitted attributes that you want to add.
+	 * @param BP_XProfile_Field $current_field Current field object.
+	 * @param string            $control_type Current field object.
 	 */
-	public function admin_new_field_html( BP_XProfile_Field $current_field, $control_type = '' ) {
-		parent::admin_new_field_html( $current_field, $control_type );
+	public function admin_new_field_html( $current_field, $control_type = '' ) {
+		add_action( 'bp_xprofile_admin_new_field_additional_settings', array( $this, 'add_settings' ) );
 
-		?>
-		<p>
-			<label>
-				<input type="checkbox" name="bpxcftr_tags_allow_new_tags" id="bpxcftr_tags_allow_new_tags" value="1" <?php checked(true,  self::allow_new_tags( $current_field->id ) );?> />
-				<?php _e( 'Allow users to add new tags', 'bp-xprofile-custom-field-types' ); ?>
-			</label>
-		</p>
-		<?php
+		parent::admin_new_field_html( $current_field, $control_type );
 	}
 
 	/**
@@ -80,5 +74,26 @@ class Field_Type_Tags extends BP_XProfile_Field_Type_Multiselectbox {
 		}
 
 		return (bool) bp_xprofile_get_meta( $field_id, 'field', 'allow_new_tags', true );
+	}
+
+	/**
+	 * Add additional field settings.
+	 *
+	 * @param BP_XProfile_Field $current_field Current field object.
+	 */
+	public function add_settings( BP_XProfile_Field $current_field ) {
+
+		if ( 'tags' != $current_field->type ) {
+			return;
+		}
+
+        ?>
+        <p>
+            <label>
+                <input type="checkbox" name="bpxcftr_tags_allow_new_tags" id="bpxcftr_tags_allow_new_tags" value="1" <?php checked(true, self::allow_new_tags( $current_field->id ) );?> />
+				<?php _e( 'Allow users to add new tags', 'bp-xprofile-custom-field-types' ); ?>
+            </label>
+        </p>
+        <?php
 	}
 }

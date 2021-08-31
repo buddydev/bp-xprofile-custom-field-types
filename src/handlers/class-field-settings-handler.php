@@ -12,6 +12,7 @@
 namespace BPXProfileCFTR\Handlers;
 
 use BPXProfileCFTR\Field_Types\Field_Type_Multi_Select_Taxonomy;
+use BPXProfileCFTR\Field_Types\Field_Type_Tags;
 
 // Do not allow direct access over web.
 defined( 'ABSPATH' ) || exit;
@@ -54,7 +55,7 @@ class Field_Settings_Handler {
 
 		$allow_new_tags = false;
 
-		if ( Field_Type_Multi_Select_Taxonomy::allow_new_terms( $field->id ) ) {
+		if ( Field_Type_Multi_Select_Taxonomy::allow_new_terms( $field->id ) || Field_Type_Tags::allow_new_tags( $field->id ) ) {
 			$allow_new_tags = true;
 		}
 
