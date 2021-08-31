@@ -61,6 +61,7 @@ function bpxcftr_get_selectable_field_types() {
 		'multiselect_custom_post_type',
 		'select_custom_taxonomy',
 		'multiselect_custom_taxonomy',
+		'tags',
 	);
 
 	return apply_filters( 'bpxcftr_selectable_types', $types );
