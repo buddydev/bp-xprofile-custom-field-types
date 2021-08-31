@@ -40,6 +40,8 @@ class Tags_Creator {
 		add_filter( 'bp_get_the_profile_field_value', array( $this, 'filter_value' ), 10, 3 );
 
 		add_filter( 'bpxcftr_load_front_assets', array( $this, 'should_load_assets' ) );
+
+		add_action( 'wp_ajax_bpxcftr_remove_user_tag', array( $this, 'remove_user_tag' ) );
 	}
 
 	/**
@@ -109,12 +111,15 @@ class Tags_Creator {
 			return $value;
 		}
 
-		$tags  = array_filter( explode( ',', $value ) );
-		$nonce = wp_create_nonce( 'bpxcftr-remove-user-tag-' . get_current_user_id() );
+		$tags    = array_filter( explode( ',', $value ) );
+		$user_id = get_current_user_id();
 
 		$appended_tags = array_map(
-			function ( $tag ) use ( $nonce ) {
-				return '<span class="bpxcftr-remove-tag" data-nonce="' . $nonce . '" style="cursor: pointer;">' . strip_tags( $tag ) . '[x]</span>';
+			function ( $tag ) use ( $user_id, $field_id ) {
+				$tag   = wp_strip_all_tags( $tag );
+				$nonce = wp_create_nonce( 'bpxcftr-remove-user-' . $user_id . '-tag-' . $tag );
+
+				return '<span class="bpxcftr-remove-tag" data-field-id="' . esc_attr( $field_id ) . '" data-tag="' . esc_html( $tag ) . '" data-nonce="' . $nonce . '" style="cursor: pointer;">' . $tag . '[x]</span>';
 			},
 			$tags
 		);
@@ -129,5 +134,36 @@ class Tags_Creator {
 	 */
 	public function should_load_assets() {
 		return bp_is_my_profile() && bp_is_profile_component();
+	}
+
+	/**
+	 * Remove user tag
+	 */
+	public function remove_user_tag() {
+		$posted_data = wp_unslash( $_POST );
+
+		$tag      = isset( $posted_data['tag'] ) ? $posted_data['tag'] : '';
+		$field_id = isset( $posted_data['field_id'] ) ? $posted_data['field_id'] : '';
+		$user_id  = get_current_user_id();
+
+		if ( ! $tag || ! $field_id || ! $user_id || ! bp_is_my_profile() ) {
+			wp_send_json_error( __( 'Invalid Request', 'bp-xpofile-custom-field-types' ) );
+		}
+
+		check_ajax_referer( 'bpxcftr-remove-user-' . $user_id . '-tag-' . $tag, 'nonce' );
+
+		$field_data = xprofile_get_field_data( $field_id, $user_id );
+
+		$position = array_search( $tag, $field_data, true );
+
+		if ( false === $position ) {
+			wp_send_json_error( __( 'Tag not found', 'bp-xpofile-custom-field-types' ) );
+		}
+
+		unset( $field_data[ $position ] );
+
+		xprofile_set_field_data( $field_id, $user_id, $field_data );
+
+		wp_send_json_success( __( 'Tag removed', 'bp-xpofile-custom-field-types' ) );
 	}
 }

@@ -23,10 +23,12 @@
             ajaxurl,
             {
                 action: 'bpxcftr_remove_user_tag',
-                nonce: $this.data( 'nonce' ),
+                nonce: $this.data('nonce'),
+                field_id: $this.data('fieldId'),
+                tag: $this.data('tag')
             },
-            function ( resp ) {
-                if ( resp.success ) {
+            function (resp) {
+                if (resp.success) {
                     $this.remove();
                 }
             }
