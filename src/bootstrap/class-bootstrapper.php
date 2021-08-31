@@ -23,6 +23,7 @@ use BPXProfileCFTR\Handlers\Taxonomy_Terms_Creator;
 use BPXProfileCFTR\Handlers\Field_Settings_Handler;
 use BPXProfileCFTR\Admin\Field_Settings_Helper as Admin_Field_Settings_Helper;
 use BPXProfileCFTR\Handlers\Signup_Validator;
+use BPXProfileCFTR\Handlers\Tags_Creator;
 
 // Do not allow direct access over web.
 defined( 'ABSPATH' ) || exit;
@@ -109,6 +110,7 @@ class Bootstrapper {
 		// BP profile Search.
 		BP_Profile_Search_Helper::boot();
 		Label_Filter::boot();
+		Tags_Creator::boot();
 	}
 
 	/**
