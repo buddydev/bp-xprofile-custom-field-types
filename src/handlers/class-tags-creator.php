@@ -59,19 +59,25 @@ class Tags_Creator {
 		// Add new tags if needed.
 		$sanitized = array();
 
-		$field_options = (array) $field->get_children( true );
+		$parent_id      = $field->id;
+		$field_group_id = $field->group_id;
+
+		$field_options    = $field->get_children( true );
+		$options_name     = empty( $field_options ) ? array() : wp_list_pluck( $field_options, 'name' );
+		$max_option_order = empty( $field_options ) ? 0 : max( wp_list_pluck( $field_options, 'option_order' ) );
 
 		foreach ( $value as $tag ) {
 
-			if ( in_array( $tag, $field_options ) ) {
+			if ( in_array( $tag, $options_name ) ) {
 				$sanitized[] = $tag;
 			} elseif ( $allow_new_tags ) {
 				$field_id = xprofile_insert_field(
 					array(
-						'field_group_id' => $field->group_id,
-						'parent_id'      => $field->id,
+						'field_group_id' => $field_group_id,
+						'parent_id'      => $parent_id,
 						'type'           => 'option',
 						'name'           => $tag,
+						'option_order'   => ++ $max_option_order,
 					)
 				);
 
