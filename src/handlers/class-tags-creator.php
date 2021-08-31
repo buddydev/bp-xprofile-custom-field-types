@@ -36,6 +36,10 @@ class Tags_Creator {
 	private function setup() {
 		// Pre validate tags.
 		add_filter( 'bp_xprofile_set_field_data_pre_validate', array( $this, 'sanitize' ), 10, 2 );
+
+		add_filter( 'bp_get_the_profile_field_value', array( $this, 'filter_value' ), 10, 3 );
+
+		add_filter( 'bpxcftr_load_front_assets', array( $this, 'should_load_assets' ) );
 	}
 
 	/**
@@ -91,4 +95,39 @@ class Tags_Creator {
 		return $sanitized;
 	}
 
+	/**
+	 * Filter profile field value
+	 *
+	 * @param string $value      Value for the profile field.
+	 * @param string $field_type Type for the profile field.
+	 * @param int    $field_id   ID for the profile field.
+	 *
+	 * @return string
+	 */
+	public function filter_value( $value, $field_type, $field_id ) {
+		if ( 'tags' !== $field_type || ! bp_is_my_profile() ) {
+			return $value;
+		}
+
+		$tags  = array_filter( explode( ',', $value ) );
+		$nonce = wp_create_nonce( 'bpxcftr-remove-user-tag-' . get_current_user_id() );
+
+		$appended_tags = array_map(
+			function ( $tag ) use ( $nonce ) {
+				return '<span class="bpxcftr-remove-tag" data-nonce="' . $nonce . '" style="cursor: pointer;">' . strip_tags( $tag ) . '[x]</span>';
+			},
+			$tags
+		);
+
+		return join( ', ', $appended_tags );
+	}
+
+	/**
+	 * Should load assets.
+	 *
+	 * @return bool
+	 */
+	public function should_load_assets() {
+		return bp_is_my_profile() && bp_is_profile_component();
+	}
 }
