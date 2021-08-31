@@ -136,7 +136,7 @@ function bpxcftr_is_selectable_field( $field ) {
  * @return bool
  */
 function bpxcftr_is_multi_valued_field( $field ) {
-	$selectable_types = apply_filters( 'bpxcftr_multi_valued_types', array( 'multiselectbox' ) );
+	$selectable_types = apply_filters( 'bpxcftr_multi_valued_types', array( 'multiselectbox', 'tags' ) );
 
 	return in_array( $field->type, $selectable_types, true ) || $field->type_obj instanceof Field_Type_Multi_Valued;
 }
