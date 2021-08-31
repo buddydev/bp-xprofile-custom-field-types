@@ -42,6 +42,7 @@ function bpxcftr_get_field_types() {
 		'fromto'                       => 'BPXProfileCFTR\Field_Types\Field_Type_From_To',
 		'oembed'                       => 'BPXProfileCFTR\Field_Types\Field_Type_Oembed',
 		'token'                        => 'BPXProfileCFTR\Field_Types\Field_Type_Token',
+		'tags'                         => 'BPXProfileCFTR\Field_Types\Field_Type_Tags',
 	);
 
 	return $fields;
