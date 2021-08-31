@@ -12,6 +12,7 @@
 
 namespace BPXProfileCFTR\Field_Types;
 
+use BP_XProfile_Field;
 use BP_XProfile_Field_Type_Multiselectbox;
 
 // Exit if accessed directly.
@@ -43,5 +44,41 @@ class Field_Type_Tags extends BP_XProfile_Field_Type_Multiselectbox {
 		 * @param Field_Type_Tags $this Current instance of the field type tags.
 		 */
 		do_action( 'bp_xprofile_field_type_tags', $this );
+	}
+
+	/**
+	 * Output HTML for this field type on the wp-admin Profile Fields screen.
+	 *
+	 * Must be used inside the {@link bp_profile_fields()} template loop.
+	 *
+	 * @param array $raw_properties Optional key/value array of permitted attributes that you want to add.
+	 */
+	public function admin_new_field_html( BP_XProfile_Field $current_field, $control_type = '' ) {
+		parent::admin_new_field_html( $current_field, $control_type );
+
+		?>
+		<p>
+			<label>
+				<input type="checkbox" name="bpxcftr_tags_allow_new_tags" id="bpxcftr_tags_allow_new_tags" value="1" <?php checked(true,  self::allow_new_tags( $current_field->id ) );?> />
+				<?php _e( 'Allow users to add new tags', 'bp-xprofile-custom-field-types' ); ?>
+			</label>
+		</p>
+		<?php
+	}
+
+	/**
+	 * I new term creation allowed?
+	 *
+	 * @param int $field_id field id.
+	 *
+	 * @return bool
+	 */
+	public static function allow_new_tags( $field_id ) {
+
+		if ( ! $field_id ) {
+			return false;
+		}
+
+		return (bool) bp_xprofile_get_meta( $field_id, 'field', 'allow_new_tags', true );
 	}
 }
