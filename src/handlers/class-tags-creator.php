@@ -35,7 +35,7 @@ class Tags_Creator {
 	 */
 	private function setup() {
 		// Pre validate tags.
-		add_filter( 'bp_xprofile_set_field_data_pre_validate', array( $this, 'sanitize' ), 10, 2 );
+		//add_filter( 'bp_xprofile_set_field_data_pre_validate', array( $this, 'sanitize' ), 10, 2 );
 
 		add_filter( 'bp_get_the_profile_field_value', array( $this, 'filter_value' ), 10, 3 );
 
@@ -65,32 +65,21 @@ class Tags_Creator {
 		// Add new tags if needed.
 		$sanitized = array();
 
-		$parent_id      = $field->id;
-		$field_group_id = $field->group_id;
+		$user_id = bp_displayed_user_id();
 
-		$field_options    = $field->get_children( true );
-		$options_name     = empty( $field_options ) ? array() : wp_list_pluck( $field_options, 'name' );
-		$max_option_order = empty( $field_options ) ? 0 : max( wp_list_pluck( $field_options, 'option_order' ) );
+		$default_tags = Field_Type_Tags::get_default_tags( $field->id );
+		$user_tags    = xprofile_get_field_data( $field->id, $user_id );
+		$user_tags    = $user_tags ? $user_tags : array();
 
 		foreach ( $value as $tag ) {
 
-			if ( in_array( $tag, $options_name ) ) {
+			if ( in_array( $tag, $default_tags ) ) {
 				$sanitized[] = $tag;
 			} elseif ( $allow_new_tags ) {
-				$field_id = xprofile_insert_field(
-					array(
-						'field_group_id' => $field_group_id,
-						'parent_id'      => $parent_id,
-						'type'           => 'option',
-						'name'           => $tag,
-						'option_order'   => ++ $max_option_order,
-					)
-				);
+				$field_data = array_merge( $user_tags, array( $tag ) );
+				xprofile_set_field_data( $field->id, $user_id, $field_data );
 
-				if ( $field_id ) {
-					$field       = xprofile_get_field( $field_id );
-					$sanitized[] = $field->name;
-				}
+				$sanitized[] = $tag;
 			}
 		}
 

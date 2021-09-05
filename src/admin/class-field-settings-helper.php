@@ -100,7 +100,12 @@ class Field_Settings_Helper {
 				break;
 
 			case 'tags':
-				$allow_tags = isset( $_POST['bpxcftr_tags_allow_new_tags'] ) ? 1 : 0;
+				$default_tags = isset( $_POST['bpxcftr_tags_default_tags'] ) ? wp_unslash( $_POST['bpxcftr_tags_default_tags'] ) : '';
+				$default_tags = sanitize_textarea_field( $default_tags );
+
+				$allow_tags   = isset( $_POST['bpxcftr_tags_allow_new_tags'] ) ? 1 : 0;
+
+				bp_xprofile_update_field_meta( $field->id, 'default_tags', $default_tags );
 
 				if ( $allow_tags ) {
 					bp_xprofile_update_field_meta( $field->id, 'allow_new_tags', $allow_tags );
