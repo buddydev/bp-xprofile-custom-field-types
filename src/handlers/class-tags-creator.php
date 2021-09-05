@@ -122,7 +122,12 @@ class Tags_Creator {
 	 * @return bool
 	 */
 	public function should_load_assets() {
-		return bp_is_my_profile() && bp_is_profile_component();
+
+		if ( ! bp_is_profile_component() ) {
+			return false;
+		}
+
+		return is_super_admin() || bp_is_my_profile();
 	}
 
 	/**
