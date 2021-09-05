@@ -120,7 +120,7 @@ class Field_Type_Tags extends \BP_XProfile_Field_Type_Textbox {
 
 		$options = array();
 
-		if ( ! $default_tags ) {
+		if ( ! $default_tags && ! $user_tags ) {
 			$options[''] = __( 'No option found', 'bp-xprofile-custom-field-types' );
 		}
 
