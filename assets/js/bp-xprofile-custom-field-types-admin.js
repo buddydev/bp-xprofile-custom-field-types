@@ -2,7 +2,7 @@ jQuery( document).ready(function($) {
 
     var fieldWithOptions = ['checkbox_acceptance', 'select_custom_post_type', 'multiselect_custom_post_type',
         'select_custom_taxonomy', 'multiselect_custom_taxonomy',
-        'decimal_number', 'number_minmax', 'slider','token', 'fromto', 'country', 'web'];
+        'decimal_number', 'number_minmax', 'slider','token', 'fromto', 'country', 'web', 'tags'];
 
     var $selectBox = $('#select2-box');
 
