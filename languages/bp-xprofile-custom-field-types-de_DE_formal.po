@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: BuddyPress Xprofile Custom Fields Type\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/buddypress-xprofile-custom-"
 "fields-type\n"
-"POT-Creation-Date: 2020-12-03 07:33+0530\n"
-"PO-Revision-Date: 2020-12-03 07:33+0530\n"
+"POT-Creation-Date: 2021-09-09 17:30+0530\n"
+"PO-Revision-Date: 2021-09-09 17:30+0530\n"
 "Last-Translator: Thorsten Wollenhöfer <thorsten.wollenhoefer@gmail.com>\n"
 "Language-Team: Thorsten Wollenhöfer <thorsten.wollenhoefer@gmail.com>\n"
 "Language: de_DE\n"
@@ -30,23 +30,23 @@ msgstr ""
 "Das Plugin BuddyPress Xprofile Custom Field Types benötigt Buddypress "
 "Xprofile Component. Bitte aktivieren Sie zuerst Xprofile."
 
-#: src/admin/class-field-settings-helper.php:228
+#: src/admin/class-field-settings-helper.php:244
 msgid "Select2"
 msgstr "Select2"
 
-#: src/admin/class-field-settings-helper.php:230
+#: src/admin/class-field-settings-helper.php:246
 msgid "Enable select2 javascript code."
 msgstr "Aktivieren Sie Select2 JavaScript-Code."
 
-#: src/admin/class-field-settings-helper.php:234
+#: src/admin/class-field-settings-helper.php:250
 msgid "Select2 status for this field"
 msgstr "Select2 Status für dieses Feld"
 
-#: src/admin/class-field-settings-helper.php:237
+#: src/admin/class-field-settings-helper.php:253
 msgid "Enabled"
 msgstr "Aktiviert"
 
-#: src/admin/class-field-settings-helper.php:240
+#: src/admin/class-field-settings-helper.php:256
 msgid "Disabled"
 msgstr "Deaktiviert"
 
@@ -74,6 +74,7 @@ msgstr "Geburtsdatum-Selektor"
 #: src/field-types/class-field-type-select-post-type.php:30
 #: src/field-types/class-field-type-select-taxonomy.php:31
 #: src/field-types/class-field-type-slider.php:28
+#: src/field-types/class-field-type-tags.php:31
 #: src/field-types/class-field-type-token.php:31
 #: src/field-types/class-field-type-web.php:27
 #, fuzzy
@@ -1259,7 +1260,7 @@ msgid "Decimal number (HTML5 field)"
 msgstr "Dezimalzahl (HTML5-Feld)"
 
 #: src/field-types/class-field-type-decimal-number.php:128
-#: src/field-types/class-field-type-from-to.php:185
+#: src/field-types/class-field-type-from-to.php:192
 msgid "Options"
 msgstr "Optionen"
 
@@ -1306,59 +1307,59 @@ msgstr "Datei herunterladen"
 msgid "From/To values"
 msgstr "Von / zu Werten"
 
-#: src/field-types/class-field-type-from-to.php:188
+#: src/field-types/class-field-type-from-to.php:195
 msgid "Value Type"
 msgstr "Werttyp"
 
-#: src/field-types/class-field-type-from-to.php:190
+#: src/field-types/class-field-type-from-to.php:197
 msgid "No restrictions"
 msgstr "Keine Einschränkungen"
 
-#: src/field-types/class-field-type-from-to.php:191
+#: src/field-types/class-field-type-from-to.php:198
 msgid "Integers"
 msgstr "Ganzzahlen"
 
-#: src/field-types/class-field-type-from-to.php:192
+#: src/field-types/class-field-type-from-to.php:199
 msgid "Numeric"
 msgstr "Numerisch"
 
-#: src/field-types/class-field-type-from-to.php:193
+#: src/field-types/class-field-type-from-to.php:200
 msgid "String"
 msgstr "Zeichenkette"
 
-#: src/field-types/class-field-type-from-to.php:198
+#: src/field-types/class-field-type-from-to.php:205
 msgid "Integer/Numeric Type Constraints"
 msgstr "Integer/numerische Typbeschränkungen"
 
-#: src/field-types/class-field-type-from-to.php:200
+#: src/field-types/class-field-type-from-to.php:207
 msgid "Default Values"
 msgstr "Standardwerte"
 
-#: src/field-types/class-field-type-from-to.php:203
+#: src/field-types/class-field-type-from-to.php:210
 msgid "From"
 msgstr "Von"
 
-#: src/field-types/class-field-type-from-to.php:208
+#: src/field-types/class-field-type-from-to.php:215
 msgid "To"
 msgstr "Bis"
 
-#: src/field-types/class-field-type-from-to.php:216
+#: src/field-types/class-field-type-from-to.php:223
 msgid "Value separator"
 msgstr ""
 
-#: src/field-types/class-field-type-from-to.php:218
+#: src/field-types/class-field-type-from-to.php:225
 msgid "Hyphen(v1 - v2)"
 msgstr ""
 
-#: src/field-types/class-field-type-from-to.php:219
+#: src/field-types/class-field-type-from-to.php:226
 msgid "Colon(v1 : v2)"
 msgstr ""
 
-#: src/field-types/class-field-type-from-to.php:220
+#: src/field-types/class-field-type-from-to.php:227
 msgid "to( v1 to v2)"
 msgstr ""
 
-#: src/field-types/class-field-type-from-to.php:257
+#: src/field-types/class-field-type-from-to.php:264
 msgid "to"
 msgstr ""
 
@@ -1468,6 +1469,28 @@ msgstr "Bereichseingabe (HTML5-Feld)"
 msgid "Write min and max values."
 msgstr "Schreibe Min- und Max-Werte."
 
+#: src/field-types/class-field-type-tags.php:32
+msgid "Tags"
+msgstr ""
+
+#: src/field-types/class-field-type-tags.php:70
+#, fuzzy
+#| msgid "Add a list of allowed tokens(separated by comma(,) eg. ONE,two etc):"
+msgid "Default tags List(separate tags by comma(,) eg. One,Two etc):"
+msgstr ""
+"Fügen Sie eine Liste der zulässigen Token hinzu (durch Komma (,) getrennt, "
+"z. B. EINE, zwei usw.):"
+
+#: src/field-types/class-field-type-tags.php:78
+msgid ""
+"Allow users to add new tags( If you tick this option, please make sure to "
+"<strong>enable select2</strong>strong> from right sidebar)."
+msgstr ""
+
+#: src/field-types/class-field-type-tags.php:151
+msgid "Clear"
+msgstr ""
+
 #: src/field-types/class-field-type-token.php:30
 #, fuzzy
 #| msgctxt "xprofile field type"
@@ -1553,6 +1576,20 @@ msgstr "Ungültiges Datum."
 #: src/handlers/class-signup-validator.php:190
 msgid "Please provide a valid token."
 msgstr "Geben Sie ein gültiges Token an."
+
+#: src/handlers/class-tags-creator.php:144
+#, fuzzy
+#| msgid "Invalid file."
+msgid "Invalid Request."
+msgstr "Ungültige Datei."
+
+#: src/handlers/class-tags-creator.php:154
+msgid "Tag not found."
+msgstr ""
+
+#: src/handlers/class-tags-creator.php:161
+msgid "Tag removed."
+msgstr ""
 
 #~ msgid "BuddyPress Xprofile Custom Field Types"
 #~ msgstr "(BuddyDev) BuddyPress Xprofile Custom Field Types"
