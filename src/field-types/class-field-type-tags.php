@@ -67,7 +67,7 @@ class Field_Type_Tags extends \BP_XProfile_Field_Type_Textbox {
 		?>
         <div id="<?php echo esc_attr( $type ); ?>" class="postbox bp-options-box"
              style="<?php echo esc_attr( $class ); ?> margin-top: 15px;">
-            <h3><?php esc_html_e( 'Add a list of allowed tags(separated by comma(,) eg. ONE,TWO etc):', 'bp-xprofile-custom-field-types' ); ?></h3>
+            <h3><?php esc_html_e( 'Default tags List(separate tags by comma(,) eg. One,Two etc):', 'bp-xprofile-custom-field-types' ); ?></h3>
             <div class="inside">
                 <p>
                     <textarea name="bpxcftr_tags_default_tags" id="bpxcftr_tags_default_tags" rows="5" cols="60"><?php echo $text; ?></textarea>
@@ -75,7 +75,7 @@ class Field_Type_Tags extends \BP_XProfile_Field_Type_Textbox {
                 <p>
                     <label>
                         <input type="checkbox" name="bpxcftr_tags_allow_new_tags" id="bpxcftr_tags_allow_new_tags" value="1" <?php checked(true, self::allow_new_tags( $current_field->id ) );?> />
-			            <?php _e( 'Allow users to add new tags', 'bp-xprofile-custom-field-types' ); ?>
+			            <?php _e( 'Allow users to add new tags( If you tick this option, please make sure to <strong>enable select2</strong>strong> from right sidebar).', 'bp-xprofile-custom-field-types' ); ?>
                     </label>
                 </p>
             </div>
