@@ -208,7 +208,7 @@ class Field_Upload_Helper {
 		if ( ! in_array( $ext, $ext_allowed ) ) {
 			return new \WP_Error( 'invalid_file_type', sprintf( __( 'File type not allowed: (%s).', 'bp-xprofile-custom-field-types' ), implode( ',', $ext_allowed ) ) );
 		} elseif ( $file_size > $allowed_size ) {
-			return new \WP_Error( sprintf( __( 'Max image upload size: %s MB.', 'bp-xprofile-custom-field-types' ), $allowed_size ) );
+			return new \WP_Error( 'file_size_err', sprintf( __( 'Max image upload size: %s MB.', 'bp-xprofile-custom-field-types' ), $allowed_size ) );
 		}
 
 		// if we are here, we may proceed to upload.
