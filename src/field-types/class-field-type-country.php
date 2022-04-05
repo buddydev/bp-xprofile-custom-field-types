@@ -334,6 +334,7 @@ class Field_Type_Country extends \BP_XProfile_Field_Type implements Field_Type_S
 			'KZ' => __( 'Kazakhstan', 'bp-xprofile-custom-field-types' ),
 			'KE' => __( 'Kenya', 'bp-xprofile-custom-field-types' ),
 			'KI' => __( 'Kiribati', 'bp-xprofile-custom-field-types' ),
+			'XK' => __( 'Kosovo', 'bp-xprofile-custom-field-types' ),
 			'KW' => __( 'Kuwait', 'bp-xprofile-custom-field-types' ),
 			'KG' => __( 'Kyrgyzstan', 'bp-xprofile-custom-field-types' ),
 			'LA' => __( 'Laos', 'bp-xprofile-custom-field-types' ),
