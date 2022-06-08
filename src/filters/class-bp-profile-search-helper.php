@@ -13,6 +13,8 @@
 namespace BPXProfileCFTR\Filters;
 
 // Do not allow direct access over web.
+use BPXProfileCFTR\Field_Types\Field_Type_Country;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
@@ -69,6 +71,11 @@ class BP_Profile_Search_Helper {
 
 			case 'decimal_number':
 				$field->format = 'decimal';
+				break;
+
+			case 'country':
+				$field->format  = 'set';
+				$field->options = Field_Type_Country::get_countries();
 				break;
 		}
 	}

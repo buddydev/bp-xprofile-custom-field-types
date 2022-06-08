@@ -215,7 +215,7 @@ class Field_Type_Country extends \BP_XProfile_Field_Type implements Field_Type_S
 	 *
 	 * @return array
 	 */
-	private static function get_countries() {
+	public static function get_countries() {
 
 		$countries = array(
 			'AF' => __( 'Afghanistan', 'bp-xprofile-custom-field-types' ),
