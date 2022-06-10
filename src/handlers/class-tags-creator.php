@@ -100,6 +100,10 @@ class Tags_Creator {
 			return $value;
 		}
 
+		if ( ! apply_filters( 'bpxcftr_enable_tag_removal_on_view_profile', true ) ) {
+			return $value;
+		}
+
 		$tags    = array_filter( explode( ',', $value ) );
 		$user_id = get_current_user_id();
 
