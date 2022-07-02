@@ -75,7 +75,7 @@ class Field_Type_Tags extends \BP_XProfile_Field_Type_Textbox {
                 <p>
                     <label>
                         <input type="checkbox" name="bpxcftr_tags_allow_new_tags" id="bpxcftr_tags_allow_new_tags" value="1" <?php checked(true, self::allow_new_tags( $current_field->id ) );?> />
-			            <?php _e( 'Allow users to add new tags( If you tick this option, please make sure to <strong>enable select2</strong>strong> from right sidebar).', 'bp-xprofile-custom-field-types' ); ?>
+			            <?php _e( 'Allow users to add new tags( If you tick this option, please make sure to <strong>enable select2</strong> from right sidebar).', 'bp-xprofile-custom-field-types' ); ?>
                     </label>
                 </p>
             </div>
