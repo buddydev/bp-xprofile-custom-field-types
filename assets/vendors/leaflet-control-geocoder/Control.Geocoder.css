@@ -1,0 +1,126 @@
+.leaflet-control-geocoder {
+  border-radius: 4px !important;
+  background: white !important;
+  min-width: 26px !important;
+  min-height: 26px !important;
+}
+
+.leaflet-touch .leaflet-control-geocoder {
+  min-width: 30px !important;
+  min-height: 30px !important;
+}
+
+.leaflet-control-geocoder a,
+.leaflet-control-geocoder .leaflet-control-geocoder-icon {
+  border-bottom: none !important;
+  display: inline-block !important;
+}
+
+.leaflet-control-geocoder .leaflet-control-geocoder-alternatives a {
+  width: inherit !important;
+  height: inherit !important;
+  line-height: inherit !important;
+}
+
+.leaflet-control-geocoder a:hover,
+.leaflet-control-geocoder .leaflet-control-geocoder-icon:hover {
+  border-bottom: none !important;
+  display: inline-block !important;
+}
+
+.leaflet-control-geocoder-form {
+  display: none !important;
+  vertical-align: middle !important;
+}
+.leaflet-control-geocoder-expanded .leaflet-control-geocoder-form {
+  display: inline-block !important;
+}
+.leaflet-control-geocoder-form input {
+  font-size: 120% !important;
+  border: 0 !important;
+  background-color: transparent !important;
+  width: 246px !important;
+}
+
+.leaflet-control-geocoder-icon {
+  border-radius: 4px !important;
+  width: 26px !important;
+  height: 26px !important;
+  border: none !important;
+  background-color: white !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12.2 13l3.4 6.6c.6 1.1 2.5-.4 2-1.2l-4-6.2z'/%3E%3Ccircle cx='10.8' cy='8.9' r='3.9' fill='none' stroke='%23000' stroke-width='1.5'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  cursor: pointer !important;
+}
+
+.leaflet-touch .leaflet-control-geocoder-icon {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.leaflet-control-geocoder-throbber .leaflet-control-geocoder-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' stroke='%23000' stroke-linecap='round' stroke-width='1.6' viewBox='0 0 24 24'%3E%3Cdefs/%3E%3Cg%3E%3Cpath stroke-opacity='.1' d='M14 8.4l3-5'/%3E%3Cpath stroke-opacity='.2' d='M15.6 10l5-3'/%3E%3Cpath stroke-opacity='.3' d='M16.2 12H22'/%3E%3Cpath stroke-opacity='.4' d='M15.6 14l5 3m-6.5-1.4l2.9 5'/%3E%3Cpath stroke-opacity='.5' d='M12 16.2V22m-2-6.4l-3 5'/%3E%3Cpath stroke-opacity='.6' d='M8.4 14l-5 3'/%3E%3Cpath stroke-opacity='.7' d='M7.8 12H2'/%3E%3Cpath stroke-opacity='.8' d='M8.4 10l-5-3'/%3E%3Cpath stroke-opacity='.9' d='M10 8.4l-3-5'/%3E%3Cpath d='M12 7.8V2'/%3E%3CanimateTransform attributeName='transform' calcMode='discrete' dur='1s' repeatCount='indefinite' type='rotate' values='0 12 12 !important;30 12 12 !important;60 12 12 !important;90 12 12 !important;120 12 12 !important;150 12 12 !important;180 12 12 !important;210 12 12 !important;240 12 12 !important;270 12 12 !important;300 12 12 !important;330 12 12'/%3E%3C/g%3E%3C/svg%3E") !important;
+}
+
+.leaflet-control-geocoder-form-no-error {
+  display: none !important;
+}
+
+.leaflet-control-geocoder-form input:focus {
+  outline: none !important;
+}
+
+.leaflet-control-geocoder-form button {
+  display: none !important;
+}
+.leaflet-control-geocoder-error {
+  margin-top: 8px !important;
+  margin-left: 8px !important;
+  display: block !important;
+  color: #444 !important;
+}
+.leaflet-control-geocoder-alternatives {
+  display: block !important;
+  width: 272px !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.leaflet-control-geocoder-alternatives-minimized {
+  display: none !important;
+  height: 0 !important;
+}
+.leaflet-control-geocoder-alternatives li {
+  white-space: nowrap !important;
+  display: block !important;
+  overflow: hidden !important;
+  padding: 5px 8px !important;
+  text-overflow: ellipsis !important;
+  border-bottom: 1px solid #ccc !important;
+  cursor: pointer !important;
+}
+
+.leaflet-control-geocoder-alternatives li a,
+.leaflet-control-geocoder-alternatives li a:hover {
+  width: inherit !important;
+  height: inherit !important;
+  line-height: inherit  !important;
+  background: inherit !important;
+  border-radius: inherit !important;
+  text-align: left !important;
+}
+
+.leaflet-control-geocoder-alternatives li:last-child {
+  border-bottom: none !important;
+}
+.leaflet-control-geocoder-alternatives li:hover,
+.leaflet-control-geocoder-selected {
+  background-color: #f5f5f5 !important;
+}
+.leaflet-control-geocoder-address-detail {
+}
+.leaflet-control-geocoder-address-context {
+  color: #666 !important;
+}

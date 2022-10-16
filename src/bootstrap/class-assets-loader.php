@@ -137,8 +137,12 @@ class Assets_Loader {
 	 */
 	public function enqueue_vendors() {
 		wp_enqueue_style( 'select2' );
+		wp_enqueue_style('leaflet-control-geocoder');
+		wp_enqueue_style( 'leaflet' );
 		wp_enqueue_script( 'modernizr' );
 		wp_enqueue_script( 'jscolor' );
+		wp_enqueue_script( 'leaflet-control-geocoder' );
+		wp_enqueue_script( 'leaflet' );
 		wp_enqueue_script( 'select2' );
 		wp_enqueue_script( 'select2-i18n' );
 	}
@@ -174,6 +178,12 @@ class Assets_Loader {
 
 		wp_register_script( 'modernizr', $url . 'assets/vendors/modernizr.js', array(), $version, false );
 		wp_register_script( 'jscolor', $url . 'assets/vendors/jscolor/jscolor.js', array(), '1.4.1', true );
+
+		// Leaflet Js and Leaflet geocoder
+		wp_register_script( 'leaflet', 'https://unpkg.com/leaflet@1.9.1/dist/leaflet.js' );
+		wp_register_style( 'leaflet', 'https://unpkg.com/leaflet@1.9.1/dist/leaflet.css' );
+		wp_register_script( 'leaflet-control-geocoder', $url . 'assets/vendors/leaflet-control-geocoder/Control.Geocoder.js', array(), '2.4.0', true );
+		wp_register_style( 'leaflet-control-geocoder', $url . 'assets/vendors/leaflet-control-geocoder/Control.Geocoder.css', array(), '2.4.0' );
 
 		wp_register_script( 'select2', $url . 'assets/vendors/select2/select2.full.min.js', array( 'jquery' ), '4.0.12', true );
 

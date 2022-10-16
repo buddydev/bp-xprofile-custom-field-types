@@ -1,5 +1,3 @@
-
-
 === BuddyPress Xprofile Custom Field Types ===
 Contributors: buddydev, sbrajesh, raviousprime
 Tags: buddypress, xprofile, fields, buddypress-profile-field-types

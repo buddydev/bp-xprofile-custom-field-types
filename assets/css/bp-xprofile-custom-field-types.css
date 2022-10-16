@@ -18,3 +18,18 @@
 .bpxcftr-from-to-edit-field-numeric input[type="text"] {
     width: 4em !important;
 }
+
+
+.bpx-leaflet-map {
+    height: 150px;
+    margin-top: 10px;
+    width: 100%;
+}
+.bp-x-laeflet-label-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bp-x-laeflet-label-wrapper label {
+    margin: initial !important;
+}
