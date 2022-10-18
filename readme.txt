@@ -1,5 +1,3 @@
-
-
 === BuddyPress Xprofile Custom Field Types ===
 Contributors: buddydev, sbrajesh, raviousprime
 Tags: buddypress, xprofile, fields, buddypress-profile-field-types
@@ -102,6 +100,10 @@ We will love to work with you. Please let us know if you need any of our [servic
 3. profile view screenshot-3.png
 
 == Changelog ==
+
+= 1.3.0 =
+ * Add Leaflet Field type ofr geolocation
+
 = 1.2.4 =
  * Added filter 'bpxcftr_enable_tag_removal_on_view_profile' to allow enabling/disabling the tag removal from profile view.
 
