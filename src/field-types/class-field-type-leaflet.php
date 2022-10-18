@@ -34,8 +34,7 @@ class Field_Type_Leaflet extends \BP_XProfile_Field_Type {
 		$this->field_prefixe = "bpxcftr_leaflet_";
 		$this->accepts_null_value = true;
 		$this->validation_regex = array('{"lat":\d+\.?\d+,"lng":\d+\.?\d+,"name":".+"}'); // Valid format {"lat":45.12345,"lng":5.12345,"name":"Adress, City, Country"}
-	
-
+		
 		do_action( 'bp_xprofile_field_type_leaflet', $this );
 	}
 
@@ -51,8 +50,7 @@ class Field_Type_Leaflet extends \BP_XProfile_Field_Type {
 		$latitude 	= bp_xprofile_get_meta( $field->id, 'field', $this->field_prefixe.'latitude', true );
 		$longitude  = bp_xprofile_get_meta( $field->id, 'field', $this->field_prefixe.'longitude', true );
 		$zoom     	= bp_xprofile_get_meta( $field->id, 'field', $this->field_prefixe.'zoom', true );
-		$height     = bp_xprofile_get_meta( $field->id, 'field', $this->field_prefixe.'height', true );
-		$required   = bp_xprofile_get_meta( $field->id, 'field', $this->field_prefixe.'required', true );
+		$height     = bp_xprofile_get_meta( $field->id, 'field', $this->field_prefixe.'height', true );		
 		$city		= "";
 
 
@@ -105,16 +103,8 @@ class Field_Type_Leaflet extends \BP_XProfile_Field_Type {
 		<?php
 	}
 
-	/**
-	 * Returns minimum age needed.
-	 *
-	 * @param int $field_id field id.
-	 *
-	 * @return int
-	 */
-	public static function isRequired( $field_id ) {		
-		return bp_xprofile_get_meta( $field_id, 'field', 'bpxcftr_leaflet_required', true );
-	}
+
+	
 
 	/**
 	 * Admin field list html.
@@ -155,7 +145,7 @@ class Field_Type_Leaflet extends \BP_XProfile_Field_Type {
 		$current_longitude  = bp_xprofile_get_meta( $current_field->id, 'field', $this->field_prefixe.'longitude', true );
 		$current_zoom     	= bp_xprofile_get_meta( $current_field->id, 'field', $this->field_prefixe.'zoom', true );
 		$height     		= bp_xprofile_get_meta( $current_field->id, 'field', $this->field_prefixe.'height', true );
-		$required    		= bp_xprofile_get_meta( $current_field->id, 'field', $this->field_prefixe.'required', true );
+		
 		
 		?>
         <div id="<?php echo esc_attr( $type ); ?>" class="postbox bp-options-box" style="<?php echo esc_attr( $class ); ?> margin-top: 15px;">
@@ -176,11 +166,7 @@ class Field_Type_Leaflet extends \BP_XProfile_Field_Type {
 				<p>
                     <label for="bpxcftr_leaflet_height"><?php _e('Height map', 'bp-xprofile-custom-field-types');?></label>
                     <input type="text" value="<?php echo esc_attr( $height);?>" name="bpxcftr_leaflet_height" placeholder="E.g. 200px"/>
-                </p>
-				<p>
-			        <?php _e( 'Field is required:', 'bp-xprofile-custom-field-types' ); ?>
-                    <input type="checkbox" name="bpxcftr_leaflet_required" id="bpxcftr_leaflet_required" value="1" <?php checked(1, $required ); ?>/>
-                </p>                                
+                </p>				
             </div>
         </div>
 		<?php
@@ -195,8 +181,7 @@ class Field_Type_Leaflet extends \BP_XProfile_Field_Type {
 	 */
 	public function is_valid( $value ) {		
 		try {
-			$field = bpxcftr_get_current_field();
-			$required    		= bp_xprofile_get_meta( $field->id, 'field', $this->field_prefixe.'required', true );
+			$field = bpxcftr_get_current_field();			
 			$validated = false;
 			$redirect_url = trailingslashit( bp_displayed_user_domain() . bp_get_profile_slug() . '/edit/group/' . bp_action_variable( 1 ) );
 			if (!empty($value)) {
@@ -206,13 +191,8 @@ class Field_Type_Leaflet extends \BP_XProfile_Field_Type {
 					bp_core_add_message('Incorrect address','error');					
 					bp_core_redirect( $redirect_url );
 				}
-			} else {
-				$validated = $required!="1";
-				if (!$validated) {					
-					bp_core_add_message('The Address field is required','error');
-					bp_core_redirect( $redirect_url );
-				}
 			}
+			
 			return $validated;
 		}
 		catch (\Exception $e) {
@@ -230,7 +210,20 @@ class Field_Type_Leaflet extends \BP_XProfile_Field_Type {
 	 * @return string   Value formatted
 	 */
 	public static function display_filter( $field_value, $field_id = 0 ) {
-		return empty( $field_value ) ? '' : sprintf( '<a href="mailto:%1$s" rel="nofollow">%1$s</a>', $field_value );
+		try {	
+			if (empty( $field_value )) {return "";}		
+			$value = json_decode(html_entity_decode($field_value));
+			if ($value!=null) {
+				$latitude =  $value->lat;
+				$longitude = $value->lng;
+				$city = $value->name;			
+				return $city;
+			}
+			return "";
+		} catch (\Exception $e) {
+			return "-- ERROR--";
+		}
+	
 	}
 
 
@@ -248,10 +241,7 @@ class Field_Type_Leaflet extends \BP_XProfile_Field_Type {
 		foreach ( $saved_settings as $setting_key => $setting_value ) {
 			bp_xprofile_update_meta( $field_id, 'field', $setting_key, $setting_value );
 		}
-		if ($saved_settings[$this->field_prefixe.'required']==null) {
-			bp_xprofile_update_meta( $field_id, 'field', $this->field_prefixe.'required', "0" );
-		}
-
+		
 		return true;
 	}
 }

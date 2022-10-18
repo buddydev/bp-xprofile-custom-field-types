@@ -52,9 +52,9 @@ class Assets_Loader {
 	 */
 	public function register_front_assets() {
 
-		if ( ! $this->should_load_front_assets() ) {
-			return;
-		}
+		// if ( ! $this->should_load_front_assets() ) {
+		// 	return;
+		// }
 
 		$this->register();
 	}
@@ -66,9 +66,9 @@ class Assets_Loader {
 		// css should be always loaded.
 		wp_enqueue_style( 'bp-xprofile-custom-field-types' );
 
-		if ( ! $this->should_load_front_assets() ) {
-			return;
-		}
+		// if ( ! $this->should_load_front_assets() ) {
+		// 	return;
+		// }
 		$this->enqueue_vendors();
 		$this->enqueue_front();
 	}
@@ -128,7 +128,9 @@ class Assets_Loader {
 	 */
 	public function enqueue_front() {
 		wp_enqueue_script( 'bp-xprofile-custom-field-types' );
-
+		wp_enqueue_script( 'leaflet' );
+		wp_enqueue_script( 'leaflet-control-geocoder' );
+		wp_enqueue_script( 'bp-xprofile-leaflet-field-type' );				
 		wp_localize_script( 'bp-xprofile-custom-field-types', 'BPXprofileCFTR', $this->data );
 	}
 
@@ -152,9 +154,7 @@ class Assets_Loader {
 	 */
 	public function enqueue_admin() {
 		wp_enqueue_script( 'bp-xprofile-custom-field-types-admin' );
-
 		wp_localize_script( 'bp-xprofile-custom-field-types', 'BPXprofileCFTR', $this->data );
-
 		wp_localize_script( 'bp-xprofile-custom-field-types-admin', 'BPXprofileCFTRAdmin', $this->data );
 	}
 
@@ -182,9 +182,12 @@ class Assets_Loader {
 		// Leaflet Js and Leaflet geocoder
 		wp_register_script( 'leaflet', 'https://unpkg.com/leaflet@1.9.1/dist/leaflet.js' );
 		wp_register_style( 'leaflet', 'https://unpkg.com/leaflet@1.9.1/dist/leaflet.css' );
-		wp_register_script( 'leaflet-control-geocoder', $url . 'assets/vendors/leaflet-control-geocoder/Control.Geocoder.js', array(), '2.4.0', true );
+		wp_register_script( 'leaflet-control-geocoder', $url . 'assets/vendors/leaflet-control-geocoder/Control.Geocoder.js', array("leaflet"), '2.4.0', true );
 		wp_register_style( 'leaflet-control-geocoder', $url . 'assets/vendors/leaflet-control-geocoder/Control.Geocoder.css', array(), '2.4.0' );
-
+		wp_register_script( 'leaflet-control-geocoder', $url . 'assets/vendors/leaflet-control-geocoder/Control.Geocoder.js', array("leaflet"), '2.4.0', true );
+		wp_register_script( 'bp-xprofile-leaflet-field-type', $url . 'assets/js/bp-xprofile-leaflet-field-type.js', array("leaflet"), '1.0.0', true );
+		
+		
 		wp_register_script( 'select2', $url . 'assets/vendors/select2/select2.full.min.js', array( 'jquery' ), '4.0.12', true );
 
 		$locale = apply_filters( 'bpxcftr_select2_js_locale', get_locale() );

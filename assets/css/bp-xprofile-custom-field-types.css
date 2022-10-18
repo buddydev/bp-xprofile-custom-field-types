@@ -20,6 +20,10 @@
 }
 
 
+.field_type_leaflet .error {
+    color: red;
+}
+
 .bpx-leaflet-map {
     height: 150px;
     margin-top: 10px;
