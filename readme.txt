@@ -2,8 +2,8 @@
 Contributors: buddydev, sbrajesh, raviousprime
 Tags: buddypress, xprofile, fields, buddypress-profile-field-types
 Requires at least: 5.0
-Tested up to: 6.0
-Stable tag: 1.2.4
+Tested up to: 6.1
+Stable tag: 1.2.5
 License: GLPv2 or later
 
 Buddypress Xprofile Custom Field Types adds extra custom profile fields to BuddyPress. Field types are: Birthdate, Email, Url etc.
@@ -40,7 +40,7 @@ The plugin is opensource and currently developed on github. We welcome you to be
 Discuss the plugin on our [release post](https://buddydev.com/add-extra-buddypress-profile-fields-with-buddypress-xprofile-custom-field-types-plugin/) or view the plugin's [detailed documentation here](https://buddydev.com/plugins/bp-xprofile-custom-field-types/).
 The idea is based on @donmik's plugin. This plugin is a complete rewrite. Some field type do share code with the original plugin. My guess, we are using 20-30% of the code for field types from the original.
 
-In future, we hope to add more fields.
+In the future, we hope to add more fields.
 
 **Note: This plugin is not 100% backward compatible**
 It is very easy to migrate. Should take less than 5 minute. If you are looking to move from the older plugin to this one, please read our [migration guide](https://buddydev.com/plugins/bp-xprofile-custom-field-types/#migrate).
@@ -85,7 +85,7 @@ Yes, but you will need to follow our [migration guide](https://buddydev.com/plug
 Yes, 100%. For better performance, we have changed the way field settings were stored in admin. The user data will be preserved and they won't notice the difference.
 
 = What is the supported BuddyPress Version? =
-5.0+, Tested with 10.2.0
+5.0+, Tested with 10.6.0
 
 = Where do I get support? =
 Please use [BuddyDev support](https://buddydev.com/support/forums/) forums.
@@ -100,6 +100,10 @@ We will love to work with you. Please let us know if you need any of our [servic
 3. profile view screenshot-3.png
 
 == Changelog ==
+= 1.2.4 =
+ * Updated compatibility with BP Profile Search plugin for Country field type. Props @dontdream
+ * *Upgrade note*:- If you are using Country field with BP profile search, Please verify that the interface works.
+
 = 1.2.4 =
  * Added filter 'bpxcftr_enable_tag_removal_on_view_profile' to allow enabling/disabling the tag removal from profile view.
 
