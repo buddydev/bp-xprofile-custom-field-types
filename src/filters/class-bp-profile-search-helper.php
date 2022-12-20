@@ -74,7 +74,7 @@ class BP_Profile_Search_Helper {
 				break;
 
 			case 'country':
-				$field->format  = 'set';
+				$field->format  = 'text';
 				$field->options = Field_Type_Country::get_countries();
 				break;
 		}
