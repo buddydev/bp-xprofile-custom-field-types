@@ -11,8 +11,6 @@ Buddypress Xprofile Custom Field Types adds extra custom profile fields to Buddy
 == Description ==
 BuddyPress Xprofile Custom Field Types plugin adds some essential field types to BuddyPress Profile.
 
-BuddyPress Xprofile Custom Field Types is 100% compatible with [BP Profile Search plugin](https://wordpress.org/plugins/bp-profile-search/).
-
 The newly added BuddyPress field types are:-
 * Birthdate.
 * Image.
@@ -34,6 +32,19 @@ The newly added BuddyPress field types are:-
 * Custom taxonomy multiselector.
 * Range input (slider)
 * [Select2 javascript plugin](https://select2.github.io/) for select boxes.
+
+BuddyPress Xprofile Custom Field Types is 100% compatible with [BP Profile Search plugin](https://wordpress.org/plugins/bp-profile-search/).
+At the moment, following fields are searchable suing BP Profile Search:-
+* Birthdate
+* Datepicker
+* Color
+* Email
+* Web
+* Number Min/Max
+* Range Input
+* Decimal Number
+* Country
+Other fields such as post type, taxonomy etc are not searchable as they are stored in serialized format( due to back compatibility).
 
 The plugin is opensource and currently developed on github. We welcome you to be part of its future development at [https://github.com/buddydev/bp-xprofile-custom-field-types](https://github.com/buddydev/bp-xprofile-custom-field-types).
 
