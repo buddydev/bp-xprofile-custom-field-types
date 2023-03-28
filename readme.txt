@@ -2,8 +2,8 @@
 Contributors: buddydev, sbrajesh, raviousprime
 Tags: buddypress, xprofile, fields, buddypress-profile-field-types
 Requires at least: 5.0
-Tested up to: 6.1
-Stable tag: 1.2.5
+Tested up to: 6.2
+Stable tag: 1.2.6
 License: GLPv2 or later
 
 Buddypress Xprofile Custom Field Types adds extra custom profile fields to BuddyPress. Field types are: Birthdate, Email, Url etc.
@@ -34,7 +34,7 @@ The newly added BuddyPress field types are:-
 * [Select2 javascript plugin](https://select2.github.io/) for select boxes.
 
 BuddyPress Xprofile Custom Field Types is 100% compatible with [BP Profile Search plugin](https://wordpress.org/plugins/bp-profile-search/).
-At the moment, following fields are searchable suing BP Profile Search:-
+At the moment, following fields are searchable using BP Profile Search:-
 * Birthdate
 * Datepicker
 * Color
@@ -111,7 +111,10 @@ We will love to work with you. Please let us know if you need any of our [servic
 3. profile view screenshot-3.png
 
 == Changelog ==
-= 1.2.4 =
+= 1.2.6 =
+ * Fix issue with Tags type oon PHp 8.0+
+
+= 1.2.5 =
  * Updated compatibility with BP Profile Search plugin for Country field type. Props @dontdream
  * *Upgrade note*:- If you are using Country field with BP profile search, Please verify that the interface works.
 
