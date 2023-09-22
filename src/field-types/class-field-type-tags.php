@@ -53,7 +53,7 @@ class Field_Type_Tags extends \BP_XProfile_Field_Type_Textbox {
 	 * @param BP_XProfile_Field $current_field Current field object.
 	 * @param string            $control_type Current field object.
 	 */
-	public function admin_new_field_html( $current_field, $control_type = '' ) {
+	public function admin_new_field_html( \BP_XProfile_Field $current_field, $control_type = '' ) {
 	    $type = array_search( get_class( $this ), bp_xprofile_get_field_types(), false );
 
 		if ( false === $type ) {
