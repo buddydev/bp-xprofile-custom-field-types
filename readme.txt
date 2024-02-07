@@ -2,7 +2,7 @@
 Contributors: buddydev, sbrajesh, raviousprime
 Tags: buddypress, xprofile, fields, buddypress-profile-field-types
 Requires at least: 5.0
-Tested up to: 6.2
+Tested up to: 6.3
 Stable tag: 1.2.6
 License: GLPv2 or later
 
