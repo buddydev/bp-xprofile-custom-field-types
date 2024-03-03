@@ -36,6 +36,28 @@ jQuery( document).ready(function($) {
 
     });
 
+    // Clicking into the custom date format field should select the Custom radio button.
+    var $birthdate_format_custom_value = jQuery( '#bpxcftr-birthdate-date-format-custom-value' );
+    var $birthdate_format_custom = jQuery( '#bpxcftr-birthdate-date-format-custom' );
+    var $birthdate_format_sample = jQuery( '#bpxcftr-birthdate-date-format-custom-sample' );
+    $birthdate_format_custom_value.on( 'focus', function() {
+        $birthdate_format_custom.prop( 'checked', 'checked' );
+    } );
+
+    // Validate custom date field.
+    var $birthdate_format_spinner = jQuery( '#bpxcftr-birthdate-date-format-custom-spinner' );
+    $birthdate_format_custom_value.on( 'change', function( e ) {
+        $birthdate_format_spinner.addClass( 'is-active' );
+        jQuery.post( ajaxurl, {
+                action: 'date_format',
+                date: e.target.value
+            },
+            function( response ) {
+                $birthdate_format_spinner.removeClass( 'is-active' );
+                $birthdate_format_sample.html( response );
+            } );
+    } );
+
     /**
      * Toggle Select2 box based on preference.
      * @param selectedType

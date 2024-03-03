@@ -96,7 +96,7 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
                                     <span class="date-format-label"><?php esc_html_e( 'Custom:', 'bp-xprofile-custom-field-types' ); ?></span>
                                 </label>
                                 <label for="bpxcftr-birthdate-date-format-custom-value" class="screen-reader-text"><?php esc_html_e( 'Enter custom time format', 'bp-xprofile-custom-field-types' ); ?></label>
-                                <input type="text" name="field-settings[date_format_custom]" id="bpxcftr-birthdate-date-format-custom-value" class="date-format-custom-value" value="<?php echo esc_attr( $settings['date_format_custom'] ); ?>" aria-describedby="bpxcftr-birthdate-date-format-custom-example" /> <span class="screen-reader-text"><?php esc_html_e( 'Example:', 'bp-xprofile-custom-field-types' ); ?></span><span class="date-format-custom-example" id="date-format-custom-sample"><?php if ( $settings['date_format_custom'] ) : ?><?php echo esc_html( date_i18n( $settings['date_format_custom'] ) ); endif; ?></span><span class="spinner" id="bpxcftr-birthdate-date-format-custom-spinner" aria-hidden="true"></span>
+                                <input type="text" name="field-settings[bpxcftr_birthdate_date_format_custom]" id="bpxcftr-birthdate-date-format-custom-value" class="bpxcftr-birthdate-date-format-custom-value" value="<?php echo esc_attr( $settings['date_format_custom'] ); ?>" aria-describedby="bpxcftr-birthdate-date-format-custom-example" /> <span class="screen-reader-text"><?php esc_html_e( 'Example:', 'bp-xprofile-custom-field-types' ); ?></span><span class="date-format-custom-example" id="bpxcftr-birthdate-date-format-custom-sample"><?php if ( $settings['date_format_custom'] ) : ?><?php echo esc_html( date_i18n( $settings['date_format_custom'] ) ); endif; ?></span><span class="spinner" id="bpxcftr-birthdate-date-format-custom-spinner" aria-hidden="true"></span>
 
                                 <p><a href="https://codex.wordpress.org/Formatting_Date_and_Time"><?php esc_html_e( 'Documentation on date and time formatting', 'bp-xprofile-custom-field-types' ); ?></a></p>
                             </div>
@@ -297,7 +297,7 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 	 * @return bool True on success.
 	 */
 	public function admin_save_settings( $field_id, $settings ) {
-		$existing_settings = self::get_field_settings( $field_id );
+        $existing_settings = self::get_field_settings( $field_id );
 
 		$saved_settings = array();
 		$prefix         = 'bpxcftr_birthdate_';
