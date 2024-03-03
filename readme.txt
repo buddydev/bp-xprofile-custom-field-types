@@ -118,6 +118,7 @@ We will love to work with you. Please let us know if you need any of our [servic
  * Fix issue with Tags type oon PHp 8.0+
 
 = 1.2.5 =
+>>>>>>> upstream/master
  * Updated compatibility with BP Profile Search plugin for Country field type. Props @dontdream
  * *Upgrade note*:- If you are using Country field with BP profile search, Please verify that the interface works.
 
