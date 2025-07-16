@@ -161,7 +161,7 @@ class Field_Type_Country extends \BP_XProfile_Field_Type implements Field_Type_S
 	}
 
 	/**
-	 * Check if valid.
+	 * Checks if valid.
 	 *
 	 * @param string $value Country code.
 	 *
@@ -172,7 +172,7 @@ class Field_Type_Country extends \BP_XProfile_Field_Type implements Field_Type_S
 	}
 
 	/**
-	 * Filter value.
+	 * Formats value for display.
 	 *
 	 * @param mixed  $field_value value.
 	 * @param string $field_id field id.
@@ -195,7 +195,7 @@ class Field_Type_Country extends \BP_XProfile_Field_Type implements Field_Type_S
 	}
 
 	/**
-	 * Get the terms content.
+	 * Returns the default selected country.
 	 *
 	 * @param int $field_id field id.
 	 *
@@ -211,7 +211,7 @@ class Field_Type_Country extends \BP_XProfile_Field_Type implements Field_Type_S
 	}
 
 	/**
-	 * Get countries
+	 * Returns an array of countries
 	 *
 	 * @return array
 	 */

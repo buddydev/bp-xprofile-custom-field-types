@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 class Signup_Validator {
 
 	/**
-	 * Setup the bootstrapper.
+	 * Sets up the bootstrapper.
 	 */
 	public static function boot() {
 		$self = new self();
@@ -31,14 +31,14 @@ class Signup_Validator {
 	}
 
 	/**
-	 * Setup.
+	 * Sets up validation.
 	 */
 	public function setup() {
 		add_action( 'bp_signup_validate', array( $this, 'validate' ) );
 	}
 
 	/**
-	 * Validate fields.
+	 * Validates fields.
 	 */
 	public function validate() {
 		if ( ! bp_is_active( 'xprofile' ) ) {
@@ -53,7 +53,7 @@ class Signup_Validator {
 	}
 
 	/**
-	 * Validate a field.
+	 * Validates a field.
 	 *
 	 * @param int $field_id field id.
 	 */
@@ -101,7 +101,7 @@ class Signup_Validator {
 	}
 
 	/**
-	 * Validate the file type fields.
+	 * Validates the file type fields.
 	 *
 	 * @param \BP_XProfile_Field $field field object.
 	 */
@@ -134,7 +134,7 @@ class Signup_Validator {
 
 
 	/**
-	 * Validate the Birthdate.
+	 * Validates the Birthdate.
 	 *
 	 * @param \BP_XProfile_Field $field field object.
 	 */
@@ -173,7 +173,7 @@ class Signup_Validator {
 	}
 
 	/**
-	 * Validate signup token.
+	 * Validates signup token.
 	 *
 	 * @param \BP_XProfile_Field_Type $field filed type token.
 	 * @param string                  $token token to validate.

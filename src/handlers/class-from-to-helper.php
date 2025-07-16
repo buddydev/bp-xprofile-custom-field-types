@@ -16,7 +16,7 @@ namespace BPXProfileCFTR\Handlers;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Manage and sync field data.
+ * Manages and sync fields data.
  */
 class From_To_Helper {
 
@@ -28,7 +28,7 @@ class From_To_Helper {
 	protected $removed = false;
 
 	/**
-	 * Setup the bootstrapper.
+	 * Sets up the bootstrapper.
 	 */
 	public static function boot() {
 		$self = new self();
@@ -36,7 +36,7 @@ class From_To_Helper {
 	}
 
 	/**
-	 * Bind hooks
+	 * Binds hooks
 	 */
 	private function setup() {
 		add_filter( 'bp_xprofile_set_field_data_pre_validate', array( $this, 'pre_save_validate' ), 10, 3 );
@@ -45,7 +45,7 @@ class From_To_Helper {
 	}
 
 	/**
-	 * Update Value on pre-validate to enforce deletion.
+	 * Updates Value on pre-validate to enforce deletion.
 	 *
 	 * @param mixed                   $value value.
 	 * @param \BP_XProfile_Field      $field field object.
@@ -71,7 +71,7 @@ class From_To_Helper {
 	}
 
 	/**
-	 * Detach the validation filter as it will remove our array keys.
+	 * Detaches the validation filter as it will remove our array keys.
 	 *
 	 * @param int $field_id field id.
 	 * @param int $data_field_id data field id.
@@ -99,7 +99,7 @@ class From_To_Helper {
 	}
 
 	/**
-	 * Re attach the filter.
+	 * Re attaches the filter.
 	 */
 	public function attach() {
 		if ( $this->removed ) {

@@ -187,7 +187,7 @@ class Field_Type_Multi_Select_Taxonomy extends \BP_XProfile_Field_Type implement
 	}
 
 	/**
-	 * Check if the field is valid.
+	 * Checks if the field is valid.
 	 *
 	 * @param array|string $values values.
 	 *
@@ -214,7 +214,7 @@ class Field_Type_Multi_Select_Taxonomy extends \BP_XProfile_Field_Type implement
 	}
 
 	/**
-	 * Filter display.
+	 * Formats value for display.
 	 *
 	 * @param mixed  $field_value value.
 	 * @param string $field_id field id.
@@ -251,9 +251,9 @@ class Field_Type_Multi_Select_Taxonomy extends \BP_XProfile_Field_Type implement
 	}
 
 	/**
-	 * Get the terms content.
+	 * Returns the selected taxonomy.
 	 *
-	 * @param int $field_id field object.
+	 * @param int $field_id field id.
 	 *
 	 * @return string
 	 */
@@ -267,7 +267,7 @@ class Field_Type_Multi_Select_Taxonomy extends \BP_XProfile_Field_Type implement
 	}
 
 	/**
-	 * I new term creation allowed?
+	 * Is new term creation allowed?
 	 *
 	 * @param int $field_id field id.
 	 *

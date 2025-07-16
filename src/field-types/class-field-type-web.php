@@ -68,7 +68,7 @@ class Field_Type_Web extends \BP_XProfile_Field_Type_URL {
 	}
 
 	/**
-	 * Format URL values for display.
+	 * Formats URL values for display.
 	 *
 	 * @param string     $field_value The URL value, as saved in the database.
 	 * @param string|int $field_id    Optional. ID of the field.
@@ -82,7 +82,7 @@ class Field_Type_Web extends \BP_XProfile_Field_Type_URL {
 	}
 
 	/**
-	 * Get the link target
+	 * Returns the link target
 	 *
 	 * @param int $field_id field id.
 	 *

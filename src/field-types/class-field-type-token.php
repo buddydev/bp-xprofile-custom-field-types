@@ -73,7 +73,7 @@ class Field_Type_Token extends \BP_XProfile_Field_Type_Textbox {
 	}
 
 	/**
-	 * Check if field is valid?
+	 * Checks if the field is valid?
 	 *
 	 * @param string|int $values value.
 	 *
@@ -102,7 +102,7 @@ class Field_Type_Token extends \BP_XProfile_Field_Type_Textbox {
 	}
 
 	/**
-	 * Get the tokens.
+	 * Returns the tokens.
 	 *
 	 * @param int $field_id field id.
 	 *
@@ -122,7 +122,7 @@ class Field_Type_Token extends \BP_XProfile_Field_Type_Textbox {
 	}
 
 	/**
-	 * Get the tokens.
+	 * Checks if the case should be ignored.
 	 *
 	 * @param int $field_id field id.
 	 *

@@ -16,7 +16,7 @@ use BPXProfileCFTR\Contracts\Field_Type_Selectable;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Get a mapping of field type to their implementation class.
+ * Returns a mapping of field types to their implementation class.
  *
  * @return array Key/value pairs (field type => class name).
  */
@@ -49,7 +49,7 @@ function bpxcftr_get_field_types() {
 }
 
 /**
- * Get field types which support the selec2  js.
+ * Returns field types which support the select2 js.
  *
  * @return array
  */
@@ -67,7 +67,7 @@ function bpxcftr_get_selectable_field_types() {
 	return apply_filters( 'bpxcftr_selectable_types', $types );
 }
 /**
- * Get an array of allowed file extensions.
+ * Returns an array of allowed file extensions.
  *
  * @param string $type possible values 'image', 'file'.
  *
@@ -95,7 +95,7 @@ function bpxcftr_get_allowed_file_extensions( $type ) {
 }
 
 /**
- * Get maximum allowed file size.
+ * Returns maximum allowed file size.
  *
  * @param string $type field type.
  *
@@ -142,7 +142,7 @@ function bpxcftr_is_multi_valued_field( $field ) {
 }
 
 /**
- * It is a work around to get the field at the time is_valid() is called on field types.
+ * It is a workaround to get the field at the time is_valid() is called on field types.
  * BuddyPress does not pass the id at the moment.
  *
  * @return BP_XProfile_Field|null
@@ -152,7 +152,7 @@ function bpxcftr_get_current_field() {
 }
 
 /**
- * Save the current field value.
+ * Saves the current field value.
  *
  * @param BP_XProfile_Field|null $field field object or null.
  */

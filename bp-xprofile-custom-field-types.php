@@ -170,7 +170,7 @@ class BP_Xprofile_CFTR {
 }
 
 /**
- * Return object of class
+ * Returns singleton instance of BP_Xprofile_CFTR
  *
  * @return BP_Xprofile_CFTR
  */

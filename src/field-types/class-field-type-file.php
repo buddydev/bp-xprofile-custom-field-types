@@ -128,7 +128,7 @@ class Field_Type_File extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-	 * Modify the appearance of value.
+	 * Formats value for display.
 	 *
 	 * @param  string $field_value Original value of field.
 	 * @param  int    $field_id  field id.
@@ -155,7 +155,7 @@ class Field_Type_File extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-	 * Override parent's implementation to avoid required attribute on input elements.
+	 * Overrides parent's implementation to avoid required attribute on input elements.
 	 *
 	 * @see \BP_XProfile_Field_Type::get_edit_field_html_elements()
 	 *

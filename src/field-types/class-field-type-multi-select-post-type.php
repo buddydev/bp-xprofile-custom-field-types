@@ -188,7 +188,7 @@ class Field_Type_Multi_Select_Post_Type extends \BP_XProfile_Field_Type implemen
 	}
 
 	/**
-	 * Check if the values are valid.
+	 * Checks if the values are valid.
 	 *
 	 * @param array $values values.
 	 *
@@ -222,7 +222,7 @@ class Field_Type_Multi_Select_Post_Type extends \BP_XProfile_Field_Type implemen
 	}
 
 	/**
-	 * Modify the appearance of value.
+	 * Formats value for display.
 	 *
 	 * @param  string $field_value Original value of field.
 	 * @param  int    $field_id Id of field.
@@ -257,7 +257,7 @@ class Field_Type_Multi_Select_Post_Type extends \BP_XProfile_Field_Type implemen
 	}
 
 	/**
-	 * Get the terms content.
+	 * Returns selected post type.
 	 *
 	 * @param int $field_id field id.
 	 *

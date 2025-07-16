@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 class Xprofile_Kses_Filter {
 
 	/**
-	 * Setup the bootstrapper.
+	 * Sets up the bootstrapper.
 	 */
 	public static function boot() {
 		$self = new self();
@@ -31,7 +31,7 @@ class Xprofile_Kses_Filter {
 	}
 
 	/**
-	 * Setup hooks.
+	 * Sets up hooks.
 	 */
 	public function setup() {
 		add_filter( 'xprofile_allowed_tags', array( $this, 'filter' ), 10, 3 );

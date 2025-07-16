@@ -34,7 +34,7 @@ defined( 'ABSPATH' ) || exit;
 class Bootstrapper {
 
 	/**
-	 * Setup the bootstrapper.
+	 * Sets up the bootstrapper.
 	 */
 	public static function boot() {
 		$self = new self();
@@ -42,7 +42,7 @@ class Bootstrapper {
 	}
 
 	/**
-	 * Bind hooks
+	 * Binds hooks
 	 */
 	private function setup() {
 
@@ -54,7 +54,7 @@ class Bootstrapper {
 	}
 
 	/**
-	 * Load core functions/template tags.
+	 * Loads core functions/template tags.
 	 * These are non auto loadable constructs.
 	 */
 	public function load() {
@@ -63,14 +63,14 @@ class Bootstrapper {
 	}
 
 	/**
-	 * Load translations.
+	 * Loads translations.
 	 */
 	public function load_translations() {
 		load_plugin_textdomain( 'bp-xprofile-custom-field-types', false, basename( dirname( bp_xprofile_cftr()->path ) ) . '/languages' );
 	}
 
 	/**
-	 * Register the field types.
+	 * Registers the field types.
 	 *
 	 * @param array $fields field types.
 	 *
@@ -82,7 +82,7 @@ class Bootstrapper {
 	}
 
 	/**
-	 * Load files common to each request type.
+	 * Loads files common to each request type.
 	 */
 	private function load_common() {
 		$path = bp_xprofile_cftr()->path;
@@ -114,7 +114,7 @@ class Bootstrapper {
 	}
 
 	/**
-	 * Load admin.
+	 * Loads admin.
 	 */
 	private function load_admin() {
 

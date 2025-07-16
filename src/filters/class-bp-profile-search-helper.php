@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 class BP_Profile_Search_Helper {
 
 	/**
-	 * Setup the bootstrapper.
+	 * Sets up the bootstrapper.
 	 */
 	public static function boot() {
 		$self = new self();
@@ -31,7 +31,7 @@ class BP_Profile_Search_Helper {
 	}
 
 	/**
-	 * Setup hooks.
+	 * Sets up hooks.
 	 */
 	public function setup() {
 		add_action( 'bps_custom_field', array( $this, 'register_field_types' ) );
@@ -39,7 +39,7 @@ class BP_Profile_Search_Helper {
 	}
 
 	/**
-	 * Register field types to Bp profile Search.
+	 * Registers field types to Bp profile Search.
 	 *
 	 * @param \stdClass $field object.
 	 */

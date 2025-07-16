@@ -142,7 +142,7 @@ class Field_Type_Number_Min_Max extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-	 * Check the validity of the value
+	 * Checks the validity of the value
 	 *
 	 * @param string $values value.
 	 *
@@ -170,7 +170,7 @@ class Field_Type_Number_Min_Max extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-	 * Get the minimum allowed value for the field id.
+	 * Returns the minimum allowed value for the field id.
 	 *
 	 * @param int $field_id field id.
 	 *
@@ -181,7 +181,7 @@ class Field_Type_Number_Min_Max extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-	 * Get the max allowed value for the field id.
+	 * Returns the max allowed value for the field id.
 	 *
 	 * @param int $field_id field id.
 	 *

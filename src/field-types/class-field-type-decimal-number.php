@@ -180,7 +180,7 @@ class Field_Type_Decimal_Number extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-	 * Get the step size.
+	 * Returns the step size.
 	 *
 	 * @param int $field_id field id.
 	 *
@@ -191,7 +191,7 @@ class Field_Type_Decimal_Number extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-	 * Get the step size.
+	 * Returns the step size.
 	 *
 	 * @param int $field_id field id.
 	 *

@@ -30,7 +30,7 @@ class Label_Filter {
 	protected $removed = false;
 
 	/**
-	 * Setup the bootstrapper.
+	 * Sets up the bootstrapper.
 	 */
 	public static function boot() {
 		$self = new self();
@@ -38,14 +38,14 @@ class Label_Filter {
 	}
 
 	/**
-	 * Bind hooks
+	 * Binds hooks
 	 */
 	private function setup() {
 		add_filter( 'bp_get_the_profile_field_name', array( $this, 'filter_label' ) );
 	}
 
 	/**
-	 * Filter field label.
+	 * Filters field label.
 	 *
 	 * @param string $label label.
 	 *

@@ -137,7 +137,7 @@ class Field_Type_Slider extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-	 * Check the validity of the value
+	 * Checks the validity of the value
 	 *
 	 * @param string $values value.
 	 *
@@ -166,10 +166,10 @@ class Field_Type_Slider extends \BP_XProfile_Field_Type {
 
 
 	/**
-	 * Modify the appearance of value. Apply autolink if enabled.
+	 * Formats value for display.
 	 *
-	 * @param  string $field_value Original value of field.
-	 * @param  int    $field_id Id of field.
+	 * @param  string $field_value Original value of the field.
+	 * @param  int    $field_id Id of the field.
 	 *
 	 * @return string   Value formatted
 	 */
@@ -178,7 +178,7 @@ class Field_Type_Slider extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-	 * Get the minimum allowed value for the field id.
+	 * Returns the minimum allowed value for the field id.
 	 *
 	 * @param int $field_id field id.
 	 *
@@ -189,7 +189,7 @@ class Field_Type_Slider extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-	 * Get the max allowed value for the field id.
+	 * Returns the max allowed value for the field id.
 	 *
 	 * @param int $field_id field id.
 	 *

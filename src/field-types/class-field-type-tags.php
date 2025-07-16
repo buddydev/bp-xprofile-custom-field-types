@@ -46,7 +46,7 @@ class Field_Type_Tags extends \BP_XProfile_Field_Type_Textbox {
 	}
 
 	/**
-	 * Output HTML for this field type on the wp-admin Profile Fields screen.
+	 * Outputs HTML for this field type on the wp-admin Profile Fields screen.
 	 *
 	 * Must be used inside the {@link bp_profile_fields()} template loop.
 	 *
@@ -85,7 +85,7 @@ class Field_Type_Tags extends \BP_XProfile_Field_Type_Textbox {
 	}
 
 	/**
-	 * Output the edit field HTML for this field type.
+	 * Outputs the edit field HTML for this field type.
 	 * Must be used inside the {@link bp_profile_fields()} template loop.
 	 *
 	 * @param array $raw_properties Optional key/value array of
@@ -157,7 +157,7 @@ class Field_Type_Tags extends \BP_XProfile_Field_Type_Textbox {
 	}
 
 	/**
-	 * I new term creation allowed?
+	 * Is new term creation allowed?
 	 *
 	 * @param int $field_id field id.
 	 *
@@ -173,7 +173,7 @@ class Field_Type_Tags extends \BP_XProfile_Field_Type_Textbox {
 	}
 
 	/**
-	 * Get default tags
+	 * Returns default tags
 	 *
 	 * @param int $field_id field id.
 	 *

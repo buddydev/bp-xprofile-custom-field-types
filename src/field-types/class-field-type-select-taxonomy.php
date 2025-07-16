@@ -167,7 +167,7 @@ class Field_Type_Select_Taxonomy extends \BP_XProfile_Field_Type implements Fiel
 	}
 
 	/**
-	 * Check if value is valid.
+	 * Checks if the value is valid.
 	 *
 	 * @param array|string $values values.
 	 *
@@ -189,7 +189,7 @@ class Field_Type_Select_Taxonomy extends \BP_XProfile_Field_Type implements Fiel
 	}
 
 	/**
-	 * Modify the appearance of value.
+	 * Formats value for display.
 	 *
 	 * @param  string $field_value Original value of field.
 	 * @param  int    $field_id Id of field.
@@ -214,7 +214,7 @@ class Field_Type_Select_Taxonomy extends \BP_XProfile_Field_Type implements Fiel
 	}
 
 	/**
-	 * Get the terms content.
+	 * Returns selected taxonomy.
 	 *
 	 * @param int $field_id field id.
 	 *

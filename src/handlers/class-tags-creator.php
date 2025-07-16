@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 class Tags_Creator {
 
 	/**
-	 * Setup the bootstrapper.
+	 * Sets up the bootstrapper.
 	 */
 	public static function boot() {
 		$self = new self();
@@ -31,7 +31,7 @@ class Tags_Creator {
 	}
 
 	/**
-	 * Bind hooks
+	 * Binds hooks
 	 */
 	private function setup() {
 		// Pre validate tags.
@@ -45,7 +45,7 @@ class Tags_Creator {
 	}
 
 	/**
-	 * Sanitize Value.
+	 * Sanitizes Value.
 	 *
 	 * @param mixed              $value value.
 	 * @param \BP_XProfile_Field $field field object.
@@ -87,7 +87,7 @@ class Tags_Creator {
 	}
 
 	/**
-	 * Filter profile field value
+	 * Filters profile field value
 	 *
 	 * @param string $value      Value for the profile field.
 	 * @param string $field_type Type for the profile field.
@@ -135,7 +135,7 @@ class Tags_Creator {
 	}
 
 	/**
-	 * Remove user tag
+	 * Removes user tag
 	 */
 	public function remove_user_tag() {
 		$posted_data = wp_unslash( $_POST );

@@ -26,7 +26,7 @@ defined( 'ABSPATH' ) || exit;
 class Field_Settings_Helper {
 
 	/**
-	 * Setup the bootstrapper.
+	 * Sets up the bootstrapper.
 	 */
 	public static function boot() {
 		$self = new self();
@@ -34,7 +34,7 @@ class Field_Settings_Helper {
 	}
 
 	/**
-	 * Bind hooks
+	 * Binds hooks
 	 */
 	private function setup() {
 		// save meta.
@@ -45,7 +45,7 @@ class Field_Settings_Helper {
 	}
 
 	/**
-	 * Save the text when the field is saved
+	 * Saves the text when the field is saved
 	 *
 	 * @param \BP_XProfile_Field $field field object.
 	 */
@@ -261,5 +261,4 @@ class Field_Settings_Helper {
         </div>
 		<?php
 	}
-
 }

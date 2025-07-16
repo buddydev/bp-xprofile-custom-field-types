@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 class Field_Settings_Handler {
 
 	/**
-	 * Setup the bootstrapper.
+	 * Sets up the bootstrapper.
 	 */
 	public static function boot() {
 		$self = new self();

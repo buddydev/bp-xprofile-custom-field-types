@@ -167,7 +167,7 @@ class Field_Type_Checkbox_Acceptance extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-	 * Check if field is valid?
+	 * Checks if the field is valid?
 	 *
 	 * @param string|int $values value.
 	 *
@@ -183,7 +183,7 @@ class Field_Type_Checkbox_Acceptance extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-	 * Modify the appearance of value.
+	 * Formats value for display.
 	 *
 	 * @param string $field_value Original value of field.
 	 * @param int    $field_id field id.
@@ -195,7 +195,7 @@ class Field_Type_Checkbox_Acceptance extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-	 * Get the terms content.
+	 * Returns the terms content.
 	 *
 	 * @param \BP_XProfile_Field $field field object.
 	 *

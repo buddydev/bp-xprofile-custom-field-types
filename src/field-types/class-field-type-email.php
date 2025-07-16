@@ -104,7 +104,7 @@ class Field_Type_Email extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-	 * Check if it is a valid email.
+	 * Checks if it is a valid email.
 	 *
 	 * @param string $values value.
 	 *
@@ -115,7 +115,7 @@ class Field_Type_Email extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-	 * Modify the appearance of value.
+	 * Formats value for display.
 	 *
 	 * @param  string $field_value Original value of field.
 	 * @param  int    $field_id Id of field.

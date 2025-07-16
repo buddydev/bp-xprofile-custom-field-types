@@ -18,12 +18,12 @@ use BPXProfileCFTR\Field_Types\Field_Type_Birthdate;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Manage and sync field data.
+ * Manages and syncs field data.
  */
 class Birthdate_Field_Validator {
 
 	/**
-	 * Setup the bootstrapper.
+	 * Sets up the bootstrapper.
 	 */
 	public static function boot() {
 		$self = new self();
@@ -31,14 +31,14 @@ class Birthdate_Field_Validator {
 	}
 
 	/**
-	 * Bind hooks
+	 * Binds hooks
 	 */
 	private function setup() {
 		add_action( 'xprofile_data_before_save', array( $this, 'on_field_data_save' ) );
 	}
 
 	/**
-	 * Validate on field save.
+	 * Validates on field save.
 	 *
 	 * @param \BP_XProfile_ProfileData $data data object.
 	 *
@@ -84,5 +84,7 @@ class Birthdate_Field_Validator {
 			bp_core_add_message( sprintf( __( 'You have to be at least %s years old.', 'bp-xprofile-custom-field-types' ), $min_age ), 'error' );
 			bp_core_redirect( $redirect_url );
 		}
+
+		return $data;
 	}
 }

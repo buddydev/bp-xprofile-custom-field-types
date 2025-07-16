@@ -16,7 +16,7 @@ namespace BPXProfileCFTR\Bootstrap;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Auto Loader for ReportAbuse.
+ * Auto Loader for BuddyPress Xprofile Custom Field Types.
  *
  * After registering this autoload function with SPL, the following line
  * would cause the function to attempt to load the BPXProfileCFTR\Bar\Baz\Qux class

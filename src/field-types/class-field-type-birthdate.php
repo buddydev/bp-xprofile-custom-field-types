@@ -34,7 +34,7 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 	}
 
 	/**
-	 * Generate the settings markup for Date fields.
+	 * Generates the settings markup for Date fields.
 	 *
 	 * This is in overridden version of parent::admin_new_field_html() since there was no other way to inject extra info.
 	 *
@@ -209,7 +209,7 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 
 
 	/**
-	 * Display formatting.
+	 * Formats value for display.
 	 *
 	 * @param string $field_value field value.
 	 * @param int    $field_id field id.
@@ -278,7 +278,7 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 	}
 
 	/**
-	 * Get age label.
+	 * Returns age label.
 	 *
 	 * @param int $field_id field id.
 	 *
@@ -290,7 +290,7 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 
 
 	/**
-	 * Save settings from the field edit screen in the Dashboard.
+	 * Saves settings from the field edit screen in the Dashboard.
 	 *
 	 * @param int   $field_id ID of the field.
 	 * @param array $settings Array of settings posted($_POST['field-settings'] ).

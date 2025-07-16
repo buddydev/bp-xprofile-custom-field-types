@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 class Taxonomy_Terms_Creator {
 
 	/**
-	 * Setup the bootstrapper.
+	 * Sets up the bootstrapper.
 	 */
 	public static function boot() {
 		$self = new self();
@@ -31,7 +31,7 @@ class Taxonomy_Terms_Creator {
 	}
 
 	/**
-	 * Bind hooks
+	 * Binds hooks
 	 */
 	private function setup() {
 		// Pre validate multiselect custom taxonomy.
@@ -44,7 +44,7 @@ class Taxonomy_Terms_Creator {
 	}
 
 	/**
-	 * Sanitize Value.
+	 * Sanitizes Value.
 	 *
 	 * @param mixed                   $value value.
 	 * @param \BP_XProfile_Field      $field field object.

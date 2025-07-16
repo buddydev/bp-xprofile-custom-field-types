@@ -168,7 +168,7 @@ class Field_Type_Select_Post_Type extends \BP_XProfile_Field_Type implements Fie
 	}
 
 	/**
-	 * Check if valid.
+	 * Checks if valid.
 	 *
 	 * @param int $values post id.
 	 *
@@ -179,7 +179,7 @@ class Field_Type_Select_Post_Type extends \BP_XProfile_Field_Type implements Fie
 	}
 
 	/**
-	 * Filter value.
+	 * Formats value for display.
 	 *
 	 * @param mixed  $field_value value.
 	 * @param string $field_id field id.
@@ -198,7 +198,7 @@ class Field_Type_Select_Post_Type extends \BP_XProfile_Field_Type implements Fie
 	}
 
 	/**
-	 * Get the terms content.
+	 * Returns the selected post type.
 	 *
 	 * @param int $field_id field id.
 	 *

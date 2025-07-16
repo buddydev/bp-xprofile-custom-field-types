@@ -21,14 +21,14 @@ defined( 'ABSPATH' ) || exit;
 class Assets_Loader {
 
 	/**
-	 * Data to be send as localized js.
+	 * Data to be sent as localized js.
 	 *
 	 * @var array
 	 */
 	private $data = array();
 
 	/**
-	 * Boot itself
+	 * Boots itself
 	 */
 	public static function boot() {
 		$self = new self();
@@ -36,7 +36,7 @@ class Assets_Loader {
 	}
 
 	/**
-	 * Setup
+	 * Sets up
 	 */
 	public function setup() {
 		add_action( 'bp_enqueue_scripts', array( $this, 'register_front_assets' ) );
@@ -48,7 +48,7 @@ class Assets_Loader {
 	}
 
 	/**
-	 * Register front assets.
+	 * Registers front assets.
 	 */
 	public function register_front_assets() {
 
@@ -60,10 +60,10 @@ class Assets_Loader {
 	}
 
 	/**
-	 * Load plugin assets
+	 * Loads plugin assets
 	 */
 	public function load_assets() {
-		// css should be always loaded.
+		// css should always be loaded.
 		wp_enqueue_style( 'bp-xprofile-custom-field-types' );
 
 		if ( ! $this->should_load_front_assets() ) {
@@ -74,7 +74,7 @@ class Assets_Loader {
 	}
 
 	/**
-	 * Register admin assets.
+	 * Registers admin assets.
 	 */
 	public function register_admin_assets() {
 
@@ -86,7 +86,7 @@ class Assets_Loader {
 	}
 
 	/**
-	 * Load plugin assets
+	 * Loads plugin assets
 	 */
 	public function load_admin_assets() {
 
@@ -99,7 +99,7 @@ class Assets_Loader {
 	}
 
 	/**
-	 * Load plugin assets
+	 * Loads plugin assets
 	 */
 	public function load_user_admin_assets() {
 
@@ -115,7 +115,7 @@ class Assets_Loader {
 	}
 
 	/**
-	 * Register assets.
+	 * Registers assets.
 	 */
 	private function register() {
 		$this->register_vendors();
@@ -124,7 +124,7 @@ class Assets_Loader {
 	}
 
 	/**
-	 * Enqueue front end assets.
+	 * Enqueues front end assets.
 	 */
 	public function enqueue_front() {
 		wp_enqueue_script( 'bp-xprofile-custom-field-types' );
@@ -133,7 +133,7 @@ class Assets_Loader {
 	}
 
 	/**
-	 * Load vendor assets.
+	 * Loads vendor assets.
 	 */
 	public function enqueue_vendors() {
 		wp_enqueue_style( 'select2' );
@@ -144,7 +144,7 @@ class Assets_Loader {
 	}
 
 	/**
-	 * Enqueue admin assets for add/edit field screen..
+	 * Enqueues admin assets for add/edit field screen.
 	 */
 	public function enqueue_admin() {
 		wp_enqueue_script( 'bp-xprofile-custom-field-types-admin' );
@@ -155,7 +155,7 @@ class Assets_Loader {
 	}
 
 	/**
-	 * Enqueue admin assets needed for user profile edit page.
+	 * Enqueues admin assets needed for user profile edit page.
 	 */
 	public function enqueue_user_admin() {
 		wp_enqueue_script( 'bp-xprofile-custom-field-types' );
@@ -163,7 +163,7 @@ class Assets_Loader {
 	}
 
 	/**
-	 * Register vendor scripts.
+	 * Registers vendor scripts.
 	 */
 	private function register_vendors() {
 
@@ -188,7 +188,7 @@ class Assets_Loader {
 	}
 
 	/**
-	 * Register core assets.
+	 * Registers core assets.
 	 */
 	private function register_core() {
 		$url     = bp_xprofile_cftr()->url;
@@ -202,7 +202,7 @@ class Assets_Loader {
 	}
 
 	/**
-	 * Register core assets.
+	 * Registers core assets.
 	 */
 	private function register_admin() {
 		$url     = bp_xprofile_cftr()->url;
@@ -236,5 +236,4 @@ class Assets_Loader {
 
 		return apply_filters( 'bpxcftr_load_front_assets', $load );
 	}
-
 }

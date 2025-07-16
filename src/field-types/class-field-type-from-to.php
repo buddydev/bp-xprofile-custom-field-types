@@ -237,7 +237,7 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-	 * Modify display for the field.
+	 * Formats value for display.
 	 *
 	 * @param mixed $field_value field value.
 	 * @param int   $field_id field id.
@@ -327,7 +327,7 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-	 * Get the allowed value type(can be integer|numeric|string).
+	 * Returns the allowed value type(can be integer|numeric|string).
 	 *
 	 * @param int $field_id field id.
 	 *
@@ -338,7 +338,7 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-	 * Get the From Value.
+	 * Returns the From Value.
 	 *
 	 * @param int $field_id field id.
 	 *
@@ -349,7 +349,7 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-	 * Get the To value
+	 * Returns the To value
 	 *
 	 * @param int $field_id field id.
 	 *
@@ -360,7 +360,7 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-	 * Get the Separator token value
+	 * Returns the Separator token value
 	 *
 	 * @param int    $field_id field id.
 	 * @param string $default defaut value.

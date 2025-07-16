@@ -28,15 +28,15 @@ class Field_Type_Oembed extends \BP_XProfile_Field_Type_URL {
 	}
 
 	/**
-	 * Format URL values for display.
+	 * Formats URL values for display.
 	 *
 	 * @param string     $field_value The URL value, as saved in the database.
 	 * @param string|int $field_id Optional. ID of the field.
 	 *
-	 * @return string URL converted to  oembed content.
+	 * @return string URL converted to oembed content.
 	 */
 	public static function display_filter( $field_value, $field_id = '' ) {
-		// can not cache oEmbed response currently. We will need either data id or user id to allow us caching.
+		// Can not cache oEmbed response currently. We will need either data id or user id to allow us caching.
 		if ( ! empty( $field_value ) ) {
 			return wp_oembed_get( $field_value );
 		}

@@ -33,7 +33,7 @@ class Field_Type_Datepicker extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-	 * Output html for the Profile->Edit and Register screen.
+	 * Outputs html for the Profile->Edit and Register screen.
 	 *
 	 * @param array $raw_properties array of attributes.
 	 */
@@ -93,7 +93,7 @@ class Field_Type_Datepicker extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-	 * Output html for showing options on Add New Field/Edit Field screen.
+	 * Outputs html for showing options on Add New Field/Edit Field screen.
 	 *
 	 * @param \BP_XProfile_Field $current_field The current profile field on the add/edit screen.
 	 * @param string             $control_type  Optional. HTML input type used to render the current
@@ -103,7 +103,7 @@ class Field_Type_Datepicker extends \BP_XProfile_Field_Type {
 	}
 
 	/**
-	 * Modify the appearance.
+	 * Formats value for display.
 	 *
 	 * @param mixed $field_value field value.
 	 * @param int   $field_id field id.

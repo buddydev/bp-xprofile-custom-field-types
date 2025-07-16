@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
 class Admin {
 
 	/**
-	 * Setup the bootstrapper.
+	 * Sets up the bootstrapper.
 	 */
 	public static function boot() {
 		$self = new self();
@@ -29,7 +29,7 @@ class Admin {
 	}
 
 	/**
-	 * Bind hooks
+	 * Binds hooks
 	 */
 	private function setup() {
 		// called after pp_loaded.
@@ -38,7 +38,7 @@ class Admin {
 	}
 
 	/**
-	 * Initialize.
+	 * Initializes.
 	 */
 	public function init() {
 
@@ -51,7 +51,7 @@ class Admin {
 	}
 
 	/**
-	 * Show notices.
+	 * Shows notices.
 	 */
 	public function notices() {
 		$notices = get_option( 'bpxcftr_notices' );

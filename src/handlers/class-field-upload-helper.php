@@ -42,7 +42,7 @@ class Field_Upload_Helper {
 	private $dir_base = 'bpxcftr-profile-uploads';
 
 	/**
-	 * Setup the bootstrapper.
+	 * Sets up the bootstrapper.
 	 */
 	public static function boot() {
 		$self = new self();
@@ -50,7 +50,7 @@ class Field_Upload_Helper {
 	}
 
 	/**
-	 * Bind hooks
+	 * Binds hooks
 	 */
 	private function setup() {
 		add_action( 'xprofile_data_before_save', array( $this, 'on_field_data_save' ), 5 );
@@ -61,7 +61,7 @@ class Field_Upload_Helper {
 	}
 
 	/**
-	 * Cleanup user files|images.
+	 * Cleans up user files|images.
 	 *
 	 * @param int $user_id user id.
 	 */
@@ -70,7 +70,7 @@ class Field_Upload_Helper {
 	}
 
 	/**
-	 * Cleanup user files|images.
+	 * Cleans up user files|images.
 	 *
 	 * @param int $user_id user id.
 	 */
@@ -81,7 +81,7 @@ class Field_Upload_Helper {
 	}
 
 	/**
-	 * Upload files on field save.
+	 * Uploads files on field save.
 	 *
 	 * @param \BP_XProfile_ProfileData $data data object.
 	 */
@@ -124,7 +124,7 @@ class Field_Upload_Helper {
 	}
 
 	/**
-	 * Redirect if needed.
+	 * Redirects if needed.
 	 *
 	 * @param string $url redirect url.
 	 */
@@ -137,7 +137,7 @@ class Field_Upload_Helper {
 	}
 
 	/**
-	 * On Field data delete, delete associated files.
+	 * On Field data delete, deletes associated files.
 	 *
 	 * @param \BP_XProfile_ProfileData $data data object.
 	 */
@@ -148,7 +148,7 @@ class Field_Upload_Helper {
 	}
 
 	/**
-	 * Delete the field with given data.
+	 * Deletes the field with given data.
 	 *
 	 * @param \BP_XProfile_Field       $field field object.
 	 * @param \BP_XProfile_ProfileData $data data object.
@@ -177,7 +177,7 @@ class Field_Upload_Helper {
 	}
 
 	/**
-	 * Handle Upload.
+	 * Handles Upload.
 	 *
 	 * @param \BP_XProfile_Field       $field field object.
 	 * @param \BP_XProfile_ProfileData $data data object.
@@ -240,7 +240,7 @@ class Field_Upload_Helper {
 	}
 
 	/**
-	 * Filter upload dir.
+	 * Filters upload dir.
 	 *
 	 * @param array $upload_dir upload dir info.
 	 *
@@ -264,7 +264,7 @@ class Field_Upload_Helper {
 	}
 
 	/**
-	 * Force delete file or image fields for user.
+	 * Force deletes file or image fields for the user.
 	 *
 	 * @param int $user_id user id.
 	 */
@@ -290,7 +290,7 @@ class Field_Upload_Helper {
 	}
 
 	/**
-	 * Get all fields of file|image type.
+	 * Returns all fields of file|image type.
 	 *
 	 * @return array
 	 */

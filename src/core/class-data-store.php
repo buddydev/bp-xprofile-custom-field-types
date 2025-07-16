@@ -28,7 +28,7 @@ class Data_Store {
 	private $data = array();
 
 	/**
-	 * Get the property value.
+	 * returns the property's value.
 	 *
 	 * @param string $name dynamic property name.
 	 *
@@ -39,7 +39,7 @@ class Data_Store {
 	}
 
 	/**
-	 * Check if a property is set.
+	 * Checks if a property is set.
 	 *
 	 * @param string $name property name.
 	 *
@@ -50,7 +50,7 @@ class Data_Store {
 	}
 
 	/**
-	 * Set a property.
+	 * Sets a property.
 	 *
 	 * @param string $name property name.
 	 * @param mixed  $value value.
@@ -60,7 +60,7 @@ class Data_Store {
 	}
 
 	/**
-	 * Unset a property.
+	 * Unsets a property.
 	 *
 	 * @param string $name property name.
 	 */
