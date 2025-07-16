@@ -17,10 +17,10 @@
  * Requires PHP: 5.3
  * Author: BuddyDev
  * Author URI: https://buddydev.com
- * License:      GPL2
- * License URI:  https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:  bp-xprofile-custom-field-types
- * Domain Path:  /languages
+ * License: GPL2
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: bp-xprofile-custom-field-types
+ * Domain Path: /languages
  */
 
 use BPXProfileCFTR\Bootstrap\Autoloader;
