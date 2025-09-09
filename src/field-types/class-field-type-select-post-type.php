@@ -86,6 +86,9 @@ class Field_Type_Select_Post_Type extends \BP_XProfile_Field_Type implements Fie
 			$new_post_selected = (int) $_POST[ 'field_' . $this->field_obj->id ];
 			$post_selected     = ( $post_selected != $new_post_selected ) ? $new_post_selected : $post_selected;
 		}
+
+		$post_selected = apply_filters( 'bp_get_the_profile_field_select_custom_post_type_selected', $post_selected, $args, $post_type_selected, $this->field_obj->id );
+
 		// Get posts of custom post type selected.
 		$posts = new \WP_Query(
 			array(
@@ -193,6 +196,8 @@ class Field_Type_Select_Post_Type extends \BP_XProfile_Field_Type implements Fie
 		if ( empty( $field_value ) || ! get_post( $post_id ) ) {
 			return '';
 		}
+
+		$post_id = apply_filters( 'bp_xprofile_field_select_custom_post_type_value', $post_id, $field_id );
 
 		return sprintf( '<a href="%1$s">%2$s</a>', esc_url( get_permalink( $post_id ) ), get_the_title( $post_id ) );
 	}

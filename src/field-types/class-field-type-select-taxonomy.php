@@ -89,6 +89,8 @@ class Field_Type_Select_Taxonomy extends \BP_XProfile_Field_Type implements Fiel
 			$term_selected     = ( $term_selected != $new_term_selected ) ? $new_term_selected : $term_selected;
 		}
 
+		$term_selected = apply_filters( 'bp_get_the_profile_field_select_custom_taxonomy_selected', $term_selected, $args, $taxonomy_selected, $this->field_obj->id );
+
 		// Get terms of custom taxonomy selected.
 		$terms = get_terms( $taxonomy_selected, array( 'hide_empty' => false ) );
 
@@ -204,6 +206,8 @@ class Field_Type_Select_Taxonomy extends \BP_XProfile_Field_Type implements Fiel
 
 		$term_id = absint( $field_value );
 		$tax     = self::get_selected_taxonomy( $field_id );
+
+		$term_id = apply_filters( 'bp_xprofile_field_select_custom_taxonomy_value', $term_id, $field_id );
 
 		$term = get_term( $term_id, $tax );
 		if ( ! $term || is_wp_error( $term ) ) {
