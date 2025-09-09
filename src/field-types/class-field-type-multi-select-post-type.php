@@ -96,6 +96,9 @@ class Field_Type_Multi_Select_Post_Type extends \BP_XProfile_Field_Type implemen
 			$new_posts_selected = $_POST[ 'field_' . $this->field_obj->id ];
 			$posts_selected     = ( $posts_selected != $new_posts_selected ) ? $new_posts_selected : $posts_selected;
 		}
+
+		$posts_selected = apply_filters( 'bp_get_the_profile_field_multiselect_custom_post_type_selected', $posts_selected, $args, $post_type_selected, $this->field_obj->id );
+
 		// Get posts of custom post type selected.
 		$posts = new \WP_Query(
 			array(
@@ -237,6 +240,7 @@ class Field_Type_Multi_Select_Post_Type extends \BP_XProfile_Field_Type implemen
 
 		$post_ids = explode( ',', $field_value );
 		$post_ids = wp_parse_id_list( $post_ids );
+		$post_ids = apply_filters( 'bp_xprofile_field_multiselect_custom_post_type_value', $post_ids, $field_id );
 		_prime_post_caches( $post_ids, false, false );
 
 		$list = '';

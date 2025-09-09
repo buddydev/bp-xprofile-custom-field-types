@@ -96,6 +96,8 @@ class Field_Type_Multi_Select_Taxonomy extends \BP_XProfile_Field_Type implement
 			$terms_selected     = ( $terms_selected != $new_terms_selected ) ? $new_terms_selected : $terms_selected;
 		}
 
+		$terms_selected = apply_filters( 'bp_get_the_profile_field_multiselect_custom_taxonomy_selected', $terms_selected, $args, $taxonomy_selected, $this->field_obj->id );
+
 		// Get terms of custom taxonomy selected.
 		$terms = get_terms( $taxonomy_selected, array( 'hide_empty' => false ) );
 
@@ -229,6 +231,7 @@ class Field_Type_Multi_Select_Taxonomy extends \BP_XProfile_Field_Type implement
 
 		$field_value = explode( ',', $field_value );
 		$term_ids    = wp_parse_id_list( $field_value );
+		$term_ids    = apply_filters( 'bp_xprofile_field_multiselect_custom_taxonomy_value', $term_ids, $field_id );
 
 		$tax  = self::get_selected_taxonomy( $field_id );
 		$list = '';
