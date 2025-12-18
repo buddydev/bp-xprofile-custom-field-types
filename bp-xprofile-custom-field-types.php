@@ -17,7 +17,7 @@
  * Requires PHP: 5.3
  * Author: BuddyDev
  * Author URI: https://buddydev.com
- * License: GPL2
+ * License: GPLv2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: bp-xprofile-custom-field-types
  * Domain Path: /languages
@@ -46,7 +46,7 @@ class BP_Xprofile_CFTR {
 	 *
 	 * @var string
 	 */
-	private $version = '1.2.7';
+	private $version = '1.2.8';
 
 	/**
 	 * Class instance

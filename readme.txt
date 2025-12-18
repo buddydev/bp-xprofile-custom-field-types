@@ -2,9 +2,9 @@
 Contributors: buddydev, sbrajesh, raviousprime
 Tags: buddypress, xprofile, fields, buddypress-profile-field-types
 Requires at least: 5.0
-Tested up to: 6.8.2
+Tested up to: 6.9
 Stable tag: 1.2.8
-License: GLPv2 or later
+License: GPl2
 
 Buddypress Xprofile Custom Field Types adds extra custom profile fields to BuddyPress. Field types are: Birthdate, Email, Url etc.
 
@@ -44,7 +44,7 @@ At the moment, following fields are searchable using BP Profile Search:-
 * Range Input
 * Decimal Number
 * Country
-Other fields such as post type, taxonomy etc are not searchable as they are stored in serialized format( due to back compatibility).
+Other fields such as post type, taxonomy etc., are not searchable as they are stored in serialized format( due to back compatibility).
 
 The plugin is opensource and currently developed on github. We welcome you to be part of its future development at [https://github.com/buddydev/bp-xprofile-custom-field-types](https://github.com/buddydev/bp-xprofile-custom-field-types).
 
@@ -64,7 +64,7 @@ It is very easy to migrate. Should take less than 5 minute. If you are looking t
  In the first version, te plugin brought all the profile fields offered by the currently abandoned The ["BuddyPress Xprofile Custom Fields Type"](https://github.com/donmik/buddypress-xprofile-custom-fields-type) plugin.
 
 = More Plugins =
-We love BuddyPress and we have created 100+ BuddyPress plugins.
+We love BuddyPress, and we have created 100+ BuddyPress plugins.
 Please take a look at our
  1. [Free BuddyPress Plugins](https://buddydev.com/plugins/  "Best BuddyPress Plugins")
  1. [Premium BuddyPress plugins](https://buddydev.com/plugins/category/buddypress-premium-plugins/ "Best BuddyPress Premium Plugins")
