@@ -62,9 +62,9 @@ class Birthdate_Field_Validator {
 
 		// Check birthdate.
 		$now   = new \DateTime();
-		$year  = $_POST[ 'field_' . $field_id . '_year' ];
-		$month = $_POST[ 'field_' . $field_id . '_month' ];
-		$day   = $_POST[ 'field_' . $field_id . '_day' ];
+		$year  = wp_unslash( $_POST[ 'field_' . $field_id . '_year' ] );
+		$month = wp_unslash( $_POST[ 'field_' . $field_id . '_month' ] );
+		$day   = wp_unslash( $_POST[ 'field_' . $field_id . '_day' ] );
 
 		if ( ! is_numeric( $year ) || empty( $month ) || ! is_numeric( $day ) ) {
 			bp_core_add_message( sprintf( __( 'Incorrect birthdate selection.', 'bp-xprofile-custom-field-types' ), $min_age ), 'error' );

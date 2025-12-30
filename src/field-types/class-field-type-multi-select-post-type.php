@@ -93,7 +93,7 @@ class Field_Type_Multi_Select_Post_Type extends \BP_XProfile_Field_Type implemen
 		$html = '';
 
 		if ( ! empty( $_POST[ 'field_' . $this->field_obj->id ] ) ) {
-			$new_posts_selected = $_POST[ 'field_' . $this->field_obj->id ];
+			$new_posts_selected = wp_unslash( $_POST[ 'field_' . $this->field_obj->id ] );
 			$posts_selected     = ( $posts_selected != $new_posts_selected ) ? $new_posts_selected : $posts_selected;
 		}
 		// Get posts of custom post type selected.

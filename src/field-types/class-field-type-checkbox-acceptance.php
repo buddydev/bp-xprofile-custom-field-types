@@ -140,7 +140,7 @@ class Field_Type_Checkbox_Acceptance extends \BP_XProfile_Field_Type {
 		$checkbox_acceptance = maybe_unserialize( \BP_XProfile_ProfileData::get_value_byid( $this->field_obj->id, $args['user_id'] ) );
 
 		if ( ! empty( $_POST[ 'field_' . $this->field_obj->id ] ) ) {
-			$new_checkbox_acceptance = $_POST[ 'field_' . $this->field_obj->id ];
+			$new_checkbox_acceptance = wp_unslash( $_POST[ 'field_' . $this->field_obj->id ] );
 			$checkbox_acceptance     = ( $checkbox_acceptance != $new_checkbox_acceptance ) ? $new_checkbox_acceptance : $checkbox_acceptance;
 		}
 

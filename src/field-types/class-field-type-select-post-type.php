@@ -83,7 +83,7 @@ class Field_Type_Select_Post_Type extends \BP_XProfile_Field_Type implements Fie
 
 
 		if ( ! empty( $_POST[ 'field_' . $this->field_obj->id ] ) ) {
-			$new_post_selected = (int) $_POST[ 'field_' . $this->field_obj->id ];
+			$new_post_selected = (int) wp_unslash( $_POST[ 'field_' . $this->field_obj->id ] );
 			$post_selected     = ( $post_selected != $new_post_selected ) ? $new_post_selected : $post_selected;
 		}
 		// Get posts of custom post type selected.

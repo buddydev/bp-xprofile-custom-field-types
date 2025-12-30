@@ -85,7 +85,7 @@ class Field_Type_Select_Taxonomy extends \BP_XProfile_Field_Type implements Fiel
 		$html = '';
 
 		if ( ! empty( $_POST[ 'field_' . $this->field_obj->id ] ) ) {
-			$new_term_selected = (int) $_POST[ 'field_' . $this->field_obj->id ];
+			$new_term_selected = (int) wp_unslash( $_POST[ 'field_' . $this->field_obj->id ] );
 			$term_selected     = ( $term_selected != $new_term_selected ) ? $new_term_selected : $term_selected;
 		}
 

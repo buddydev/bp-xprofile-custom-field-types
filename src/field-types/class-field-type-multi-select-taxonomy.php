@@ -92,7 +92,7 @@ class Field_Type_Multi_Select_Taxonomy extends \BP_XProfile_Field_Type implement
 		$html = '';
 
 		if ( ! empty( $_POST[ 'field_' . $this->field_obj->id ] ) ) {
-			$new_terms_selected = $_POST[ 'field_' . $this->field_obj->id ];
+			$new_terms_selected = wp_unslash( $_POST[ 'field_' . $this->field_obj->id ] );
 			$terms_selected     = ( $terms_selected != $new_terms_selected ) ? $new_terms_selected : $terms_selected;
 		}
 

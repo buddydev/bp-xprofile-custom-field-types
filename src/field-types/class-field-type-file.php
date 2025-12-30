@@ -141,6 +141,10 @@ class Field_Type_File extends \BP_XProfile_Field_Type {
 			return '';
 		}
 
+		if ( 0 !== validate_file( $field_value ) ) {
+			return '';
+		}
+
 		$field_value = trim( $field_value, '/\\' );// no absolute path or dir please.
 		// the BP Xprofile Custom Fields type stored '/path' which was a bad decision
 		// we are using the above line for back compatibility with them.

@@ -161,7 +161,12 @@ class Field_Upload_Helper {
 			return true;
 		}
 
+		if ( 0 !== validate_file( $data->value ) ) {
+			return false;
+		}
+
 		$uploads = wp_upload_dir();
+
 		$path    = path_join( $uploads['basedir'], trim( $data->value, '/\\' ) );
 
 		switch ( $field->type ) {
