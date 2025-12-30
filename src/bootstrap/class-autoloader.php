@@ -20,10 +20,10 @@ defined( 'ABSPATH' ) || exit;
  *
  * After registering this autoload function with SPL, the following line
  * would cause the function to attempt to load the BPXProfileCFTR\Bar\Baz\Qux class
- * from /path/to/wp-content/plugins/buddypress-xprofile-custom-fields-types/src/bar/baz/class-qux.php:
+ * from /path/to/wp-content/plugins/bp-xprofile-custom-field-typess/src/bar/baz/class-qux.php:
  *
  *      new BPXProfileCFTR\Baz_Xyz\Qux;
- *  maps to /path/to/wp-content/plugins/buddypress-xprofile-custom-fields-types/src/bar/baz-xyz/class-qux.php
+ *  maps to /path/to/wp-content/plugins/bp-xprofile-custom-field-types/src/bar/baz-xyz/class-qux.php
  * The path/directory name should be all lowercase and the the class file is named as 'class-$classname.php'
  */
 class Autoloader {
@@ -58,10 +58,10 @@ class Autoloader {
 	 *
 	 * After registering this autoload function with SPL, the following line
 	 * would cause the function to attempt to load the \BPXProfileCFTR\Bar\Baz\Qux class
-	 * from /path/to/project/buddypress-xprofile-custom-fields-types/src/bar/baz/class-qux.php:
+	 * from /path/to/project/bp-xprofile-custom-field-types/src/bar/baz/class-qux.php:
 	 *
 	 *      new \BPXProfileCFTR\Baz\Qux;
-	 *  maps to /path/to/buddypress-xprofile-custom-fields-types/src/baz/class-qux.php
+	 *  maps to /path/to/bp-xprofile-custom-field-types/src/baz/class-qux.php
 	 * The path/directory name should be all lowercase and the the class file is named as 'class-$classname.php'
 	 * Since we wills tick to wp standards, we will be using interface-$classname.php for loading iterface(and similar for traits)
 	 * It sacrifices a bit of speed for readability( if we do not prefix with class-, interface-,trait-, it wil be better).

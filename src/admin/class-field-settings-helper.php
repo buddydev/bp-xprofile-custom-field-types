@@ -241,19 +241,19 @@ class Field_Settings_Helper {
 
 		?>
         <div id="select2-box" class="postbox<?php if ( $hidden ): ?> hidden<?php endif; ?>">
-            <h2><?php esc_html_e( 'Select2', 'buddypress-xprofile-custom-fields-types' ); ?></h2>
+            <h2><?php esc_html_e( 'Select2', 'bp-xprofile-custom-field-types' ); ?></h2>
             <div class="inside">
-                <p class="description"><?php _e( 'Enable select2 javascript code.', 'buddypress-xprofile-custom-fields-types' ); ?></p>
+                <p class="description"><?php _e( 'Enable select2 javascript code.', 'bp-xprofile-custom-field-types' ); ?></p>
 
                 <p>
                     <label for="do-select2"
-                           class="screen-reader-text"><?php _e( 'Select2 status for this field', 'buddypress-xprofile-custom-fields-types' ); ?></php></label>
+                           class="screen-reader-text"><?php _e( 'Select2 status for this field', 'bp-xprofile-custom-field-types' ); ?></php></label>
                     <select name="do_select2" id="do-select2">
                         <option value="on" <?php if ( $do_select2 === 'on' ): ?> selected="selected"<?php endif; ?>>
-							<?php _e( 'Enabled', 'buddypress-xprofile-custom-fields-types' ); ?>
+							<?php _e( 'Enabled', 'bp-xprofile-custom-field-types' ); ?>
                         </option>
                         <option value=""<?php if ( $do_select2 !== 'on' ): ?> selected="selected"<?php endif; ?>>
-							<?php _e( 'Disabled', 'buddypress-xprofile-custom-fields-types' ); ?>
+							<?php _e( 'Disabled', 'bp-xprofile-custom-field-types' ); ?>
                         </option>
                     </select>
                 </p>
