@@ -93,8 +93,8 @@ class Field_Type_Checkbox_Acceptance extends \BP_XProfile_Field_Type {
 		) );
 		?>
         <label for="<?php bp_the_profile_field_input_name(); ?>">
-            <input <?php echo $html; ?>>
-			<?php echo $text; ?>
+            <input <?php echo $html;  // phpcs:ignore?>>
+			<?php echo $text; // phpcs:ignore ?>
         </label>
 		<?php
 	}
@@ -122,7 +122,7 @@ class Field_Type_Checkbox_Acceptance extends \BP_XProfile_Field_Type {
             <h3><?php esc_html_e( 'Use this field to write a text that should be displayed beside the checkbox:', 'bp-xprofile-custom-field-types' ); ?></h3>
             <div class="inside">
                 <p>
-                    <textarea name="bpxcftr_tos_content" id="bpxcftr_tos_content" rows="5" cols="60"><?php echo $text; ?></textarea>
+                    <textarea name="bpxcftr_tos_content" id="bpxcftr_tos_content" rows="5" cols="60"><?php echo esc_textarea( $text ); ?></textarea>
                 </p>
             </div>
         </div>
@@ -161,7 +161,7 @@ class Field_Type_Checkbox_Acceptance extends \BP_XProfile_Field_Type {
 		$html = '<input ' . $this->get_edit_field_html_elements( $atts ) . ' />';
 		// we should most probably avoid kses  on output.
 		$html .= wp_kses_post( self::get_content( $field ) );
-		echo apply_filters( 'bp_get_the_profile_field_checkbox_acceptance', $html, $args['type'], $this->field_obj->id, $checkbox_acceptance );
+		echo apply_filters( 'bp_get_the_profile_field_checkbox_acceptance', $html, $args['type'], $this->field_obj->id, $checkbox_acceptance ); // phpcs:ignore
 		?>
     	<?php
 	}

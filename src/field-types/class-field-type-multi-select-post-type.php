@@ -68,7 +68,7 @@ class Field_Type_Multi_Select_Post_Type extends \BP_XProfile_Field_Type implemen
 
 		<?php do_action( bp_get_the_profile_field_errors_action() ); ?>
 
-		<select <?php echo $html; ?>>
+		<select <?php echo $html; // phpcs:ignore ?>>
 			<?php bp_the_profile_field_options( "user_id={$user_id}" ); ?>
 		</select>
 
@@ -117,7 +117,7 @@ class Field_Type_Multi_Select_Post_Type extends \BP_XProfile_Field_Type implemen
 			}
 		}
 
-		echo apply_filters( 'bp_get_the_profile_field_multiselect_custom_post_type', $html, $args['type'], $post_type_selected, $this->field_obj->id );
+		echo apply_filters( 'bp_get_the_profile_field_multiselect_custom_post_type', $html, $args['type'], $post_type_selected, $this->field_obj->id ); // phpcs:ignore
 	}
 
 	/**
@@ -139,7 +139,7 @@ class Field_Type_Multi_Select_Post_Type extends \BP_XProfile_Field_Type implemen
 		);
 		?>
 
-		<select <?php echo $html; ?>>
+		<select <?php echo $html; // phpcs:ignore ?>>
 			<?php bp_the_profile_field_options(); ?>
 		</select>
 
@@ -177,7 +177,7 @@ class Field_Type_Multi_Select_Post_Type extends \BP_XProfile_Field_Type implemen
                         <select name="bpxcftr_multi_selected_post_type" id="bpxcftr_multi_selected_post_type">
                             <option value=""><?php _e( 'Select...', 'bp-xprofile-custom-field-types' ); ?></option>
 							<?php foreach ( $post_types as $k => $v ) : ?>
-                                <option value="<?php echo $k; ?>" <?php selected( $selected_post_type, $k, true );?>><?php echo $v; ?></option>
+                                <option value="<?php echo esc_attr( $k ); ?>" <?php selected( $selected_post_type, $k, true );?>><?php echo esc_html( $v ); ?></option>
 							<?php endforeach; ?>
                         </select>
                     </p>

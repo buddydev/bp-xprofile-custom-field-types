@@ -61,7 +61,7 @@ class Field_Type_Token extends \BP_XProfile_Field_Type_Textbox {
 			<h3><?php esc_html_e( 'Add a list of allowed tokens(separated by comma(,) eg. ONE,two etc):', 'bp-xprofile-custom-field-types' ); ?></h3>
 			<div class="inside">
 				<p>
-					<textarea name="bpxcftr_token_tokens" id="bpxcftr_token_tokens" rows="5" cols="60"><?php echo $text; ?></textarea>
+					<textarea name="bpxcftr_token_tokens" id="bpxcftr_token_tokens" rows="5" cols="60"><?php echo esc_textarea( $text ); ?></textarea>
 				</p>
                 <p>
                     <input type="checkbox" name="bpxcftr_token_ignore_case" id="bpxcftr_token_ignore_case" value="1" <?php checked(true, self::is_case_ignored( $current_field->id ) );?>>

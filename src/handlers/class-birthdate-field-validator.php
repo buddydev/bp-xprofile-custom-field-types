@@ -81,6 +81,7 @@ class Birthdate_Field_Validator {
 		$age = $now->diff( $birthdate );
 
 		if ( $age->y < $min_age ) {
+			/* translators: %s: Minimum age */
 			bp_core_add_message( sprintf( __( 'You have to be at least %s years old.', 'bp-xprofile-custom-field-types' ), $min_age ), 'error' );
 			bp_core_redirect( $redirect_url );
 		}

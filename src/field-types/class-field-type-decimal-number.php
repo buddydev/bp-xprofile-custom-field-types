@@ -72,7 +72,7 @@ class Field_Type_Decimal_Number extends \BP_XProfile_Field_Type {
 		do_action( bp_get_the_profile_field_errors_action() );
 		// Input.
 		?>
-        <input <?php echo $html; ?> />
+        <input <?php echo $html; // phpcs:ignore ?> />
 
 		<?php if ( bp_get_the_profile_field_description() ) : ?>
             <p class="description" id="<?php bp_the_profile_field_input_name(); ?>-3"><?php bp_the_profile_field_description(); ?></p>
@@ -99,7 +99,7 @@ class Field_Type_Decimal_Number extends \BP_XProfile_Field_Type {
 			)
 		);
 		?>
-        <input <?php echo $html; ?> />
+        <input <?php echo $html; // phpcs:ignore ?> />
 		<?php
 	}
 
@@ -131,7 +131,7 @@ class Field_Type_Decimal_Number extends \BP_XProfile_Field_Type {
                     <label for="bpxcftr_decimal_precision"><?php _e('Precision', 'bp-xprofile-custom-field-types');?></label>
                     <select name="bpxcftr_decimal_precision" id="bpxcftr_decimal_precision">
 						<?php for ( $j = 1; $j <= 6; $j ++ ): ?>
-                            <option value="<?php echo $j; ?>" <?php  selected( $current_precision, $j, true ); ?>><?php echo $j; ?></option>
+                            <option value="<?php echo $j; ?>" <?php  selected( $current_precision, $j, true ); ?>><?php echo $j; // phpcs:ignore ?></option>
 						<?php endfor; ?>
                     </select>
                 </p>

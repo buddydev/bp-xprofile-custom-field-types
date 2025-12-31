@@ -77,15 +77,17 @@ class Field_Type_File extends \BP_XProfile_Field_Type {
 		do_action( bp_get_the_profile_field_errors_action() );
 		?>
 
-        <input <?php echo $html; ?> />
+        <input <?php echo $html; // phpcs:ignore ?> />
 
 		<?php if ( $has_file ) : ?>
             <p>
-				<?php echo $value; ?>
+				<?php
+                // value is markup for printing file link, @see self::display_filter()
+                echo $value; //phpcs:ignore ?>
             </p>
 
             <label>
-                <input type="checkbox" name="<?php echo $name; ?>_delete" value="1"/> <?php _e( 'Check this to delete this file', 'bp-xprofile-custom-field-types' ); ?>
+                <input type="checkbox" name="<?php echo esc_attr( $name ); ?>_delete" value="1"/> <?php _e( 'Check this to delete this file', 'bp-xprofile-custom-field-types' ); ?>
             </label>
 		<?php endif; ?>
 
@@ -113,7 +115,7 @@ class Field_Type_File extends \BP_XProfile_Field_Type {
 		);
 		?>
 
-        <input <?php echo $html; ?> />
+        <input <?php echo $html; // phpcs:ignore ?> />
 
 		<?php
 	}

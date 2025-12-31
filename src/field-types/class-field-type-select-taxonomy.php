@@ -58,7 +58,7 @@ class Field_Type_Select_Taxonomy extends \BP_XProfile_Field_Type implements Fiel
 		</legend>
 
 		<?php do_action( bp_get_the_profile_field_errors_action() ); ?>
-		<select <?php echo $html; ?>>
+		<select <?php echo $html; // phpcs:ignore ?>>
 			<option value=""><?php _e( 'Select...', 'bp-xprofile-custom-field-types' ); ?></option>
 			<?php bp_the_profile_field_options( "user_id={$user_id}" ); ?>
 		</select>
@@ -90,7 +90,10 @@ class Field_Type_Select_Taxonomy extends \BP_XProfile_Field_Type implements Fiel
 		}
 
 		// Get terms of custom taxonomy selected.
-		$terms = get_terms( $taxonomy_selected, array( 'hide_empty' => false ) );
+		$terms = get_terms( array(
+			'taxonomy'   => $taxonomy_selected,
+			'hide_empty' => false
+		) );
 
 		if ( $terms && ! is_wp_error( $terms ) ) {
 
@@ -104,7 +107,7 @@ class Field_Type_Select_Taxonomy extends \BP_XProfile_Field_Type implements Fiel
 			}
 		}
 
-		echo apply_filters( 'bp_get_the_profile_field_select_custom_taxonomy', $html, $args['type'], $term_selected, $this->field_obj->id );
+		echo apply_filters( 'bp_get_the_profile_field_select_custom_taxonomy', $html, $args['type'], $term_selected, $this->field_obj->id ); // phpcs:ignore
 	}
 
 	/**
@@ -116,7 +119,7 @@ class Field_Type_Select_Taxonomy extends \BP_XProfile_Field_Type implements Fiel
 		$html = $this->get_edit_field_html_elements( $raw_properties );
 		?>
 
-        <select <?php echo $html; ?>>
+        <select <?php echo $html; // phpcs:ignore ?>>
 			<?php bp_the_profile_field_options(); ?>
         </select>
 
@@ -156,7 +159,7 @@ class Field_Type_Select_Taxonomy extends \BP_XProfile_Field_Type implements Fiel
                         <select name="bpxcftr_selected_taxonomy" id="bpxcftr_selected_taxonomy">
                             <option value=""><?php _e( 'Select...', 'bp-xprofile-custom-field-types' ); ?></option>
 							<?php foreach ( $taxonomies as $k => $v ): ?>
-                                <option value="<?php echo $k; ?>"<?php if ( $selected_tax == $k ): ?> selected="selected"<?php endif; ?>><?php echo $v; ?></option>
+                                <option value="<?php echo esc_attr( $k ); ?>"<?php if ( $selected_tax == $k ): ?> selected="selected"<?php endif; ?>><?php echo esc_html( $v ); ?></option>
 							<?php endforeach; ?>
                         </select>
                     </p>

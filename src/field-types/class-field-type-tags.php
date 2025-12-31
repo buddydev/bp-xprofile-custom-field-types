@@ -135,7 +135,7 @@ class Field_Type_Tags extends \BP_XProfile_Field_Type_Textbox {
 
 		<?php do_action( bp_get_the_profile_field_errors_action() ); ?>
 
-        <select <?php echo $this->get_edit_field_html_elements( $r ); ?> aria-labelledby="<?php bp_the_profile_field_input_name(); ?>-1" aria-describedby="<?php bp_the_profile_field_input_name(); ?>-3">
+        <select <?php echo $this->get_edit_field_html_elements( $r ); // phpcs:ignore ?> aria-labelledby="<?php bp_the_profile_field_input_name(); ?>-1" aria-describedby="<?php bp_the_profile_field_input_name(); ?>-3">
 			<?php foreach ( $options as $value => $option ) : ?>
                 <option value="<?php echo esc_attr( $value ); ?>" <?php selected( in_array( $value, $user_tags ), true )?>><?php echo esc_html( $option ); ?></option>
             <?php endforeach; ?>
@@ -148,7 +148,7 @@ class Field_Type_Tags extends \BP_XProfile_Field_Type_Textbox {
 		<?php if ( ! bp_get_the_profile_field_is_required() ) : ?>
 
             <a class="clear-value" href="javascript:clear( '<?php echo esc_js( bp_get_the_profile_field_input_name() ); ?>[]' );">
-				<?php esc_html_e( 'Clear', 'buddypress' ); ?>
+				<?php esc_html_e( 'Clear', 'bp-xprofile-custom-field-types' ); ?>
             </a>
 
 		<?php endif; ?>

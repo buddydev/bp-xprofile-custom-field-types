@@ -58,7 +58,7 @@ class Field_Type_Country extends \BP_XProfile_Field_Type implements Field_Type_S
 
 		<?php do_action( bp_get_the_profile_field_errors_action() ); ?>
 
-	   <select <?php echo $atts; ?>>
+	   <select <?php echo $atts; // phpcs:ignore ?>>
 			<option value=""><?php _e( 'Select...', 'bp-xprofile-custom-field-types' ); ?></option>
 			<?php bp_the_profile_field_options( "user_id={$user_id}" ); ?>
 		</select>
@@ -107,7 +107,7 @@ class Field_Type_Country extends \BP_XProfile_Field_Type implements Field_Type_S
 			}
 		}
 
-		echo apply_filters( 'bp_get_the_profile_field_country', $html, $args['type'], $country_selected, $this->field_obj->id );
+		echo apply_filters( 'bp_get_the_profile_field_country', $html, $args['type'], $country_selected, $this->field_obj->id ); // phpcs:ignore
 	}
 
 	/**
@@ -118,7 +118,7 @@ class Field_Type_Country extends \BP_XProfile_Field_Type implements Field_Type_S
 	public function admin_field_html( array $raw_properties = array() ) {
 		$atts = $this->get_edit_field_html_elements( $raw_properties );
 		?>
-        <select <?php echo $atts; ?>>
+        <select <?php echo $atts; // phpcs:ignore ?>>
 			<?php bp_the_profile_field_options(); ?>
         </select>
 		<?php
@@ -151,7 +151,7 @@ class Field_Type_Country extends \BP_XProfile_Field_Type implements Field_Type_S
                         <select name="bpxcftr_default_country" id="bpxcftr_default_country">
                             <option value=""><?php _e( 'Select...', 'bp-xprofile-custom-field-types' ); ?></option>
 							<?php foreach ( self::get_countries() as $country_code => $country ): ?>
-                                <option value="<?php echo $country_code; ?>" <?php selected( $selected_country, $country_code, true ); ?>><?php echo $country; ?></option>
+                                <option value="<?php echo esc_attr( $country_code ); ?>" <?php selected( $selected_country, $country_code, true ); ?>><?php echo esc_html( $country ); ?></option>
 							<?php endforeach; ?>
                         </select>
                     </p>

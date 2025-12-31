@@ -75,7 +75,11 @@ class Field_Type_Web extends \BP_XProfile_Field_Type_URL {
 	 * @return string URL converted to a link.
 	 */
 	public static function display_filter( $field_value, $field_id = '' ) {
-		$link   = strip_tags( $field_value );
+		if ( empty( $field_value ) ) {
+			return '';
+		}
+
+		$link   = wp_strip_all_tags( $field_value );
 		$target = self::get_link_target( $field_id ) ? 'target="_blank"' : '';
 
 		return sprintf( '<a href="%1$s" rel="nofollow" %3$s>%2$s</a>', esc_url( $field_value ), esc_html( $link ), $target );

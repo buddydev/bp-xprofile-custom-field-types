@@ -124,10 +124,12 @@ class Signup_Validator {
 		$allowed_size      = bpxcftr_get_allowed_file_size( $field->type );
 
 		if ( $allowed_size < $filesize ) {
+			/* translators: %s: Allowed file size */
 			$bp->signup->errors[ 'field_' . $field_id ] = sprintf( __( 'File exceed the upload limit. Max upload size %d.', 'bp-xprofile-custom-field-types' ), $allowed_size );
 		}
 
 		if ( ! in_array( $ext, $allowed_extension ) ) {
+			/* translators: %s: Allowed file extensions */
 			$bp->signup->errors[ 'field_' . $field_id ] = sprintf( __( 'File type not allowed: (%s).', 'bp-xprofile-custom-field-types' ), implode( ',', $allowed_extension ) );
 		}
 	}
@@ -148,6 +150,7 @@ class Signup_Validator {
 		}
 
 		if ( empty( $_POST[ 'field_' . $field_id ] ) ) {
+			/* translators: %s: Minimum age */
 			$bp->signup->errors[ 'field_' . $field_id ] = sprintf( __( 'You have to be at least %s years old.', 'bp-xprofile-custom-field-types' ), $min_age );
 
 			return;
@@ -168,6 +171,7 @@ class Signup_Validator {
 		$age       = $now->diff( $birthdate );
 
 		if ( $age->y < $min_age ) {
+			/* translators: %s: Minimum age */
 			$bp->signup->errors[ 'field_' . $field_id ] = sprintf( __( 'You have to be at least %s years old.', 'bp-xprofile-custom-field-types' ), $min_age );
 		}
 	}

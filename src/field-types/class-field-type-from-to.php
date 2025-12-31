@@ -116,8 +116,8 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 		// Input.
 		?>
 		<div class="bpxcftr-from-to-edit-field bpxcftr-from-to-edit-field-<?php echo esc_attr( $type );?>">
-			<input <?php echo $from_atts; ?> /> <span class="bpxcftr-fromto-edit-separator">-</span>
-			<input <?php echo $to_atts; ?> />
+			<input <?php echo esc_attr( $from_atts ); ?> /> <span class="bpxcftr-fromto-edit-separator">-</span>
+			<input <?php echo esc_attr( $to_atts ); ?> />
 		</div>
 
 		<?php if ( bp_get_the_profile_field_description() ) : ?>
@@ -161,8 +161,8 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 
 		?>
 		<div class="bpxcftr-from-to-edit-field">
-			<input <?php echo $from_atts; ?> /> <span class="bpxcftr-fromto-edit-separator">-</span>
-			<input <?php echo $to_atts; ?> />
+			<input <?php echo esc_attr( $from_atts ); ?> /> <span class="bpxcftr-fromto-edit-separator">-</span>
+			<input <?php echo esc_attr( $to_atts ); ?> />
 		</div>
 
 		<?php
@@ -192,27 +192,27 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 			<h3><?php esc_html_e( 'Options', 'bp-xprofile-custom-field-types' ); ?></h3>
 			<div class="inside">
 				<p>
-					<label for="bpxcftr_fromto_value_type"> <?php _e( 'Value Type', 'bp-xprofile-custom-field-types' );?></label>
+					<label for="bpxcftr_fromto_value_type"> <?php esc_html_e( 'Value Type', 'bp-xprofile-custom-field-types' );?></label>
 					<select name="bpxcftr_fromto_value_type">
-						<option value="" <?php selected( $value_type, '', true);?>><?php _e( 'No restrictions', 'bp-xprofile-custom-field-types');?></option>
-						<option value="integer" <?php selected( $value_type, 'integer', true );?>><?php _e( 'Integers', 'bp-xprofile-custom-field-types');?></option>
-						<option value="numeric" <?php selected( $value_type, 'numeric', true );?>><?php _e( 'Numeric', 'bp-xprofile-custom-field-types');?></option>
-						<option value="string" <?php selected( $value_type, 'string', true );?>><?php _e( 'String', 'bp-xprofile-custom-field-types');?></option>
+						<option value="" <?php selected( $value_type, '', true);?>><?php esc_html_e( 'No restrictions', 'bp-xprofile-custom-field-types');?></option>
+						<option value="integer" <?php selected( $value_type, 'integer', true );?>><?php esc_html_e( 'Integers', 'bp-xprofile-custom-field-types');?></option>
+						<option value="numeric" <?php selected( $value_type, 'numeric', true );?>><?php esc_html_e( 'Numeric', 'bp-xprofile-custom-field-types');?></option>
+						<option value="string" <?php selected( $value_type, 'string', true );?>><?php esc_html_e( 'String', 'bp-xprofile-custom-field-types');?></option>
 					</select>
 				</p>
 
 				<div class="int-numeric-constraints">
-					<label for="bpxcftr_numeric_type_constraints"><?php _e('Integer/Numeric Type Constraints', 'bp-xprofile-custom-field-types');?></label>
+					<label for="bpxcftr_numeric_type_constraints"><?php esc_html_e('Integer/Numeric Type Constraints', 'bp-xprofile-custom-field-types');?></label>
 
-					<h4><?php _e( 'Default Values', 'bp-xprofile-custom-field-types');?></h4>
+					<h4><?php esc_html_e( 'Default Values', 'bp-xprofile-custom-field-types');?></h4>
 					<p>
 						<label>
-							<?php _e( 'From', 'bp-xprofile-custom-field-types');?>
+							<?php esc_html_e( 'From', 'bp-xprofile-custom-field-types');?>
 							<input type="text" name="bpxcftr_fromto_from_value" value="<?php echo esc_attr( $from_value );?>" />
 						</label>
 
 						<label>
-							<?php _e( 'To', 'bp-xprofile-custom-field-types' ); ?>
+							<?php esc_html_e( 'To', 'bp-xprofile-custom-field-types' ); ?>
 							<input type="text" name="bpxcftr_fromto_to_value" value="<?php echo esc_attr( $to_value ); ?>"/>
 						</label>
 
@@ -220,11 +220,11 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
                     <h4> Misc Settings</h4>
                     <?php $separator = self::get_separator_token( $current_field->id, '-' ); ?>
                     <p>
-                        <label for="bpxcftr_fromto_separator_token"> <?php _e( 'Value separator', 'bp-xprofile-custom-field-types' );?></label>
+                        <label for="bpxcftr_fromto_separator_token"> <?php esc_html_e( 'Value separator', 'bp-xprofile-custom-field-types' );?></label>
                         <select name="bpxcftr_fromto_separator_token">
-                            <option value="-" <?php selected( $separator, '-', true);?>><?php _e( 'Hyphen(v1 - v2)', 'bp-xprofile-custom-field-types');?></option>
-                            <option value=":" <?php selected( $separator, ':', true );?>><?php _e( 'Colon(v1 : v2)', 'bp-xprofile-custom-field-types');?></option>
-                            <option value="to" <?php selected( $separator, 'to', true );?>><?php _e( 'to( v1 to v2)', 'bp-xprofile-custom-field-types');?></option>
+                            <option value="-" <?php selected( $separator, '-', true);?>><?php esc_html_e( 'Hyphen(v1 - v2)', 'bp-xprofile-custom-field-types');?></option>
+                            <option value=":" <?php selected( $separator, ':', true );?>><?php esc_html_e( 'Colon(v1 : v2)', 'bp-xprofile-custom-field-types');?></option>
+                            <option value="to" <?php selected( $separator, 'to', true );?>><?php esc_html_e( 'to( v1 to v2)', 'bp-xprofile-custom-field-types');?></option>
 
                         </select>
                     </p>

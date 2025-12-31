@@ -61,7 +61,7 @@ class Admin {
 				$notice = wp_kses_data( $notice );
 				$notice = wpautop( $notice );
 
-				echo "<div class='error'>{$notice}</div>";
+				echo "<div class='error'>{$notice}</div>"; // phpcs:ignore
 			}
 			delete_option( 'bpxcftr_notices' );
 		}

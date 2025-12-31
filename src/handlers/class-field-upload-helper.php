@@ -165,6 +165,13 @@ class Field_Upload_Helper {
 			return false;
 		}
 
+		// make sure this is for the correct user.
+		$user_owned_path = trim( $this->dir_base, '/\\' ) . '/' . $data->user_id . '/' . $field->type;
+
+		if ( ! str_starts_with( trim( $data->value ), $user_owned_path ) ) {
+			return false;
+		}
+
 		$uploads = wp_upload_dir();
 
 		$path    = path_join( $uploads['basedir'], trim( $data->value, '/\\' ) );
@@ -211,8 +218,10 @@ class Field_Upload_Helper {
 		$allowed_size = bpxcftr_get_allowed_file_size( $field->type );
 
 		if ( ! in_array( $ext, $ext_allowed ) ) {
+			/* translators: %s: allowed file extensions */
 			return new \WP_Error( 'invalid_file_type', sprintf( __( 'File type not allowed: (%s).', 'bp-xprofile-custom-field-types' ), implode( ',', $ext_allowed ) ) );
 		} elseif ( $file_size > $allowed_size ) {
+			/* translators: %s: maximum allowed file size */
 			return new \WP_Error( 'file_size_err', sprintf( __( 'Max image upload size: %s MB.', 'bp-xprofile-custom-field-types' ), $allowed_size ) );
 		}
 

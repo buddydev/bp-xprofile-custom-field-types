@@ -64,7 +64,7 @@ class Field_Settings_Handler {
 			?>
             <script>
                 jQuery(function ($) {
-                    $('select[name="<?php echo $field_name_id; ?>"]').select2({
+                    $('select[name="<?php echo esc_attr( $field_name_id ); ?>"]').select2({
                         tags: true,
                         tokenSeparators: [',']
                     });
@@ -75,7 +75,7 @@ class Field_Settings_Handler {
 			?>
             <script>
                 jQuery(function ($) {
-                    $('select[name="<?php echo $field_name_id; ?>"]').select2();
+                    $('select[name="<?php echo esc_attr( $field_name_id ); ?>"]').select2();
                 });
             </script>
 			<?php

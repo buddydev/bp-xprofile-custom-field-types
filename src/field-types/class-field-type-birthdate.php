@@ -77,7 +77,7 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
                                 <div class="bp-date-format-option">
                                     <label for="bpxcftr-birthdate-date-format-<?php echo esc_attr( $format ); ?>">
                                         <input type="radio" name="field-settings[bpxcftr_birthdate_date_format]" id="bpxcftr-birthdate-date-format-<?php echo esc_attr( $format ); ?>" value="<?php echo esc_attr( $format ); ?>" <?php checked( $format, $settings['date_format'] ); ?> />
-                                        <span class="date-format-label"><?php echo date_i18n( $format ); ?></span>
+                                        <span class="date-format-label"><?php echo esc_html( date_i18n( $format ) ); ?></span>
                                         <code><?php echo esc_html( $format ); ?></code>
                                     </label>
                                 </div>
@@ -235,9 +235,11 @@ class Field_Type_Birthdate extends \BP_XProfile_Field_Type_Datebox {
 		$birthdate    = new \DateTime( "@$field_value" );
 		$age_interval = $now->diff( $birthdate );
 
+        /* translators: %s: Age in no. of years */
 		$age = sprintf( __( '%s years', 'bp-xprofile-custom-field-types' ), $age_interval->y );
 
 		if ( $age_interval->m && ! self::hide_months( $field_id ) ) {
+            /* translators: %s: Number of Months */
 			$age .= sprintf( _n( ', %s month', ', %s months', $age_interval->m, 'bp-xprofile-custom-field-types' ), $age_interval->m );
 		}
 

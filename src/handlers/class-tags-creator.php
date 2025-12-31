@@ -145,7 +145,7 @@ class Tags_Creator {
 		$user_id  = get_current_user_id();
 
 		if ( ! $tag || ! $field_id || ! $user_id || ! bp_is_my_profile() ) {
-			wp_send_json_error( __( 'Invalid Request.', 'bp-xpofile-custom-field-types' ) );
+			wp_send_json_error( __( 'Invalid Request.', 'bp-xprofile-custom-field-types' ) );
 		}
 
 		check_ajax_referer( 'bpxcftr-remove-user-' . $user_id . '-tag-' . $tag, 'nonce' );
@@ -155,13 +155,13 @@ class Tags_Creator {
 		$position = array_search( $tag, $field_data, true );
 
 		if ( false === $position ) {
-			wp_send_json_error( __( 'Tag not found.', 'bp-xpofile-custom-field-types' ) );
+			wp_send_json_error( __( 'Tag not found.', 'bp-xprofile-custom-field-types' ) );
 		}
 
 		unset( $field_data[ $position ] );
 
 		xprofile_set_field_data( $field_id, $user_id, $field_data );
 
-		wp_send_json_success( __( 'Tag removed.', 'bp-xpofile-custom-field-types' ) );
+		wp_send_json_success( __( 'Tag removed.', 'bp-xprofile-custom-field-types' ) );
 	}
 }

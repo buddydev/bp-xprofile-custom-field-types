@@ -63,7 +63,7 @@ class Field_Type_Color extends \BP_XProfile_Field_Type {
 
 		<?php do_action( bp_get_the_profile_field_errors_action() ); ?>
 
-        <input <?php echo $html; ?>>
+        <input <?php echo $html; // phpcs:ignore ?>>
 
 		<?php if ( bp_get_the_profile_field_description() ) : ?>
             <p class="description" id="<?php bp_the_profile_field_input_name(); ?>-3"><?php bp_the_profile_field_description(); ?></p>
@@ -87,7 +87,7 @@ class Field_Type_Color extends \BP_XProfile_Field_Type {
 		);
 		?>
 
-        <input <?php echo $html; ?>>
+        <input <?php echo $html; // phpcs:ignore ?>>
 		<?php
 	}
 
