@@ -161,8 +161,8 @@ class Field_Type_From_To extends \BP_XProfile_Field_Type {
 
 		?>
 		<div class="bpxcftr-from-to-edit-field">
-			<input <?php echo esc_attr( $from_atts ); ?> /> <span class="bpxcftr-fromto-edit-separator">-</span>
-			<input <?php echo esc_attr( $to_atts ); ?> />
+			<input <?php echo $from_atts; ?> /> <span class="bpxcftr-fromto-edit-separator">-</span>
+			<input <?php echo $to_atts; ?> />
 		</div>
 
 		<?php
