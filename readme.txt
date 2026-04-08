@@ -112,7 +112,7 @@ We will love to work with you. Please let us know if you need any of our [servic
 
 == Changelog ==
 = 1.3.1 =
- * Fixes issue with From/To field quoting the value incorrectly.
+ * Fixes issue with From/To field quoting the value incorrectly. Props @tukskyk .
 
 = 1.3.0 =
  * Fixes security for Arbitrary File Deletion
